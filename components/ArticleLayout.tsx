@@ -57,8 +57,22 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
         <div className="relative aspect-[16/8] overflow-hidden rounded-[8px]">
           <Image src={post.image} alt="" fill priority sizes="100vw" className="object-cover" />
         </div>
+        {toc.length > 0 ? (
+          <details className="mt-8 rounded-[8px] border border-[#5A0F18]/10 bg-white p-5 shadow-sm lg:hidden">
+            <summary className="cursor-pointer text-sm font-bold uppercase tracking-[0.14em] text-[#8a6a18]">
+              En este artículo
+            </summary>
+            <nav className="mt-4 grid max-h-80 gap-2 overflow-y-auto pr-1 text-sm leading-6 text-[#1F1F1F]/70">
+              {toc.map((item) => (
+                <a key={item.id} href={`#${item.id}`} className="hover:text-[#5A0F18]">
+                  {item.text}
+                </a>
+              ))}
+            </nav>
+          </details>
+        ) : null}
         <div className="mt-10 grid gap-10 lg:grid-cols-[240px_1fr]">
-          <aside className="lg:sticky lg:top-24 lg:self-start">
+          <aside className="hidden lg:sticky lg:top-24 lg:block lg:self-start">
             <div className="max-h-none overflow-visible rounded-[8px] border border-[#5A0F18]/10 bg-white p-5 shadow-sm lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:overscroll-contain">
               <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8a6a18]">
                 En este artículo
