@@ -57,13 +57,13 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
         <div className="relative aspect-[16/8] overflow-hidden rounded-[8px]">
           <Image src={post.image} alt="" fill priority sizes="100vw" className="object-cover" />
         </div>
-        <div className="mt-10 grid gap-10 lg:grid-cols-[220px_1fr]">
-          <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-[8px] border border-[#5A0F18]/10 bg-white p-5 shadow-sm">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[240px_1fr]">
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <div className="max-h-none overflow-visible rounded-[8px] border border-[#5A0F18]/10 bg-white p-5 shadow-sm lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:overscroll-contain">
               <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8a6a18]">
                 En este artículo
               </p>
-              <nav className="mt-4 grid gap-2 text-sm text-[#1F1F1F]/70">
+              <nav className="mt-4 grid gap-2 pr-1 text-sm leading-6 text-[#1F1F1F]/70">
                 {toc.map((item) => (
                   <a key={item.id} href={`#${item.id}`} className="hover:text-[#5A0F18]">
                     {item.text}
