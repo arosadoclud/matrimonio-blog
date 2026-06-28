@@ -61,9 +61,11 @@ function parsePost(fileName: string): Post {
     date: String(data.date),
     category: String(data.category),
     author: String(data.author ?? "Restaura Tu Matrimonio"),
+    reviewedBy: data.reviewedBy ? String(data.reviewedBy) : undefined,
     image: String(data.image),
     slug,
-    keywords: Array.isArray(data.keywords) ? data.keywords.map(String) : []
+    keywords: Array.isArray(data.keywords) ? data.keywords.map(String) : [],
+    contentType: data.contentType === "pillar" ? "pillar" : "satellite"
   };
 
   return {

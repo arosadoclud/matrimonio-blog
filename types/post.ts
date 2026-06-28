@@ -10,9 +10,11 @@ export type PostMeta = {
   date: string;
   category: string;
   author: string;
+  reviewedBy?: string;
   image: string;
   slug: string;
   keywords: string[];
+  contentType?: "pillar" | "satellite";
 };
 
 export type Post = PostMeta & {

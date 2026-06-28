@@ -15,6 +15,8 @@ export function CTABox({
       <p className="mt-3 max-w-2xl text-sm leading-7 text-white/78">{description}</p>
       <Link
         href="/recursos"
+        data-event="cta_click"
+        data-label="recurso_recomendado"
         className="mt-6 inline-flex rounded-full bg-[#D4AF37] px-6 py-3 text-sm font-bold text-[#1F1F1F] transition hover:bg-[#e1bd45]"
       >
         Ver recurso recomendado

@@ -6,9 +6,15 @@ export function AuthorBox() {
         Equipo editorial de Restaura Tu Matrimonio
       </h2>
       <p className="mt-3 text-sm leading-7 text-[#1F1F1F]/72">
-        Publicamos recursos cristianos de esperanza, oración y restauración familiar con un enfoque
-        pastoral, práctico y responsable. Este contenido no sustituye consejería profesional,
-        acompañamiento pastoral directo ni ayuda especializada en situaciones de abuso o peligro.
+        Somos un equipo editorial cristiano enfocado en acompañar a matrimonios que atraviesan
+        crisis, distancia emocional o procesos de reconciliación. Escribimos con una voz pastoral,
+        práctica y esperanzadora, cuidando que cada recurso invite a la oración, la responsabilidad
+        personal y la búsqueda de ayuda sabia cuando sea necesario.
+      </p>
+      <p className="mt-3 text-sm leading-7 text-[#1F1F1F]/72">
+        Descargo: este contenido es espiritual y educativo. No reemplaza consejería profesional,
+        terapia, asesoría legal, acompañamiento pastoral directo ni ayuda especializada en
+        situaciones de abuso, violencia o peligro.
       </p>
     </aside>
   );

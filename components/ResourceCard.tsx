@@ -29,6 +29,8 @@ export function ResourceCard() {
         </ul>
         <Link
           href="#"
+          data-event="affiliate_cta_click"
+          data-label="hotmart_recurso_recomendado"
           className="mt-7 inline-flex rounded-full bg-[#5A0F18] px-7 py-3.5 font-semibold text-white"
         >
           Acceder al recurso

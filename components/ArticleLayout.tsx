@@ -44,6 +44,12 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             <span>{post.readingTime}</span>
             <span>•</span>
             <span>{post.author}</span>
+            {post.reviewedBy ? (
+              <>
+                <span>•</span>
+                <span>Revisado por {post.reviewedBy}</span>
+              </>
+            ) : null}
           </div>
         </div>
       </section>

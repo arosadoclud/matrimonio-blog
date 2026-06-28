@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/categorias",
     "/sobre-nosotros",
     "/recursos",
+    "/guia-oracion",
     "/contacto",
     "/privacidad",
     "/terminos",
