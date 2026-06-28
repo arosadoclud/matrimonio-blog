@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --burgundy: #5a0f18;
+  --gold: #d4af37;
+  --cream: #fff7e8;
+  --dark: #1f1f1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--dark);
+  background: #fffdf8;
+  font-family: var(--font-body), Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+}
+
+.prose-article {
+  color: #2d2d2d;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.prose-article h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.9rem;
+  color: var(--burgundy);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.prose-article h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  color: #3c1117;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.prose-article p {
+  margin: 1rem 0;
+}
+
+.prose-article ul,
+.prose-article ol {
+  padding-left: 1.4rem;
+  margin: 1rem 0;
+}
+
+.prose-article li {
+  margin: 0.55rem 0;
+}
+
+.prose-article strong {
+  color: var(--burgundy);
+}
+
+.prose-article a {
+  color: var(--burgundy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.65);
+  text-underline-offset: 4px;
+}
+
+.prose-article blockquote {
+  border-left: 4px solid var(--gold);
+  background: #fff7e8;
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+}

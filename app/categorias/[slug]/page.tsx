@@ -1,0 +1,58 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { BlogCard } from "@/components/BlogCard";
+import { getPostsByCategory } from "@/lib/posts";
+import { categories, siteConfig } from "@/lib/site";
+
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export function generateStaticParams() {
+  return categories.map((category) => ({ slug: category.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const category = categories.find((item) => item.slug === slug);
+
+  if (!category) {
+    return {};
+  }
+
+  return {
+    title: `${category.name} | ${siteConfig.name}`,
+    description: category.description
+  };
+}
+
+export default async function CategoryPage({ params }: PageProps) {
+  const { slug } = await params;
+  const category = categories.find((item) => item.slug === slug);
+
+  if (!category) {
+    notFound();
+  }
+
+  const posts = getPostsByCategory(slug);
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Categoría</p>
+      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
+        {category.name}
+      </h1>
+      <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">{category.description}</p>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <BlogCard key={post.slug} post={post} />
+        ))}
+      </div>
+      {posts.length === 0 ? (
+        <p className="mt-10 rounded-[8px] bg-[#FFF7E8] p-6 text-[#1F1F1F]/70">
+          Pronto publicaremos artículos en esta categoría.
+        </p>
+      ) : null}
+    </section>
+  );
+}

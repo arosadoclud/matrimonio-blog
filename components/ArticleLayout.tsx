@@ -1,0 +1,69 @@
+import Image from "next/image";
+import { CTABox } from "@/components/CTABox";
+import { CategoryBadge } from "@/components/CategoryBadge";
+import { MdxContent } from "@/components/MdxContent";
+import { RelatedArticles } from "@/components/RelatedArticles";
+import { VerseBox } from "@/components/VerseBox";
+import { getTableOfContents } from "@/lib/posts";
+import type { Post } from "@/types/post";
+
+type ArticleLayoutProps = {
+  post: Post;
+  relatedPosts: Post[];
+};
+
+export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
+  const toc = getTableOfContents(post.content);
+
+  return (
+    <article>
+      <section className="bg-[#FFF7E8]">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <CategoryBadge category={post.category} />
+          <h1 className="mt-5 font-[var(--font-display)] text-5xl font-bold leading-tight text-[#5A0F18] sm:text-6xl">
+            {post.title}
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-[#1F1F1F]/72">{post.description}</p>
+          <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-[#1F1F1F]/55">
+            <span>{new Intl.DateTimeFormat("es", { dateStyle: "long" }).format(new Date(post.date))}</span>
+            <span>•</span>
+            <span>{post.readingTime}</span>
+            <span>•</span>
+            <span>{post.author}</span>
+          </div>
+        </div>
+      </section>
+      <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="relative aspect-[16/8] overflow-hidden rounded-[8px]">
+          <Image src={post.image} alt="" fill priority sizes="100vw" className="object-cover" />
+        </div>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[220px_1fr]">
+          <aside className="lg:sticky lg:top-28 lg:self-start">
+            <div className="rounded-[8px] border border-[#5A0F18]/10 bg-white p-5 shadow-sm">
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8a6a18]">
+                En este artículo
+              </p>
+              <nav className="mt-4 grid gap-2 text-sm text-[#1F1F1F]/70">
+                {toc.map((item) => (
+                  <a key={item.id} href={`#${item.id}`} className="hover:text-[#5A0F18]">
+                    {item.text}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </aside>
+          <div>
+            <VerseBox />
+            <div className="prose-article mt-8">
+              <MdxContent source={post.content} />
+            </div>
+            <div className="mt-10">
+              <CTABox />
+            </div>
+          </div>
+        </div>
+        <RelatedArticles posts={relatedPosts} />
+      </div>
+    </article>
+  );
+}
