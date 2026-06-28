@@ -19,6 +19,10 @@ export function Footer() {
             <Link href="/recursos">Recursos</Link>
             <Link href="/sobre-nosotros">Sobre nosotros</Link>
             <Link href="/contacto">Contacto</Link>
+            <Link href="/privacidad">Política de Privacidad</Link>
+            <Link href="/terminos">Términos</Link>
+            <Link href="/afiliados">Afiliados</Link>
+            <Link href="/cookies">Cookies</Link>
           </div>
         </div>
         <div>

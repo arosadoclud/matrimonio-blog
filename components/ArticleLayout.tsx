@@ -1,10 +1,14 @@
 import Image from "next/image";
+import { AdSlot } from "@/components/AdSlot";
+import { AuthorBox } from "@/components/AuthorBox";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABox } from "@/components/CTABox";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MdxContent } from "@/components/MdxContent";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { VerseBox } from "@/components/VerseBox";
 import { getTableOfContents } from "@/lib/posts";
+import { slugify } from "@/lib/site";
 import type { Post } from "@/types/post";
 
 type ArticleLayoutProps = {
@@ -19,7 +23,17 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
     <article>
       <section className="bg-[#FFF7E8]">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <CategoryBadge category={post.category} />
+          <Breadcrumbs
+            items={[
+              { label: "Inicio", href: "/" },
+              { label: "Blog", href: "/blog" },
+              { label: post.category, href: `/categorias/${slugify(post.category)}` },
+              { label: post.title }
+            ]}
+          />
+          <div className="mt-6">
+            <CategoryBadge category={post.category} />
+          </div>
           <h1 className="mt-5 font-[var(--font-display)] text-5xl font-bold leading-tight text-[#5A0F18] sm:text-6xl">
             {post.title}
           </h1>
@@ -54,12 +68,18 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
           </aside>
           <div>
             <VerseBox />
+            <AdSlot className="mt-8" label="Anuncio recomendado" />
             <div className="prose-article mt-8">
               <MdxContent source={post.content} />
             </div>
+            <AdSlot className="mt-10" label="Anuncio de mitad de artículo" />
             <div className="mt-10">
               <CTABox />
             </div>
+            <div className="mt-10">
+              <AuthorBox />
+            </div>
+            <AdSlot className="mt-10" label="Anuncio final" />
           </div>
         </div>
         <RelatedArticles posts={relatedPosts} />

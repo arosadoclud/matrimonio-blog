@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleLayout } from "@/components/ArticleLayout";
+import { JsonLd } from "@/components/JsonLd";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, slugify } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -55,7 +56,8 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   const relatedPosts = getRelatedPosts(post);
-  const schema = {
+  const articleUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
@@ -71,12 +73,42 @@ export default async function ArticlePage({ params }: PageProps) {
       "@type": "Organization",
       name: siteConfig.name
     },
-    mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`
+    mainEntityOfPage: articleUrl
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: siteConfig.url
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${siteConfig.url}/blog`
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.category,
+        item: `${siteConfig.url}/categorias/${slugify(post.category)}`
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: post.title,
+        item: articleUrl
+      }
+    ]
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
       <ArticleLayout post={post} relatedPosts={relatedPosts} />
     </>
   );
