@@ -20,4 +20,5 @@ export type PostMeta = {
 export type Post = PostMeta & {
   content: string;
   readingTime: string;
+  wordCount: number;
 };

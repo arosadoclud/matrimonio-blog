@@ -5,7 +5,7 @@ import { CTABox } from "@/components/CTABox";
 import { FeaturedPost } from "@/components/FeaturedPost";
 import { Hero } from "@/components/Hero";
 import { NewsletterBox } from "@/components/NewsletterBox";
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts, getPillarPosts } from "@/lib/posts";
 import { categories } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -16,11 +16,51 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const posts = getAllPosts();
+  const pillarPosts = getPillarPosts();
   const [featuredPost, ...recentPosts] = posts;
 
   return (
     <>
       <Hero />
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Empieza aquí</p>
+            <h2 className="mt-2 font-[var(--font-display)] text-4xl font-bold text-[#5A0F18]">
+              Una ruta clara si tu matrimonio está en crisis
+            </h2>
+            <p className="mt-4 leading-7 text-[#1F1F1F]/70">
+              Si llegaste con dolor, empieza por estas tres guías. Están pensadas para ordenar el
+              corazón, orar con dirección y entender el perdón bíblico sin negar la realidad.
+            </p>
+            <Link
+              href="/newsletter"
+              className="mt-6 inline-flex rounded-full bg-[#5A0F18] px-6 py-3 text-sm font-semibold text-white"
+              data-event="cta_click"
+              data-label="home_empieza_aqui_newsletter"
+            >
+              Recibir guía gratuita
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {pillarPosts.slice(0, 3).map((post, index) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="rounded-[8px] border border-[#D4AF37]/35 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              >
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
+                  Pilar {index + 1}
+                </span>
+                <h3 className="mt-3 font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
+                  {post.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[#1F1F1F]/64">{post.description}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-6">
           <div>

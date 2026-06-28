@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleLayout } from "@/components/ArticleLayout";
 import { JsonLd } from "@/components/JsonLd";
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
+import { getAllPosts, getFaqs, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { siteConfig, slugify } from "@/lib/site";
 
 type PageProps = {
@@ -28,6 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description: post.description,
     keywords: post.keywords,
+    robots:
+      post.wordCount >= 300
+        ? undefined
+        : {
+            index: false,
+            follow: true
+          },
     alternates: { canonical: url },
     openGraph: {
       type: "article",
@@ -56,6 +63,7 @@ export default async function ArticlePage({ params }: PageProps) {
   }
 
   const relatedPosts = getRelatedPosts(post);
+  const faqs = getFaqs(post.content);
   const articleUrl = `${siteConfig.url}/blog/${post.slug}`;
   const articleSchema = {
     "@context": "https://schema.org",
@@ -105,10 +113,25 @@ export default async function ArticlePage({ params }: PageProps) {
       }
     ]
   };
+  const faqSchema =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer
+            }
+          }))
+        }
+      : null;
 
   return (
     <>
-      <JsonLd data={[articleSchema, breadcrumbSchema]} />
+      <JsonLd data={faqSchema ? [articleSchema, breadcrumbSchema, faqSchema] : [articleSchema, breadcrumbSchema]} />
       <ArticleLayout post={post} relatedPosts={relatedPosts} />
     </>
   );

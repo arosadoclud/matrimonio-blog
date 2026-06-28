@@ -1,3 +1,5 @@
+import { NewsletterForm } from "@/components/NewsletterForm";
+
 export function NewsletterBox() {
   return (
     <section className="rounded-[8px] border border-[#D4AF37]/35 bg-white p-6 shadow-sm">
@@ -8,25 +10,7 @@ export function NewsletterBox() {
         Lead magnet preparado para captar suscriptores con una secuencia devocional de oración,
         reflexión bíblica y pasos prácticos durante una semana.
       </p>
-      <form className="mt-5 grid gap-3 sm:grid-cols-[1fr_auto]">
-        <label className="sr-only" htmlFor="newsletter-email">
-          Email
-        </label>
-        <input
-          id="newsletter-email"
-          type="email"
-          placeholder="tu@email.com"
-          className="rounded-full border border-[#5A0F18]/15 px-5 py-3 outline-none focus:border-[#D4AF37]"
-        />
-        <button
-          className="rounded-full bg-[#5A0F18] px-6 py-3 font-semibold text-white"
-          data-event="newsletter_signup_click"
-          data-label="lead_magnet_7_dias"
-          type="button"
-        >
-          Recibir guía
-        </button>
-      </form>
+      <NewsletterForm />
     </section>
   );
 }

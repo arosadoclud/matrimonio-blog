@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/posts";
+import { getIndexablePosts } from "@/lib/posts";
 import { categories, siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sobre-nosotros",
     "/recursos",
     "/guia-oracion",
+    "/newsletter",
     "/contacto",
     "/privacidad",
     "/terminos",
@@ -25,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date()
   }));
 
-  const postRoutes = getAllPosts().map((post) => ({
+  const postRoutes = getIndexablePosts().map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: new Date(post.date)
   }));

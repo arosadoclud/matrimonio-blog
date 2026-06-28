@@ -43,9 +43,13 @@ function parseFrontmatter(raw: string) {
 }
 
 function estimateReadingTime(content: string) {
-  const words = content.trim().split(/\s+/).filter(Boolean).length;
+  const words = getWordCount(content);
   const minutes = Math.max(1, Math.ceil(words / 220));
   return `${minutes} min de lectura`;
+}
+
+export function getWordCount(content: string) {
+  return content.trim().split(/\s+/).filter(Boolean).length;
 }
 
 function parsePost(fileName: string): Post {
@@ -71,7 +75,8 @@ function parsePost(fileName: string): Post {
   return {
     ...meta,
     content,
-    readingTime: estimateReadingTime(content)
+    readingTime: estimateReadingTime(content),
+    wordCount: getWordCount(content)
   };
 }
 
@@ -101,6 +106,14 @@ export function getRelatedPosts(post: Post, limit = 3): Post[] {
     .slice(0, limit);
 }
 
+export function getPillarPosts(): Post[] {
+  return getAllPosts().filter((post) => post.contentType === "pillar");
+}
+
+export function getIndexablePosts(): Post[] {
+  return getAllPosts().filter((post) => post.wordCount >= 300);
+}
+
 export function getTableOfContents(content: string) {
   return content
     .split("\n")
@@ -112,4 +125,28 @@ export function getTableOfContents(content: string) {
         id: slugify(text)
       };
     });
+}
+
+export function getFaqs(content: string) {
+  const faqStart = content.search(/^## Preguntas frecuentes\s*$/m);
+
+  if (faqStart === -1) {
+    return [];
+  }
+
+  const faqContent = content.slice(faqStart).replace(/^## Preguntas frecuentes\s*/m, "");
+  const nextSection = faqContent.search(/\n## (?!Preguntas frecuentes)/);
+  const section = nextSection === -1 ? faqContent : faqContent.slice(0, nextSection);
+  const matches = Array.from(section.matchAll(/^###\s+(.+)\n+([\s\S]*?)(?=\n###\s+|\s*$)/gm));
+
+  return matches
+    .map((match) => ({
+      question: match[1].trim(),
+      answer: match[2]
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+        .replace(/\*\*([^*]+)\*\*/g, "$1")
+        .replace(/\s+/g, " ")
+        .trim()
+    }))
+    .filter((item) => item.question && item.answer);
 }
