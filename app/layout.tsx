@@ -6,25 +6,26 @@ import { CookieNotice } from "@/components/CookieNotice";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { SkipLinks } from "@/components/SkipLinks";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["600", "700"]
+  weight: ["600", "700"],
 });
 
 const body = Inter({
   subsets: ["latin"],
-  variable: "--font-body"
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} | Restauración matrimonial cristiana`,
-    template: `%s | ${siteConfig.name}`
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
@@ -33,16 +34,16 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: siteConfig.name,
-    description: siteConfig.description
+    description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
-    description: siteConfig.description
+    description: siteConfig.description,
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-  }
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -52,12 +53,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    sameAs: []
+    sameAs: [],
   };
 
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
       <body>
+        <SkipLinks />
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT ? (
           <Script
             async
@@ -68,7 +70,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         ) : null}
         <JsonLd data={organizationSchema} />
         <Header />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
         <CookieNotice />
         <Analytics />
