@@ -3,10 +3,13 @@ import { slugify } from "./utils";
 
 export const siteConfig = {
   name: "Restaura Tu Matrimonio",
-  domain: "restauratumatrimonio.org",
-  url: "https://restauratumatrimonio.org",
+  // TODO: cambiar a restauratumatrimonio-blog.com cuando se compre el dominio.
+  // Mientras tanto, se usa el dominio temporal de Vercel.
+  domain: "matrimonio-blog.vercel.app",
+  url: "https://matrimonio-blog.vercel.app",
   description:
     "Recursos cristianos, oración y enseñanzas para matrimonios que desean sanar, perdonar y volver a construir.",
+  // Landing de ventas (checkout Hotmart) — dominio separado a propósito, no cambia.
   hotmartUrl: "https://restauratumatrimonio.org/recursos",
   whatsappUrl: "#",
 };
