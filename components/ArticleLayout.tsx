@@ -2,11 +2,12 @@ import Image from "next/image";
 import { AdSlot } from "@/components/AdSlot";
 import { AuthorBox } from "@/components/AuthorBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { CTABox } from "@/components/CTABox";
+import { FunnelCTA } from "@/components/FunnelCTA";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { MdxContent } from "@/components/MdxContent";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { VerseBox } from "@/components/VerseBox";
+import { ViewContentTracker } from "@/components/ViewContentTracker";
 import { getTableOfContents } from "@/lib/posts";
 import { slugify } from "@/lib/site";
 import type { Post } from "@/types/post";
@@ -21,6 +22,7 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
 
   return (
     <article>
+      <ViewContentTracker contentName={post.title} contentCategory={post.category} />
       <section className="bg-[#FFF7E8]">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <Breadcrumbs
@@ -87,6 +89,9 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             </div>
           </aside>
           <div>
+            <div className="mt-2">
+              <FunnelCTA variant="top" />
+            </div>
             <VerseBox />
             <AdSlot className="mt-8" label="Anuncio recomendado" />
             <div className="prose-article mt-8">
@@ -94,10 +99,13 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             </div>
             <AdSlot className="mt-10" label="Anuncio de mitad de artículo" />
             <div className="mt-10">
-              <CTABox />
+              <FunnelCTA variant="middle" topic={post.category} />
             </div>
             <div className="mt-10">
               <AuthorBox />
+            </div>
+            <div className="mt-10">
+              <FunnelCTA variant="bottom" />
             </div>
             <AdSlot className="mt-10" label="Anuncio final" />
           </div>
