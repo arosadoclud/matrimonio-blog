@@ -2,22 +2,11 @@
 
 import Script from "next/script";
 import { useEffect } from "react";
-
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
-function trackEvent(eventName: string, params?: Record<string, string | number | boolean>) {
-  if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, params ?? {});
-  }
-}
+import { trackEvent } from "@/lib/analytics";
 
 export function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
   useEffect(() => {
     const trackedDepths = new Set<number>();
@@ -43,7 +32,7 @@ export function Analytics() {
       [25, 50, 75, 90].forEach((checkpoint) => {
         if (depth >= checkpoint && !trackedDepths.has(checkpoint)) {
           trackedDepths.add(checkpoint);
-          trackEvent("scroll_depth", { percent: checkpoint });
+          trackEvent("ScrollDepth", { percent: checkpoint });
         }
       });
     }
@@ -57,21 +46,49 @@ export function Analytics() {
     };
   }, []);
 
-  if (!gaId) {
-    return null;
-  }
-
   return (
     <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${gaId}');
-        `}
-      </Script>
+      {gaId ? (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
+          <Script id="ga4-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaId}');
+            `}
+          </Script>
+        </>
+      ) : null}
+      {metaPixelId ? (
+        <>
+          <Script id="meta-pixel-init" strategy="afterInteractive">
+            {`
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              window.fbq('init', '${metaPixelId}');
+              window.fbq('track', 'PageView');
+            `}
+          </Script>
+          <noscript>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              alt=""
+              src={`https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1`}
+            />
+          </noscript>
+        </>
+      ) : null}
     </>
   );
 }

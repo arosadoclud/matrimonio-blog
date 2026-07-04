@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -41,6 +42,7 @@ export function NewsletterForm() {
         return;
       }
 
+      trackEvent("Lead", { content_name: "lead_magnet_7_dias" });
       setStatus("success");
       form.reset();
     } catch (error) {
