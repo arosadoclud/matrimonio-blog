@@ -11,7 +11,7 @@ describe("seo helpers", () => {
 
   it("builds absolute canonical URLs from relative paths", () => {
     expect(buildCanonicalUrl("/blog/como-orar-cuando-mi-matrimonio-esta-destruido")).toBe(
-      "https://restauratumatrimonio-blog.com/blog/como-orar-cuando-mi-matrimonio-esta-destruido"
+      "https://restauratumatriminio-blog.com/blog/como-orar-cuando-mi-matrimonio-esta-destruido"
     );
   });
 });
