@@ -50,12 +50,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
-  other: [
-    {
-      name: "google-adsense-account",
-      content: "ca-pub-2971696184390995",
-    },
-  ],
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
@@ -73,6 +67,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-2971696184390995" />
+      </head>
       <body>
         <SkipLinks />
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT ? (
