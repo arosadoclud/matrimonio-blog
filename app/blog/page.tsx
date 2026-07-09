@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BlogExplorer } from "@/components/BlogExplorer";
 import { getAllPosts } from "@/lib/posts";
 import { ensureMetaDescription } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog de restauración matrimonial cristiana",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     "Artículos cristianos sobre restauración matrimonial, oración por el matrimonio, perdón, reconciliación, comunicación y crisis de pareja."
   ),
   alternates: {
-    canonical: "https://matrimonio-blog.vercel.app/blog",
+    canonical: `${siteConfig.url}/blog`,
   },
 };
 

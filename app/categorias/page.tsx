@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { categories } from "@/lib/site";
+import { categories, siteConfig } from "@/lib/site";
 import { ensureMetaDescription } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Explora temas cristianos sobre restauración matrimonial, oración, perdón, crisis de pareja, comunicación y consejos bíblicos."
   ),
   alternates: {
-    canonical: "https://matrimonio-blog.vercel.app/categorias",
+    canonical: `${siteConfig.url}/categorias`,
   },
 };
 
