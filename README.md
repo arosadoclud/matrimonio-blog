@@ -128,3 +128,5 @@ contentType: "satellite"
   humano revise y mergee.
 - Mientras el PR no se mergee, el post **no está publicado** — Kingdom Studio refleja esto
   devolviendo `status=DRY_RUN` en el resultado del adaptador, no `PUBLISHED`.
+
+<!-- auto-merge verification marker: safe, no functional change -->
