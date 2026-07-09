@@ -3,8 +3,8 @@ import { slugify } from "./utils";
 
 export const siteConfig = {
   name: "Restaura Tu Matrimonio",
-  domain: "restauratumatriminio-blog.com",
-  url: "https://restauratumatriminio-blog.com",
+  domain: "restauratumatrimonio-blog.com",
+  url: "https://restauratumatrimonio-blog.com",
   description:
     "Recursos cristianos, oración y enseñanzas para matrimonios que desean sanar, perdonar y volver a construir.",
   // Landing de ventas (checkout Hotmart) — dominio separado a propósito, no cambia.
