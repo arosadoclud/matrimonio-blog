@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {

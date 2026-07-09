@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@/lib/site";
+import { ensureMetaDescription } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Categorías de restauración matrimonial",
-  description:
+  description: ensureMetaDescription(
     "Explora temas cristianos sobre restauración matrimonial, oración, perdón, crisis de pareja, comunicación y consejos bíblicos."
+  ),
+  alternates: {
+    canonical: "https://matrimonio-blog.vercel.app/categorias",
+  },
 };
 
 export default function CategoriesPage() {

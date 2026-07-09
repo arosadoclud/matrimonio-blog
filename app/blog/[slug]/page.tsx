@@ -4,6 +4,7 @@ import { ArticleLayout } from "@/components/ArticleLayout";
 import { JsonLd } from "@/components/JsonLd";
 import { getAllPosts, getFaqs, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { siteConfig, slugify } from "@/lib/site";
+import { buildCanonicalUrl, ensureMetaDescription } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -22,11 +23,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `${post.title} | ${siteConfig.name}`;
-  const url = `${siteConfig.url}/blog/${post.slug}`;
+  const url = buildCanonicalUrl(`/blog/${post.slug}`);
 
   return {
     title,
-    description: post.description,
+    description: ensureMetaDescription(post.description),
     keywords: post.keywords,
     robots:
       post.wordCount >= 300

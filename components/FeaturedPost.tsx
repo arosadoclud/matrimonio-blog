@@ -7,7 +7,14 @@ export function FeaturedPost({ post }: { post: PostMeta }) {
   return (
     <article className="grid overflow-hidden rounded-[8px] border border-[#5A0F18]/10 bg-white shadow-lg lg:grid-cols-[1fr_1fr]">
       <div className="relative min-h-[280px]">
-        <Image src={post.image} alt="" fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        <Image
+          src={post.image}
+          alt={`Portada del artículo ${post.title}`}
+          fill
+          priority
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover"
+        />
       </div>
       <div className="p-7 sm:p-10">
         <CategoryBadge category={post.category} />

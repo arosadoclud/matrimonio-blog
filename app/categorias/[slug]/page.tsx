@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { getPostsByCategory } from "@/lib/posts";
 import { categories, siteConfig } from "@/lib/site";
+import { buildCanonicalUrl, ensureMetaDescription } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -24,7 +25,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${category.name} | ${siteConfig.name}`,
-    description: category.description
+    description: ensureMetaDescription(category.description),
+    alternates: { canonical: buildCanonicalUrl(`/categorias/${category.slug}`) },
   };
 }
 

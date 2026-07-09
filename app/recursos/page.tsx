@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 import { NewsletterBox } from "@/components/NewsletterBox";
 import { ResourceCard } from "@/components/ResourceCard";
 import { ViewContentTracker } from "@/components/ViewContentTracker";

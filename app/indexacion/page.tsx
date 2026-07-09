@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Indexación y medición",
   description:
     "Guía interna para activar Google Search Console, enviar sitemap, configurar GA4 y medir conversiones del blog.",
+  alternates: {
+    canonical: buildCanonicalUrl("/indexacion"),
+  },
   robots: {
     index: false,
     follow: false

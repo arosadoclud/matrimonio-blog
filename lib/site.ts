@@ -10,7 +10,7 @@ export const siteConfig = {
   description:
     "Recursos cristianos, oración y enseñanzas para matrimonios que desean sanar, perdonar y volver a construir.",
   // Landing de ventas (checkout Hotmart) — dominio separado a propósito, no cambia.
-  hotmartUrl: "https://restauratumatrimonio.org/recursos",
+  hotmartUrl: "https://restauratumatrimonio.org/",
   whatsappUrl: "#",
 };
 

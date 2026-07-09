@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contacto",
   description:
     "Contacta a Restaura Tu Matrimonio para consultas, colaboraciones o mensajes sobre recursos cristianos de restauración matrimonial.",
+  alternates: {
+    canonical: buildCanonicalUrl("/contacto"),
+  },
 };
 
 export default function ContactPage() {

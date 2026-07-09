@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 import { NewsletterBox } from "@/components/NewsletterBox";
 
 export const metadata: Metadata = {

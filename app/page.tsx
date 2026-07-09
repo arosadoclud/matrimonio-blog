@@ -7,11 +7,16 @@ import { Hero } from "@/components/Hero";
 import { NewsletterBox } from "@/components/NewsletterBox";
 import { getAllPosts, getPillarPosts } from "@/lib/posts";
 import { categories } from "@/lib/site";
+import { ensureMetaDescription } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Restauración matrimonial cristiana, oración y reconciliación",
-  description:
+  description: ensureMetaDescription(
     "Dios puede restaurar tu matrimonio. Encuentra artículos cristianos sobre oración, perdón, reconciliación, crisis de pareja y restauración familiar."
+  ),
+  alternates: {
+    canonical: "https://matrimonio-blog.vercel.app/",
+  },
 };
 
 export default function HomePage() {

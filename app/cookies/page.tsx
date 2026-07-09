@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Política de Cookies",

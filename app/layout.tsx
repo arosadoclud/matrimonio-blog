@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { SkipLinks } from "@/components/SkipLinks";
 import { siteConfig } from "@/lib/site";
+import { ensureMetaDescription } from "@/lib/seo";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -27,19 +28,22 @@ export const metadata: Metadata = {
     default: `${siteConfig.name} | Restauración matrimonial cristiana`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description: ensureMetaDescription(siteConfig.description),
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: siteConfig.name,
-    description: siteConfig.description,
+    description: ensureMetaDescription(siteConfig.description),
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
-    description: siteConfig.description,
+    description: ensureMetaDescription(siteConfig.description),
+  },
+  alternates: {
+    canonical: siteConfig.url,
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,

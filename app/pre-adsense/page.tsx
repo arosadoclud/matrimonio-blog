@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Checklist interno pre-AdSense",
   description:
     "Checklist interno para revisar contenido, políticas, navegación, medición e indexación antes de solicitar Google AdSense.",
+  alternates: {
+    canonical: buildCanonicalUrl("/pre-adsense"),
+  },
   robots: {
     index: false,
     follow: false

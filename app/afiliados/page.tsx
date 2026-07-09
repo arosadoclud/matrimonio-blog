@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Política de Afiliados",
   description:
-    "Aviso de afiliados de Restaura Tu Matrimonio: transparencia sobre recomendaciones, Hotmart y posibles comisiones."
+    "Aviso de afiliados de Restaura Tu Matrimonio: transparencia sobre recomendaciones, Hotmart y posibles comisiones.",
+  alternates: {
+    canonical: buildCanonicalUrl("/afiliados"),
+  },
 };
 
 export default function AffiliatesPage() {

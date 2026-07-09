@@ -57,7 +57,14 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
       </section>
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="relative aspect-[16/8] overflow-hidden rounded-[8px]">
-          <Image src={post.image} alt="" fill priority sizes="100vw" className="object-cover" />
+          <Image
+            src={post.image}
+            alt={`Portada del artículo ${post.title}`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
         {toc.length > 0 ? (
           <details className="mt-8 rounded-[8px] border border-[#5A0F18]/10 bg-white p-5 shadow-sm lg:hidden">

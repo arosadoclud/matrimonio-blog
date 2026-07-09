@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { buildCanonicalUrl } from "@/lib/seo";
 import { CTABox } from "@/components/CTABox";
 
 export const metadata: Metadata = {
   title: "Sobre nosotros",
   description:
-    "Restaura Tu Matrimonio nace como un espacio cristiano de esperanza para matrimonios que atraviesan crisis, distancia emocional o heridas profundas."
+    "Restaura Tu Matrimonio nace como un espacio cristiano de esperanza para matrimonios que atraviesan crisis, distancia emocional o heridas profundas.",
+  alternates: {
+    canonical: buildCanonicalUrl("/sobre-nosotros"),
+  },
 };
 
 export default function AboutPage() {

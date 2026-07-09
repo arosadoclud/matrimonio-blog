@@ -12,7 +12,13 @@ export function BlogCard({ post }: BlogCardProps) {
     <article className="overflow-hidden rounded-[8px] border border-[#5A0F18]/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
       <Link href={`/blog/${post.slug}`} className="block">
         <div className="relative aspect-[16/10]">
-          <Image src={post.image} alt="" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+          <Image
+            src={post.image}
+            alt={`Portada del artículo ${post.title}`}
+            fill
+            sizes="(min-width: 1024px) 33vw, 100vw"
+            className="object-cover"
+          />
         </div>
       </Link>
       <div className="p-5">
