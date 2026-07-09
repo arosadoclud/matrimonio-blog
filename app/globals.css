@@ -47,24 +47,24 @@ a {
 
 .prose-article h3 {
   margin-top: 2rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.85rem;
   color: #3c1117;
   font-size: 1.35rem;
   line-height: 1.25;
 }
 
 .prose-article p {
-  margin: 1rem 0;
+  margin: 1.35rem 0;
 }
 
 .prose-article ul,
 .prose-article ol {
   padding-left: 1.4rem;
-  margin: 1rem 0;
+  margin: 1.3rem 0;
 }
 
 .prose-article li {
-  margin: 0.55rem 0;
+  margin: 0.75rem 0;
 }
 
 .prose-article strong {
