@@ -44,6 +44,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    "/api/newsletter": ["./public/guias/7-dias-de-oracion-restauracion-matrimonial.pdf"],
+  },
   images: {
     remotePatterns: [
       {
