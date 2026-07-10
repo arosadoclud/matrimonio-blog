@@ -73,7 +73,7 @@ describe("NewsletterForm", () => {
     fireEvent.click(submitButton);
 
     await waitFor(() => {
-      expect(screen.getByText(/no pudimos registrar/i)).toBeInTheDocument();
+      expect(screen.getByText(/no pudimos enviar la guía/i)).toBeInTheDocument();
     });
   });
 

@@ -6,8 +6,8 @@ import { trackEvent } from "@/lib/analytics";
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const STATUS_MESSAGES = {
-  success: "Listo. Te enviaremos la guía cuando el proveedor de email esté conectado.",
-  error: "No pudimos registrar el email. Intenta de nuevo en unos minutos.",
+  success: "¡Listo! Revisa tu correo y la carpeta de spam. Te acabamos de enviar la guía.",
+  error: "No pudimos enviar la guía en este momento. Inténtalo nuevamente en unos minutos.",
 };
 
 export function NewsletterForm() {
@@ -19,6 +19,7 @@ export function NewsletterForm() {
     const formData = new FormData(form);
     const email = formData.get("email") as string;
     const leadMagnet = formData.get("lead_magnet") as string;
+    const website = formData.get("website") as string;
 
     setStatus("loading");
 
@@ -31,6 +32,7 @@ export function NewsletterForm() {
         body: JSON.stringify({
           email,
           lead_magnet: leadMagnet,
+          website,
         }),
       });
 
@@ -70,6 +72,14 @@ export function NewsletterForm() {
         name="lead_magnet"
         value="7 dias de oracion por la restauracion de tu matrimonio"
       />
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <button
         className="rounded-full bg-[#5A0F18] px-6 py-3 font-semibold text-white transition hover:bg-[#3f0b11] disabled:cursor-not-allowed disabled:opacity-50"
         data-event="newsletter_signup_click"
@@ -105,6 +115,10 @@ export function NewsletterForm() {
           "Recibir guía"
         )}
       </button>
+      <p className="text-xs leading-5 text-[#1F1F1F]/60 sm:col-span-2">
+        Al solicitar la guía, aceptas recibir recursos y contenidos de Restaura tu Matrimonio.
+        Puedes cancelar tu suscripción en cualquier momento.
+      </p>
       {status === "success" && (
         <div
           className="flex items-center gap-2 text-sm font-semibold text-green-700 sm:col-span-2"
