@@ -35,6 +35,7 @@ describe("POST /api/newsletter", () => {
 
   afterEach(() => {
     process.env = { ...ORIGINAL_ENV };
+    vi.unstubAllEnvs();
   });
 
   it("sends the email and returns success for a valid email", async () => {
@@ -71,7 +72,7 @@ describe("POST /api/newsletter", () => {
 
   it("returns developmentMode:true when BREVO_API_KEY is missing outside production", async () => {
     delete process.env.BREVO_API_KEY;
-    process.env.NODE_ENV = "development";
+    vi.stubEnv("NODE_ENV", "development");
 
     const response = await POST(jsonRequest({ email: "dev-mode@example.com" }));
     const data = await response.json();
@@ -83,7 +84,7 @@ describe("POST /api/newsletter", () => {
 
   it("returns 503 when BREVO_API_KEY is missing in production", async () => {
     delete process.env.BREVO_API_KEY;
-    process.env.NODE_ENV = "production";
+    vi.stubEnv("NODE_ENV", "production");
 
     const response = await POST(jsonRequest({ email: "prod-no-key@example.com" }));
     expect(response.status).toBe(503);
