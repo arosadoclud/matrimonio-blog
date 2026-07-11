@@ -9,3 +9,4 @@ vercel
 *.tsbuildinfo
 coverage
 .claude/
+.vercel

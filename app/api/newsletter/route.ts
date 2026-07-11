@@ -56,38 +56,61 @@ function isRateLimited(key: string): boolean {
 
 function buildEmailHtml(siteUrl: string): string {
   const pdfUrl = `${siteUrl}${PDF_PUBLIC_URL}`;
+  const siteLabel = siteUrl.replace(/^https?:\/\//, "");
   return `
-  <div style="font-family: Georgia, 'Times New Roman', serif; max-width: 560px; margin: 0 auto; background: #FAF7F2; padding: 32px 24px; color: #2C1810;">
-    <h1 style="font-size: 22px; color: #6B1A27; margin-bottom: 16px;">
-      Tu guía ha llegado
-    </h1>
-    <p style="font-size: 15px; line-height: 24px;">
-      Gracias por confiar en Restaura tu Matrimonio. Aquí tienes tu guía
-      <strong>"7 días de oración por la restauración de tu matrimonio"</strong>,
-      adjunta en este correo en formato PDF.
-    </p>
-    <p style="font-size: 15px; line-height: 24px;">
-      Si prefieres descargarla directamente, puedes hacerlo aquí:
-    </p>
-    <p style="text-align: center; margin: 24px 0;">
-      <a href="${pdfUrl}" style="background: #6B1A27; color: #FFF8F0; padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: bold;">
-        Descargar guía en PDF
-      </a>
-    </p>
-    <p style="font-size: 14px; line-height: 22px; color: #4A3728;">
-      Te recomendamos guardar este correo para que puedas volver a la guía
-      cada día durante tu semana de oración.
-    </p>
-    <p style="font-size: 15px; line-height: 24px; margin-top: 24px;">
-      Con cariño y esperanza,<br />
-      <strong>Restaura tu Matrimonio</strong>
-    </p>
-    <hr style="border: none; border-top: 1px solid #E8D9C8; margin: 32px 0 16px;" />
-    <p style="font-size: 12px; line-height: 18px; color: #6B5B4E;">
-      Recibes este correo porque solicitaste esta guía en restauratumatrimonio-blog.com.
-      Puedes cancelar tu suscripción a futuras comunicaciones respondiendo a este correo
-      con la palabra "cancelar".
-    </p>
+  <div style="background:#FFF7E8; padding:32px 16px; font-family: Arial, Helvetica, sans-serif;">
+    <div style="max-width:560px; margin:0 auto; background:#FFFDF8; border:1px solid rgba(212,175,55,0.45); border-radius:8px; overflow:hidden;">
+      <div style="background:#5A0F18; padding:20px 32px; text-align:center;">
+        <p style="margin:0; font-size:12px; font-weight:bold; letter-spacing:0.18em; text-transform:uppercase; color:#D4AF37;">
+          Restaura tu Matrimonio
+        </p>
+      </div>
+      <div style="padding:36px 32px 32px;">
+        <h1 style="margin:0 0 20px; font-family: Georgia, 'Times New Roman', serif; font-size:26px; font-weight:bold; color:#5A0F18; text-align:center;">
+          Tu guía ha llegado
+        </h1>
+        <p style="margin:0 0 16px; font-size:15px; line-height:24px; color:#2D2D2D;">
+          Gracias por confiar en Restaura tu Matrimonio. Aquí tienes tu guía
+          <strong>&ldquo;7 días de oración por la restauración de tu matrimonio&rdquo;</strong>,
+          adjunta en este correo en formato PDF.
+        </p>
+        <div style="margin:24px 0; padding:20px 24px; background:#FFF7E8; border:1px solid rgba(212,175,55,0.45); border-radius:8px;">
+          <p style="margin:0; font-family: Georgia, 'Times New Roman', serif; font-size:19px; font-weight:bold; line-height:1.4; color:#5A0F18;">
+            &ldquo;Cordón de tres dobleces no se rompe pronto.&rdquo;
+          </p>
+          <p style="margin:10px 0 0; font-size:12px; font-weight:bold; letter-spacing:0.14em; text-transform:uppercase; color:#8a6a18;">
+            Eclesiastés 4:12
+          </p>
+        </div>
+        <p style="margin:0 0 8px; font-size:15px; line-height:24px; color:#2D2D2D;">
+          Si prefieres descargarla directamente, puedes hacerlo aquí:
+        </p>
+        <table role="presentation" cellpadding="0" cellspacing="0" style="margin:20px auto;">
+          <tr>
+            <td style="border-radius:999px; background:#5A0F18;">
+              <a href="${pdfUrl}" style="display:inline-block; padding:14px 32px; font-size:15px; font-weight:bold; color:#FFF7E8; text-decoration:none; border-radius:999px;">
+                Descargar guía en PDF
+              </a>
+            </td>
+          </tr>
+        </table>
+        <p style="margin:20px 0 0; font-size:14px; line-height:22px; color:#4A3728;">
+          Te recomendamos guardar este correo para que puedas volver a la guía
+          cada día durante tu semana de oración.
+        </p>
+        <p style="margin:28px 0 0; font-size:15px; line-height:24px; color:#2D2D2D;">
+          Con cariño y esperanza,<br />
+          <strong style="color:#5A0F18; font-family: Georgia, 'Times New Roman', serif;">Restaura tu Matrimonio</strong>
+        </p>
+      </div>
+      <div style="border-top:1px solid rgba(212,175,55,0.45); padding:20px 32px;">
+        <p style="margin:0; font-size:12px; line-height:18px; color:#6B5B4E;">
+          Recibes este correo porque solicitaste esta guía en ${siteLabel}.
+          Puedes cancelar tu suscripción a futuras comunicaciones respondiendo a este correo
+          con la palabra "cancelar".
+        </p>
+      </div>
+    </div>
   </div>`;
 }
 
