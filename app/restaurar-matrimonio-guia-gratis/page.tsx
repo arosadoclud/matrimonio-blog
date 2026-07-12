@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Suspense } from "react";
 import { CampaignLeadForm } from "@/components/CampaignLeadForm";
 import { ViewContentTracker } from "@/components/ViewContentTracker";
+import { WhatsAppContactButton } from "@/components/WhatsAppContactButton";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function CampaignLandingPage() {
         contentName="guia_7_dias_oracion_matrimonio"
         contentCategory="facebook_ads_landing"
       />
+      <WhatsAppContactButton placement="campaign" />
       <header className="border-b border-[#5A0F18]/10 bg-white/90">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-5 py-4 sm:px-8">
           <Image src="/favicon.png" alt="" width={42} height={42} className="rounded-full" priority />
