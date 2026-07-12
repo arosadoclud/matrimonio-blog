@@ -151,6 +151,18 @@ describe("POST /api/newsletter", () => {
     expect(requestBody.to).toEqual([{ email: "normalize-me@example.com" }]);
   });
 
+  it("uses the lead name in the email and Brevo contact", async () => {
+    process.env.BREVO_LIST_ID = "5";
+
+    await POST(jsonRequest({ email: "andy@example.com", name: "Andy Robinson" }));
+
+    const emailBody = JSON.parse(vi.mocked(fetch).mock.calls[0][1]!.body as string);
+    const contactBody = JSON.parse(vi.mocked(fetch).mock.calls[1][1]!.body as string);
+    expect(emailBody.to).toEqual([{ email: "andy@example.com", name: "Andy Robinson" }]);
+    expect(contactBody.attributes).toEqual({ FIRSTNAME: "Andy Robinson" });
+    expect(contactBody.listIds).toEqual([5]);
+  });
+
   it("silently blocks the request when the honeypot field is filled", async () => {
     const response = await POST(
       jsonRequest({ email: "bot@example.com", website: "https://spam.example" })

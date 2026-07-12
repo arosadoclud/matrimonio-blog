@@ -3,8 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@/components/Analytics";
 import { CookieNotice } from "@/components/CookieNotice";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { SiteChrome } from "@/components/SiteChrome";
 import { JsonLd } from "@/components/JsonLd";
 import { SkipLinks } from "@/components/SkipLinks";
 import { siteConfig } from "@/lib/site";
@@ -81,11 +80,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           />
         ) : null}
         <JsonLd data={organizationSchema} />
-        <Header />
+        <SiteChrome position="header" />
         <main id="main-content" tabIndex={-1}>
           {children}
         </main>
-        <Footer />
+        <SiteChrome position="footer" />
         <CookieNotice />
         <Analytics />
       </body>
