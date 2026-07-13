@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { WhatsAppContactButton } from "@/components/WhatsAppContactButton";
+import { WhatsAppInviteCard } from "@/components/WhatsAppInviteCard";
 import { LeadConfirmedTracker } from "@/components/LeadConfirmedTracker";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function ThankYouPage() {
         <div className="mt-8 rounded-lg bg-[#fff4d8] px-5 py-4 text-sm leading-6 text-[#51402f]">
           Mientras llega, respira y haz una oración sencilla: “Señor, dame sabiduría para dar el próximo paso con verdad, amor y prudencia”.
         </div>
+        <WhatsAppInviteCard />
         <Link href="/blog" className="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-[#5A0F18] px-6 py-3 font-bold text-white transition hover:bg-[#741923]">
           Leer recursos para mi matrimonio
         </Link>
