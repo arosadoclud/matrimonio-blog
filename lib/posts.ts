@@ -171,18 +171,31 @@ export function getFaqs(content: string) {
   const faqContent = content.slice(faqStart).replace(/^## Preguntas frecuentes\s*/m, "");
   const nextSection = faqContent.search(/\n## (?!Preguntas frecuentes)/);
   const section = nextSection === -1 ? faqContent : faqContent.slice(0, nextSection);
-  const matches = Array.from(section.matchAll(/^###\s+(.+)\n+([\s\S]*?)(?=\n###\s+|\s*$)/gm));
+  const matches = Array.from(section.matchAll(/^#{2,4}\s*(.+)\n+([\s\S]*?)(?=\n#{2,4}\s+|\s*$)/gm));
 
   return matches
     .map((match) => ({
-      question: match[1].trim(),
-      answer: match[2]
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
-        .replace(/\*\*([^*]+)\*\*/g, "$1")
-        .replace(/\s+/g, " ")
-        .trim(),
+      question: cleanFaqText(match[1]),
+      answer: cleanFaqText(match[2]),
     }))
     .filter((item) => item.question && item.answer);
+}
+
+/**
+ * Strips Markdown formatting Kingdom Studio's generated content sometimes
+ * leaves un-rendered (bold, italic, links, stray leading "#"s from heading
+ * levels the regex above didn't expect) -- getFaqs() output is used both in
+ * the FAQPage JSON-LD schema (plain text only) and in FaqSection, which
+ * renders questions/answers as plain strings with no Markdown parsing.
+ */
+function cleanFaqText(raw: string): string {
+  return raw
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/^#+\s*/, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /**
@@ -196,16 +209,4 @@ export function stripFaqSection(content: string): string {
     return content;
   }
   return content.slice(0, faqStart).trimEnd();
-}
-
-/**
- * Get a summary of all posts for debugging/development
- */
-export function getPostsSummary(): { title: string; slug: string; wordCount: number; hasFaqs: boolean }[] {
-  return getAllPosts().map((post) => ({
-    title: post.title,
-    slug: post.slug,
-    wordCount: post.wordCount,
-    hasFaqs: getFaqs(post.content).length > 0,
-  }));
 }
