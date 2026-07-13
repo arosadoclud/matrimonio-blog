@@ -7,7 +7,7 @@ import { trackEvent, trackHotmartCtaClick } from "@/lib/analytics";
 
 type FunnelCTAProps =
   | { variant: "top" }
-  | { variant: "middle"; topic: string }
+  | { variant: "middle"; topic: string; slug: string }
   | { variant: "bottom" };
 
 function buildHotmartUrl(content: string) {
@@ -47,9 +47,9 @@ export function FunnelCTA(props: FunnelCTAProps) {
           este proceso.
         </p>
         <Link
-          href="/recursos"
+          href={`/recursos?src=${encodeURIComponent(props.slug)}`}
           data-cta-id="funnel_cta_middle"
-          onClick={() => trackEvent("CtaClick", { content_name: "funnel_cta_middle" })}
+          onClick={() => trackEvent("CtaClick", { content_name: "funnel_cta_middle", source_post: props.slug })}
           className="mt-5 inline-flex rounded-full bg-[#5A0F18] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#3f0b11]"
         >
           Ver recurso recomendado

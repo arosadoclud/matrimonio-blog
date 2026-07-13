@@ -21,15 +21,21 @@ describe("FunnelCTA", () => {
     expect(screen.getByLabelText("Email")).toBeInTheDocument();
   });
 
-  it("variant=middle renders the topic in the copy and tracks CtaClick on click", async () => {
+  it("variant=middle renders the topic in the copy, links to /recursos with the post slug, and tracks CtaClick on click", async () => {
     const { trackEvent } = await import("@/lib/analytics");
-    render(<FunnelCTA variant="middle" topic="Crisis matrimonial" />);
+    render(<FunnelCTA variant="middle" topic="Crisis matrimonial" slug="mi-pareja-no-quiere-hablar-conmigo" />);
 
     expect(screen.getByText(/crisis matrimonial/i)).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("link", { name: /ver recurso recomendado/i }));
+    const link = screen.getByRole("link", { name: /ver recurso recomendado/i });
+    expect(link).toHaveAttribute("href", "/recursos?src=mi-pareja-no-quiere-hablar-conmigo");
 
-    expect(trackEvent).toHaveBeenCalledWith("CtaClick", { content_name: "funnel_cta_middle" });
+    fireEvent.click(link);
+
+    expect(trackEvent).toHaveBeenCalledWith("CtaClick", {
+      content_name: "funnel_cta_middle",
+      source_post: "mi-pareja-no-quiere-hablar-conmigo",
+    });
   });
 
   it("variant=bottom links out and fires CtaClick + InitiateCheckout on click", async () => {
