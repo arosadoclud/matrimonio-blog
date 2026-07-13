@@ -2,7 +2,6 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "loading" | "error";
 
@@ -43,11 +42,6 @@ export function CampaignLeadForm({ placement = "hero" }: { placement?: string })
         throw new Error(data.error || "No pudimos registrar tu solicitud.");
       }
 
-      trackEvent("Lead", {
-        content_name: "guia_7_dias_oracion_matrimonio",
-        content_category: "facebook_ads_landing",
-        placement,
-      });
       const query = new URLSearchParams();
       ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach((key) => {
         const value = searchParams.get(key);
