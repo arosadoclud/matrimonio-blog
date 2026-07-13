@@ -3,7 +3,9 @@ import { slugify } from "@/lib/site";
 
 function renderInline(text: string) {
   const nodes: React.ReactNode[] = [];
-  const pattern = /(\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)]+)\))/g;
+  // Bold must be tried before single-asterisk italic so "**x**" matches as
+  // bold instead of leaving stray "*" characters from a partial italic match.
+  const pattern = /(\*\*([^*]+)\*\*|\*([^*]+)\*|\[([^\]]+)\]\(([^)]+)\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
 
@@ -14,16 +16,18 @@ function renderInline(text: string) {
 
     if (match[2]) {
       nodes.push(<strong key={match.index}>{match[2]}</strong>);
-    } else if (match[3] && match[4]) {
-      const href = match[4];
+    } else if (match[3]) {
+      nodes.push(<em key={match.index}>{match[3]}</em>);
+    } else if (match[4] && match[5]) {
+      const href = match[5];
       nodes.push(
         href.startsWith("/") ? (
           <Link key={match.index} href={href}>
-            {match[3]}
+            {match[4]}
           </Link>
         ) : (
           <a key={match.index} href={href}>
-            {match[3]}
+            {match[4]}
           </a>
         )
       );
