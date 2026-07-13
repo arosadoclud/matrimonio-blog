@@ -161,6 +161,14 @@ export function getTableOfContents(content: string) {
  * Extract FAQs from content
  * Looks for a "## Preguntas frecuentes" section
  */
+/**
+ * Extract FAQs from content
+ * Looks for a "## Preguntas frecuentes" section
+ */
+/**
+ * Extract FAQs from content
+ * Looks for a "## Preguntas frecuentes" section
+ */
 export function getFaqs(content: string) {
   const faqStart = content.search(/^## Preguntas frecuentes\s*$/m);
 

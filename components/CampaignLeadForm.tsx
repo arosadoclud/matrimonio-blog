@@ -64,11 +64,9 @@ export function CampaignLeadForm({ placement = "hero" }: { placement?: string })
           id={`campaign-name-${placement}`}
           name="name"
           type="text"
-          required
-          minLength={2}
           maxLength={80}
           autoComplete="name"
-          placeholder="¿Cómo te llamas?"
+          placeholder="¿Cómo te llamas? (opcional)"
           className="w-full rounded-lg border border-[#5A0F18]/20 bg-white px-4 py-3.5 text-base outline-none transition focus:border-[#A87B24] focus:ring-4 focus:ring-[#D4AF37]/15"
         />
       </div>
