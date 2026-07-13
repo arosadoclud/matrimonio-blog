@@ -186,6 +186,19 @@ export function getFaqs(content: string) {
 }
 
 /**
+ * Removes the "## Preguntas frecuentes" section from the article body so it
+ * can be rendered separately as a styled accordion (FaqSection) instead of
+ * falling through MdxContent's generic h2/h3 rendering.
+ */
+export function stripFaqSection(content: string): string {
+  const faqStart = content.search(/^## Preguntas frecuentes\s*$/m);
+  if (faqStart === -1) {
+    return content;
+  }
+  return content.slice(0, faqStart).trimEnd();
+}
+
+/**
  * Get a summary of all posts for debugging/development
  */
 export function getPostsSummary(): { title: string; slug: string; wordCount: number; hasFaqs: boolean }[] {

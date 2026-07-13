@@ -4,11 +4,12 @@ import { AuthorBox } from "@/components/AuthorBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FunnelCTA } from "@/components/FunnelCTA";
 import { CategoryBadge } from "@/components/CategoryBadge";
+import { FaqSection } from "@/components/FaqSection";
 import { MdxContent } from "@/components/MdxContent";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { VerseBox } from "@/components/VerseBox";
 import { ViewContentTracker } from "@/components/ViewContentTracker";
-import { getTableOfContents } from "@/lib/posts";
+import { getFaqs, getTableOfContents, stripFaqSection } from "@/lib/posts";
 import { slugify } from "@/lib/site";
 import type { Post } from "@/types/post";
 
@@ -19,6 +20,8 @@ type ArticleLayoutProps = {
 
 export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
   const toc = getTableOfContents(post.content);
+  const faqs = getFaqs(post.content);
+  const bodyWithoutFaqs = stripFaqSection(post.content);
 
   return (
     <article>
@@ -102,8 +105,9 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             <VerseBox />
             <AdSlot className="mt-8" label="Anuncio recomendado" />
             <div className="prose-article mt-8">
-              <MdxContent source={post.content} />
+              <MdxContent source={bodyWithoutFaqs} />
             </div>
+            <FaqSection faqs={faqs} />
             <AdSlot className="mt-10" label="Anuncio de mitad de artículo" />
             <div className="mt-10">
               <FunnelCTA variant="middle" topic={post.category} slug={post.slug} />
