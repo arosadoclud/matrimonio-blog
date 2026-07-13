@@ -106,7 +106,7 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             </div>
             <AdSlot className="mt-10" label="Anuncio de mitad de artículo" />
             <div className="mt-10">
-              <FunnelCTA variant="middle" topic={post.category} />
+              <FunnelCTA variant="middle" topic={post.category} slug={post.slug} />
             </div>
             <div className="mt-10">
               <AuthorBox />

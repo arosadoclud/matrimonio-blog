@@ -4,17 +4,24 @@ import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 import { trackHotmartCtaClick } from "@/lib/analytics";
 
-function buildHotmartUrl(content: string) {
+function buildHotmartUrl(content: string, sourcePostSlug?: string) {
   const url = new URL(siteConfig.hotmartUrl);
   url.searchParams.set("utm_source", "blog");
   url.searchParams.set("utm_medium", "cta");
   url.searchParams.set("utm_campaign", "funnel_blog");
   url.searchParams.set("utm_content", content);
+  // Carries which specific blog post sent the visitor here, so conversions
+  // can be attributed per-article instead of collapsing into one generic
+  // "recursos_page" bucket -- otherwise there's no way to tell which posts
+  // actually drive sales vs. just traffic.
+  if (sourcePostSlug) {
+    url.searchParams.set("utm_term", sourcePostSlug);
+  }
   return url.toString();
 }
 
-export function ResourceCard() {
-  const hotmartUrl = buildHotmartUrl("recursos_page");
+export function ResourceCard({ sourcePostSlug }: { sourcePostSlug?: string } = {}) {
+  const hotmartUrl = buildHotmartUrl("recursos_page", sourcePostSlug);
 
   return (
     <section className="grid gap-8 rounded-[8px] border border-[#D4AF37]/35 bg-white p-6 shadow-lg sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">

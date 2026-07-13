@@ -28,7 +28,13 @@ const testimonials = [
   },
 ];
 
-export default function ResourcesPage() {
+type PageProps = {
+  searchParams: Promise<{ src?: string }>;
+};
+
+export default async function ResourcesPage({ searchParams }: PageProps) {
+  const { src } = await searchParams;
+
   return (
     <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <ViewContentTracker contentName="Recursos" />
@@ -47,7 +53,7 @@ export default function ResourcesPage() {
       </div>
 
       <div className="mt-10">
-        <ResourceCard />
+        <ResourceCard sourcePostSlug={src} />
       </div>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-3">
