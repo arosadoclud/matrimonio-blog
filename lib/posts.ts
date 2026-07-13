@@ -161,6 +161,14 @@ export function getTableOfContents(content: string) {
  * Extract FAQs from content
  * Looks for a "## Preguntas frecuentes" section
  */
+/**
+ * Extract FAQs from content
+ * Looks for a "## Preguntas frecuentes" section
+ */
+/**
+ * Extract FAQs from content
+ * Looks for a "## Preguntas frecuentes" section
+ */
 export function getFaqs(content: string) {
   const faqStart = content.search(/^## Preguntas frecuentes\s*$/m);
 
@@ -179,6 +187,23 @@ export function getFaqs(content: string) {
       answer: cleanFaqText(match[2]),
     }))
     .filter((item) => item.question && item.answer);
+}
+
+/**
+ * Strips Markdown formatting Kingdom Studio's generated content sometimes
+ * leaves un-rendered (bold, italic, links, stray leading "#"s from heading
+ * levels the regex above didn't expect) -- getFaqs() output is used both in
+ * the FAQPage JSON-LD schema (plain text only) and in FaqSection, which
+ * renders questions/answers as plain strings with no Markdown parsing.
+ */
+function cleanFaqText(raw: string): string {
+  return raw
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/^#+\s*/, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /**
