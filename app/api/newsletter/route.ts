@@ -116,6 +116,7 @@ function buildEmailHtml(siteUrl: string): string {
 
 async function sendGuideEmail(
   email: string,
+  recipientName: string,
   apiKey: string,
   senderEmail: string,
   senderName: string,
@@ -133,7 +134,7 @@ async function sendGuideEmail(
     },
     body: JSON.stringify({
       sender: { name: senderName, email: senderEmail },
-      to: [{ email }],
+      to: [{ email, ...(recipientName ? { name: recipientName } : {}) }],
       subject: "Tu guía: 7 días de oración por tu matrimonio",
       htmlContent: buildEmailHtml(siteUrl),
       attachment: [
@@ -148,7 +149,12 @@ async function sendGuideEmail(
   return response;
 }
 
-async function upsertContact(email: string, apiKey: string, listId: string | undefined) {
+async function upsertContact(
+  email: string,
+  recipientName: string,
+  apiKey: string,
+  listId: string | undefined
+) {
   try {
     const response = await fetch(BREVO_CONTACTS_ENDPOINT, {
       method: "POST",
@@ -159,6 +165,7 @@ async function upsertContact(email: string, apiKey: string, listId: string | und
       },
       body: JSON.stringify({
         email,
+        ...(recipientName ? { attributes: { FIRSTNAME: recipientName } } : {}),
         updateEnabled: true,
         ...(listId ? { listIds: [Number(listId)] } : {}),
       }),
@@ -182,8 +189,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Solicitud inválida." }, { status: 400 });
   }
 
-  const { email, lead_magnet, website } = body as {
+  const { email, name, lead_magnet, website } = body as {
     email?: unknown;
+    name?: unknown;
     lead_magnet?: unknown;
     website?: unknown;
   };
@@ -199,6 +207,7 @@ export async function POST(request: Request) {
   }
 
   const sanitizedEmail = sanitizeInput(email).toLowerCase();
+  const sanitizedName = typeof name === "string" ? sanitizeInput(name).slice(0, 80) : "";
 
   if (!isValidEmail(sanitizedEmail)) {
     return NextResponse.json(
@@ -242,6 +251,7 @@ export async function POST(request: Request) {
   try {
     const emailResponse = await sendGuideEmail(
       sanitizedEmail,
+      sanitizedName,
       apiKey,
       senderEmail,
       senderName,
@@ -257,7 +267,7 @@ export async function POST(request: Request) {
       );
     }
 
-    await upsertContact(sanitizedEmail, apiKey, listId);
+    await upsertContact(sanitizedEmail, sanitizedName, apiKey, listId);
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
