@@ -7,6 +7,12 @@ import { trackEvent } from "@/lib/analytics";
 export function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  // Second Pixel lives under a different Meta Business Manager than the
+  // first (the one with access to the ad account actually running
+  // campaigns) -- initializing both means fbq('track', ...) sends every
+  // event to both Pixels without needing Meta's cross-business asset
+  // sharing, which is blocked for new businesses for several weeks.
+  const metaPixelId2 = process.env.NEXT_PUBLIC_META_PIXEL_ID_2;
 
   useEffect(() => {
     const trackedDepths = new Set<number>();
@@ -74,6 +80,7 @@ export function Analytics() {
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
               window.fbq('init', '${metaPixelId}');
+              ${metaPixelId2 ? `window.fbq('init', '${metaPixelId2}');` : ""}
               window.fbq('track', 'PageView');
             `}
           </Script>
@@ -87,6 +94,18 @@ export function Analytics() {
               src={`https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1`}
             />
           </noscript>
+          {metaPixelId2 ? (
+            <noscript>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                height="1"
+                width="1"
+                style={{ display: "none" }}
+                alt=""
+                src={`https://www.facebook.com/tr?id=${metaPixelId2}&ev=PageView&noscript=1`}
+              />
+            </noscript>
+          ) : null}
         </>
       ) : null}
     </>
