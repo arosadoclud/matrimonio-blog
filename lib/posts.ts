@@ -218,15 +218,3 @@ export function stripFaqSection(content: string): string {
   }
   return content.slice(0, faqStart).trimEnd();
 }
-
-/**
- * Get a summary of all posts for debugging/development
- */
-export function getPostsSummary(): { title: string; slug: string; wordCount: number; hasFaqs: boolean }[] {
-  return getAllPosts().map((post) => ({
-    title: post.title,
-    slug: post.slug,
-    wordCount: post.wordCount,
-    hasFaqs: getFaqs(post.content).length > 0,
-  }));
-}
