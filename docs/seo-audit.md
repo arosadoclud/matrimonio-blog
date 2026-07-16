@@ -32,7 +32,9 @@ La tarea original pedía usar `www.restauratumatrimonio-blog.com` como canónico
 
 **Se preguntó al propietario del sitio y se decidió mantener `restauratumatrimonio-blog.com` (sin www) como dominio canónico**, en vez de forzar un cambio masivo hacia `www` sobre una base de código 100% consistente y un dominio que aún no existe en DNS.
 
-Como medida preventiva se implementó en `next.config.ts` un `redirects()` que envía cualquier tráfico a `www.<dominio>` con 301 (código `permanent: true`, HTTP 308 real en Next.js) hacia la versión sin `www`, conservando ruta y query params. Esta regla no tiene efecto hoy (no hay DNS), pero queda lista para cuando se compre y apunte el dominio.
+Como medida preventiva se implementó en `next.config.ts` un `redirects()` que envía cualquier tráfico a `www.<dominio>` con 301 (código `permanent: true`, HTTP 308 real en Next.js) hacia la versión sin `www`, conservando ruta y query params.
+
+**Actualización — incidente resuelto:** al conectar el dominio real en Vercel, la propia configuración de dominios de Vercel tenía el apex (`restauratumatrimonio-blog.com`) con "Redirect to Another Domain" → `www...`, en dirección contraria a la regla de `next.config.ts` — esto causó un bucle real (`ERR_TOO_MANY_REDIRECTS`) en producción. Se corrigió en Vercel (no en código): ambos dominios deben quedar en "Connect to an environment → Production", sin ningún redirect a nivel de Vercel; el redirect `www → apex` lo hace solo la app. Detalle completo en `docs/manual-seo-setup.md` sección 0 y `docs/post-deployment-seo-checklist.md`.
 
 ## 3. Problemas encontrados y corregidos en esta auditoría
 
