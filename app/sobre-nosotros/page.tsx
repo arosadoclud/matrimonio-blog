@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { CTABox } from "@/components/CTABox";
+import { JsonLd } from "@/components/JsonLd";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sobre nosotros",
@@ -12,8 +14,21 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "Sobre nosotros",
+    url: buildCanonicalUrl("/sobre-nosotros"),
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+      <JsonLd data={aboutPageSchema} />
       <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Sobre nosotros</p>
       <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold leading-tight text-[#5A0F18]">
         Un espacio cristiano de esperanza para matrimonios en crisis

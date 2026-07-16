@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { ContactForm } from "@/components/ContactForm";
+import { JsonLd } from "@/components/JsonLd";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -12,8 +14,21 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contacto",
+    url: buildCanonicalUrl("/contacto"),
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <JsonLd data={contactPageSchema} />
       <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Contacto</p>
       <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
         Escríbenos
