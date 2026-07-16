@@ -14,7 +14,6 @@ export function ViewContentTracker({ contentName, contentCategory }: ViewContent
       content_name: contentName,
       ...(contentCategory ? { content_category: contentCategory } : {}),
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contentName, contentCategory]);
 
   return null;
