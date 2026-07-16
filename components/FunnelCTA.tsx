@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
-import { siteConfig } from "@/lib/site";
-import { trackEvent, trackHotmartCtaClick } from "@/lib/analytics";
+import { categoryClusters, siteConfig } from "@/lib/site";
+import { buildCtaPayload, trackEvent, trackHotmartCtaClick } from "@/lib/analytics";
 
 type FunnelCTAProps =
   | { variant: "top" }
   | { variant: "middle"; topic: string; slug: string }
-  | { variant: "bottom" };
+  | { variant: "bottom"; slug?: string; category?: string };
 
 function buildHotmartUrl(content: string) {
   const url = new URL(siteConfig.hotmartUrl);
@@ -37,6 +37,9 @@ export function FunnelCTA(props: FunnelCTAProps) {
   }
 
   if (props.variant === "middle") {
+    const destinationUrl = `/recursos?src=${encodeURIComponent(props.slug)}`;
+    const ctaText = "Ver recurso recomendado";
+
     return (
       <section className="mb-10 rounded-[8px] border border-[#5A0F18]/10 bg-white p-6 shadow-sm sm:p-7">
         <p className="font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
@@ -47,18 +50,34 @@ export function FunnelCTA(props: FunnelCTAProps) {
           este proceso.
         </p>
         <Link
-          href={`/recursos?src=${encodeURIComponent(props.slug)}`}
+          href={destinationUrl}
           data-cta-id="funnel_cta_middle"
-          onClick={() => trackEvent("CtaClick", { content_name: "funnel_cta_middle", source_post: props.slug })}
+          onClick={() =>
+            trackEvent(
+              "CtaClick",
+              buildCtaPayload(
+                { content_name: "funnel_cta_middle", source_post: props.slug },
+                {
+                  article_slug: props.slug,
+                  article_category: props.topic,
+                  cta_location: "article_middle",
+                  content_cluster: categoryClusters[props.topic],
+                  destination_url: destinationUrl,
+                  cta_text: ctaText,
+                }
+              )
+            )
+          }
           className="mt-5 inline-flex rounded-full bg-[#5A0F18] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#3f0b11]"
         >
-          Ver recurso recomendado
+          {ctaText}
         </Link>
       </section>
     );
   }
 
   const hotmartUrl = buildHotmartUrl("article_bottom");
+  const bottomCtaText = "Quiero recuperar mi matrimonio →";
 
   return (
     <section className="mb-10 rounded-[8px] bg-[#5A0F18] p-6 text-white sm:p-8">
@@ -72,10 +91,19 @@ export function FunnelCTA(props: FunnelCTAProps) {
       <a
         href={hotmartUrl}
         data-cta-id="article_bottom_cta"
-        onClick={() => trackHotmartCtaClick("article_bottom_cta")}
+        onClick={() =>
+          trackHotmartCtaClick("article_bottom_cta", {
+            article_slug: props.slug,
+            article_category: props.category,
+            cta_location: "article_bottom",
+            content_cluster: props.category ? categoryClusters[props.category] : undefined,
+            destination_url: hotmartUrl,
+            cta_text: bottomCtaText,
+          })
+        }
         className="mt-6 inline-flex rounded-full bg-[#D4AF37] px-6 py-3 text-sm font-bold text-[#1F1F1F] transition hover:bg-[#e1bd45]"
       >
-        Quiero recuperar mi matrimonio →
+        {bottomCtaText}
       </a>
       <p className="mt-3 text-xs text-white/60">
         Te llevamos a restauratumatrimonio.org, el sitio oficial del programa.

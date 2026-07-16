@@ -116,7 +116,7 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
               <AuthorBox />
             </div>
             <div className="mt-10">
-              <FunnelCTA variant="bottom" />
+              <FunnelCTA variant="bottom" slug={post.slug} category={post.category} />
             </div>
             <AdSlot className="mt-10" label="Anuncio final" />
           </div>

@@ -84,7 +84,9 @@ export default async function CategoryPage({ params }: PageProps) {
         <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
           {category.name}
         </h1>
-        <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">{category.description}</p>
+        <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">
+          {category.intro ?? category.description}
+        </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <BlogCard key={post.slug} post={post} />

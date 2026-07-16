@@ -77,3 +77,61 @@ Se auditaron los 42 artículos con un script que extrae enlaces `[texto](/blog/s
 - **0 enlaces rotos** hacia artículos inexistentes.
 - **0 anchors genéricos** ("haz clic aquí", "leer más", "ver aquí", "más información").
 - **4 artículos sin ningún enlace hacia su pilar de clúster** en el cuerpo del texto (aunque sí eran alcanzables vía `/blog`, categorías y `RelatedArticles`, no estaban verdaderamente huérfanos): `como-recuperar-a-mi-esposo-despues-de-una-infidelidad`, `dios-restaura-tu-matrimonio-guia-pdf-gratis`, `pequenas-acciones-que-pueden-comenzar-una-restauracion-matrimonial`, `senales-de-que-dios-esta-trabajando-en-tu-matrimonio`. Se agregó a cada uno una oración final con anchor descriptivo hacia su pilar correspondiente, sin modificar el resto del contenido.
+
+## Propuesta de diferenciación editorial — clústeres de riesgo (sin fusionar, sin cambiar slugs)
+
+Se verificó que ambos grupos **ya se enlazan entre sí correctamente** (cada artículo del trío enlaza a los otros dos y/o a su pilar de clúster), así que el trabajo pendiente es de **diferenciación de intención**, no de arquitectura de enlaces. Se ajustó únicamente la `description` de `senales-de-esperanza-en-un-matrimonio-que-dios-esta-restaurando` para dejar más explícito que su ángulo es "señales visibles en la relación" (vs. las otras dos, que son sobre convicción personal o sobre si el matrimonio en general puede restaurarse). No se reescribió contenido de cuerpo en ningún artículo de este grupo.
+
+### Clúster "versículos"
+
+Página que actúa como pilar informal del grupo (más completa y mejor enlazada, sin cambiar su `contentType`): `versiculos-biblicos-para-matrimonios-en-crisis`.
+
+| URL | Intención actual | Intención recomendada (diferenciada) | Keyword principal | Secciones a añadir | Evitar repetir | CTA recomendado |
+|---|---|---|---|---|---|---|
+| `/blog/versiculos-biblicos-para-matrimonios-en-crisis` | Consuelo general en el dolor de la crisis | Mantener: consuelo emocional inmediato, "qué leer cuando duele ahora mismo" | versículos matrimonio en crisis | Ya es el más completo (858 palabras); podría añadir una sección breve "Cómo usar estos versículos en oración" | No listar versículos de restauración a largo plazo (eso es del artículo de "salvar") ni versículos específicamente de oración estructurada (eso es del otro) | Descargar guía |
+| `/blog/versiculos-para-orar-por-la-restauracion-matrimonial` | Oración con base bíblica por la restauración | Mantener y ampliar: versículos como punto de partida de una oración estructurada (no solo lectura) | versículos restauración matrimonial | Hoy es delgado (182 palabras, `noindex` automático); ampliar con una mini-guía de oración versículo por versículo, distinta de la guía completa "7 días" | No repetir la lista de versículos de consuelo del primer artículo | Descargar guía/devocional |
+| `/blog/versiculos-para-salvar-mi-matrimonio` | Versículos para la decisión activa de "salvar" el matrimonio | Mantener: versículos orientados a la acción y la decisión de no rendirse, distinto del consuelo pasivo | versículos para salvar mi matrimonio | Podría añadir una sección "Un paso concreto por versículo" | No repetir los versículos ya usados como ancla en el primer artículo | Conocer los próximos pasos |
+
+### Clúster "señales de restauración"
+
+Página que actúa como pilar informal del grupo: `senales-de-que-dios-esta-trabajando-en-tu-matrimonio` (la más completa, 858 palabras, y la que ya tiene la diferenciación más clara en su propia `description`: "en ti... incluso antes de ver cambios en tu cónyuge").
+
+| URL | Intención actual | Intención recomendada (diferenciada) | Keyword principal | Secciones a añadir | Evitar repetir | CTA recomendado |
+|---|---|---|---|---|---|---|
+| `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Convicción y cambio interior personal | Mantener: señales **internas y personales**, incluso sin cambios visibles del cónyuge | señales de Dios matrimonio | Ya es el más completo | No listar señales "externas" de la relación (eso es del artículo de "esperanza") | Descargar guía |
+| `/blog/senales-de-esperanza-en-un-matrimonio-que-dios-esta-restaurando` | Señales generales de esperanza | Diferenciado ahora en su `description`: señales **visibles en la relación**, de ambos cónyuges, no solo internas | señales de restauración matrimonial | Hoy es delgado (201 palabras, `noindex` automático); ampliar con ejemplos concretos observables en la pareja (diálogo, gestos, tiempo compartido) | No repetir el enfoque "en ti mismo" del artículo anterior | Descargar guía |
+| `/blog/senales-de-que-un-matrimonio-puede-ser-restaurado` | Si el matrimonio en general tiene esperanza de restaurarse | Mantener: evaluación general de si "hay camino" (mezcla señales prácticas + espirituales, más orientado a decisión) | señales matrimonio puede restaurarse | Podría añadir una sección tipo checklist ("¿Cuántas de estas señales reconoces?") | No repetir listas idénticas de las otras dos; enfocarse en la pregunta de fondo "¿vale la pena seguir intentando?" | Conocer los próximos pasos |
+
+**Ninguna fusión se ejecutó.** La decisión final de fusionar (o no) se tomará después de tener datos reales de Search Console por 4-6 semanas, comparando impresiones/clics por URL para confirmar si de verdad compiten por las mismas queries o si Google ya las diferencia bien.
+
+## Categorías con pocos artículos (ronda posterior)
+
+No se eliminó ninguna categoría, no se movieron artículos ni se cambiaron URLs. Ambas categorías tienen contenido real publicado (2 artículos cada una), así que **no calificaban para `noindex`** bajo la misma regla aplicada a "Preguntas frecuentes" (que tenía 0 artículos) — se mantienen indexables, justificación documentada abajo. Se les agregó una introducción propia (`intro` en `lib/site.ts`, distinta de la `description` usada para meta description) para que la página de categoría no dependa solo de una oración genérica.
+
+### Comunicación en pareja
+
+- **Artículos actuales:** `como-recuperar-la-comunicacion-con-mi-pareja` (899 palabras), `mi-pareja-no-quiere-hablar-conmigo` (315 palabras).
+- **Introducción añadida:** ver `intro` de esta categoría en `lib/site.ts`.
+- **Decisión de indexación:** mantener indexable. Justificación: tiene 2 artículos reales y publicados, con contenido sustancial (no es una categoría vacía ni de relleno); marcarla `noindex` sin más artículos activos penalizaría contenido que ya recibe tráfico potencial.
+- **Página pilar recomendada:** `como-recuperar-la-comunicacion-con-mi-pareja` (899 palabras, ya es el más completo) — candidato natural a ampliarse hasta convertirse en el pilar formal del clúster 5 ("Comunicación matrimonial"), tal como ya sugiere `docs/seo-content-plan-90-days.md` (Semana 4).
+- **Qué tipo de contenido debe publicarse aquí:** guías prácticas de comunicación (no solo principios), con ejemplos de frases/diálogos concretos, y contenido que distinga comunicación cotidiana de comunicación durante una crisis activa.
+- **5 ideas de artículos para fortalecer la categoría:**
+  1. "Cómo hablar sin discutir: herramientas prácticas para parejas cristianas" (ya estaba en el plan de 90 días, semana 5).
+  2. "Errores de comunicación que alejan a las parejas" (plan de 90 días, semana 5).
+  3. "Cómo escuchar a tu cónyuge sin prepararte para responder" — principio bíblico de Santiago 1:19 aplicado a conflictos matrimoniales.
+  4. "Qué hacer cuando cada conversación termina en pelea" — de-escalada práctica, distinto de "mi pareja no quiere hablar conmigo" (que trata silencio, no conflicto activo).
+  5. "Cómo pedir lo que necesitas sin sonar a reclamo" — comunicación de necesidades, no solo de quejas.
+
+### Testimonios
+
+- **Artículos actuales:** `dios-puede-restaurar-lo-que-parece-perdido` (894 palabras), `testimonios-reales-de-matrimonios-restaurados` (413 palabras, con enlaces reales a video).
+- **Introducción añadida:** ver `intro` de esta categoría en `lib/site.ts` — deja explícito que son testimonios reales, autorizados, sin garantía de resultado.
+- **Decisión de indexación:** mantener indexable, misma justificación que la categoría anterior (contenido real, no vacío).
+- **Página pilar recomendada:** ninguna todavía — es la categoría con menos volumen potencial de búsqueda directa (la gente no suele buscar "testimonios de matrimonios restaurados" como intención principal, funciona más como prueba social enlazada desde otros artículos). No se recomienda forzar un pilar aquí; mantenerla como categoría de apoyo del clúster 6 ("Recursos y acompañamiento").
+- **Regla explícita para esta categoría:** solo se pueden publicar testimonios reales, de personas que autorizaron compartir su historia (con nombre, iniciales o anónimos según su preferencia), enlazando a la fuente original cuando exista (video, audio). **No se debe inventar, componer ni parafrasear un testimonio como si fuera real.** Ningún testimonio debe presentarse como garantía de que otro matrimonio obtendrá el mismo resultado — ya es la práctica actual en `testimonios-reales-de-matrimonios-restaurados.mdx` y debe mantenerse en cualquier contenido nuevo de esta categoría.
+- **5 ideas de artículos para fortalecer la categoría** (todas requieren un testimonio real y autorizado antes de escribirse — no se deben producir sin esa fuente):
+  1. Testimonio en video/audio adicional con contexto escrito, si el ministerio tiene otro caso real disponible.
+  2. "Qué tienen en común los matrimonios que sí lograron restaurarse" — análisis editorial (no inventado) basado en patrones observados en los testimonios ya publicados, citándolos.
+  3. Entrevista corta (real) a una pareja sobre un aspecto específico de su proceso (ej. cómo reconstruyeron la confianza), si autorizan.
+  4. "Lo que nadie te cuenta sobre el proceso de restaurar un matrimonio" — basado en testimonios reales ya existentes, enfocado en expectativas realistas (tiempo, retrocesos), no en un caso nuevo.
+  5. Actualización/seguimiento real de un testimonio ya publicado, si la pareja autoriza compartir cómo siguen tiempo después.

@@ -4,7 +4,7 @@
 
 - **GA4:** carga condicional en `components/Analytics.tsx` si `NEXT_PUBLIC_GA_ID` está definido. Sin ese valor, el script simplemente no se inyecta (no rompe el sitio).
 - **Meta Pixel:** carga condicional si `NEXT_PUBLIC_META_PIXEL_ID` está definido. Soporta un segundo pixel opcional (`NEXT_PUBLIC_META_PIXEL_ID_2`) para un Business Manager distinto (ver comentario en el propio componente).
-- **Microsoft Clarity:** **no está implementado en el código.** No existe ningún script ni variable de entorno para Clarity. Si se quiere usar, hay que añadirlo (ver `docs/manual-seo-setup.md`).
+- **Microsoft Clarity:** implementado en `components/Analytics.tsx`, gated por `NEXT_PUBLIC_CLARITY_PROJECT_ID` (no se inventó ningún ID) y por el mismo interruptor de consentimiento que GA4/Meta. Sin ese valor, Clarity simplemente no se carga.
 - **Google Search Console:** verificación vía `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` en `app/layout.tsx` (`verification.google`).
 - **Google AdSense:** `NEXT_PUBLIC_ADSENSE_CLIENT`, cargado en `app/layout.tsx` y usado por `components/AdSlot.tsx`.
 - **Módulo centralizado de tracking:** `lib/analytics.ts` — toda la telemetría pasa por `trackEvent(eventName, params)` o `trackHotmartCtaClick(ctaId)`. No hay llamadas directas a `fbq`/`gtag` dispersas por el resto del proyecto (se verificó con `grep`).
@@ -17,7 +17,7 @@
 | `PageView` | Al inicializar el Pixel (`components/Analytics.tsx`) | `fbq('track', 'PageView')` | Cubierto por `gtag('config', ...)` | — |
 | `ViewContent` | `ViewContentTracker` al montar en artículos y en `/recursos` | `fbq('track', ...)` | `view_item` | `contentName` |
 | `ScrollDepth` | Checkpoints 25/50/75/90% de scroll (`Analytics.tsx`) | `fbq('trackCustom', ...)` | `scroll_depth` | `percent` |
-| `CtaClick` | Cualquier `[data-event]`, `FunnelCTA` (middle/bottom), `ResourceCard` | `fbq('trackCustom', ...)` | `select_content` | `label` / `content_name` |
+| `CtaClick` | Cualquier `[data-event]`, `FunnelCTA` (middle/bottom), `ResourceCard` | `fbq('trackCustom', ...)` | `select_content` | `label` / `content_name`, y opcionalmente `article_slug`, `article_category`, `cta_location`, `content_cluster`, `destination_url`, `cta_text` (ver sección de enriquecimiento abajo) |
 | `Lead` | Envío exitoso de `NewsletterForm` (tras `response.ok`) | `fbq('track', ...)` | `generate_lead` | — |
 | `InitiateCheckout` | Junto con `CtaClick` al usar `trackHotmartCtaClick` (CTA hacia el landing/Hotmart) | `fbq('track', ...)` | `begin_checkout` | `content_name`, `value: 149`, `currency: "USD"` |
 
@@ -41,22 +41,51 @@ La tarea original pedía nombres de evento específicos (`lead_magnet_view`, `le
 | `form_error` | `form_error` (`form_name`, `reason`) en `NewsletterForm.tsx` y `ContactForm.tsx` | ✅ Cubierto |
 | `form_success` | `Lead` en newsletter; `form_success` (`form_name`) en `ContactForm.tsx` | ✅ Cubierto |
 
-### Hallazgos (parcialmente corregidos en una pasada posterior)
+### Hallazgos (corregidos en rondas posteriores)
 
 Se añadieron `form_error` (`NewsletterForm.tsx`, `ContactForm.tsx`) y `form_success` (`ContactForm.tsx`, que antes no medía nada) como eventos aditivos — no cambian la forma de los eventos existentes (`CtaClick`, `Lead`), así que no afectan reportes ni audiencias ya construidas.
 
-No se modificó `lib/analytics.ts` en cuanto a `CtaClick`/`trackHotmartCtaClick` porque cambiar su firma afecta dos componentes (`FunnelCTA.tsx`, `ResourceCard.tsx`) y un test existente, sin acceso a las cuentas reales de GA4/Meta para validar el impacto antes de desplegar. Sigue pendiente como trabajo futuro recomendado:
-- Enriquecer `CtaClick`/`trackHotmartCtaClick` con `article_slug`, `article_category` y `cta_location` cuando el CTA vive dentro de un artículo (el CTA "middle" ya envía `source_post` con el slug; falta extenderlo al CTA "bottom" y a `ResourceCard`).
+**Actualización:** `CtaClick`/`trackHotmartCtaClick` ya se enriquecieron con contexto opcional. Ver sección siguiente.
 
-## Consentimiento de cookies — hallazgo importante (Fase 18)
+## Enriquecimiento de `CtaClick` / `trackHotmartCtaClick` con contexto de artículo
 
-`components/CookieNotice.tsx` es un **aviso informativo**, no una puerta de consentimiento: GA4 y Meta Pixel se cargan en `components/Analytics.tsx` de forma incondicional (si los IDs están configurados) **antes** de que el usuario acepte o rechace el aviso. Esto no cumple literalmente "respeta el consentimiento de cookies antes de cargar herramientas que lo requieran" de la tarea original.
+`lib/analytics.ts` expone ahora `buildCtaPayload(base, context)`, que centraliza cómo se combinan los campos opcionales de contexto con el payload base de cada evento — evita duplicar esa lógica entre GA4 y Meta, y entre `CtaClick`/`InitiateCheckout`. `trackHotmartCtaClick(ctaId, context?)` acepta un segundo argumento opcional con el tipo `CtaContext`:
 
-**No se modificó este comportamiento en esta auditoría** porque:
-- Es un cambio de UX/legal con impacto directo en el volumen de datos de conversión que recibe el negocio (bloquear analítica hasta el consentimiento reduce la señal de atribución).
-- Requiere decisión del propietario sobre el marco legal aplicable (GDPR-style opt-in vs. aviso simple), que depende de la audiencia real del sitio (país/países).
+```ts
+type CtaContext = {
+  article_slug?: string;
+  article_category?: string;
+  cta_location?: string;
+  content_cluster?: string;
+  destination_url?: string;
+  cta_text?: string;
+};
+```
 
-**Queda documentado como decisión pendiente de aprobación** — ver `docs/manual-seo-setup.md` y la lista de decisiones pendientes en `docs/seo-audit.md`.
+**Compatibilidad:** `context` es opcional en todas las funciones; cualquier llamada existente sin ese segundo argumento sigue enviando exactamente los mismos campos que antes (los campos de contexto que no se proporcionan se omiten del payload, nunca se envían como `undefined`).
+
+**Qué componente envía qué, y desde dónde:**
+
+| Componente | CTA | `article_slug` | `article_category` | `cta_location` | `content_cluster` | `destination_url` | `cta_text` |
+|---|---|---|---|---|---|---|---|
+| `FunnelCTA` (variant `middle`) | "Ver recurso recomendado" | `props.slug` (slug del artículo) | `props.topic` (categoría del post) | `"article_middle"` | Mapeado desde la categoría vía `categoryClusters` (`lib/site.ts`) | `/recursos?src=<slug>` | `"Ver recurso recomendado"` |
+| `FunnelCTA` (variant `bottom`) | "Quiero recuperar mi matrimonio →" | `props.slug` si `ArticleLayout` lo pasó (siempre lo hace) | `props.category` ídem | `"article_bottom"` | Igual, vía `categoryClusters` | URL de Hotmart con UTMs | `"Quiero recuperar mi matrimonio →"` |
+| `ResourceCard` (en `/recursos`) | "Acceder al recurso" | `sourcePostSlug` (query `?src=`, si el visitante llegó desde un artículo) | `sourcePostCategory`, resuelto server-side en `app/recursos/page.tsx` vía `getPostBySlug` | `"recursos_page"` | Igual, vía `categoryClusters` | URL de Hotmart con UTMs | `"Acceder al recurso"` |
+
+`categoryClusters` (nuevo, en `lib/site.ts`) mapea el nombre de categoría al clúster temático de `docs/seo-content-plan-90-days.md`/`docs/keyword-map.md`, solo para fines de analítica — no afecta rutas ni metadatos.
+
+**No se renombró ningún evento de GA4/Meta** (`CtaClick`, `InitiateCheckout` siguen igual). Cubierto por tests nuevos en `lib/__tests__/analytics.test.ts` y `components/__tests__/FunnelCTA.test.tsx`.
+
+## Consentimiento de cookies (Fase 18) — implementado como interruptor técnico
+
+`lib/consent.ts` (nuevo) centraliza un sistema de consentimiento configurable vía `NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT`:
+
+- **Por defecto (`false`/sin definir):** `hasAnalyticsConsent()` siempre devuelve `true` — GA4, Meta Pixel y Clarity cargan exactamente igual que antes de que este módulo existiera. **No cambia nada en producción a menos que se active explícitamente.**
+- **Si se activa (`"true"`):** `components/Analytics.tsx` no renderiza ningún `<Script>` de GA4/Meta/Clarity hasta que `components/CookieNotice.tsx` registre una decisión de "Aceptar" (`setStoredConsent("granted")`). Si el visitante rechaza, ninguna herramienta carga. La preferencia se guarda en `localStorage` (clave `rtm-analytics-consent`) y se puede cambiar después mediante un botón persistente "Preferencias de cookies" que reabre el aviso.
+- Ningún evento se pierde de forma ruidosa: `trackEvent`/`trackHotmartCtaClick` siguen funcionando exactamente igual (ya eran no-op seguros si `fbq`/`gtag` no existen) — simplemente no hay nada que llamar hasta que el script correspondiente se cargue.
+- El texto del banner (`components/CookieNotice.tsx`) está marcado con un comentario `TODO(legal)` — **no se afirma ningún marco legal específico (GDPR, ePrivacy, etc.)**. Activar esta variable en producción, y decidir la redacción final del aviso, es una decisión del propietario según los países/reglas aplicables a su audiencia real — ver `docs/manual-seo-setup.md`.
+
+Cubierto por `lib/__tests__/consent.test.ts`, `components/__tests__/Analytics.test.tsx` y `components/__tests__/CookieNotice.test.tsx`.
 
 ## UTMs hacia `restauratumatrimonio.org`
 
@@ -80,5 +109,9 @@ Esto ya cumple, en sustancia, con la Fase 19 de la tarea original (soporte consi
 | `NEXT_PUBLIC_META_PIXEL_ID_2` | Meta Pixel secundario (Business Manager distinto) | **No estaba en `.env.example` — ver corrección abajo** |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Verificación GSC | Documentada |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | AdSense | Documentada |
+| `NEXT_PUBLIC_CLARITY_PROJECT_ID` | Microsoft Clarity | Documentada, sin valor real (ver arriba) |
+| `NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT` | Interruptor de consentimiento | Documentada, `false` por defecto |
 
-Se detectó que `NEXT_PUBLIC_META_PIXEL_ID_2` se usa en `components/Analytics.tsx` pero no estaba listada en `.env.example` — se añadió en esta auditoría (ver commit `docs(seo): audit and content strategy` / `feat(analytics)`). Ningún ID real fue añadido, solo el nombre de la variable con placeholder vacío.
+Se detectó que `NEXT_PUBLIC_META_PIXEL_ID_2` se usa en `components/Analytics.tsx` pero no estaba listada en `.env.example` — se añadió en esta auditoría. Ningún ID real fue añadido, solo el nombre de la variable con placeholder vacío.
+
+**Hallazgo adicional (ronda posterior):** `app/layout.tsx` tenía el ID de AdSense (`ca-pub-2971696184390995`) escrito directamente en un `<meta name="google-adsense-account">`, duplicando lo que ya existía como `NEXT_PUBLIC_ADSENSE_CLIENT` en el resto del mismo archivo y en `components/AdSlot.tsx`. Corregido: ese `<meta>` ahora lee `process.env.NEXT_PUBLIC_ADSENSE_CLIENT` y no se renderiza si la variable no está definida. Se verificó con `grep` que no queda ningún otro ID de analítica/AdSense escrito literalmente en el código.

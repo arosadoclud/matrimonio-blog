@@ -15,6 +15,41 @@ Ejecutar después de mergear esta rama a `main` y de que Vercel despliegue a pro
 - [ ] Formulario de contacto (`/contacto`) completa un envío de prueba real (requiere `CONTACT_ENDPOINT` configurado).
 - [ ] GA4 DebugView o Meta Events Manager (Test Events) muestran `PageView` al cargar cualquier página, si los IDs ya están configurados.
 
+## Lighthouse y Core Web Vitals (ejecutar tras el primer despliegue real)
+
+No se ejecutó Lighthouse en esta auditoría porque este entorno no tiene navegador ni un despliegue real contra el cual medir — cualquier número aquí sería inventado. Estos son los pasos exactos a correr manualmente después de desplegar:
+
+### Cómo correr cada prueba
+
+1. **Lighthouse móvil:** Chrome DevTools → pestaña "Lighthouse" → dispositivo "Mobile" → categorías Performance, Accessibility, Best Practices, SEO → "Analyze page load". Repetir para cada URL de la lista de abajo.
+2. **Lighthouse escritorio:** mismo proceso, dispositivo "Desktop".
+3. **PageSpeed Insights:** [pagespeed.web.dev](https://pagespeed.web.dev/), pegar la URL real de producción — da datos de campo (CrUX) además del análisis de laboratorio, útil una vez haya tráfico real.
+4. **Search Console → Core Web Vitals:** una vez haya suficientes datos de campo, revisar el informe de "Experiencia" para ver LCP/INP/CLS agregados por grupo de URLs (no por URL individual).
+
+### Páginas a probar
+
+- [ ] Portada (`/`)
+- [ ] Una página de artículo representativa (recomendado: un pilar, ej. `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios`)
+- [ ] Una página de categoría (ej. `/categorias/restauracion-matrimonial`)
+- [ ] La landing de la guía gratuita (`/guia-oracion` o `/restaurar-matrimonio-guia-gratis`)
+
+### Métricas a registrar en cada prueba
+
+LCP, INP, CLS, FCP, TBT, y los 4 scores de Lighthouse (Performance, Accessibility, Best Practices, SEO).
+
+### Tabla de resultados (completar después del despliegue — vacía a propósito)
+
+| Página | Dispositivo | LCP | INP | CLS | FCP | TBT | Performance | Accessibility | Best Practices | SEO | Fecha de la prueba |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `/` | Mobile | | | | | | | | | | |
+| `/` | Desktop | | | | | | | | | | |
+| Artículo pilar | Mobile | | | | | | | | | | |
+| Artículo pilar | Desktop | | | | | | | | | | |
+| Categoría | Mobile | | | | | | | | | | |
+| Categoría | Desktop | | | | | | | | | | |
+| Landing de guía gratuita | Mobile | | | | | | | | | | |
+| Landing de guía gratuita | Desktop | | | | | | | | | | |
+
 ## Search Console (primeros días)
 
 - [ ] Propiedad de dominio verificada (ver `docs/manual-seo-setup.md`, sección 1).

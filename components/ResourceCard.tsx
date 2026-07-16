@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { siteConfig } from "@/lib/site";
+import { categoryClusters, siteConfig } from "@/lib/site";
 import { trackHotmartCtaClick } from "@/lib/analytics";
 
 function buildHotmartUrl(content: string, sourcePostSlug?: string) {
@@ -20,8 +20,14 @@ function buildHotmartUrl(content: string, sourcePostSlug?: string) {
   return url.toString();
 }
 
-export function ResourceCard({ sourcePostSlug }: { sourcePostSlug?: string } = {}) {
+type ResourceCardProps = {
+  sourcePostSlug?: string;
+  sourcePostCategory?: string;
+};
+
+export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCardProps = {}) {
   const hotmartUrl = buildHotmartUrl("recursos_page", sourcePostSlug);
+  const ctaText = "Acceder al recurso";
 
   return (
     <section className="grid gap-8 rounded-[8px] border border-[#D4AF37]/35 bg-white p-6 shadow-lg sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -51,10 +57,19 @@ export function ResourceCard({ sourcePostSlug }: { sourcePostSlug?: string } = {
         <a
           href={hotmartUrl}
           data-cta-id="recursos_page_cta"
-          onClick={() => trackHotmartCtaClick("recursos_page_cta")}
+          onClick={() =>
+            trackHotmartCtaClick("recursos_page_cta", {
+              article_slug: sourcePostSlug,
+              article_category: sourcePostCategory,
+              cta_location: "recursos_page",
+              content_cluster: sourcePostCategory ? categoryClusters[sourcePostCategory] : undefined,
+              destination_url: hotmartUrl,
+              cta_text: ctaText,
+            })
+          }
           className="mt-7 inline-flex rounded-full bg-[#5A0F18] px-7 py-3.5 font-semibold text-white transition hover:bg-[#3f0b11]"
         >
-          Acceder al recurso
+          {ctaText}
         </a>
         <p className="mt-3 text-xs leading-5 text-[#1F1F1F]/50">
           Te llevamos a restauratumatrimonio.org, el sitio oficial del programa.
