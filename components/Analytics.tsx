@@ -3,8 +3,14 @@
 import Script from "next/script";
 import { useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { useAnalyticsConsent } from "@/lib/consent";
 
 export function Analytics() {
+  // When NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT is not "true" (the default),
+  // this is always true and every tool below loads exactly as before this
+  // gate existed. See lib/consent.ts.
+  const consentGranted = useAnalyticsConsent();
+
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   // Second Pixel lives under a different Meta Business Manager than the
@@ -13,6 +19,7 @@ export function Analytics() {
   // event to both Pixels without needing Meta's cross-business asset
   // sharing, which is blocked for new businesses for several weeks.
   const metaPixelId2 = process.env.NEXT_PUBLIC_META_PIXEL_ID_2;
+  const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 
   useEffect(() => {
     const trackedDepths = new Set<number>();
@@ -54,7 +61,7 @@ export function Analytics() {
 
   return (
     <>
-      {gaId ? (
+      {consentGranted && gaId ? (
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
           <Script id="ga4-init" strategy="afterInteractive">
@@ -67,7 +74,21 @@ export function Analytics() {
           </Script>
         </>
       ) : null}
-      {metaPixelId ? (
+      {consentGranted && clarityProjectId ? (
+        // Official Clarity loader snippet, gated the same way as GA4/Meta above.
+        // Clarity masks input field values by default; do not disable that
+        // setting for forms that collect email/name (see docs/manual-seo-setup.md).
+        <Script id="clarity-init" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${clarityProjectId}");
+          `}
+        </Script>
+      ) : null}
+      {consentGranted && metaPixelId ? (
         <>
           <Script id="meta-pixel-init" strategy="afterInteractive">
             {`
