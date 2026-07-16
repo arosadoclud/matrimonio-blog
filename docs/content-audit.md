@@ -69,3 +69,11 @@ Las tres tienen **intención de búsqueda distinta** (guía integral vs. discern
 4. **Pares por género** (`como-recuperar-a-mi-esposa...` / `como-recuperar-a-mi-esposo...`, `oracion-por-mi-esposa...` / `oracion-por-mi-esposo...`): intencionalmente diferenciados por quién busca (esposo buscando recuperar a su esposa vs. esposa buscando recuperar a su esposo), riesgo bajo, no requieren acción.
 
 Ningún artículo se fusionó, redirigió ni eliminó en esta auditoría — todos los casos "Medio" quedan documentados para aprobación editorial antes de tocar contenido publicado, conforme a la Fase 11 ("antes de eliminar o fusionar contenido editorial importante: documenta la propuesta... si la decisión no es evidente, deja el cambio marcado para aprobación manual").
+
+## Enlaces internos (Fase 13, ronda posterior)
+
+Se auditaron los 42 artículos con un script que extrae enlaces `[texto](/blog/slug)` desde el cuerpo de cada post:
+
+- **0 enlaces rotos** hacia artículos inexistentes.
+- **0 anchors genéricos** ("haz clic aquí", "leer más", "ver aquí", "más información").
+- **4 artículos sin ningún enlace hacia su pilar de clúster** en el cuerpo del texto (aunque sí eran alcanzables vía `/blog`, categorías y `RelatedArticles`, no estaban verdaderamente huérfanos): `como-recuperar-a-mi-esposo-despues-de-una-infidelidad`, `dios-restaura-tu-matrimonio-guia-pdf-gratis`, `pequenas-acciones-que-pueden-comenzar-una-restauracion-matrimonial`, `senales-de-que-dios-esta-trabajando-en-tu-matrimonio`. Se agregó a cada uno una oración final con anchor descriptivo hacia su pilar correspondiente, sin modificar el resto del contenido.
