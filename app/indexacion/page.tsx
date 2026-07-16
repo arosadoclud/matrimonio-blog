@@ -24,13 +24,14 @@ export default function IndexingPage() {
       <div className="prose-article mt-8">
         <h2>Google Search Console</h2>
         <p>
-          Crea una propiedad de dominio para restauratumatrimonio.org. Copia el código de
-          verificación HTML y guárdalo en Vercel como NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION.
+          Crea una propiedad de dominio para restauratumatrimonio-blog.com (el blog, no el
+          landing de ventas). Copia el código de verificación HTML y guárdalo en Vercel como
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION.
         </p>
         <h2>Enviar sitemap</h2>
         <p>
           Después de verificar el dominio, entra a Sitemaps en Search Console y envía:
-          https://restauratumatrimonio.org/sitemap.xml.
+          https://restauratumatrimonio-blog.com/sitemap.xml.
         </p>
         <h2>GA4</h2>
         <p>
