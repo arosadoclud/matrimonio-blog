@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildCanonicalUrl } from "@/lib/seo";
+import { getPostBySlug } from "@/lib/posts";
 import { NewsletterBox } from "@/components/NewsletterBox";
 import { ResourceCard } from "@/components/ResourceCard";
 import { ViewContentTracker } from "@/components/ViewContentTracker";
@@ -37,6 +38,7 @@ type PageProps = {
 
 export default async function ResourcesPage({ searchParams }: PageProps) {
   const { src } = await searchParams;
+  const sourcePost = src ? getPostBySlug(src) : undefined;
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
@@ -56,7 +58,7 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
       </div>
 
       <div className="mt-10">
-        <ResourceCard sourcePostSlug={src} />
+        <ResourceCard sourcePostSlug={src} sourcePostCategory={sourcePost?.category} />
       </div>
 
       <div className="mt-12 grid gap-6 sm:grid-cols-3">

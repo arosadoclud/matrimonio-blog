@@ -2,10 +2,14 @@ import { describe, expect, it, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { FunnelCTA } from "../FunnelCTA";
 
-vi.mock("@/lib/analytics", () => ({
-  trackEvent: vi.fn(),
-  trackHotmartCtaClick: vi.fn(),
-}));
+vi.mock("@/lib/analytics", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/analytics")>();
+  return {
+    ...actual,
+    trackEvent: vi.fn(),
+    trackHotmartCtaClick: vi.fn(),
+  };
+});
 
 global.fetch = vi.fn();
 
@@ -35,10 +39,16 @@ describe("FunnelCTA", () => {
     expect(trackEvent).toHaveBeenCalledWith("CtaClick", {
       content_name: "funnel_cta_middle",
       source_post: "mi-pareja-no-quiere-hablar-conmigo",
+      article_slug: "mi-pareja-no-quiere-hablar-conmigo",
+      article_category: "Crisis matrimonial",
+      cta_location: "article_middle",
+      content_cluster: "separacion_y_distancia_emocional",
+      destination_url: "/recursos?src=mi-pareja-no-quiere-hablar-conmigo",
+      cta_text: "Ver recurso recomendado",
     });
   });
 
-  it("variant=bottom links out and fires CtaClick + InitiateCheckout on click", async () => {
+  it("variant=bottom links out and fires CtaClick + InitiateCheckout on click, without article context when not provided", async () => {
     const { trackHotmartCtaClick } = await import("@/lib/analytics");
     render(<FunnelCTA variant="bottom" />);
 
@@ -47,6 +57,29 @@ describe("FunnelCTA", () => {
 
     fireEvent.click(link);
 
-    expect(trackHotmartCtaClick).toHaveBeenCalledWith("article_bottom_cta");
+    expect(trackHotmartCtaClick).toHaveBeenCalledWith("article_bottom_cta", {
+      article_slug: undefined,
+      article_category: undefined,
+      cta_location: "article_bottom",
+      content_cluster: undefined,
+      destination_url: expect.stringContaining("restauratumatrimonio.org"),
+      cta_text: "Quiero recuperar mi matrimonio →",
+    });
+  });
+
+  it("variant=bottom passes article_slug/article_category/content_cluster when known", async () => {
+    const { trackHotmartCtaClick } = await import("@/lib/analytics");
+    render(<FunnelCTA variant="bottom" slug="mi-esposa-dice-que-ya-no-me-ama" category="Crisis matrimonial" />);
+
+    fireEvent.click(screen.getByRole("link", { name: /quiero recuperar mi matrimonio/i }));
+
+    expect(trackHotmartCtaClick).toHaveBeenCalledWith("article_bottom_cta", {
+      article_slug: "mi-esposa-dice-que-ya-no-me-ama",
+      article_category: "Crisis matrimonial",
+      cta_location: "article_bottom",
+      content_cluster: "separacion_y_distancia_emocional",
+      destination_url: expect.stringContaining("restauratumatrimonio.org"),
+      cta_text: "Quiero recuperar mi matrimonio →",
+    });
   });
 });
