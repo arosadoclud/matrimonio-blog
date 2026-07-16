@@ -43,7 +43,7 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             {post.title}
           </h1>
           <p className="mt-5 text-lg leading-8 text-[#1F1F1F]/72">{post.description}</p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-[#1F1F1F]/55">
+          <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-[#5c5c5c]">
             <span>{new Intl.DateTimeFormat("es", { dateStyle: "long" }).format(new Date(post.date))}</span>
             <span>•</span>
             <span>{post.readingTime}</span>

@@ -117,7 +117,7 @@ export function NewsletterForm() {
           "Recibir guía"
         )}
       </button>
-      <p className="text-xs leading-5 text-[#1F1F1F]/60 sm:col-span-2">
+      <p className="text-xs leading-5 text-[#5c5c5c] sm:col-span-2">
         Al solicitar la guía, aceptas recibir recursos y contenidos de Restaura tu Matrimonio.
         Puedes cancelar tu suscripción en cualquier momento.
       </p>

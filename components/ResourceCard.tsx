@@ -62,7 +62,13 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
               article_slug: sourcePostSlug,
               article_category: sourcePostCategory,
               cta_location: "recursos_page",
-              content_cluster: sourcePostCategory ? categoryClusters[sourcePostCategory] : undefined,
+              // Prefer the source article's cluster when the visitor came from one; otherwise
+              // fall back to the cluster this page itself belongs to ("Recursos y
+              // acompañamiento", clúster 6 en docs/seo-content-plan-90-days.md) instead of
+              // leaving content_cluster empty just because there's no ?src= in the URL.
+              content_cluster: sourcePostCategory
+                ? categoryClusters[sourcePostCategory]
+                : "recursos_y_acompanamiento",
               destination_url: hotmartUrl,
               cta_text: ctaText,
             })
@@ -71,10 +77,10 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
         >
           {ctaText}
         </a>
-        <p className="mt-3 text-xs leading-5 text-[#1F1F1F]/50">
+        <p className="mt-3 text-xs leading-5 text-[#5c5c5c]">
           Te llevamos a restauratumatrimonio.org, el sitio oficial del programa.
         </p>
-        <p className="mt-2 text-xs leading-5 text-[#1F1F1F]/50">
+        <p className="mt-2 text-xs leading-5 text-[#5c5c5c]">
           Aviso: este sitio puede recibir una comisión si compras desde enlaces de afiliado, sin
           costo adicional para ti.
         </p>

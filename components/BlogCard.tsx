@@ -29,7 +29,7 @@ export function BlogCard({ post }: BlogCardProps) {
           </h2>
         </Link>
         <p className="mt-3 line-clamp-3 text-sm leading-6 text-[#1F1F1F]/70">{post.description}</p>
-        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-[#1F1F1F]/45">
+        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-[#5c5c5c]">
           {new Intl.DateTimeFormat("es", { dateStyle: "long" }).format(new Date(post.date))}
         </p>
       </div>
