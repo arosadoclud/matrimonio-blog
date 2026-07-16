@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { slugify } from "@/lib/site";
+import { SafetyNotice } from "@/components/SafetyNotice";
 
 function renderInline(text: string) {
   const nodes: React.ReactNode[] = [];
@@ -64,6 +65,17 @@ export function MdxContent({ source }: { source: string }) {
         if (firstLine.startsWith("### ")) {
           const text = firstLine.replace(/^###\s+/, "");
           return <h3 key={index}>{renderInline(text)}</h3>;
+        }
+
+        // Bloque de advertencia de seguridad (contenido sensible sobre violencia/riesgo):
+        // se marca en el .mdx como cita ("> ") y se renderiza con un componente
+        // visual distintivo en vez de un párrafo normal. Ver docs/seo-audit.md, sección 6.
+        if (lines.every((line) => line.startsWith("> "))) {
+          return (
+            <SafetyNotice key={index}>
+              {renderInline(lines.map((line) => line.replace(/^>\s?/, "")).join(" "))}
+            </SafetyNotice>
+          );
         }
 
         if (lines.every((line) => line.startsWith("- "))) {
