@@ -33,7 +33,10 @@ Copia `.env.example` a `.env.local` y completa los valores. `.env.local` nunca s
 | Variable | Dónde se usa | Notas |
 | --- | --- | --- |
 | `NEXT_PUBLIC_GA_ID` | `components/Analytics.tsx` | Measurement ID de GA4. Si falta, GA4 simplemente no se carga. |
-| `NEXT_PUBLIC_META_PIXEL_ID` | `components/Analytics.tsx` | Pixel ID de Meta. Si falta, el pixel no se carga (no hay gating por consentimiento hoy). |
+| `NEXT_PUBLIC_META_PIXEL_ID` | `components/Analytics.tsx` | Pixel ID de Meta. Si falta, el pixel no se carga. |
+| `NEXT_PUBLIC_META_PIXEL_ID_2` | `components/Analytics.tsx` | Segundo Pixel opcional, para cuando la cuenta de ads vive en otro Business Manager. |
+| `NEXT_PUBLIC_CLARITY_PROJECT_ID` | `components/Analytics.tsx` | Project ID de Microsoft Clarity. Si falta, Clarity simplemente no se carga. |
+| `NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT` | `lib/consent.ts`, `components/Analytics.tsx`, `components/CookieNotice.tsx` | Si es `"true"`, GA4/Meta/Clarity solo cargan después de que el visitante acepte el aviso de cookies. Por defecto (`false`/sin definir) los tres cargan igual que antes de que existiera este interruptor. Es solo el mecanismo técnico — qué régimen legal aplica y si activarlo en producción es decisión del propietario, ver `docs/manual-seo-setup.md`. |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | `app/layout.tsx` | Verificación de Google Search Console. |
 | `NEXT_PUBLIC_NEWSLETTER_ENDPOINT` | `app/api/newsletter/route.ts` | Proveedor de email para el lead magnet. Sin este valor, el endpoint responde éxito en modo desarrollo y solo loguea en consola. |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | `app/layout.tsx`, `components/AdSlot.tsx` | Cliente de AdSense; sin este valor los `AdSlot` no se renderizan. |
