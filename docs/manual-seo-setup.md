@@ -2,6 +2,10 @@
 
 Nada de esto se puede hacer desde GitHub. Se documentan los pasos exactos para que el propietario del sitio los ejecute. No se confirma que ninguna de estas herramientas ya esté configurada — no hay forma de comprobarlo desde el código.
 
+## ⚠️ Advertencia sobre los textos legales (`/privacidad`, `/terminos`, `/cookies`, `/afiliados`, `/politica-editorial`)
+
+Estas páginas existen y son una base razonable, pero **ninguna tiene validez legal definitiva**. No se les agregó (ni se les agregará desde este repositorio) información de empresa, dirección, responsable legal, jurisdicción o datos fiscales, porque no se dispone de esa información real y no debe inventarse. **Antes de considerar estos textos definitivos, un profesional legal debe revisarlos** — especialmente porque el sitio capta emails (formularios) y enlaza a la venta de un programa pagado a través de Hotmart. Esta advertencia debe mantenerse hasta que esa revisión ocurra.
+
 ## 0. Requisito previo: comprar y apuntar el dominio
 
 Según `README.md`, `restauratumatrimonio-blog.com` **aún no está comprado**. Antes de cualquier paso de Search Console/GA4 con el dominio real:
@@ -45,14 +49,24 @@ Según `README.md`, `restauratumatrimonio-blog.com` **aún no está comprado**. 
 
 ## 4. Microsoft Clarity
 
-**No implementado en el código todavía.** Pasos para activarlo:
+**Ya implementado técnicamente en el código** (`components/Analytics.tsx`, gated por consentimiento igual que GA4/Meta — ver `docs/analytics-tracking.md`). Solo falta el Project ID real, que no se puede obtener desde este repositorio. Pasos para activarlo:
 
 1. Crear un proyecto en [clarity.microsoft.com](https://clarity.microsoft.com) para el dominio del blog.
 2. Obtener el Project ID.
-3. Pedir la implementación como una tarea de desarrollo aparte (añadir el script de Clarity de forma condicional a una variable de entorno nueva, siguiendo el mismo patrón que GA4/Meta en `components/Analytics.tsx` — no se implementó en esta auditoría por no tener el ID real ni confirmación de que se quiere usar).
-4. Configurar el **enmascarado de texto/inputs sensibles** en la configuración del proyecto de Clarity antes de grabar sesiones reales, dado que el sitio recibe formularios de contacto con datos personales.
-5. Verificar que las grabaciones excluyen los campos de email/nombre de los formularios (`ContactForm.tsx`, `NewsletterForm.tsx`) usando las reglas de enmascaramiento de Clarity.
-6. Alinear la carga del script de Clarity con la decisión de consentimiento de cookies pendiente (ver `docs/analytics-tracking.md`, sección "Consentimiento de cookies").
+3. Añadirlo como `NEXT_PUBLIC_CLARITY_PROJECT_ID` en las variables de entorno de Vercel (Production/Preview/Development según corresponda). Sin este valor, Clarity simplemente no se carga (no rompe el sitio).
+4. Configurar el **enmascarado de texto/inputs sensibles** en la configuración del proyecto de Clarity antes de grabar sesiones reales, dado que el sitio recibe formularios de contacto con datos personales. El código no fuerza reglas de enmascarado propias (serían suposiciones no verificables desde aquí) — depende de la configuración de Clarity, que por defecto ya enmascara el contenido de los campos `<input>`.
+5. Verificar en el dashboard de Clarity que las grabaciones excluyen los campos de email/nombre de los formularios (`ContactForm.tsx`, `NewsletterForm.tsx`).
+6. Si se activa `NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT=true` (ver sección 3b más abajo y `lib/consent.ts`), Clarity respeta el mismo interruptor automáticamente — no requiere configuración adicional en el código.
+
+## 3b. Consentimiento de cookies para analítica (interruptor técnico ya implementado)
+
+El código ya tiene un interruptor técnico (`lib/consent.ts`, `NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT`) que puede impedir que GA4, Meta Pixel y Clarity carguen hasta que el visitante acepte el aviso de cookies. **No se activó en producción ni se decidió qué régimen legal aplica** — eso sigue siendo una decisión del propietario:
+
+1. Definir, con asesoría legal, si la audiencia real del sitio (país/países) requiere un modelo de consentimiento opt-in (ej. estilo GDPR) o si un aviso informativo simple es suficiente.
+2. Si se decide requerir consentimiento explícito: configurar `NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT=true` en Vercel.
+3. Revisar y aprobar el texto exacto del banner en `components/CookieNotice.tsx` (está marcado con un comentario `TODO(legal)` porque el texto actual es solo un placeholder razonable, no una redacción legal definitiva).
+4. Verificar en un despliegue de prueba que, con la variable activada, ninguna herramienta de analítica carga hasta aceptar (ver `docs/post-deployment-seo-checklist.md`).
+5. Si se decide NO requerir consentimiento explícito por ahora, no hace falta ninguna acción — el comportamiento por defecto (`false`/sin definir) es el mismo que ya existía antes de este interruptor.
 
 ## 5. Semrush — Position Tracking
 
