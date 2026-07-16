@@ -5,7 +5,10 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Política de Privacidad",
   description:
-    "Política de Privacidad de Restaura Tu Matrimonio: uso de datos, cookies, analítica, publicidad y contacto."
+    "Política de Privacidad de Restaura Tu Matrimonio: uso de datos, cookies, analítica, publicidad y contacto.",
+  alternates: {
+    canonical: buildCanonicalUrl("/privacidad"),
+  },
 };
 
 export default function PrivacyPage() {

@@ -5,7 +5,10 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Términos y Condiciones",
   description:
-    "Términos de uso de Restaura Tu Matrimonio, contenido informativo, responsabilidades y enlaces externos."
+    "Términos de uso de Restaura Tu Matrimonio, contenido informativo, responsabilidades y enlaces externos.",
+  alternates: {
+    canonical: buildCanonicalUrl("/terminos"),
+  },
 };
 
 export default function TermsPage() {

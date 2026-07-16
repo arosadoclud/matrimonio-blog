@@ -5,7 +5,10 @@ import { NewsletterBox } from "@/components/NewsletterBox";
 export const metadata: Metadata = {
   title: "7 días de oración por la restauración de tu matrimonio",
   description:
-    "Lead magnet cristiano preparado para acompañarte con oración, reflexión bíblica y pasos prácticos durante siete días."
+    "Lead magnet cristiano preparado para acompañarte con oración, reflexión bíblica y pasos prácticos durante siete días.",
+  alternates: {
+    canonical: buildCanonicalUrl("/guia-oracion"),
+  },
 };
 
 export default function PrayerGuidePage() {
