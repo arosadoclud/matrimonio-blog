@@ -2,6 +2,10 @@ export type Category = {
   name: string;
   slug: string;
   description: string;
+  // Introducción más amplia y original para la página de categoría, distinta
+  // de `description` (que se usa para meta description y como fallback aquí
+  // si una categoría no define su propia introducción).
+  intro?: string;
 };
 
 export type PostMeta = {
