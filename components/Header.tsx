@@ -21,6 +21,22 @@ export function Header() {
     setIsOpen(false);
   }, [pathname]);
 
+  // Allow keyboard users to close the mobile menu with Escape
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
+
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
