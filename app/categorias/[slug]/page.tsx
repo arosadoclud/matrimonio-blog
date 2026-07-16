@@ -23,10 +23,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
+  const hasPosts = getPostsByCategory(slug).length > 0;
+
   return {
     title: `${category.name} | ${siteConfig.name}`,
     description: ensureMetaDescription(category.description),
     alternates: { canonical: buildCanonicalUrl(`/categorias/${category.slug}`) },
+    // Categorías sin artículos publicados aún no deben indexarse (contenido insuficiente).
+    robots: hasPosts ? undefined : { index: false, follow: true },
   };
 }
 

@@ -5,7 +5,10 @@ import { NewsletterBox } from "@/components/NewsletterBox";
 export const metadata: Metadata = {
   title: "Newsletter cristiana para restauración matrimonial",
   description:
-    "Suscríbete para recibir la guía 7 días de oración por la restauración de tu matrimonio y nuevos recursos cristianos."
+    "Suscríbete para recibir la guía 7 días de oración por la restauración de tu matrimonio y nuevos recursos cristianos.",
+  alternates: {
+    canonical: buildCanonicalUrl("/newsletter"),
+  },
 };
 
 export default function NewsletterPage() {

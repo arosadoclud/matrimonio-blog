@@ -4,7 +4,10 @@ import { buildCanonicalUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Política de Cookies",
   description:
-    "Información sobre el uso de cookies, medición, analítica y publicidad en Restaura Tu Matrimonio."
+    "Información sobre el uso de cookies, medición, analítica y publicidad en Restaura Tu Matrimonio.",
+  alternates: {
+    canonical: buildCanonicalUrl("/cookies"),
+  },
 };
 
 export default function CookiesPage() {

@@ -7,7 +7,10 @@ import { ViewContentTracker } from "@/components/ViewContentTracker";
 export const metadata: Metadata = {
   title: "Recursos recomendados para restaurar tu matrimonio",
   description:
-    "Conoce recursos cristianos recomendados para matrimonios que buscan oración, reconciliación, perdón y restauración familiar."
+    "Conoce recursos cristianos recomendados para matrimonios que buscan oración, reconciliación, perdón y restauración familiar.",
+  alternates: {
+    canonical: buildCanonicalUrl("/recursos"),
+  },
 };
 
 const testimonials = [

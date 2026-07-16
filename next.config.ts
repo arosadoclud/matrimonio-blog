@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { siteConfig } from "./lib/site";
 
 const securityHeaders = [
   {
@@ -68,6 +69,25 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+    ];
+  },
+  // Dominio canónico: siteConfig.domain (sin "www"). Cualquier tráfico que llegue por
+  // "www.<domain>" se redirige 308 (permanente) a la versión sin www, conservando ruta y
+  // query params. No hay redirect activo hoy porque el dominio final aún no está en DNS
+  // (ver README) — esta regla queda lista para cuando se apunte el dominio real a Vercel.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: `www.${siteConfig.domain}`,
+          },
+        ],
+        destination: `${siteConfig.url}/:path*`,
+        permanent: true,
       },
     ];
   },

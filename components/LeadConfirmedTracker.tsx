@@ -30,7 +30,6 @@ export function LeadConfirmedTracker({ contentName }: { contentName: string }) {
       utm_campaign: searchParams.get("utm_campaign") ?? "",
       utm_content: searchParams.get("utm_content") ?? "",
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contentName]);
 
   return null;
