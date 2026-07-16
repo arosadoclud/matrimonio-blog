@@ -104,6 +104,17 @@ Esto ya cumple, en sustancia, con lo pedido en la Fase 10.
 
 **Actualización (ronda posterior):** se implementó `components/SafetyNotice.tsx`, un componente visual reutilizable (caja con borde e ícono textual distintivo, `role="note"`), y se insertó en los 12 artículos identificados arriba. `MdxContent.tsx` ahora reconoce un bloque de cita (`> texto` en el `.mdx`) y lo renderiza con `SafetyNotice` en vez de un párrafo normal. No se inventó ni reescribió ningún texto: se tomó el párrafo de advertencia que cada artículo ya tenía y se marcó como cita para que se muestre destacado. Cubierto por `components/__tests__/MdxContent.test.tsx`.
 
+## 6b. Rendimiento y accesibilidad (Fases 20 y 22, ronda posterior)
+
+Auditado el código (no se pudo correr Lighthouse en este entorno sin navegador real, ver limitación en `docs/post-deployment-seo-checklist.md`). Ya estaba bien implementado:
+
+- Imágenes vía `next/image` en todos los componentes (`ArticleLayout`, `BlogCard`, `FeaturedPost`, `ResourceCard`) con `alt` descriptivo real, `sizes` correcto y `priority` solo en las imágenes above-the-fold (portada de artículo, featured post). Sin `unoptimized`, así que Next sirve automáticamente AVIF/WebP.
+- Fuentes vía `next/font/google` (autohospedadas, sin bloqueo de render ni petición externa a Google Fonts).
+- Scripts de terceros (GA4, Meta Pixel, AdSense) cargados con `next/script` y `strategy="afterInteractive"`, no bloquean el render inicial.
+- `SkipLinks`, landmarks semánticos, `aria-expanded`/`aria-controls`/`aria-label`/`aria-current` ya en el header y su menú móvil.
+
+Se corrigió: el menú móvil (`Header.tsx`) solo podía cerrarse con clic/mouse en el botón o el overlay — un usuario de teclado que lo abre no tenía forma de cerrarlo sin recorrer todo el menú hasta el botón de cerrar. Se agregó cierre con tecla Escape.
+
 ## 7. Decisiones que requieren aprobación manual
 
 1. **Redacción de `/indexacion`**: ~~menciona `restauratumatrimonio.org`~~ **Corregido** en una ronda posterior — ahora referencia `restauratumatrimonio-blog.com` (este blog) al hablar de Search Console/sitemap.
