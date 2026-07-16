@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -43,14 +44,17 @@ export function ContactForm() {
         if (data.errors) {
           setErrors(data.errors);
         }
+        trackEvent("form_error", { form_name: "contacto", reason: "api_error" });
         setStatus("error");
         return;
       }
 
+      trackEvent("form_success", { form_name: "contacto" });
       setStatus("success");
       form.reset();
     } catch (error) {
       console.error("Contact form error:", error);
+      trackEvent("form_error", { form_name: "contacto", reason: "network_error" });
       setStatus("error");
     }
   }
