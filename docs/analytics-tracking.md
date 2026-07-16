@@ -38,18 +38,15 @@ La tarea original pedía nombres de evento específicos (`lead_magnet_view`, `le
 | `whatsapp_click` | `WhatsAppContact` (evento propio) en `WhatsAppContactButton.tsx` y `WhatsAppInviteCard.tsx` | ✅ Cubierto (nombre distinto pero equivalente) |
 | `program_page_view` | `InitiateCheckout` (se dispara junto con el click, no al ver la página) | ⚠️ Parcial |
 | `outbound_click` | No hay evento genérico de salida; solo `trackHotmartCtaClick` para el landing específico | ⚠️ Falta |
-| `form_error` | No implementado como evento de analítica (sí hay manejo de error en UI) | ❌ Falta |
-| `form_success` | Cubierto por `Lead` en newsletter; no confirmado en `/api/contacto` | ⚠️ Verificar |
+| `form_error` | `form_error` (`form_name`, `reason`) en `NewsletterForm.tsx` y `ContactForm.tsx` | ✅ Cubierto |
+| `form_success` | `Lead` en newsletter; `form_success` (`form_name`) en `ContactForm.tsx` | ✅ Cubierto |
 
-### Hallazgos (no corregidos en esta pasada — requieren decisión de producto, no son bugs de SEO técnico)
+### Hallazgos (parcialmente corregidos en una pasada posterior)
 
-No se modificó `lib/analytics.ts` ni los componentes de tracking en esta auditoría porque:
-1. Cambiar la forma de los parámetros de eventos ya en producción (`CtaClick`, `Lead`, etc.) afecta reportes y audiencias ya construidas en GA4/Meta Ads.
-2. No hay acceso a las cuentas reales de GA4/Meta/Clarity para validar el impacto antes de desplegar.
+Se añadieron `form_error` (`NewsletterForm.tsx`, `ContactForm.tsx`) y `form_success` (`ContactForm.tsx`, que antes no medía nada) como eventos aditivos — no cambian la forma de los eventos existentes (`CtaClick`, `Lead`), así que no afectan reportes ni audiencias ya construidas.
 
-Se documenta como trabajo futuro recomendado (no urgente para indexación/rastreo, sí relevante para medir conversión con más detalle):
-- Enriquecer `CtaClick` con `article_slug`, `article_category` y `cta_location` cuando el CTA vive dentro de un artículo (ya se tiene el `post` disponible en `ArticleLayout.tsx`).
-- Añadir `form_error` en `NewsletterForm.tsx` y `ContactForm.tsx` junto al `Lead`/`form_success` existente.
+No se modificó `lib/analytics.ts` en cuanto a `CtaClick`/`trackHotmartCtaClick` porque cambiar su firma afecta dos componentes (`FunnelCTA.tsx`, `ResourceCard.tsx`) y un test existente, sin acceso a las cuentas reales de GA4/Meta para validar el impacto antes de desplegar. Sigue pendiente como trabajo futuro recomendado:
+- Enriquecer `CtaClick`/`trackHotmartCtaClick` con `article_slug`, `article_category` y `cta_location` cuando el CTA vive dentro de un artículo (el CTA "middle" ya envía `source_post` con el slug; falta extenderlo al CTA "bottom" y a `ResourceCard`).
 
 ## Consentimiento de cookies — hallazgo importante (Fase 18)
 

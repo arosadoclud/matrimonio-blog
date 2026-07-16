@@ -40,6 +40,7 @@ export function NewsletterForm() {
 
       if (!response.ok) {
         console.error("Newsletter error:", data.error);
+        trackEvent("form_error", { form_name: "newsletter", reason: "api_error" });
         setStatus("error");
         return;
       }
@@ -49,6 +50,7 @@ export function NewsletterForm() {
       form.reset();
     } catch (error) {
       console.error("Newsletter fetch error:", error);
+      trackEvent("form_error", { form_name: "newsletter", reason: "network_error" });
       setStatus("error");
     }
   }
