@@ -8,13 +8,13 @@ Estas páginas existen y son una base razonable, pero **ninguna tiene validez le
 
 ## 0. Requisito previo: comprar y apuntar el dominio
 
-Según `README.md`, `restauratumatrimonio-blog.com` **aún no está comprado**. Antes de cualquier paso de Search Console/GA4 con el dominio real:
+`restauratumatrimonio-blog.com` ya está comprado y conectado en Vercel (ver incidente resuelto abajo). Pasos para referencia si se vuelve a tocar esta configuración:
 
 1. Comprar el dominio `restauratumatrimonio-blog.com`.
 2. En Vercel → proyecto del blog → Settings → Domains: añadir `restauratumatrimonio-blog.com` y `www.restauratumatrimonio-blog.com`.
 3. Configurar los registros DNS que indique Vercel (normalmente un registro `A`/`ALIAS` en el apex y un `CNAME` en `www`).
-4. Confirmar que `www.restauratumatrimonio-blog.com` redirige 301 a `restauratumatrimonio-blog.com` (el redirect ya está implementado en `next.config.ts` — solo falta que el dominio exista en DNS para que se active).
-5. Una vez el dominio esté activo, verificar que `https://restauratumatrimonio-blog.com/sitemap.xml` y `/robots.txt` responden 200 antes de continuar con Search Console.
+4. **Importante — evitar bucle de redirect:** en la pantalla de cada dominio en Vercel (Settings → Domains → editar cada uno), ambos deben quedar en **"Connect to an environment" → Production**, y **ninguno de los dos** debe tener marcado "Redirect to Another Domain". El redirect `www → apex` ya lo hace `next.config.ts` a nivel de aplicación — si Vercel *también* redirige (en cualquier dirección) a nivel de plataforma, se produce un bucle infinito (`ERR_TOO_MANY_REDIRECTS`). Esto ya ocurrió una vez (Vercel tenía el apex con "Redirect to Another Domain" → `www`, en dirección contraria al código) y se corrigió quitando el redirect de Vercel en ambos dominios.
+5. Verificar que `https://restauratumatrimonio-blog.com/sitemap.xml` y `/robots.txt` responden 200, y que `https://www.restauratumatrimonio-blog.com/` redirige correctamente a la versión sin `www` sin bucles.
 
 ## 1. Google Search Console
 
