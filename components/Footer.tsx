@@ -23,6 +23,7 @@ export function Footer() {
             <Link href="/terminos">Términos</Link>
             <Link href="/afiliados">Afiliados</Link>
             <Link href="/cookies">Cookies</Link>
+            <Link href="/politica-editorial">Política Editorial</Link>
           </div>
         </div>
         <div>

@@ -3,6 +3,14 @@
 Fecha: 2026-07-16
 Rama: `claude/restaura-matrimonio-seo-audit-xiwkxr` (equivalente a `seo/organic-growth-foundation`)
 
+**Actualización (ronda posterior):** se agregó `/politica-editorial` (Fase 9 de la tarea original),
+explicando cómo se investigan, revisan, corrigen y actualizan los artículos, cómo se manejan
+testimonios y enlaces comerciales, y la diferencia entre orientación espiritual, mentoría, terapia y
+atención profesional. Enlazada desde el footer y añadida al sitemap. Todo el contenido de esa página
+describe procesos reales y verificables en el repositorio (flujo de Pull Request + CI, campo
+`reviewedBy`, testimonios con enlace a fuente), sin inventar certificaciones ni procesos que no
+existen hoy.
+
 ## 1. Stack y arquitectura (verificado en el repo)
 
 - **Framework:** Next.js 16.2.9 (App Router, Turbopack), React 19.

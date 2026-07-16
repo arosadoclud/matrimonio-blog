@@ -92,6 +92,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.4,
     },
+    {
+      url: `${siteConfig.url}/politica-editorial`,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
   ];
 
   return [
