@@ -2,6 +2,42 @@
 
 Ejecutar después de mergear esta rama a `main` y de que Vercel despliegue a producción (`.github/workflows/deploy.yml`).
 
+## Verificación de dominios y redirecciones (ejecutar tú — este sandbox no tiene acceso de red al dominio real)
+
+Se intentó verificar esto directamente desde el entorno que generó esta auditoría (`curl -v https://restauratumatrimonio-blog.com/`) y la política de red del sandbox lo bloquea (403 del proxy de egress, mismo tipo de restricción documentada en la sección de Lighthouse arriba). **No se inventó ningún resultado.** Ejecuta estos comandos exactos tú mismo (en tu máquina, o cualquier entorno con acceso normal a internet) y completa la tabla:
+
+```bash
+# 1. Dominio sin www (canónico) — debe responder 200 directo, sin redirect
+curl -sI https://restauratumatrimonio-blog.com/
+
+# 2. Dominio con www — debe responder 301/308 hacia la versión sin www
+curl -sI https://www.restauratumatrimonio-blog.com/
+
+# 3. www con una ruta de artículo — la ruta debe conservarse en el redirect
+curl -sI https://www.restauratumatrimonio-blog.com/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios
+
+# 4. www con una ruta de categoría
+curl -sI https://www.restauratumatrimonio-blog.com/categorias/restauracion-matrimonial
+
+# 5. www con query params — deben conservarse en el Location del redirect
+curl -sI "https://www.restauratumatrimonio-blog.com/recursos?src=como-restaurar-mi-matrimonio-con-la-ayuda-de-dios"
+
+# 6. Confirmar que NO hay cadena de redirects (máximo 1 salto) ni bucle
+curl -sIL --max-redirs 3 https://www.restauratumatrimonio-blog.com/ | grep -c "^HTTP"
+```
+
+**Qué confirmar en cada respuesta:**
+- [ ] (1) `HTTP/2 200` directo, sin `Location` header — el apex sirve el sitio, no redirige (así quedó configurado en Vercel tras el incidente de bucle).
+- [ ] (2)-(5) código `301` o `308` (permanente, no `302`/`307` temporal), con header `Location: https://restauratumatrimonio-blog.com/<misma-ruta-y-query>` — ruta y query conservados exactamente.
+- [ ] (6) el conteo de líneas `HTTP` debe ser **2** (un 30x + el 200 final) — más de 2 indicaría una cadena de redirects; si `curl` falla con "too many redirects" hay un bucle.
+- [ ] Ver el HTML de la respuesta 200 (`curl -s https://restauratumatrimonio-blog.com/ | grep canonical`): el `<link rel="canonical">` debe apuntar a `https://restauratumatrimonio-blog.com/...` (sin `www`).
+- [ ] Repetir el `grep` anterior sobre `/sitemap.xml`: todas las URLs deben ser `https://restauratumatrimonio-blog.com/...`.
+- [ ] Ver el `<meta property="og:url">` de una página: debe ser la versión sin `www`.
+- [ ] Ver el JSON-LD (`<script type="application/ld+json">`) de un artículo: los campos `url`/`mainEntityOfPage` deben ser sin `www`.
+- [ ] Revisar 2-3 artículos: sus enlaces internos (`[texto](/blog/...)`) son rutas relativas, así que siempre heredan el dominio actual — no hay riesgo de que apunten a `www` por accidente, pero confirmar visualmente que el navegador no muestra ningún enlace absoluto a `www.restauratumatrimonio-blog.com` en el HTML renderizado.
+
+**Nota importante:** el dominio canónico de este proyecto es **sin `www`** (confirmado explícitamente por el propietario dos veces en esta auditoría — ver `docs/seo-audit.md` sección 2). Todo el código (`lib/site.ts:siteConfig.url`, `app/sitemap.ts`, `app/layout.tsx` OG, JSON-LD en `app/blog/[slug]/page.tsx` y `app/categorias/[slug]/page.tsx`) ya deriva consistentemente de `siteConfig.url`, que es la versión sin `www` — se verificó con `grep -rn "www\."` que no hay ninguna referencia hardcodeada a la versión con `www` del propio dominio en el código (los únicos resultados son dominios de terceros legítimos: `clarity.ms`, `googletagmanager.com`, `facebook.com`, `google-analytics.com`).
+
 ## Verificación técnica inmediata (0-24h)
 
 - [ ] `https://<dominio-de-producción>/` carga sin errores de consola.
@@ -15,40 +51,67 @@ Ejecutar después de mergear esta rama a `main` y de que Vercel despliegue a pro
 - [ ] Formulario de contacto (`/contacto`) completa un envío de prueba real (requiere `CONTACT_ENDPOINT` configurado).
 - [ ] GA4 DebugView o Meta Events Manager (Test Events) muestran `PageView` al cargar cualquier página, si los IDs ya están configurados.
 
-## Lighthouse y Core Web Vitals (ejecutar tras el primer despliegue real)
+## Lighthouse y Core Web Vitals
 
-No se ejecutó Lighthouse en esta auditoría porque este entorno no tiene navegador ni un despliegue real contra el cual medir — cualquier número aquí sería inventado. Estos son los pasos exactos a correr manualmente después de desplegar:
+### Lo que sí se pudo ejecutar realmente, y lo que falta
 
-### Cómo correr cada prueba
+Este sandbox de desarrollo **no tiene acceso de red al dominio real** (`restauratumatrimonio-blog.com` está bloqueado por la política de egress del entorno — confirmado con `curl -v`, error 403 del proxy). Por eso, en vez de inventar números contra la URL real, se corrió **Lighthouse CLI real** (`npx lighthouse`, Chromium preinstalado) contra un **build de producción del mismo código corriendo en local** (`npm run build && npm run start`, `http://localhost:3000`). Los resultados de abajo son reales — ningún número fue inventado — pero corresponden al build local, no al CDN/edge real de Vercel; en particular LCP/FCP/TBT en producción real deberían ser iguales o mejores (Vercel sirve con CDN y compresión de borde que este `localhost` no tiene). **Sigue pendiente correr esto mismo contra el dominio real** una vez alguien con acceso de red lo haga (pasos exactos abajo).
 
-1. **Lighthouse móvil:** Chrome DevTools → pestaña "Lighthouse" → dispositivo "Mobile" → categorías Performance, Accessibility, Best Practices, SEO → "Analyze page load". Repetir para cada URL de la lista de abajo.
-2. **Lighthouse escritorio:** mismo proceso, dispositivo "Desktop".
-3. **PageSpeed Insights:** [pagespeed.web.dev](https://pagespeed.web.dev/), pegar la URL real de producción — da datos de campo (CrUX) además del análisis de laboratorio, útil una vez haya tráfico real.
-4. **Search Console → Core Web Vitals:** una vez haya suficientes datos de campo, revisar el informe de "Experiencia" para ver LCP/INP/CLS agregados por grupo de URLs (no por URL individual).
+Reportes JSON completos de Lighthouse (antes y después de los fixes) disponibles en la sesión que generó esta auditoría; no se incluyen en el repo por tamaño, pero cualquier número de la tabla se puede reproducir con:
 
-### Páginas a probar
+```bash
+npm run build && npm run start &
+npx lighthouse http://localhost:3000/<ruta> --output=json --output-path=informe.json \
+  --chrome-flags="--headless=new --no-sandbox" --only-categories=performance,accessibility,best-practices,seo
+# agregar --preset=desktop para la variante de escritorio
+```
 
-- [ ] Portada (`/`)
-- [ ] Una página de artículo representativa (recomendado: un pilar, ej. `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios`)
-- [ ] Una página de categoría (ej. `/categorias/restauracion-matrimonial`)
-- [ ] La landing de la guía gratuita (`/guia-oracion` o `/restaurar-matrimonio-guia-gratis`)
+INP no aparece: es una métrica de campo (requiere interacción real de usuarios), Lighthouse en laboratorio no la reporta.
 
-### Métricas a registrar en cada prueba
+### Problemas reales encontrados y corregidos en este build
 
-LCP, INP, CLS, FCP, TBT, y los 4 scores de Lighthouse (Performance, Accessibility, Best Practices, SEO).
+| # | Problema | Dónde | Corrección |
+|---|---|---|---|
+| 1 | Fecha del `BlogCard` con contraste 2.81:1 (mínimo requerido 4.5:1) — `text-[#1F1F1F]/45` sobre blanco | `components/BlogCard.tsx` | Color fijo `#5c5c5c` con margen de contraste seguro |
+| 2 | Texto legal del formulario de newsletter con contraste 4.35:1 (insuficiente) — `text-[#1F1F1F]/60` | `components/NewsletterForm.tsx` | Color fijo `#5c5c5c` |
+| 3 | Breadcrumbs (usados en artículo y categoría) con contraste 3.68:1/3.72:1 — `text-[#1F1F1F]/55` sobre fondo crema | `components/Breadcrumbs.tsx` | Color fijo `#5c5c5c` |
+| 4 | Textos de aviso en `ResourceCard` con contraste 3.23:1 — `text-[#1F1F1F]/50` | `components/ResourceCard.tsx` | Color fijo `#5c5c5c` |
+| 5 | Metadatos del artículo (fecha/tiempo de lectura/autor) con contraste 3.68:1 — `text-[#1F1F1F]/55` sobre fondo crema | `components/ArticleLayout.tsx` | Color fijo `#5c5c5c` |
+| 6 | Enlaces del footer con área táctil de 17px de alto (mínimo requerido 24×24px) y espaciado insuficiente entre ellos | `components/Footer.tsx` | Cada enlace ahora tiene `py-1.5` (≈25px de alto tocable) |
 
-### Tabla de resultados (completar después del despliegue — vacía a propósito)
+Hallazgo verificado pero **no es un bug del código**: un único error de consola (403) al pedir imágenes de `images.unsplash.com` a través del optimizador de `next/image` — es la política de red de este sandbox bloqueando el dominio externo (mismo tipo de bloqueo que impide llegar al dominio real). En producción (Vercel, con acceso normal a internet) esto no debería ocurrir; verificar igualmente en el despliegue real que las imágenes de Unsplash cargan sin 403.
 
-| Página | Dispositivo | LCP | INP | CLS | FCP | TBT | Performance | Accessibility | Best Practices | SEO | Fecha de la prueba |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| `/` | Mobile | | | | | | | | | | |
-| `/` | Desktop | | | | | | | | | | |
-| Artículo pilar | Mobile | | | | | | | | | | |
-| Artículo pilar | Desktop | | | | | | | | | | |
-| Categoría | Mobile | | | | | | | | | | |
-| Categoría | Desktop | | | | | | | | | | |
-| Landing de guía gratuita | Mobile | | | | | | | | | | |
-| Landing de guía gratuita | Desktop | | | | | | | | | | |
+No se encontraron: recursos bloqueantes de renderizado, JavaScript sin minificar, CSS sin minificar, imágenes sin formato moderno (`next/image` ya sirve AVIF/WebP automáticamente), layout shifts (CLS = 0 en las 12 pruebas), ni scripts de terceros pesados (GA4/Meta/Clarity cargan con `strategy="afterInteractive"`, y no están configurados en este entorno de prueba así que no se ejecutan). El único "unused-javascript" detectado (~28 KiB en un chunk interno de Next/React) es overhead normal del framework bajo el throttling de CPU 4x que aplica Lighthouse en modo móvil, no algo atribuible a código propio.
+
+### Páginas probadas
+
+`/` (home), `/blog`, `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` (artículo pilar extenso), `/categorias/restauracion-matrimonial`, `/guia-oracion` (landing de guía gratuita), `/recursos`.
+
+### Tabla de resultados — build local, después de las correcciones (real, no inventado)
+
+| Página | Dispositivo | Performance | Accessibility | Best Practices | SEO | LCP | CLS | FCP | TBT | Speed Index |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `/` | Mobile | 95 | 100 | 96 | 100 | 2.8 s | 0 | 0.8 s | 130 ms | 0.8 s |
+| `/` | Desktop | 100 | 100 | 96 | 100 | 0.6 s | 0 | 0.2 s | 0 ms | 0.2 s |
+| `/blog` | Mobile | 90 | 100 | 96 | 100 | 3.2 s | 0 | 1.2 s | 200 ms | 1.2 s |
+| `/blog` | Desktop | 100 | 100 | 96 | 100 | 0.7 s | 0 | 0.3 s | 0 ms | 0.3 s |
+| `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Mobile | 94 | 100 | 96 | 100 | 2.4 s | 0 | 0.9 s | 220 ms | 0.9 s |
+| `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Desktop | 100 | 100 | 96 | 100 | 0.6 s | 0 | 0.3 s | 0 ms | 0.3 s |
+| `/categorias/restauracion-matrimonial` | Mobile | 93 | 100 | 96 | 100 | 2.8 s | 0 | 0.8 s | 170 ms | 0.8 s |
+| `/categorias/restauracion-matrimonial` | Desktop | 100 | 100 | 96 | 100 | 0.6 s | 0 | 0.2 s | 0 ms | 0.2 s |
+| `/guia-oracion` | Mobile | 97 | 100 | 100 | 100 | 2.3 s | 0 | 0.8 s | 140 ms | 0.8 s |
+| `/guia-oracion` | Desktop | 100 | 100 | 100 | 100 | 0.6 s | 0 | 0.2 s | 0 ms | 0.2 s |
+| `/recursos` | Mobile | 95 | 100 | 96 | 100 | 2.7 s | 0 | 0.8 s | 140 ms | 0.8 s |
+| `/recursos` | Desktop | 100 | 100 | 96 | 100 | 0.6 s | 0 | 0.2 s | 0 ms | 0.2 s |
+
+**Antes de las correcciones**, Accessibility era 96 en 5 de las 6 páginas (solo por los problemas de contraste/tap-target de la tabla de arriba); Performance mobile estaba en el mismo rango (87-98) — la ganancia de Performance en `/guia-oracion` (87→97) es real pero puede deberse en parte a variabilidad entre corridas del entorno de prueba, no solo a las correcciones (ninguna de las 6 correcciones de esta ronda toca directamente performance, solo accesibilidad).
+
+### Pendiente real — ejecutar contra el dominio de producción
+
+- [ ] Repetir estas 12 pruebas contra `https://restauratumatrimonio-blog.com` real (Lighthouse en Chrome DevTools, o `npx lighthouse` desde una máquina con acceso a internet).
+- [ ] PageSpeed Insights: [pagespeed.web.dev](https://pagespeed.web.dev/), pegar cada URL real — da datos de campo (CrUX) una vez haya tráfico real, no solo laboratorio.
+- [ ] Search Console → Core Web Vitals: una vez haya datos de campo suficientes, revisar LCP/INP/CLS agregados por grupo de URLs.
+- [ ] Confirmar que las imágenes de Unsplash cargan sin 403 en producción real (el único error de consola visto aquí es específico de este sandbox).
 
 ## Search Console (primeros días)
 

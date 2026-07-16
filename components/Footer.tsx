@@ -14,23 +14,27 @@ export function Footer() {
         </div>
         <div>
           <p className="font-semibold text-[#D4AF37]">Explorar</p>
-          <div className="mt-4 grid gap-2 text-sm text-white/80">
-            <Link href="/blog">Blog</Link>
-            <Link href="/recursos">Recursos</Link>
-            <Link href="/sobre-nosotros">Sobre nosotros</Link>
-            <Link href="/contacto">Contacto</Link>
-            <Link href="/privacidad">Política de Privacidad</Link>
-            <Link href="/terminos">Términos</Link>
-            <Link href="/afiliados">Afiliados</Link>
-            <Link href="/cookies">Cookies</Link>
-            <Link href="/politica-editorial">Política Editorial</Link>
+          <div className="mt-2 flex flex-col text-sm text-white/80">
+            <Link className="inline-block py-1.5" href="/blog">Blog</Link>
+            <Link className="inline-block py-1.5" href="/recursos">Recursos</Link>
+            <Link className="inline-block py-1.5" href="/sobre-nosotros">Sobre nosotros</Link>
+            <Link className="inline-block py-1.5" href="/contacto">Contacto</Link>
+            <Link className="inline-block py-1.5" href="/privacidad">Política de Privacidad</Link>
+            <Link className="inline-block py-1.5" href="/terminos">Términos</Link>
+            <Link className="inline-block py-1.5" href="/afiliados">Afiliados</Link>
+            <Link className="inline-block py-1.5" href="/cookies">Cookies</Link>
+            <Link className="inline-block py-1.5" href="/politica-editorial">Política Editorial</Link>
           </div>
         </div>
         <div>
           <p className="font-semibold text-[#D4AF37]">Categorías</p>
-          <div className="mt-4 grid gap-2 text-sm text-white/80">
+          <div className="mt-2 flex flex-col text-sm text-white/80">
             {categories.slice(0, 5).map((category) => (
-              <Link key={category.slug} href={`/categorias/${category.slug}`}>
+              <Link
+                key={category.slug}
+                className="inline-block py-1.5"
+                href={`/categorias/${category.slug}`}
+              >
                 {category.name}
               </Link>
             ))}
