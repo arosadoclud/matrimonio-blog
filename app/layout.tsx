@@ -64,6 +64,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     sameAs: [],
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    inLanguage: "es",
+  };
+
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
       <head>
@@ -79,7 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             strategy="afterInteractive"
           />
         ) : null}
-        <JsonLd data={organizationSchema} />
+        <JsonLd data={[organizationSchema, websiteSchema]} />
         <SiteChrome position="header" />
         <main id="main-content" tabIndex={-1}>
           {children}
