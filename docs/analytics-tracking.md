@@ -70,11 +70,13 @@ type CtaContext = {
 |---|---|---|---|---|---|---|---|
 | `FunnelCTA` (variant `middle`) | "Ver recurso recomendado" | `props.slug` (slug del artículo) | `props.topic` (categoría del post) | `"article_middle"` | Mapeado desde la categoría vía `categoryClusters` (`lib/site.ts`) | `/recursos?src=<slug>` | `"Ver recurso recomendado"` |
 | `FunnelCTA` (variant `bottom`) | "Quiero recuperar mi matrimonio →" | `props.slug` si `ArticleLayout` lo pasó (siempre lo hace) | `props.category` ídem | `"article_bottom"` | Igual, vía `categoryClusters` | URL de Hotmart con UTMs | `"Quiero recuperar mi matrimonio →"` |
-| `ResourceCard` (en `/recursos`) | "Acceder al recurso" | `sourcePostSlug` (query `?src=`, si el visitante llegó desde un artículo) | `sourcePostCategory`, resuelto server-side en `app/recursos/page.tsx` vía `getPostBySlug` | `"recursos_page"` | Igual, vía `categoryClusters` | URL de Hotmart con UTMs | `"Acceder al recurso"` |
+| `ResourceCard` (en `/recursos`) | "Acceder al recurso" | `sourcePostSlug` (query `?src=`, si el visitante llegó desde un artículo) | `sourcePostCategory`, resuelto server-side en `app/recursos/page.tsx` vía `getPostBySlug` | `"recursos_page"` | Vía `categoryClusters` si hay artículo de origen; si no, `"recursos_y_acompanamiento"` (clúster propio de la página — ver hallazgo abajo) | URL de Hotmart con UTMs | `"Acceder al recurso"` |
 
 `categoryClusters` (nuevo, en `lib/site.ts`) mapea el nombre de categoría al clúster temático de `docs/seo-content-plan-90-days.md`/`docs/keyword-map.md`, solo para fines de analítica — no afecta rutas ni metadatos.
 
-**No se renombró ningún evento de GA4/Meta** (`CtaClick`, `InitiateCheckout` siguen igual). Cubierto por tests nuevos en `lib/__tests__/analytics.test.ts` y `components/__tests__/FunnelCTA.test.tsx`.
+**Ronda posterior — `ResourceCard` ya no depende solo de `?src=`:** cuando un visitante llega a `/recursos` sin ese parámetro (no vino de un artículo específico), `content_cluster` ya no queda vacío — usa `"recursos_y_acompanamiento"` como valor por defecto, porque `/recursos` en sí mismo pertenece a ese clúster (Fase 12). `article_slug`/`article_category` siguen sin enviarse en ese caso porque, honestamente, no hay artículo de origen que reportar — no se inventa uno. Cubierto por `components/__tests__/ResourceCard.test.tsx` (nuevo).
+
+**No se renombró ningún evento de GA4/Meta** (`CtaClick`, `InitiateCheckout` siguen igual). Cubierto por tests en `lib/__tests__/analytics.test.ts`, `components/__tests__/FunnelCTA.test.tsx` y `components/__tests__/ResourceCard.test.tsx`.
 
 ## Consentimiento de cookies (Fase 18) — implementado como interruptor técnico
 
