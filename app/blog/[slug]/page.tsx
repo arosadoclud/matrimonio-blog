@@ -26,7 +26,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = buildCanonicalUrl(`/blog/${post.slug}`);
 
   return {
-    title,
+    // The root layout defines title.template = "%s | Restaura Tu Matrimonio",
+    // which Next.js would otherwise re-append to whatever buildPageTitle()
+    // already returned (double suffix on short titles, or the suffix
+    // creeping back onto titles buildPageTitle() intentionally left bare).
+    // { absolute } opts this page out of that template so `title` is used
+    // verbatim.
+    title: { absolute: title },
     description: ensureMetaDescription(post.description),
     keywords: post.keywords,
     robots:
