@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { getAllPosts, getRelatedPosts } from "../posts";
 import { getWordCount } from "../utils";
 
 describe("posts utility functions (mocked)", () => {
@@ -66,6 +67,41 @@ describe("posts utility functions (mocked)", () => {
 
       const hasFaqSection = content.includes("## Preguntas frecuentes");
       expect(hasFaqSection).toBe(true);
+    });
+  });
+
+  describe("getRelatedPosts", () => {
+    it("gives every post in a multi-post category at least one inbound related-post link", () => {
+      // Regression test for the internal-linking gap Semrush flagged
+      // ("pages with only one internal link"): getRelatedPosts() used to
+      // always return the 3 most recent posts per category, so older posts
+      // never got picked and ended up with no inbound links from this
+      // widget anywhere on the site.
+      const posts = getAllPosts();
+      const inboundCount = new Map<string, number>();
+      for (const post of posts) {
+        for (const related of getRelatedPosts(post)) {
+          inboundCount.set(related.slug, (inboundCount.get(related.slug) ?? 0) + 1);
+        }
+      }
+
+      const categoryCounts = new Map<string, number>();
+      for (const post of posts) {
+        categoryCounts.set(post.category, (categoryCounts.get(post.category) ?? 0) + 1);
+      }
+
+      for (const post of posts) {
+        if ((categoryCounts.get(post.category) ?? 0) > 1) {
+          expect(inboundCount.get(post.slug) ?? 0).toBeGreaterThan(0);
+        }
+      }
+    });
+
+    it("never includes the post itself", () => {
+      const posts = getAllPosts();
+      for (const post of posts) {
+        expect(getRelatedPosts(post).map((r) => r.slug)).not.toContain(post.slug);
+      }
     });
   });
 });

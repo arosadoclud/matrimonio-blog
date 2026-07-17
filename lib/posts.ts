@@ -130,10 +130,32 @@ export function getPostsByCategory(category: string): Post[] {
   return getAllPosts().filter((post) => slugify(post.category) === category);
 }
 
+// Picks the next `limit` posts after this one within its category, wrapping
+// around the list. Taking a fixed "first 3 most recent" instead (as this
+// used to) means every post in a category points at the same handful of
+// recent posts, so older posts never receive an inbound "related" link and
+// end up with almost no internal links pointing at them at all (Semrush:
+// "pages with only one internal link"). The ring guarantees every post in a
+// category with more than `limit` members gets linked from at least one
+// other post's related-posts section.
 export function getRelatedPosts(post: Post, limit = 3): Post[] {
-  return getAllPosts()
-    .filter((candidate) => candidate.slug !== post.slug && candidate.category === post.category)
-    .slice(0, limit);
+  const sameCategory = getAllPosts().filter((candidate) => candidate.category === post.category);
+  const currentIndex = sameCategory.findIndex((candidate) => candidate.slug === post.slug);
+
+  if (currentIndex === -1 || sameCategory.length <= 1) {
+    return [];
+  }
+
+  const related: Post[] = [];
+  for (let offset = 1; offset <= limit && related.length < limit; offset++) {
+    const candidateIndex = (currentIndex + offset) % sameCategory.length;
+    if (candidateIndex === currentIndex) {
+      break;
+    }
+    related.push(sameCategory[candidateIndex]);
+  }
+
+  return related;
 }
 
 export function getPillarPosts(): Post[] {
