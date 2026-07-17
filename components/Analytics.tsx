@@ -11,15 +11,18 @@ export function Analytics() {
   // gate existed. See lib/consent.ts.
   const consentGranted = useAnalyticsConsent();
 
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  // .trim() guards against trailing whitespace/newlines pasted into the
+  // Vercel dashboard when setting these values -- an untrimmed ID breaks
+  // fbq('init', ...) and the noscript pixel's query string silently.
+  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+  const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim();
   // Second Pixel lives under a different Meta Business Manager than the
   // first (the one with access to the ad account actually running
   // campaigns) -- initializing both means fbq('track', ...) sends every
   // event to both Pixels without needing Meta's cross-business asset
   // sharing, which is blocked for new businesses for several weeks.
-  const metaPixelId2 = process.env.NEXT_PUBLIC_META_PIXEL_ID_2;
-  const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+  const metaPixelId2 = process.env.NEXT_PUBLIC_META_PIXEL_ID_2?.trim();
+  const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID?.trim();
 
   useEffect(() => {
     const trackedDepths = new Set<number>();
