@@ -22,7 +22,7 @@ export function ensureMetaDescription(description: string, maxLength = 160): str
 // ver lib/analytics.ts) para que el <title> siga siendo distinto del
 // <h1> de la página (evita el warning "duplicate H1 and title tags");
 // solo si ni eso cabe, se deja el título del artículo solo.
-export function buildPageTitle(pageTitle: string, maxLength = 70): string {
+export function buildPageTitle(pageTitle: string, maxLength = 73): string {
   const withFullSuffix = `${pageTitle} | ${siteConfig.name}`;
   if (withFullSuffix.length <= maxLength) {
     return withFullSuffix;

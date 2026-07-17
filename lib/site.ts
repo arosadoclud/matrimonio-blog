@@ -18,21 +18,29 @@ export const categories: Category[] = [
     name: "Restauración matrimonial",
     slug: "restauracion-matrimonial",
     description: "Guías cristianas para volver a construir confianza, amor y propósito.",
+    intro:
+      "Restaurar un matrimonio no significa fingir que el daño no existió, ni volver exactamente al punto de partida. Aquí encontrarás guías cristianas completas — con oración, verdad, límites sanos y pasos concretos — para parejas que sienten que su relación necesita reconstruirse desde el fundamento: confianza, honestidad y la convicción de que Dios sigue interesado en su matrimonio, incluso cuando el proceso es lento.",
   },
   {
     name: "Oración por el matrimonio",
     slug: "oracion-por-el-matrimonio",
     description: "Oraciones y devocionales para presentar tu relación delante de Dios.",
+    intro:
+      "Cuando ya no sabes qué decirle a tu cónyuge, todavía puedes hablar con Dios. Esta sección reúne oraciones y devocionales pensados para momentos concretos — un matrimonio en crisis, un cónyuge que se alejó, una espera que se siente larga — con versículos explicados y guías prácticas para entregar tu relación en oración en vez de cargarla solo con tus propias fuerzas.",
   },
   {
     name: "Perdón y reconciliación",
     slug: "perdon-y-reconciliacion",
     description: "Contenido para sanar heridas, pedir perdón y abrir caminos de paz.",
+    intro:
+      "El perdón cristiano no exige fingir que no dolió, y la reconciliación no siempre llega al mismo ritmo que el perdón. Aquí encontrarás contenido para distinguir entre perdonar, reconciliarte y volver a confiar — con pasos honestos para pedir perdón, sanar heridas específicas como la infidelidad, y abrir un camino de paz sin minimizar lo que realmente pasó.",
   },
   {
     name: "Crisis matrimonial",
     slug: "crisis-matrimonial",
     description: "Primeros pasos cuando el matrimonio atraviesa distancia o dolor.",
+    intro:
+      "Cuando el matrimonio atraviesa distancia, silencio o una crisis abierta, el primer paso rara vez es el más dramático — es el más honesto. Esta sección reúne guías para momentos concretos de crisis: cuando tu cónyuge dice que ya no te ama, cuando habla de separarse, o cuando sientes que ya nadie está luchando por la relación, con orientación bíblica y práctica para actuar sin desesperación.",
   },
   {
     name: "Comunicación en pareja",
@@ -45,6 +53,8 @@ export const categories: Category[] = [
     name: "Consejos bíblicos",
     slug: "consejos-biblicos",
     description: "Principios de la Palabra aplicados a la vida matrimonial diaria.",
+    intro:
+      "La Biblia no fue escrita como un manual de terapia de pareja, pero tiene mucho que decir sobre cómo amar, perdonar y permanecer. Esta sección aplica principios bíblicos a preguntas concretas del matrimonio — qué dice la Escritura sobre el perdón, la restauración o el compromiso — sin usar los versículos como arma en una discusión, sino como dirección para el corazón de cada cónyuge.",
   },
   {
     name: "Testimonios",

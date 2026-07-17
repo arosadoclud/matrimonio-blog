@@ -20,6 +20,13 @@ export default function CategoriesPage() {
       <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
         Temas para acompañar tu proceso
       </h1>
+      <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">
+        Cada matrimonio en crisis atraviesa un momento distinto: algunos necesitan primero recuperar la
+        comunicación, otros sanar una herida específica como la infidelidad, y otros simplemente encontrar
+        palabras para orar. Estas categorías agrupan el contenido del blog por el punto exacto en el que
+        podrías estar hoy, para que no tengas que leer todo el sitio para encontrar lo que aplica a tu
+        situación.
+      </p>
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {categories.map((category) => (
           <Link
