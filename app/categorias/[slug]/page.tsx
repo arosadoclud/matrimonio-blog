@@ -26,7 +26,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const hasPosts = getPostsByCategory(slug).length > 0;
 
   return {
-    title: `${category.name} | ${siteConfig.name}`,
+    // { absolute } opts out of the root layout's title.template
+    // ("%s | Restaura Tu Matrimonio"), which would otherwise double-append
+    // the brand suffix on top of the one built here.
+    title: { absolute: `${category.name} | ${siteConfig.name}` },
     description: ensureMetaDescription(category.description),
     alternates: { canonical: buildCanonicalUrl(`/categorias/${category.slug}`) },
     // Categorías sin artículos publicados aún no deben indexarse (contenido insuficiente).
