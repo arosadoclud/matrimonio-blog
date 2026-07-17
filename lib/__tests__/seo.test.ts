@@ -21,8 +21,14 @@ describe("seo helpers", () => {
     );
   });
 
-  it("drops the brand suffix when it would push the title past the SERP limit", () => {
+  it("falls back to a short brand suffix when the full one would push the title past the SERP limit", () => {
     const longTitle = "Cómo salvar tu matrimonio en 7 días: una guía práctica y bíblica";
-    expect(buildPageTitle(longTitle)).toBe(longTitle);
+    expect(buildPageTitle(longTitle)).toBe(`${longTitle} | RTM`);
+  });
+
+  it("drops the brand suffix entirely when even the short one would not fit", () => {
+    const veryLongTitle =
+      "Quién es Andrés Arango: el pastor y psicólogo detrás del método de restauración matrimonial";
+    expect(buildPageTitle(veryLongTitle)).toBe(veryLongTitle);
   });
 });
