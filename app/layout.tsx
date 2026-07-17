@@ -76,6 +76,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
       <head>
+        {/* Cover images come from several external CDNs (Unsplash, Pexels, Rawpixel,
+            the Kingdom Studio R2 bucket); preconnecting lets the browser open the
+            DNS/TLS connection for whichever one this page's LCP image uses before
+            it discovers the actual <img> tag, instead of paying that latency after.
+            Semrush flagged this as "Preconnect to Required Origins" on 9 pages. */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://images.pexels.com" />
+        <link rel="preconnect" href="https://images.rawpixel.com" />
+        <link rel="preconnect" href="https://pub-c35e24e567e64e278b36c6857a95ec25.r2.dev" />
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT ? (
           <meta name="google-adsense-account" content={process.env.NEXT_PUBLIC_ADSENSE_CLIENT} />
         ) : null}
