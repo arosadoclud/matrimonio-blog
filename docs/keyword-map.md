@@ -67,3 +67,36 @@ Ninguna de estas URLs cambió de slug ni se marcó `noindex` manualmente en esta
 1. "mi esposo ya no me ama" — falta el ángulo simétrico a `mi-esposa-dice-que-ya-no-me-ama`.
 2. "terapia de pareja cristiana" — diferenciarlo explícitamente de mentoría/consejería/programa pagado (encaja con la política editorial de la Fase 9).
 3. "cómo evitar el divorcio" — el post más cercano (`errores-que-debes-evitar-al-intentar-restaurar-tu-matrimonio`) es delgado (166 palabras); ampliarlo antes de intentar posicionar esta keyword de alto volumen.
+
+## Análisis de keywords relacionadas al término de marca "Restaura tu Matrimonio" (2026-07-17)
+
+Revisión de un export de "Related Keywords" / "Long-Tail Keywords" de una herramienta externa de investigación de palabras clave, buscado por el propietario alrededor del término de marca. Varios resultados de la herramienta eran falsos positivos (confusión "restaurar" / "restaurante", irrelevantes): "restaurantes para bodas en Santo Domingo", "restaurantes románticos Santo Domingo" (dos variantes), "cómo escribir carta formal" — se descartan, no requieren acción.
+
+**Ya cubiertas por contenido existente (verificado, sin acción adicional):**
+
+| Keyword buscada | URL que ya la cubre |
+|---|---|
+| cómo saber si Dios quiere restaurar mi matrimonio | `/blog/como-saber-si-dios-quiere-restaurar-mi-matrimonio` (coincidencia exacta) |
+| cómo salvar el matrimonio en 7 días | `/blog/como-salvar-tu-matrimonio-en-7-dias` (coincidencia exacta) |
+| oración para restaurar mi matrimonio | `/blog/oracion-para-restaurar-mi-matrimonio` (coincidencia exacta) |
+| Dios restaura tu matrimonio pdf | `/blog/dios-restaura-tu-matrimonio-guia-pdf-gratis` (coincidencia exacta) |
+| restaurando la confianza en tu matrimonio | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` |
+| restaurar matrimonio después de adulterio | `/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad`, `/blog/como-recuperar-a-mi-esposo-despues-de-una-infidelidad` |
+
+**Ajustadas en esta ronda (frase de la variante de búsqueda trabajada de forma natural en el copy, sin cambiar título/slug/keyword principal asignada):**
+
+| Keyword buscada | URL ajustada | Cambio |
+|---|---|---|
+| cómo restaurar mi matrimonio de la mano de Dios | `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Primer párrafo ahora dice "de la mano de Dios" en vez de solo "con la ayuda de Dios". |
+| 7 pasos iniciales para restaurar tu matrimonio | `/blog/primeros-pasos-para-restaurar-un-matrimonio-en-crisis` | Intro menciona "primeros pasos iniciales para restaurar tu matrimonio". No se afirma un conteo de "7 pasos" porque el post real tiene 4 secciones — evitar prometer una estructura que el contenido no tiene. |
+| cómo Dios quiere y va a restaurar tu matrimonio | `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Intro incorpora la frase de forma natural. |
+
+**Oportunidad real detectada, pendiente de decisión editorial (no técnica) — sin acción tomada:**
+
+- "matrimonios restaurados católicos" — el sitio hoy tiene un enfoque cristiano genérico/evangélico, sin contenido dirigido específicamente a audiencia católica. Podría ser una oportunidad de tráfico, pero implica una decisión de tono/enfoque doctrinal que corresponde al propietario, no al equipo técnico.
+
+**Descartadas (bajo volumen probable / no son de nuestra marca):**
+
+- "Restaura tu Matrimonio" — es el propio nombre de marca del sitio, no una keyword de terceros a conquistar.
+- "11 a prueba fuego dios restaura matrimonios" — frase inusual, probablemente el título de un libro o serie de otro autor.
+- "restaurar tu matrimonio Robert D. Jones" — autor/libro específico de un tercero, no contenido propio del sitio.
