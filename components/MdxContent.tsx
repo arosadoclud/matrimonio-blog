@@ -16,9 +16,14 @@ function renderInline(text: string) {
     }
 
     if (match[2]) {
-      nodes.push(<strong key={match.index}>{match[2]}</strong>);
+      // Recurse instead of pushing match[2] as a raw string: bold text that
+      // itself contains a link (e.g. "**[texto](/ruta)**") would otherwise
+      // render the literal "[texto](/ruta)" characters instead of a real
+      // <Link>, since the bold branch of the regex swallows everything
+      // up to the next "**" regardless of what's inside it.
+      nodes.push(<strong key={match.index}>{renderInline(match[2])}</strong>);
     } else if (match[3]) {
-      nodes.push(<em key={match.index}>{match[3]}</em>);
+      nodes.push(<em key={match.index}>{renderInline(match[3])}</em>);
     } else if (match[4] && match[5]) {
       const href = match[5];
       nodes.push(
