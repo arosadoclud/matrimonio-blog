@@ -34,6 +34,23 @@ describe("MdxContent", () => {
     expect(screen.queryByText(/\[Descarga la guía/)).not.toBeInTheDocument();
   });
 
+  it("renders a numbered list as a real <ol>, not a run-on paragraph", () => {
+    const source = ["## Pasos", ["1. Primer paso", "2. Segundo paso", "3. Tercer paso"].join("\n")].join(
+      "\n\n"
+    );
+
+    render(<MdxContent source={source} />);
+
+    const list = screen.getByRole("list");
+    expect(list.tagName).toBe("OL");
+    expect(screen.getByText("Primer paso")).toBeInTheDocument();
+    expect(screen.getByText("Segundo paso")).toBeInTheDocument();
+    expect(screen.getByText("Tercer paso")).toBeInTheDocument();
+    // Regression guard: the old fallback joined every line into one <p>,
+    // so "2." and "3." showed up as stray inline text before the item text.
+    expect(screen.queryByText(/^2\./)).not.toBeInTheDocument();
+  });
+
   it("renders headings, lists and paragraphs as before", () => {
     const source = ["## Un título", "- Primer punto", "- Segundo punto"].join("\n\n");
 

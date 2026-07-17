@@ -93,6 +93,20 @@ export function MdxContent({ source }: { source: string }) {
           );
         }
 
+        // Ordered lists ("1. ", "2. ", ...) had no block handler, so they
+        // fell through to the plain-paragraph case below: every line got
+        // joined with spaces into one run-on paragraph, with the "2.", "3."
+        // markers showing up as stray inline text instead of a real list.
+        if (lines.every((line) => /^\d+\.\s+/.test(line))) {
+          return (
+            <ol key={index}>
+              {lines.map((line) => (
+                <li key={line}>{renderInline(line.replace(/^\d+\.\s+/, ""))}</li>
+              ))}
+            </ol>
+          );
+        }
+
         return <p key={index}>{renderInline(lines.join(" "))}</p>;
       })}
     </>
