@@ -22,6 +22,11 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
   const toc = getTableOfContents(post.content);
   const faqs = getFaqs(post.content);
   const bodyWithoutFaqs = stripFaqSection(post.content);
+  // Posts under 600 words still get the top/bottom CTA and one ad slot, but
+  // skip the mid-article ad break + second CTA so shorter pages don't carry
+  // the same monetization density as a full-length article (AdSense flags
+  // pages that are ad-heavy relative to their actual content).
+  const isShortPost = post.wordCount < 600;
 
   return (
     <article>
@@ -108,10 +113,14 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
               <MdxContent source={bodyWithoutFaqs} />
             </div>
             <FaqSection faqs={faqs} />
-            <AdSlot className="mt-10" label="Anuncio de mitad de artículo" />
-            <div className="mt-10">
-              <FunnelCTA variant="middle" topic={post.category} slug={post.slug} />
-            </div>
+            {!isShortPost ? (
+              <>
+                <AdSlot className="mt-10" label="Anuncio de mitad de artículo" />
+                <div className="mt-10">
+                  <FunnelCTA variant="middle" topic={post.category} slug={post.slug} />
+                </div>
+              </>
+            ) : null}
             <div className="mt-10">
               <AuthorBox />
             </div>
