@@ -11,10 +11,10 @@ Basado en la lista de referencia de la Fase 25 y en las `keywords[]` reales del 
 | cómo salvar mi matrimonio | Transaccional / plan de acción | `/blog/como-salvar-tu-matrimonio-en-7-dias` | Pilar | MOFU | Descargar guía PDF | `dios-restaura-tu-matrimonio-guia-pdf-gratis` | Medio — mismo lead magnet, ver content-audit |
 | cómo recuperar mi matrimonio | Informacional | Sin URL asignada — oportunidad (se solapa hoy con `como-restaurar-mi-matrimonio-con-la-ayuda-de-dios`, no requiere URL nueva) | — | TOFU | Guía gratuita | — | — |
 | matrimonio en crisis | Informacional | `/categorias/crisis-matrimonial` | Categoría | TOFU | Conocer próximos pasos | `mi-esposa-dice-que-ya-no-me-ama`, `mi-esposo-ya-no-quiere-seguir-que-hago`, `que-hacer-si-mi-pareja-quiere-separarse`, `que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar` | Bajo |
-| cómo evitar el divorcio | Informacional / urgente | `/blog/errores-que-debes-evitar-al-intentar-restaurar-tu-matrimonio` | Satélite | MOFU | Guía gratuita | — | Bajo. Contenido hoy delgado (166 palabras) — ampliar antes de posicionar esta keyword en serio |
+| cómo evitar el divorcio | Informacional / urgente | `/blog/errores-que-debes-evitar-al-intentar-restaurar-tu-matrimonio` | Satélite | MOFU | Guía gratuita | — | Bajo. Ampliado a 700 palabras (2026-07-20), incluye la keyword en título/descripción/cuerpo/FAQ |
 | señales de que mi matrimonio se puede salvar | Informacional | `/blog/senales-de-que-un-matrimonio-puede-ser-restaurado` | Satélite | TOFU | Guía gratuita | `senales-de-esperanza-...`, `senales-de-que-dios-esta-trabajando-...` | **Medio** — 3 artículos de "señales" compiten, ver content-audit |
 | cómo reconstruir la confianza en el matrimonio | Informacional | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` | Satélite | MOFU | Guía gratuita | `dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` | Bajo. Contenido hoy delgado (204 palabras) — ampliar |
-| mi esposo ya no me ama | Informacional / crisis | Sin URL exacta — más cercano es `/blog/mi-esposa-dice-que-ya-no-me-ama` (ángulo esposa) | — | MOFU | Conocer próximos pasos | — | Oportunidad: crear el equivalente para "mi esposo ya no me ama" (hoy solo existe el ángulo "mi esposa dice que ya no me ama") |
+| mi esposo ya no me ama | Informacional / crisis | `/blog/mi-esposo-ya-no-me-ama` | Satélite | MOFU | Conocer próximos pasos | `/blog/mi-esposa-dice-que-ya-no-me-ama` | Bajo — publicado 2026-07-20, ángulo distinto (esposo) del ya existente (esposa) |
 | mi esposa ya no me ama | Informacional / crisis | `/blog/mi-esposa-dice-que-ya-no-me-ama` | Satélite | MOFU | Conocer próximos pasos | — | Bajo |
 | mi esposo quiere separarse | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse`, `/blog/mi-esposo-ya-no-quiere-seguir-que-hago` | Satélite | MOFU | Conocer próximos pasos | — | Bajo-Medio: dos posts cercanos, cada uno con matiz distinto (separación vs. "ya no quiere seguir luchando") |
 | mi esposa quiere separarse | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse` | Satélite | MOFU | Conocer próximos pasos | — | Bajo |
@@ -31,7 +31,7 @@ Basado en la lista de referencia de la Fase 25 y en las `keywords[]` reales del 
 | qué dice la biblia sobre restaurar el matrimonio | Informacional | `/blog/que-dice-la-biblia-sobre-restaurar-un-matrimonio` | Satélite | TOFU | Guía gratuita | `que-dice-la-biblia-sobre-el-perdon-en-el-matrimonio` | Bajo |
 | Dios puede restaurar mi matrimonio | Informacional / esperanza | `/blog/dios-puede-restaurar-lo-que-parece-perdido` | Satélite | TOFU | Descargar guía | `senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Bajo |
 | consejería matrimonial cristiana | Informacional / comercial ligera | `/recursos` | Landing de recursos | BOFU | Conocer el programa | `quien-es-andres-arango-pastor-y-psicologo-de-matrimonios` | Bajo |
-| terapia de pareja cristiana | Informacional / comercial ligera | Sin URL específica — cubierta parcialmente por `/recursos` | — | BOFU | Conocer el programa | — | Oportunidad: artículo dedicado a "terapia de pareja cristiana vs. mentoría vs. consejería pastoral" (ver política editorial, Fase 9) |
+| terapia de pareja cristiana | Informacional / comercial ligera | `/blog/terapia-de-pareja-cristiana` | Satélite | BOFU | Conocer el programa | `/recursos`, `quien-es-andres-arango-pastor-y-psicologo-de-matrimonios` | Bajo — publicado 2026-07-21, diferencia explícitamente orientación espiritual / mentoría / terapia profesional / emergencia, según la política editorial |
 | mentoría matrimonial cristiana | Comercial | `/recursos`, `quien-es-andres-arango-pastor-y-psicologo-de-matrimonios` | Landing + autoridad | BOFU | Conocer el programa | — | Bajo |
 | programa para restaurar el matrimonio | Comercial | `/recursos` (enlaza a `restauratumatrimonio.org` vía `siteConfig.hotmartUrl`) | Landing de recursos | BOFU | Conocer el programa de restauración matrimonial | `testimonios-reales-de-matrimonios-restaurados` | Bajo |
 | cómo reconstruir la confianza en el matrimonio | Informacional | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` | Satélite | MOFU | Guía gratuita | — | Bajo |
@@ -64,9 +64,14 @@ Ninguna de estas URLs cambió de slug ni se marcó `noindex` manualmente en esta
 
 ## Oportunidades de contenido nuevo detectadas (sin URL asignada)
 
-1. "mi esposo ya no me ama" — falta el ángulo simétrico a `mi-esposa-dice-que-ya-no-me-ama`.
-2. "terapia de pareja cristiana" — diferenciarlo explícitamente de mentoría/consejería/programa pagado (encaja con la política editorial de la Fase 9).
-3. "cómo evitar el divorcio" — el post más cercano (`errores-que-debes-evitar-al-intentar-restaurar-tu-matrimonio`) es delgado (166 palabras); ampliarlo antes de intentar posicionar esta keyword de alto volumen.
+Las tres oportunidades documentadas en la ronda anterior ya se resolvieron (ver tabla principal arriba): "mi esposo ya no me ama" (2026-07-20), "terapia de pareja cristiana" (2026-07-21) y la ampliación de "cómo evitar el divorcio" (2026-07-20).
+
+Huecos nuevos detectados en la auditoría del 2026-08-04 (AdSense/SEO/CRO), pendientes:
+
+1. "consejos para esposas cristianas en crisis" y "consejos para esposos cristianos en crisis" — sin cobertura, encajan en la categoría "Comunicación en pareja" (hoy solo 2 artículos, la más pequeña del sitio).
+2. "cómo hablar con mi esposo sin pelear" — mismo hueco de categoría.
+3. "mi pareja quiere el divorcio qué hago" — existe `que-hacer-si-mi-pareja-quiere-separarse` pero no menciona "divorcio" explícitamente en título/keyword principal.
+4. "devocional diario para parejas" — sin cobertura.
 
 ## Análisis de keywords relacionadas al término de marca "Restaura tu Matrimonio" (2026-07-17)
 
