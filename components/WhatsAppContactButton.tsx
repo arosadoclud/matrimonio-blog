@@ -21,7 +21,7 @@ export function WhatsAppContactButton({ placement }: { placement: "campaign" | "
       data-event="whatsapp_contact_click"
       data-label={placement}
       aria-label="Hablar con Restaura tu Matrimonio por WhatsApp"
-      className="fixed bottom-24 right-4 z-30 inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/25 bg-[#1f8f4e] px-4 py-3 text-sm font-bold text-white shadow-[0_12px_32px_rgba(12,72,37,0.28)] transition hover:bg-[#187841] focus:outline-none focus:ring-4 focus:ring-[#25d366]/30 sm:bottom-6 sm:right-6"
+      className="fixed bottom-32 right-4 z-30 inline-flex min-h-12 items-center gap-2 rounded-lg border border-white/25 bg-[#1f8f4e] px-4 py-3 text-sm font-bold text-white shadow-[0_12px_32px_rgba(12,72,37,0.28)] transition hover:bg-[#187841] focus:outline-none focus:ring-4 focus:ring-[#25d366]/30 sm:bottom-6 sm:right-6"
     >
       <svg
         aria-hidden="true"
