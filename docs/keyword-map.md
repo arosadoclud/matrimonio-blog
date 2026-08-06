@@ -18,6 +18,7 @@ Basado en la lista de referencia de la Fase 25 y en las `keywords[]` reales del 
 | mi esposa ya no me ama | Informacional / crisis | `/blog/mi-esposa-dice-que-ya-no-me-ama` | Satélite | MOFU | Conocer próximos pasos | — | Bajo |
 | mi esposo quiere separarse | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse`, `/blog/mi-esposo-ya-no-quiere-seguir-que-hago` | Satélite | MOFU | Conocer próximos pasos | — | Bajo-Medio: dos posts cercanos, cada uno con matiz distinto (separación vs. "ya no quiere seguir luchando") |
 | mi esposa quiere separarse | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse` | Satélite | MOFU | Conocer próximos pasos | — | Bajo |
+| mi pareja quiere el divorcio qué hago | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse` | Satélite | MOFU | Conocer próximos pasos | — | Bajo — misma URL que "separarse", con sección e intención propia dentro del artículo (ver nota abajo) |
 | mi pareja no quiere hablar conmigo | Informacional | `/blog/mi-pareja-no-quiere-hablar-conmigo` | Satélite | MOFU | Guía gratuita | `como-recuperar-la-comunicacion-con-mi-pareja` | Bajo |
 | cómo recuperar a mi esposa | Informacional | `/blog/como-recuperar-a-mi-esposa-despues-de-haberla-herido` | Satélite | MOFU | Guía gratuita | — | Bajo |
 | cómo recuperar a mi esposo | Informacional | `/blog/como-recuperar-a-mi-esposo-despues-de-una-infidelidad` | Satélite | MOFU | Guía gratuita | — | Bajo |
@@ -73,8 +74,10 @@ Huecos nuevos detectados en la auditoría del 2026-08-04 (AdSense/SEO/CRO):
 
 1. ~~"consejos para esposas cristianas en crisis" y "consejos para esposos cristianos en crisis"~~ — resuelto: `consejos-para-esposas-cristianas-en-crisis-matrimonial.mdx` y `consejos-para-esposos-cristianos-en-crisis-matrimonial.mdx` publicados (agosto 2026).
 2. ~~"cómo hablar con mi esposo sin pelear"~~ — resuelto: `como-hablar-con-mi-esposo-sin-pelear.mdx` publicado.
-3. "mi pareja quiere el divorcio qué hago" — pendiente. Existe `que-hacer-si-mi-pareja-quiere-separarse` pero no menciona "divorcio" explícitamente en título/keyword principal.
+3. ~~"mi pareja quiere el divorcio qué hago"~~ — resuelto (2026-08-06): `que-hacer-si-mi-pareja-quiere-separarse.mdx` ahora incluye la keyword en `keywords[]`, una sección dedicada que distingue separación de divorcio, y una entrada de FAQ. De paso se corrigió un bug real: el artículo tenía secciones ("Preguntas que conviene hacer con calma", "Cuándo una separación temporal requiere estructura", "Cómo sostener tu vida espiritual") colocadas *después* de `## Preguntas frecuentes`, que `stripFaqSection()` (`lib/posts.ts`) corta silenciosamente — nunca se renderizaban en la página real. Se reordenó el artículo dejando `## Preguntas frecuentes` como última sección, que es el patrón correcto que ya siguen el resto de artículos del sitio.
 4. "devocional diario para parejas" — pendiente, sin cobertura.
+
+**Nota técnica para contenido futuro:** cualquier `## Preguntas frecuentes` debe ir siempre como la última sección del artículo. `stripFaqSection()` en `lib/posts.ts` descarta todo lo que viene después de ese encabezado al renderizar el cuerpo del artículo (solo lo re-inserta como el bloque de acordeón FAQ vía `getFaqs()`), así que cualquier sección colocada después queda invisible en producción aunque exista en el `.mdx`.
 
 ## Análisis de keywords relacionadas al término de marca "Restaura tu Matrimonio" (2026-07-17)
 
