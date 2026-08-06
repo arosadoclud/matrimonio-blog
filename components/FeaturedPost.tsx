@@ -12,6 +12,7 @@ export function FeaturedPost({ post }: { post: PostMeta }) {
           alt={`Portada del artículo ${post.title}`}
           fill
           priority
+          quality={70}
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover"
         />

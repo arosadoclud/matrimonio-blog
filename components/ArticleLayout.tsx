@@ -70,6 +70,7 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             alt={`Portada del artículo ${post.title}`}
             fill
             priority
+            quality={70}
             sizes="100vw"
             className="object-cover"
           />
