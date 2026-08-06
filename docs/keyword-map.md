@@ -36,6 +36,9 @@ Basado en la lista de referencia de la Fase 25 y en las `keywords[]` reales del 
 | programa para restaurar el matrimonio | Comercial | `/recursos` (enlaza a `restauratumatrimonio.org` vía `siteConfig.hotmartUrl`) | Landing de recursos | BOFU | Conocer el programa de restauración matrimonial | `testimonios-reales-de-matrimonios-restaurados` | Bajo |
 | cómo reconstruir la confianza en el matrimonio | Informacional | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` | Satélite | MOFU | Guía gratuita | — | Bajo |
 | Dios está trabajando en tu matrimonio | Informacional / esperanza | `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Satélite | TOFU | Guía gratuita | `senales-de-esperanza-en-un-matrimonio-que-dios-esta-restaurando` | **Medio** — ver content-audit |
+| consejos para esposas cristianas | Informacional / crisis | `/blog/consejos-para-esposas-cristianas-en-crisis-matrimonial` | Satélite | MOFU | Conocer próximos pasos | — | Bajo — publicado 2026-08 |
+| consejos para esposos cristianos | Informacional / crisis | `/blog/consejos-para-esposos-cristianos-en-crisis-matrimonial` | Satélite | MOFU | Conocer próximos pasos | `/blog/primeros-pasos-para-restaurar-un-matrimonio-en-crisis`, `/blog/como-hablar-con-mi-esposo-sin-pelear` | Bajo — publicado 2026-08-06, ángulo distinto (esposo) del ya existente (esposa) |
+| cómo hablar con mi esposo sin pelear | Informacional | `/blog/como-hablar-con-mi-esposo-sin-pelear` | Satélite | MOFU | Guía gratuita | — | Bajo |
 
 ## Cómo se asignaron las CTAs por etapa de embudo
 
@@ -66,12 +69,12 @@ Ninguna de estas URLs cambió de slug ni se marcó `noindex` manualmente en esta
 
 Las tres oportunidades documentadas en la ronda anterior ya se resolvieron (ver tabla principal arriba): "mi esposo ya no me ama" (2026-07-20), "terapia de pareja cristiana" (2026-07-21) y la ampliación de "cómo evitar el divorcio" (2026-07-20).
 
-Huecos nuevos detectados en la auditoría del 2026-08-04 (AdSense/SEO/CRO), pendientes:
+Huecos nuevos detectados en la auditoría del 2026-08-04 (AdSense/SEO/CRO):
 
-1. "consejos para esposas cristianas en crisis" y "consejos para esposos cristianos en crisis" — sin cobertura, encajan en la categoría "Comunicación en pareja" (hoy solo 2 artículos, la más pequeña del sitio).
-2. "cómo hablar con mi esposo sin pelear" — mismo hueco de categoría.
-3. "mi pareja quiere el divorcio qué hago" — existe `que-hacer-si-mi-pareja-quiere-separarse` pero no menciona "divorcio" explícitamente en título/keyword principal.
-4. "devocional diario para parejas" — sin cobertura.
+1. ~~"consejos para esposas cristianas en crisis" y "consejos para esposos cristianos en crisis"~~ — resuelto: `consejos-para-esposas-cristianas-en-crisis-matrimonial.mdx` y `consejos-para-esposos-cristianos-en-crisis-matrimonial.mdx` publicados (agosto 2026).
+2. ~~"cómo hablar con mi esposo sin pelear"~~ — resuelto: `como-hablar-con-mi-esposo-sin-pelear.mdx` publicado.
+3. "mi pareja quiere el divorcio qué hago" — pendiente. Existe `que-hacer-si-mi-pareja-quiere-separarse` pero no menciona "divorcio" explícitamente en título/keyword principal.
+4. "devocional diario para parejas" — pendiente, sin cobertura.
 
 ## Análisis de keywords relacionadas al término de marca "Restaura tu Matrimonio" (2026-07-17)
 
