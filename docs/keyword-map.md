@@ -44,6 +44,8 @@ Basado en la lista de referencia de la Fase 25 y en las `keywords[]` reales del 
 | cómo hablar con mi esposo sin pelear | Informacional | `/blog/como-hablar-con-mi-esposo-sin-pelear` | Satélite | MOFU | Guía gratuita | — | Bajo |
 | siento que ya no amo a mi esposo / esposa | Informacional / crisis | `/blog/que-hacer-si-siento-que-ya-no-amo-a-mi-esposo-o-esposa` | Satélite | MOFU | Conocer próximos pasos | `dios-puede-sanar-lo-que-ustedes-ya-no-saben-como-arreglar` | Bajo — publicado 2026-08-10, ángulo invertido de "ya no me ama" (aquí la persona es quien perdió el sentimiento, no quien lo recibe) |
 | cansada/o de luchar sola/o por mi matrimonio | Informacional / crisis | `/blog/que-hacer-cuando-sientes-que-eres-el-unico-que-lucha-por-tu-matrimonio` | Satélite | MOFU | Conocer próximos pasos | `antes-de-rendirte-ora-por-tu-matrimonio-una-vez-mas` | Bajo — publicado 2026-08-10, dolor de esfuerzo desigual sin cobertura previa |
+| somos compañeros de cuarto no esposos | Informacional / crisis | `/blog/sentimos-que-somos-companeros-de-cuarto-no-esposos` | Satélite | MOFU | Conocer próximos pasos | `como-recuperar-la-comunicacion-con-mi-pareja`, `devocional-diario-para-parejas-cristianas` | Bajo-Medio — la frase ya se mencionaba de paso en `5-senales-de-que-tu-matrimonio-necesita-sanidad-emocional` (1 de 5 señales); este artículo la desarrolla como tema propio con intención MOFU |
+| miedo a que mi matrimonio termine | Informacional / crisis | `/blog/tengo-miedo-de-que-mi-matrimonio-termine` | Satélite | MOFU | Conocer próximos pasos | `oracion-para-restaurar-mi-matrimonio` | Bajo — publicado 2026-08-10, ángulo de ansiedad anticipatoria sin evento de crisis real, distinto de artículos donde ya hay una frase o decisión de separación dicha |
 | cómo saber si mi matrimonio ya no tiene arreglo | Informacional / decisión | `/blog/senales-de-que-un-matrimonio-puede-ser-restaurado` | Satélite | TOFU | Guía gratuita | — | Bajo — integrado 2026-08-10 en el artículo existente (título/keywords/FAQ) en vez de crear una 4ª URL en el clúster de "señales", ya marcado Medio por content-audit |
 
 ## Cómo se asignaron las CTAs por etapa de embudo
@@ -88,6 +90,10 @@ Dolores nuevos cubiertos el 2026-08-10 (a petición del propietario, para seguir
 6. "siento que ya no amo a mi esposo/esposa" — resuelto: `que-hacer-si-siento-que-ya-no-amo-a-mi-esposo-o-esposa.mdx`.
 7. "cansada/o de luchar sola/o por mi matrimonio" — resuelto: `que-hacer-cuando-sientes-que-eres-el-unico-que-lucha-por-tu-matrimonio.mdx`.
 8. "cómo saber si mi matrimonio ya no tiene arreglo" — resuelto sin URL nueva, integrado en `senales-de-que-un-matrimonio-puede-ser-restaurado.mdx` (ya casi cubría exactamente esta intención; crear una 4ª URL en el clúster de "señales" habría empeorado el riesgo de canibalización ya documentado como "Medio").
+9. "somos compañeros de cuarto no esposos" — resuelto: `sentimos-que-somos-companeros-de-cuarto-no-esposos.mdx` (2026-08-09).
+10. "miedo a que mi matrimonio termine" (ansiedad, sin evento de crisis real) — resuelto: `tengo-miedo-de-que-mi-matrimonio-termine.mdx` (2026-08-10).
+
+**Nota recurrente:** en los artículos 6, 7, 9 y 10 se escribió inicialmente "## Ruta recomendada" *después* de "## Preguntas frecuentes" — el mismo error de estructura que causó el bug documentado abajo. Se detectó y corrigió en los 4 casos antes de publicar, verificando con el script de auditoría cada vez.
 
 ## Bug de contenido oculto tras "## Preguntas frecuentes" (encontrado y corregido, 2026-08-10)
 
