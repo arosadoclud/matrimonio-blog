@@ -42,6 +42,9 @@ Basado en la lista de referencia de la Fase 25 y en las `keywords[]` reales del 
 | consejos para esposas cristianas | Informacional / crisis | `/blog/consejos-para-esposas-cristianas-en-crisis-matrimonial` | Satélite | MOFU | Conocer próximos pasos | — | Bajo — publicado 2026-08 |
 | consejos para esposos cristianos | Informacional / crisis | `/blog/consejos-para-esposos-cristianos-en-crisis-matrimonial` | Satélite | MOFU | Conocer próximos pasos | `/blog/primeros-pasos-para-restaurar-un-matrimonio-en-crisis`, `/blog/como-hablar-con-mi-esposo-sin-pelear` | Bajo — publicado 2026-08-06, ángulo distinto (esposo) del ya existente (esposa) |
 | cómo hablar con mi esposo sin pelear | Informacional | `/blog/como-hablar-con-mi-esposo-sin-pelear` | Satélite | MOFU | Guía gratuita | — | Bajo |
+| siento que ya no amo a mi esposo / esposa | Informacional / crisis | `/blog/que-hacer-si-siento-que-ya-no-amo-a-mi-esposo-o-esposa` | Satélite | MOFU | Conocer próximos pasos | `dios-puede-sanar-lo-que-ustedes-ya-no-saben-como-arreglar` | Bajo — publicado 2026-08-10, ángulo invertido de "ya no me ama" (aquí la persona es quien perdió el sentimiento, no quien lo recibe) |
+| cansada/o de luchar sola/o por mi matrimonio | Informacional / crisis | `/blog/que-hacer-cuando-sientes-que-eres-el-unico-que-lucha-por-tu-matrimonio` | Satélite | MOFU | Conocer próximos pasos | `antes-de-rendirte-ora-por-tu-matrimonio-una-vez-mas` | Bajo — publicado 2026-08-10, dolor de esfuerzo desigual sin cobertura previa |
+| cómo saber si mi matrimonio ya no tiene arreglo | Informacional / decisión | `/blog/senales-de-que-un-matrimonio-puede-ser-restaurado` | Satélite | TOFU | Guía gratuita | — | Bajo — integrado 2026-08-10 en el artículo existente (título/keywords/FAQ) en vez de crear una 4ª URL en el clúster de "señales", ya marcado Medio por content-audit |
 
 ## Cómo se asignaron las CTAs por etapa de embudo
 
@@ -79,7 +82,28 @@ Huecos nuevos detectados en la auditoría del 2026-08-04 (AdSense/SEO/CRO):
 3. ~~"mi pareja quiere el divorcio qué hago"~~ — resuelto (2026-08-06): `que-hacer-si-mi-pareja-quiere-separarse.mdx` ahora incluye la keyword en `keywords[]`, una sección dedicada que distingue separación de divorcio, y una entrada de FAQ. De paso se corrigió un bug real: el artículo tenía secciones ("Preguntas que conviene hacer con calma", "Cuándo una separación temporal requiere estructura", "Cómo sostener tu vida espiritual") colocadas *después* de `## Preguntas frecuentes`, que `stripFaqSection()` (`lib/posts.ts`) corta silenciosamente — nunca se renderizaban en la página real. Se reordenó el artículo dejando `## Preguntas frecuentes` como última sección, que es el patrón correcto que ya siguen el resto de artículos del sitio.
 4. ~~"devocional diario para parejas"~~ — resuelto (2026-08-06): nuevo artículo `devocional-diario-para-parejas-cristianas.mdx`, categoría "Oración por el matrimonio". Con esto se cierran los 4 huecos detectados en la auditoría del 2026-08-04.
 
-**Nota técnica para contenido futuro:** cualquier `## Preguntas frecuentes` debe ir siempre como la última sección del artículo. `stripFaqSection()` en `lib/posts.ts` descarta todo lo que viene después de ese encabezado al renderizar el cuerpo del artículo (solo lo re-inserta como el bloque de acordeón FAQ vía `getFaqs()`), así que cualquier sección colocada después queda invisible en producción aunque exista en el `.mdx`.
+Dolores nuevos cubiertos el 2026-08-10 (a petición del propietario, para seguir generando tráfico/conversión):
+
+5. "mi esposo me trata con indiferencia" / "mi esposa me ignora" — resuelto: `que-hacer-cuando-tu-pareja-te-trata-con-indiferencia.mdx`.
+6. "siento que ya no amo a mi esposo/esposa" — resuelto: `que-hacer-si-siento-que-ya-no-amo-a-mi-esposo-o-esposa.mdx`.
+7. "cansada/o de luchar sola/o por mi matrimonio" — resuelto: `que-hacer-cuando-sientes-que-eres-el-unico-que-lucha-por-tu-matrimonio.mdx`.
+8. "cómo saber si mi matrimonio ya no tiene arreglo" — resuelto sin URL nueva, integrado en `senales-de-que-un-matrimonio-puede-ser-restaurado.mdx` (ya casi cubría exactamente esta intención; crear una 4ª URL en el clúster de "señales" habría empeorado el riesgo de canibalización ya documentado como "Medio").
+
+## Bug de contenido oculto tras "## Preguntas frecuentes" (encontrado y corregido, 2026-08-10)
+
+Al revisar el artículo del punto 3 se detectó que `stripFaqSection()` (`lib/posts.ts`) corta todo el contenido que viene *después* de `## Preguntas frecuentes` al renderizar el cuerpo del artículo — solo reinserta esa sección como el acordeón de FAQ vía `getFaqs()`. Cualquier `## sección` colocada después del FAQ queda invisible en la página real, aunque exista en el `.mdx` y cuente para el conteo de palabras (con lo cual algunos artículos podían aparecer "indexables" por word count sin que Google realmente viera ese texto en el HTML renderizado).
+
+Se auditó **todo** `content/posts/*.mdx` con un script y se encontraron **16 artículos** afectados, no solo el de separación/divorcio. En la mayoría el contenido perdido era menor (un CTA o "Ruta recomendada" de un párrafo), pero varios perdían secciones sustanciales completas:
+
+- `como-orar-cuando-mi-matrimonio-esta-destruido.mdx` — 7 secciones invisibles, incluida la oración principal del artículo. Además tenía **dos** encabezados `## Preguntas frecuentes` separados en el original — se fusionaron en uno solo.
+- `mi-esposa-dice-que-ya-no-me-ama.mdx` — perdía "Un plan inicial de siete días".
+- `como-recuperar-a-mi-esposa-despues-de-haberla-herido.mdx`, `como-recuperar-a-mi-esposo-despues-de-una-infidelidad.mdx`, `dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad.mdx`, `mi-esposo-ya-no-quiere-seguir-que-hago.mdx`, `mi-pareja-no-quiere-hablar-conmigo.mdx`, `versiculos-para-salvar-mi-matrimonio.mdx`, `senales-de-que-un-matrimonio-puede-ser-restaurado.mdx` — 3-4 secciones cada uno.
+- El resto (`como-restaurar-mi-matrimonio-con-la-ayuda-de-dios.mdx`, `oracion-para-restaurar-mi-matrimonio.mdx`, `que-dice-la-biblia-sobre-el-perdon-en-el-matrimonio.mdx`) solo perdían un CTA de cierre.
+- Los 3 artículos nuevos de esta misma ronda (`que-hacer-cuando-tu-pareja-te-trata-con-indiferencia.mdx`, `que-hacer-si-siento-que-ya-no-amo-a-mi-esposo-o-esposa.mdx`, `que-hacer-cuando-sientes-que-eres-el-unico-que-lucha-por-tu-matrimonio.mdx`) se escribieron con el mismo error y se corrigieron antes de publicarse.
+
+Los 16 se reordenaron dejando `## Preguntas frecuentes` como última sección en todos los casos, sin perder ni alterar ningún párrafo — solo se movió el bloque de FAQ al final (y se fusionó el encabezado duplicado en `como-orar-cuando-mi-matrimonio-esta-destruido.mdx`). Verificado con un script que confirma que ningún post del sitio tiene ya contenido después del encabezado de FAQ, ni encabezados de FAQ duplicados.
+
+**Nota técnica para contenido futuro:** cualquier `## Preguntas frecuentes` debe ir siempre como la última sección del artículo, y solo debe existir un único encabezado de ese tipo por artículo. `stripFaqSection()` en `lib/posts.ts` descarta todo lo que viene después de ese encabezado al renderizar el cuerpo del artículo (solo lo re-inserta como el bloque de acordeón FAQ vía `getFaqs()`), así que cualquier sección colocada después queda invisible en producción aunque exista en el `.mdx`.
 
 ## Análisis de keywords relacionadas al término de marca "Restaura tu Matrimonio" (2026-07-17)
 
