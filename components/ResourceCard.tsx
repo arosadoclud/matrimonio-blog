@@ -56,6 +56,7 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
         </ul>
         <a
           href={hotmartUrl}
+          rel="sponsored nofollow"
           data-cta-id="recursos_page_cta"
           onClick={() =>
             trackHotmartCtaClick("recursos_page_cta", {
@@ -78,11 +79,12 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
           {ctaText}
         </a>
         <p className="mt-3 text-xs leading-5 text-[#5c5c5c]">
-          Te llevamos a restauratumatrimonio.org, el sitio oficial del programa.
+          Enlace de afiliado a restauratumatrimonio.org, el sitio oficial del programa.
         </p>
         <p className="mt-2 text-xs leading-5 text-[#5c5c5c]">
-          Aviso: este sitio puede recibir una comisión si compras desde enlaces de afiliado, sin
-          costo adicional para ti.
+          Aviso: este sitio puede recibir una comisión si compras desde este enlace de afiliado, sin
+          costo adicional para ti. El programa no garantiza resultados y no sustituye terapia ni
+          ayuda profesional — es un complemento, no un reemplazo.
         </p>
       </div>
     </section>
