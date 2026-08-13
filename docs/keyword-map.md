@@ -157,3 +157,15 @@ Revisión de un export de "Related Keywords" / "Long-Tail Keywords" de una herra
 - "Restaura tu Matrimonio" — es el propio nombre de marca del sitio, no una keyword de terceros a conquistar.
 - "11 a prueba fuego dios restaura matrimonios" — frase inusual, probablemente el título de un libro o serie de otro autor.
 - "restaurar tu matrimonio Robert D. Jones" — autor/libro específico de un tercero, no contenido propio del sitio.
+
+## Categoría "Preguntas frecuentes" vacía — resuelta (2026-08-13)
+
+La categoría "Preguntas frecuentes" (`lib/site.ts`, slug `preguntas-frecuentes`) existía en la lista de categorías del sitio desde hace tiempo, pero ningún artículo la usaba — la página `/categorias/preguntas-frecuentes` mostraba "Pronto publicaremos artículos en esta categoría." El propietario detectó esto navegando el sitio.
+
+Se publicó un artículo pilar nuevo para llenarla: `preguntas-frecuentes-sobre-matrimonios-en-crisis.mdx` (categoría "Preguntas frecuentes", 2026-08-13, ~960 palabras). Reúne 11 preguntas comunes y dolorosas que ya aparecían dispersas en distintos artículos del sitio (miedo, sentir que ya no se ama, esfuerzo desigual, perdón, cuándo buscar ayuda profesional, considerar el divorcio, etc.), con respuestas breves y enlaces a los artículos que profundizan cada tema — no duplica el contenido de esos artículos, funciona como punto de entrada/índice temático.
+
+| Keyword | Intención | URL asignada | Tipo de contenido | Etapa del embudo | CTA | Contenidos secundarios | Riesgo de canibalización |
+|---|---|---|---|---|---|---|---|
+| preguntas frecuentes matrimonio en crisis | Informacional amplia | `/blog/preguntas-frecuentes-sobre-matrimonios-en-crisis` | Pilar | TOFU | Guía gratuita | Enlaza a la mayoría de artículos de "Crisis matrimonial" y "Perdón y reconciliación" | Bajo — es un índice temático, no compite por las mismas keywords long-tail de cada artículo enlazado |
+
+Con esto la categoría deja de estar vacía y ya no debería mostrar el mensaje "Pronto publicaremos artículos en esta categoría" (`app/categorias/[slug]/page.tsx` deja de aplicar `noindex` automáticamente porque `getPostsByCategory(slug).length > 0`).
