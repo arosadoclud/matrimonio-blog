@@ -90,6 +90,7 @@ export function FunnelCTA(props: FunnelCTAProps) {
       </p>
       <a
         href={hotmartUrl}
+        rel="sponsored nofollow"
         data-cta-id="article_bottom_cta"
         onClick={() =>
           trackHotmartCtaClick("article_bottom_cta", {
@@ -106,7 +107,9 @@ export function FunnelCTA(props: FunnelCTAProps) {
         {bottomCtaText}
       </a>
       <p className="mt-3 text-xs text-white/60">
-        Te llevamos a restauratumatrimonio.org, el sitio oficial del programa.
+        Enlace de afiliado a restauratumatrimonio.org, el sitio oficial del programa. Podemos recibir
+        una comisión si compras desde este enlace, sin costo adicional para ti. El programa no
+        garantiza resultados y no sustituye terapia ni ayuda profesional.
       </p>
     </section>
   );
