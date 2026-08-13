@@ -95,6 +95,20 @@ Dolores nuevos cubiertos el 2026-08-10 (a petición del propietario, para seguir
 
 **Nota recurrente:** en los artículos 6, 7, 9 y 10 se escribió inicialmente "## Ruta recomendada" *después* de "## Preguntas frecuentes" — el mismo error de estructura que causó el bug documentado abajo. Se detectó y corrigió en los 4 casos antes de publicar, verificando con el script de auditoría cada vez.
 
+## Rechazo de AdSense por "contenido de bajo valor" — remediación (2026-08-12/13)
+
+Google AdSense rechazó `restauratumatrimonio-blog.com` con el motivo "Contenido de bajo valor" poco después de publicar los 5 artículos de dolor de la ronda anterior (puntos 5, 6, 7, 9, 10 arriba) en un solo día. Ningún artículo individual estaba por debajo del mínimo de 300 palabras, pero los 5 compartían un esqueleto casi idéntico: mismo orden de secciones ("por qué pasa" → "qué no ayuda" → "qué sí puedes hacer" → "cuándo buscar ayuda" → "Ruta recomendada" → FAQ de 3 preguntas), frases repetidas casi textuales ("no es debilidad sentir esto", "busca ayuda pastoral o profesional"), y dos de ellos con la misma apertura literal ("No hay X. No hay Y. No hay Z."). Esto coincide con el patrón que Google llama internamente "scaled content abuse" — muchas páginas casi idénticas publicadas muy rápido, independientemente de que cada una esté bien escrita por separado.
+
+Se reescribieron los 5 artículos (`que-hacer-cuando-tu-pareja-te-trata-con-indiferencia.mdx`, `que-hacer-si-siento-que-ya-no-amo-a-mi-esposo-o-esposa.mdx`, `que-hacer-cuando-sientes-que-eres-el-unico-que-lucha-por-tu-matrimonio.mdx`, `sentimos-que-somos-companeros-de-cuarto-no-esposos.mdx`, `tengo-miedo-de-que-mi-matrimonio-termine.mdx`) para diferenciarlos de verdad:
+
+- Encabezados de sección únicos en cada uno (ya no hay dos artículos que compartan el mismo nombre de sección).
+- Número de secciones y de preguntas de FAQ variado (2-4 secciones, 2-3 preguntas) en vez del mismo conteo fijo siempre.
+- Aperturas reescritas para eliminar el patrón repetido "No hay X. No hay Y."
+- Sección "Ruta recomendada" eliminada como encabezado fijo — los enlaces internos ahora se integran de forma natural dentro del último párrafo de contenido, en vez de repetir la misma estructura de cierre en los 5.
+- Se conservó todo el contenido pastoral/bíblico útil de cada uno; el cambio fue de forma y estructura, no de sustancia.
+
+**Pausa de publicación:** no se publicó contenido nuevo mientras se investigaba y corregia esto. Antes de escribir más artículos de dolor, evaluar: (1) espaciar publicaciones en el tiempo en vez de publicar varios el mismo día, (2) variar deliberadamente la estructura de cada artículo nuevo respecto a los últimos publicados, (3) esperar a que Google vuelva a rastrear el sitio y solicitar una nueva revisión de AdSense antes de retomar el ritmo anterior.
+
 ## Bug de contenido oculto tras "## Preguntas frecuentes" (encontrado y corregido, 2026-08-10)
 
 Al revisar el artículo del punto 3 se detectó que `stripFaqSection()` (`lib/posts.ts`) corta todo el contenido que viene *después* de `## Preguntas frecuentes` al renderizar el cuerpo del artículo — solo reinserta esa sección como el acordeón de FAQ vía `getFaqs()`. Cualquier `## sección` colocada después del FAQ queda invisible en la página real, aunque exista en el `.mdx` y cuente para el conteo de palabras (con lo cual algunos artículos podían aparecer "indexables" por word count sin que Google realmente viera ese texto en el HTML renderizado).
