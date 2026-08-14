@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FunnelCTA } from "@/components/FunnelCTA";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { FaqSection } from "@/components/FaqSection";
+import { KidsBooksPromo } from "@/components/KidsBooksPromo";
 import { MdxContent } from "@/components/MdxContent";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { VerseBox } from "@/components/VerseBox";
@@ -103,12 +104,18 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
                 ))}
               </nav>
             </div>
+            <div className="mt-6">
+              <KidsBooksPromo />
+            </div>
           </aside>
           <div>
             <div className="mt-2">
               <FunnelCTA variant="top" />
             </div>
             <VerseBox />
+            <div className="mt-8 lg:hidden">
+              <KidsBooksPromo />
+            </div>
             <AdSlot className="mt-8" label="Anuncio recomendado" />
             <div className="prose-article mt-8">
               <MdxContent source={bodyWithoutFaqs} />
