@@ -18,7 +18,12 @@ export function FeaturedPost({ post }: { post: PostMeta }) {
         />
       </div>
       <div className="p-7 sm:p-10">
-        <CategoryBadge category={post.category} />
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="inline-flex w-fit items-center rounded-full bg-[#FFF7E8] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
+            Destacado · Más leído
+          </span>
+          <CategoryBadge category={post.category} />
+        </div>
         <h2 className="mt-5 font-[var(--font-display)] text-4xl font-bold leading-tight text-[#5A0F18]">
           {post.title}
         </h2>
