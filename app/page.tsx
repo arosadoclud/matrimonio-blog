@@ -53,15 +53,15 @@ export default function HomePage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="rounded-[8px] border border-[#D4AF37]/35 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                className="flex flex-col rounded-[8px] border border-[#D4AF37]/35 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
                   Pilar {index + 1}
                 </span>
-                <h3 className="mt-3 font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
+                <h3 className="mt-3 line-clamp-3 font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
                   {post.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-[#1F1F1F]/64">{post.description}</p>
+                <p className="mt-3 line-clamp-3 text-sm leading-6 text-[#1F1F1F]/64">{post.description}</p>
               </Link>
             ))}
           </div>
