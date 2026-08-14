@@ -84,6 +84,7 @@ function parsePost(fileName: string): Post | null {
       slug,
       keywords: Array.isArray(data.keywords) ? data.keywords.map(String) : [],
       contentType: data.contentType === "pillar" ? "pillar" : "satellite",
+      homeFeaturedOrder: data.homeFeaturedOrder ? Number(data.homeFeaturedOrder) : undefined,
     };
 
     return {
@@ -159,7 +160,13 @@ export function getRelatedPosts(post: Post, limit = 3): Post[] {
 }
 
 export function getPillarPosts(): Post[] {
-  return getAllPosts().filter((post) => post.contentType === "pillar");
+  // getAllPosts() is already date-desc, which this sort preserves as the
+  // tiebreaker/fallback order (Array.prototype.sort is stable) -- only
+  // posts with an explicit homeFeaturedOrder jump ahead of that, in
+  // ascending order.
+  return getAllPosts()
+    .filter((post) => post.contentType === "pillar")
+    .sort((a, b) => (a.homeFeaturedOrder ?? Infinity) - (b.homeFeaturedOrder ?? Infinity));
 }
 
 export function getIndexablePosts(): Post[] {

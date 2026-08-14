@@ -19,6 +19,13 @@ export type PostMeta = {
   slug: string;
   keywords: string[];
   contentType?: "pillar" | "satellite";
+  // Manual override for ordering pillar posts in the homepage "Empieza
+  // aquí" section. Lower numbers show first; posts without it fall back to
+  // date-desc ordering, sorted after every ranked post. Without this, a
+  // brand-new pillar post (like an index/FAQ page with no proven traffic
+  // yet) would bump a highest-performing pillar out of the featured slot
+  // just for being newest -- see docs/keyword-map.md.
+  homeFeaturedOrder?: number;
 };
 
 export type Post = PostMeta & {
