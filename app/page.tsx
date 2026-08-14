@@ -23,7 +23,15 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const posts = getAllPosts();
   const pillarPosts = getPillarPosts();
-  const [featuredPost, ...recentPosts] = posts;
+  const featuredPillarSlugs = new Set(pillarPosts.slice(0, 3).map((post) => post.slug));
+  // Reference/index-style content (like the FAQ hub) reads well as a small
+  // grid card but not as the single large "featured" hero -- it has no
+  // narrative to preview. Also skip whatever is already shown as a
+  // "Destacado" pillar above so the same article doesn't appear twice.
+  const eligibleForFeatured = posts.filter(
+    (post) => !featuredPillarSlugs.has(post.slug) && post.category !== "Preguntas frecuentes"
+  );
+  const [featuredPost, ...recentPosts] = eligibleForFeatured;
 
   return (
     <>
