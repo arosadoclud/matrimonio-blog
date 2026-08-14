@@ -7,8 +7,8 @@ export function NewsletterBox() {
         7 días de oración por la restauración de tu matrimonio
       </p>
       <p className="mt-2 text-sm leading-6 text-[#1F1F1F]/70">
-        Lead magnet preparado para captar suscriptores con una secuencia devocional de oración,
-        reflexión bíblica y pasos prácticos durante una semana.
+        Una secuencia devocional gratuita de oración, reflexión bíblica y pasos prácticos para
+        acompañarte durante siete días.
       </p>
       <NewsletterForm />
     </section>
