@@ -23,7 +23,15 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const posts = getAllPosts();
   const pillarPosts = getPillarPosts();
-  const [featuredPost, ...recentPosts] = posts;
+  const featuredPillarSlugs = new Set(pillarPosts.slice(0, 3).map((post) => post.slug));
+  // Reference/index-style content (like the FAQ hub) reads well as a small
+  // grid card but not as the single large "featured" hero -- it has no
+  // narrative to preview. Also skip whatever is already shown as a
+  // "Destacado" pillar above so the same article doesn't appear twice.
+  const eligibleForFeatured = posts.filter(
+    (post) => !featuredPillarSlugs.has(post.slug) && post.category !== "Preguntas frecuentes"
+  );
+  const [featuredPost, ...recentPosts] = eligibleForFeatured;
 
   return (
     <>
@@ -36,7 +44,7 @@ export default function HomePage() {
               Una ruta clara si tu matrimonio está en crisis
             </h2>
             <p className="mt-4 leading-7 text-[#1F1F1F]/70">
-              Si llegaste con dolor, empieza por estas tres guías. Están pensadas para ordenar el
+              Empieza por los 3 artículos más leídos del sitio. Están pensados para ordenar el
               corazón, orar con dirección y entender el perdón bíblico sin negar la realidad.
             </p>
             <Link
@@ -55,8 +63,8 @@ export default function HomePage() {
                 href={`/blog/${post.slug}`}
                 className="flex flex-col rounded-[8px] border border-[#D4AF37]/35 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
-                  Pilar {index + 1}
+                <span className="inline-flex w-fit items-center rounded-full bg-[#FFF7E8] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
+                  Destacado #{index + 1}
                 </span>
                 <h3 className="mt-3 line-clamp-3 font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
                   {post.title}
