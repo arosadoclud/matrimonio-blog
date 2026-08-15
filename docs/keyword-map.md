@@ -169,3 +169,24 @@ Se publicó un artículo pilar nuevo para llenarla: `preguntas-frecuentes-sobre-
 | preguntas frecuentes matrimonio en crisis | Informacional amplia | `/blog/preguntas-frecuentes-sobre-matrimonios-en-crisis` | Pilar | TOFU | Guía gratuita | Enlaza a la mayoría de artículos de "Crisis matrimonial" y "Perdón y reconciliación" | Bajo — es un índice temático, no compite por las mismas keywords long-tail de cada artículo enlazado |
 
 Con esto la categoría deja de estar vacía y ya no debería mostrar el mensaje "Pronto publicaremos artículos en esta categoría" (`app/categorias/[slug]/page.tsx` deja de aplicar `noindex` automáticamente porque `getPostsByCategory(slug).length > 0`).
+
+## Cadencia de publicación y contenido para audiencia católica (2026-08-15)
+
+A petición del propietario, se retoma la publicación de contenido nuevo con un ritmo explícito de **1 artículo cada 2-3 días** (nunca varios el mismo día), variando deliberadamente la estructura de cada uno respecto al anterior — la lección directa del rechazo de AdSense documentado arriba. Se configuró además una rutina automática que retoma este trabajo en ese ritmo (ver notas de sesión).
+
+Se resolvió la oportunidad pendiente marcada como "decisión editorial, no técnica" en la sección de análisis de keywords (2026-07-17): **"matrimonios restaurados católicos"**. El propietario confirmó que sí quiere perseguir esta audiencia.
+
+| Keyword | Intención | URL asignada | Tipo de contenido | Etapa del embudo | CTA | Contenidos secundarios | Riesgo de canibalización |
+|---|---|---|---|---|---|---|---|
+| matrimonios restaurados católicos | Informacional / identidad de audiencia | `/blog/como-la-fe-catolica-puede-ayudar-a-restaurar-tu-matrimonio` | Satélite | TOFU | Guía gratuita | `oracion-para-restaurar-mi-matrimonio`, `como-restaurar-mi-matrimonio-con-la-ayuda-de-dios`, `terapia-de-pareja-cristiana` | Bajo — es el primer y único artículo del sitio con enfoque doctrinal católico específico |
+
+Contenido publicado (2026-08-15): `como-la-fe-catolica-puede-ayudar-a-restaurar-tu-matrimonio.mdx`, categoría "Restauración matrimonial". Cubre elementos específicamente católicos que el resto del sitio (de tono cristiano genérico/evangélico) no menciona:
+
+- El matrimonio como sacramento según el Catecismo de la Iglesia Católica (CIC 1644, citado textualmente, verificado).
+- Mateo 19:6 citado en la traducción de la Biblia de Jerusalén (no RVR1960, para sonar auténtico a la audiencia católica) — texto verificado por búsqueda antes de usarlo.
+- Santa Mónica como patrona de los matrimonios difíciles (historia y patronazgo verificados).
+- La confesión y la Eucaristía como fuente de gracia.
+- Retrouvaille, programa católico real de acompañamiento a matrimonios en crisis (existencia, origen en Quebec 1977 y alcance verificados) — con nota aclaratoria de que no sustituye ayuda profesional en casos de riesgo.
+- FAQ propia sobre nulidad matrimonial vs. divorcio civil, con la aclaración de no ofrecer asesoría canónica — solo orientación general, remitiendo a párroco o canonista para casos concretos.
+
+Imagen: Pexels 13983353 (manos en oración con rosario), verificada visualmente antes de usarla.
