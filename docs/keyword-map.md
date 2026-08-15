@@ -184,9 +184,11 @@ Contenido publicado (2026-08-15): `como-la-fe-catolica-puede-ayudar-a-restaurar-
 
 - El matrimonio como sacramento según el Catecismo de la Iglesia Católica (CIC 1644, citado textualmente, verificado).
 - Mateo 19:6 citado en la traducción de la Biblia de Jerusalén (no RVR1960, para sonar auténtico a la audiencia católica) — texto verificado por búsqueda antes de usarlo.
-- Santa Mónica como patrona de los matrimonios difíciles (historia y patronazgo verificados).
+- Cristo como el único que restaura (Juan 15:5 y Filipenses 4:13, RVR1960, verificados) — no una devoción, programa o esfuerzo propio.
 - La confesión y la Eucaristía como fuente de gracia.
 - Retrouvaille, programa católico real de acompañamiento a matrimonios en crisis (existencia, origen en Quebec 1977 y alcance verificados) — con nota aclaratoria de que no sustituye ayuda profesional en casos de riesgo.
 - FAQ propia sobre nulidad matrimonial vs. divorcio civil, con la aclaración de no ofrecer asesoría canónica — solo orientación general, remitiendo a párroco o canonista para casos concretos.
+
+**Corrección (2026-08-15, mismo día):** la primera versión incluía una sección sobre Santa Mónica como patrona de los matrimonios difíciles. El propietario pidió explícitamente no incluir contenido sobre santos ni intercesión de santos en el sitio — su postura es que únicamente Jesucristo restaura. Se reemplazó esa sección por una centrada en Cristo como fuente de toda restauración, y se retiró "Santa Mónica matrimonio" de las keywords del artículo. **Nota editorial para contenido futuro con enfoque católico:** evitar contenido centrado en devoción a santos; mantener el enfoque cristocéntrico incluso al cubrir elementos específicamente católicos (sacramentos, Catecismo, programas de la Iglesia).
 
 Imagen: Pexels 13983353 (manos en oración con rosario), verificada visualmente antes de usarla.
