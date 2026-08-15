@@ -33,7 +33,11 @@ export default function HomePage() {
   );
   const flagshipFeatured = eligibleForFeatured.find((post) => post.homeFlagshipFeatured);
   const featuredPost = flagshipFeatured ?? eligibleForFeatured[0];
-  const recentPosts = eligibleForFeatured.filter((post) => post.slug !== featuredPost?.slug);
+  // Stable sort preserves the date-desc order from eligibleForFeatured as
+  // the fallback/tiebreaker for posts without an explicit homeRecentOrder.
+  const recentPosts = eligibleForFeatured
+    .filter((post) => post.slug !== featuredPost?.slug)
+    .sort((a, b) => (a.homeRecentOrder ?? Infinity) - (b.homeRecentOrder ?? Infinity));
 
   return (
     <>
