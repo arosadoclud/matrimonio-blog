@@ -85,6 +85,7 @@ function parsePost(fileName: string): Post | null {
       keywords: Array.isArray(data.keywords) ? data.keywords.map(String) : [],
       contentType: data.contentType === "pillar" ? "pillar" : "satellite",
       homeFeaturedOrder: data.homeFeaturedOrder ? Number(data.homeFeaturedOrder) : undefined,
+      homeFlagshipFeatured: data.homeFlagshipFeatured === "true",
     };
 
     return {

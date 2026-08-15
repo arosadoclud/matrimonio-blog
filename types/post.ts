@@ -26,6 +26,13 @@ export type PostMeta = {
   // yet) would bump a highest-performing pillar out of the featured slot
   // just for being newest -- see docs/keyword-map.md.
   homeFeaturedOrder?: number;
+  // Manual override for the single large "Destacado" card on the homepage
+  // (components/FeaturedPost.tsx). Without this, that slot defaults to the
+  // newest eligible satellite post by date -- which would make every new
+  // article bump whatever was actually performing well. Set this on the
+  // post that real Search Console data shows as the top-clicked satellite
+  // (see docs/keyword-map.md) and it stays pinned until updated by hand.
+  homeFlagshipFeatured?: boolean;
 };
 
 export type Post = PostMeta & {

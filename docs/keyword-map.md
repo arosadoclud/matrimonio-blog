@@ -2,6 +2,16 @@
 
 Basado en la lista de referencia de la Fase 25 y en las `keywords[]` reales del frontmatter de cada post (`content/posts/*.mdx`). Cuando una keyword de referencia no tiene todavía una URL específica que la cubra bien, se marca "Sin URL asignada — oportunidad" en vez de forzar una asignación artificial.
 
+## Card "Destacado · Más leído" de la home (2026-08-15)
+
+El card grande destacado de `app/page.tsx` (componente `FeaturedPost`) elegía automáticamente el artículo satélite más reciente por fecha, sin ningún dato real de tráfico detrás — así que cada artículo nuevo heredaba la etiqueta "más leído" el mismo día que se publicaba, sin haber sido leído todavía.
+
+Se pidió conectar esto a Google Search Console. El sitio ya tiene la propiedad verificada (`restauratumatrimonio-blog.com`), pero el tráfico real es todavía mínimo (10-12 clics en 28 días a la fecha de este cambio) — no hay suficiente volumen para justificar el esfuerzo de mantener una integración en vivo con la Search Console API (cuenta de servicio de Google Cloud, credenciales en variables de entorno, caché/revalidación, manejo de errores si la API falla). En vez de eso, se ancló manualmente el card destacado al artículo satélite que las Estadísticas de Search Console mostraban como más clicado en ese momento (excluyendo el pilar "Cómo salvar tu matrimonio en 7 días", que ya se muestra arriba como Destacado #1): **`pequenas-acciones-que-pueden-comenzar-una-restauracion-matrimonial`**.
+
+Mecanismo: campo `homeFlagshipFeatured: true` en el frontmatter (`types/post.ts`, `lib/posts.ts`, usado en `app/page.tsx`) — mismo patrón que `homeFeaturedOrder` ya usa para los 3 pilares. Mientras ese campo esté puesto, ningún artículo nuevo puede desplazar el card destacado solo por ser el más reciente.
+
+**Pendiente / a revisar cuando haya más tráfico:** si el sitio crece lo suficiente como para que valga la pena, construir la integración real con la Search Console API (`googleapis`, cuenta de servicio con acceso de lectura a la propiedad) para automatizar esta elección en vez de fijarla a mano. Hasta entonces, si se quiere cambiar cuál artículo lleva el flagship, hay que revisar Search Console → Estadísticas → "Tu contenido" y mover el campo `homeFlagshipFeatured: true` al MDX correspondiente (quitándolo del anterior).
+
 | Keyword | Intención | URL asignada | Tipo de contenido | Etapa del embudo | CTA | Contenidos secundarios | Riesgo de canibalización |
 |---|---|---|---|---|---|---|---|
 | cómo restaurar mi matrimonio | Informacional amplia | `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Pilar | TOFU | Guía gratuita | Todos los satélites de "Restauración matrimonial" | Bajo (es el pilar único de esta keyword) |
