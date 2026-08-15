@@ -31,7 +31,9 @@ export default function HomePage() {
   const eligibleForFeatured = posts.filter(
     (post) => !featuredPillarSlugs.has(post.slug) && post.category !== "Preguntas frecuentes"
   );
-  const [featuredPost, ...recentPosts] = eligibleForFeatured;
+  const flagshipFeatured = eligibleForFeatured.find((post) => post.homeFlagshipFeatured);
+  const featuredPost = flagshipFeatured ?? eligibleForFeatured[0];
+  const recentPosts = eligibleForFeatured.filter((post) => post.slug !== featuredPost?.slug);
 
   return (
     <>
