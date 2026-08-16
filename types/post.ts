@@ -33,6 +33,13 @@ export type PostMeta = {
   // post that real Search Console data shows as the top-clicked satellite
   // (see docs/keyword-map.md) and it stays pinned until updated by hand.
   homeFlagshipFeatured?: boolean;
+  // Manual override for ordering the small "recent posts" grid below the
+  // flagship card on the homepage. Same rationale as homeFeaturedOrder --
+  // without it, that grid is just date-desc, so a brand-new post bumps
+  // real, proven performers down. Lower numbers show first; posts without
+  // it fall back to date-asc (oldest of the unranked ones first) so that
+  // being newly published is never itself what wins a homepage slot.
+  homeRecentOrder?: number;
 };
 
 export type Post = PostMeta & {
