@@ -86,6 +86,7 @@ function parsePost(fileName: string): Post | null {
       contentType: data.contentType === "pillar" ? "pillar" : "satellite",
       homeFeaturedOrder: data.homeFeaturedOrder ? Number(data.homeFeaturedOrder) : undefined,
       homeFlagshipFeatured: data.homeFlagshipFeatured === "true",
+      homeRecentOrder: data.homeRecentOrder ? Number(data.homeRecentOrder) : undefined,
     };
 
     return {

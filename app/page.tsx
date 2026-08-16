@@ -33,7 +33,17 @@ export default function HomePage() {
   );
   const flagshipFeatured = eligibleForFeatured.find((post) => post.homeFlagshipFeatured);
   const featuredPost = flagshipFeatured ?? eligibleForFeatured[0];
-  const recentPosts = eligibleForFeatured.filter((post) => post.slug !== featuredPost?.slug);
+  // Ranked posts (homeRecentOrder) go first. Among unranked posts, oldest
+  // first -- being newly published must never by itself be what wins a
+  // homepage slot meant to reflect real performance.
+  const recentPosts = eligibleForFeatured
+    .filter((post) => post.slug !== featuredPost?.slug)
+    .sort((a, b) => {
+      const rankA = a.homeRecentOrder ?? Infinity;
+      const rankB = b.homeRecentOrder ?? Infinity;
+      if (rankA !== rankB) return rankA - rankB;
+      return Number(new Date(a.date)) - Number(new Date(b.date));
+    });
 
   return (
     <>
