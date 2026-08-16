@@ -3,13 +3,15 @@ import Image from "next/image";
 const kidsBooks = [
   {
     title: "Aventuras de la Biblia para colorear",
-    description: "20 historias bíblicas para colorear, aprender y conversar en familia. Para niños de 4 a 9 años.",
+    ageRange: "4 a 9 años",
+    description: "20 historias bíblicas para colorear, aprender y conversar en familia.",
     image: "/images/productos/pequenos-exploradores.jpg",
     href: "https://pequenos-exploradores-landing.vercel.app/",
   },
   {
     title: "Jonás y el gran pez para colorear",
-    description: "30 páginas para colorear la historia de Jonás, con diploma y actividades. Para niños de 4 a 8 años.",
+    ageRange: "4 a 8 años",
+    description: "30 páginas para colorear la historia de Jonás, con diploma y actividades.",
     image: "/images/productos/jonas-y-el-gran-pez.jpg",
     href: "https://landing-pages-jonas.vercel.app/#beneficios",
   },
@@ -31,14 +33,31 @@ export function KidsBooksPromo() {
             href={book.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex gap-3 rounded-[8px] border border-[#5A0F18]/8 p-2 transition hover:border-[#D4AF37]/50 hover:bg-[#FFF7E8]"
+            className="group block overflow-hidden rounded-[8px] border border-[#5A0F18]/10 bg-[#FFFDF8] shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37]/50 hover:shadow-md"
           >
-            <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded-[4px]">
-              <Image src={book.image} alt={`Portada de ${book.title}`} fill sizes="64px" className="object-cover" />
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FFF7E8]">
+              <Image
+                src={book.image}
+                alt={`Portada de ${book.title}`}
+                fill
+                sizes="(min-width: 1024px) 240px, 100vw"
+                className="object-cover transition duration-300 group-hover:scale-[1.03]"
+              />
             </div>
-            <div>
-              <p className="text-sm font-bold leading-5 text-[#5A0F18] group-hover:underline">{book.title}</p>
-              <p className="mt-1 text-xs leading-5 text-[#1F1F1F]/65">{book.description}</p>
+            <div className="p-3.5">
+              <span className="inline-flex items-center rounded-full border border-[#D4AF37]/40 bg-[#FFF7E8] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#8a6a18]">
+                {book.ageRange}
+              </span>
+              <p className="mt-2 font-[var(--font-display)] text-base font-bold leading-tight text-[#5A0F18] group-hover:underline">
+                {book.title}
+              </p>
+              <p className="mt-1.5 text-xs leading-5 text-[#1F1F1F]/65">{book.description}</p>
+              <span className="mt-2.5 inline-flex items-center gap-1 text-xs font-bold text-[#5A0F18]">
+                Ver más
+                <span aria-hidden="true" className="transition group-hover:translate-x-0.5">
+                  →
+                </span>
+              </span>
             </div>
           </a>
         ))}
