@@ -97,6 +97,31 @@ const nextConfig: NextConfig = {
         destination: `${siteConfig.url}/:path*`,
         permanent: true,
       },
+      // Content consolidation (2026-08-22): 3 near-duplicate "señales" posts
+      // merged into one comprehensive article, and 3 near-duplicate
+      // "versículos" posts merged into one -- see docs/keyword-map.md. Old
+      // slugs 301 to the surviving, expanded URL so existing links/rankings
+      // aren't lost.
+      {
+        source: "/blog/senales-de-esperanza-en-un-matrimonio-que-dios-esta-restaurando",
+        destination: "/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio",
+        permanent: true,
+      },
+      {
+        source: "/blog/senales-de-que-un-matrimonio-puede-ser-restaurado",
+        destination: "/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio",
+        permanent: true,
+      },
+      {
+        source: "/blog/versiculos-para-orar-por-la-restauracion-matrimonial",
+        destination: "/blog/versiculos-biblicos-para-matrimonios-en-crisis",
+        permanent: true,
+      },
+      {
+        source: "/blog/versiculos-para-salvar-mi-matrimonio",
+        destination: "/blog/versiculos-biblicos-para-matrimonios-en-crisis",
+        permanent: true,
+      },
     ];
   },
 };
