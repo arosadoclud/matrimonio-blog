@@ -257,14 +257,4 @@ El propietario corrió una auditoría de contenido/SEO en Claude web con el cone
 
 Grupo B completo (variantes de "oración...matrimonio", volumen 40-1000, KD 11-25%) y notas de competidores (unidosenoracion.org, hozana.org, aciprensa.com, aleteia.org, avivanuestroscorazones.com) disponibles en el chat con el propietario si se necesita más detalle al escribir cada pieza.
 
-### #1 de la cola resuelto: "oracion para el matrimonio" (2026-08-22)
-
-| Keyword | Intención | URL asignada | Tipo de contenido | Etapa del embudo | CTA | Contenidos secundarios | Riesgo de canibalización |
-|---|---|---|---|---|---|---|---|
-| oracion para el matrimonio | Informacional / devocional | `/blog/oracion-para-el-matrimonio` | Satélite | TOFU | Guía/devocional gratuito | `oracion-para-restaurar-mi-matrimonio`, `devocional-diario-para-parejas-cristianas` | Bajo — intención distinta a ambos: no es específico de crisis (a diferencia del pilar) ni es un plan de 7 días para hacer en pareja (a diferencia del devocional diario) |
-
-Contenido publicado: `oracion-para-el-matrimonio.mdx`, categoría "Oración por el matrimonio", ~708 palabras. Diferenciación deliberada del pilar `oracion-para-restaurar-mi-matrimonio` (2162 palabras, enfocado específicamente en restauración durante una crisis): este artículo es un "banco de oraciones" organizado por necesidad (unidad, paciencia, perdón, provisión, protección, gratitud) para cualquier matrimonio, esté o no en crisis activa — formato distinto (oraciones breves listadas, no un ensayo narrativo) a todo lo publicado hasta ahora. Versículos verificados por búsqueda contra RVR1960 antes de usarlos: Salmos 127:1, Efesios 4:2-3, Colosenses 3:13, 1 Tesalonicenses 5:18. Imagen: Pexels 5875111 (pareja adulta orando junta en una iglesia), verificada visualmente — se descartaron dos candidatas antes (Pexels 6860419/video, y Pexels 5876583, una cena familiar de Acción de Gracias sin relación con el tema) durante la verificación.
-
-**No se abordó todavía "oracion por mi matrimonio" (720/mes, KD19)**, el #2 de la cola — se evaluó si fusionarlo en este mismo artículo, pero se decidió publicarlo como pieza aparte más adelante para no alargar este post más allá de lo que su formato de banco de oraciones sostiene bien; sigue pendiente en la cola para la próxima ronda de cadencia.
-
 **No hacer:** crear contenido para keywords puramente transaccionales tipo "comprar programa restaurar matrimonio" — la auditoría confirmó volumen 0 en las bases consultadas; toda la conversión en este nicho pasa por contenido informativo con CTA, no por keywords de compra directa.
