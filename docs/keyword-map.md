@@ -232,3 +232,29 @@ Contenido publicado: `sirve-un-programa-de-restauracion-si-mi-conyuge-no-quiere-
 **Próximos candidatos BOFU si se sigue esta línea:** "cuánto cuesta y vale la pena un programa de restauración matrimonial" (objeción de precio, sin cobertura hoy) y una expansión de testimonios más allá de los 3 breves que ya tiene `/recursos`.
 
 Contenido publicado: `como-manejar-los-problemas-de-dinero-en-tu-matrimonio.mdx`, categoría "Crisis matrimonial", ~937 palabras. Estructura deliberadamente distinta a los últimos 4 artículos publicados (reencuadre inicial → sección en formato de lista con 3 patrones → versículos → paso práctico → cuándo es más que un problema de presupuesto → cierre con enlaces internos integrados en el párrafo, sin encabezado "Ruta recomendada" → FAQ de 3 preguntas). Versículos verificados por búsqueda contra RVR1960 antes de usarlos: Mateo 6:24, 1 Timoteo 6:10, Hebreos 13:5, Proverbios 22:7. Imagen: Pexels 6964105 (pareja revisando cuentas/facturas juntos en la mesa), verificada visualmente — tono serio pero colaborativo, no de desesperación.
+
+## Auditoría SEMrush (2026-08-17) — nueva fuente de verdad para priorización de keywords
+
+El propietario corrió una auditoría de contenido/SEO en Claude web con el conector de SEMrush conectado (base de datos México, complementada con Colombia/España). Reemplaza el análisis de keywords informal usado hasta ahora como criterio principal de priorización — de aquí en adelante, priorizar keywords de esta auditoría (o de auditorías SEMrush futuras) sobre intuición editorial cuando haya conflicto.
+
+**Hallazgo crítico:** el dominio solo tiene 4 keywords rastreadas por SEMrush en México, 1 en Colombia, 0 en España — pese a los ~58 artículos publicados. Authority Score 2/100, 35 backlinks de solo 18 dominios de referencia. Ninguna keyword en página 2 (posición 11-20); las 4 rastreadas están en posición 21-33. Esto confirma lo que ya sabíamos por Search Console (tráfico real todavía mínimo) y añade un dato nuevo: **backlinks/autoridad es tan urgente como contenido nuevo**, no un problema secundario. La auditoría completa (con la lista de ~12 dominios católicos/cristianos de Authority Score 35-62 que enlazan a competidores pero no al sitio, para outreach futuro) quedó solo en el chat con el propietario — no se transcribe aquí completa porque el trabajo de outreach de backlinks no es algo que este equipo técnico pueda ejecutar directamente.
+
+**Optimización on-page (2026-08-20), sin crear contenido nuevo:** la única keyword rastreada cerca de página 2 es "como saber si dios quiere restaurar mi matrimonio" (posición 21, volumen 70, KD29 en la base de México), que ya apuntaba a `senales-de-que-dios-esta-trabajando-en-tu-matrimonio.mdx` — pero la frase exacta no aparecía en ningún lugar del artículo (ni título, ni intro, ni keywords, ni FAQ), solo una variante cercana. Se actualizó sin tocar slug ni título (para no arriesgar el ranking ya ganado):
+- `description` reescrita para abrir con la frase exacta.
+- Frase exacta agregada como primer ítem de `keywords[]`.
+- Intro ajustada de "cómo Dios quiere y va a restaurar tu matrimonio" a "cómo saber si Dios quiere restaurar tu matrimonio" (match más cercano al término real).
+- Nueva primera pregunta de FAQ con match exacto: "¿Cómo sé si Dios quiere restaurar mi matrimonio?" — mayor probabilidad de featured snippet / People Also Ask.
+
+**Cola de contenido nuevo priorizada por la auditoría (orden sugerido, pendiente de ejecutar en la cadencia de 1 cada 2-3 días):**
+
+| Orden | Keyword | Vol./mes (MX) | KD% | Por qué |
+|---|---|---|---|---|
+| 1 | oracion para el matrimonio | 1000 | 20 | Mayor volumen de todo el set, sin cobertura — pieza de oración pilar |
+| 2 | oracion por mi matrimonio | 720 | 19 | Segundo mayor volumen, intención/ángulo muy cercano al #1 — evaluar si es artículo propio o subtítulo del #1 para no canibalizar |
+| 3 | consejeria matrimonial cristiana | 90 | 9 | KD más bajo del set + CPC más alto (0,38) — mejor puente hacia el programa de pago |
+| 4 | retiro para matrimonios en crisis | 110 | 5 | KD casi nulo, prácticamente sin competencia |
+| 5 | como salvar mi matrimonio | 110 | 17 | Intención comercial (CPC 0,31), coincide con el nombre del programa afiliado |
+
+Grupo B completo (variantes de "oración...matrimonio", volumen 40-1000, KD 11-25%) y notas de competidores (unidosenoracion.org, hozana.org, aciprensa.com, aleteia.org, avivanuestroscorazones.com) disponibles en el chat con el propietario si se necesita más detalle al escribir cada pieza.
+
+**No hacer:** crear contenido para keywords puramente transaccionales tipo "comprar programa restaurar matrimonio" — la auditoría confirmó volumen 0 en las bases consultadas; toda la conversión en este nicho pasa por contenido informativo con CTA, no por keywords de compra directa.
