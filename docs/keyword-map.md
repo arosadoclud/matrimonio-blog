@@ -20,13 +20,13 @@ La misma lógica aplica a la grilla de 3 cards pequeños debajo del flagship (`r
 |---|---|---|---|---|---|---|---|
 | cómo restaurar mi matrimonio | Informacional amplia | `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Pilar | TOFU | Guía gratuita | Todos los satélites de "Restauración matrimonial" | Bajo (es el pilar único de esta keyword) |
 | restaurar matrimonio | Informacional amplia | `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Pilar | TOFU | Guía gratuita | `pequenas-acciones-...`, `primeros-pasos-...` | Bajo |
-| restauración matrimonial | Informacional amplia | `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Pilar | TOFU | Guía gratuita | `senales-de-que-un-matrimonio-puede-ser-restaurado` | Medio — ver `docs/content-audit.md` (clúster "señales") |
+| restauración matrimonial | Informacional amplia | `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Pilar | TOFU | Guía gratuita | `senales-de-que-dios-esta-trabajando-en-tu-matrimonio` (fusionado, ver 2026-08-22) | Bajo |
 | restauración matrimonial cristiana | Informacional | `/` (home) y `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Home + Pilar | TOFU | Guía gratuita | — | Bajo |
 | cómo salvar mi matrimonio | Transaccional / plan de acción | `/blog/como-salvar-tu-matrimonio-en-7-dias` | Pilar | MOFU | Descargar guía PDF | `dios-restaura-tu-matrimonio-guia-pdf-gratis` | Medio — mismo lead magnet, ver content-audit |
 | cómo recuperar mi matrimonio | Informacional | Sin URL asignada — oportunidad (se solapa hoy con `como-restaurar-mi-matrimonio-con-la-ayuda-de-dios`, no requiere URL nueva) | — | TOFU | Guía gratuita | — | — |
 | matrimonio en crisis | Informacional | `/categorias/crisis-matrimonial` | Categoría | TOFU | Conocer próximos pasos | `mi-esposa-dice-que-ya-no-me-ama`, `mi-esposo-ya-no-quiere-seguir-que-hago`, `que-hacer-si-mi-pareja-quiere-separarse`, `que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar` | Bajo |
 | cómo evitar el divorcio | Informacional / urgente | `/blog/errores-que-debes-evitar-al-intentar-restaurar-tu-matrimonio` | Satélite | MOFU | Guía gratuita | — | Bajo. Ampliado a 700 palabras (2026-07-20), incluye la keyword en título/descripción/cuerpo/FAQ |
-| señales de que mi matrimonio se puede salvar | Informacional | `/blog/senales-de-que-un-matrimonio-puede-ser-restaurado` | Satélite | TOFU | Guía gratuita | `senales-de-esperanza-...`, `senales-de-que-dios-esta-trabajando-...` | **Medio** — 3 artículos de "señales" compiten, ver content-audit |
+| señales de que mi matrimonio se puede salvar | Informacional | `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Satélite | TOFU | Guía gratuita | — | Bajo — los 3 artículos de "señales" se fusionaron en uno (2026-08-22) |
 | cómo reconstruir la confianza en el matrimonio | Informacional | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` | Satélite | MOFU | Guía gratuita | `dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` | Bajo. Contenido hoy delgado (204 palabras) — ampliar |
 | mi esposo ya no me ama | Informacional / crisis | `/blog/mi-esposo-ya-no-me-ama` | Satélite | MOFU | Conocer próximos pasos | `/blog/mi-esposa-dice-que-ya-no-me-ama` | Bajo — publicado 2026-07-20, ángulo distinto (esposo) del ya existente (esposa) |
 | mi esposa ya no me ama | Informacional / crisis | `/blog/mi-esposa-dice-que-ya-no-me-ama` | Satélite | MOFU | Conocer próximos pasos | — | Bajo |
@@ -43,8 +43,7 @@ La misma lógica aplica a la grilla de 3 cards pequeños debajo del flagship (`r
 | oración para restaurar mi matrimonio | Informacional / devocional | `/blog/oracion-para-restaurar-mi-matrimonio` | Pilar | TOFU | Guía/devocional gratuito | Todos los satélites de "Oración por el matrimonio" | Bajo |
 | devocional diario para parejas | Informacional / devocional | `/blog/devocional-diario-para-parejas-cristianas` | Satélite | TOFU | Guía/devocional gratuito | `/blog/oracion-para-restaurar-mi-matrimonio` | Bajo — publicado 2026-08-06, intención distinta a la del pilar (costumbre diaria general, no oración específica de crisis) |
 | oración por un matrimonio en crisis | Informacional / devocional | `/blog/oracion-para-restaurar-mi-matrimonio` | Pilar | TOFU | Guía/devocional gratuito | `oracion-por-mi-esposa-en-tiempos-de-crisis`, `oracion-por-mi-esposo-para-que-dios-toque-su-corazon` | Bajo |
-| versículos para matrimonios en crisis | Informacional | `/blog/versiculos-biblicos-para-matrimonios-en-crisis` | Satélite | TOFU | Descargar guía | `versiculos-para-orar-por-la-restauracion-matrimonial`, `versiculos-para-salvar-mi-matrimonio` | **Medio** — ver content-audit |
-| versículos para salvar mi matrimonio | Informacional | `/blog/versiculos-para-salvar-mi-matrimonio` | Satélite | TOFU | Descargar guía | — | **Medio** — ver content-audit |
+| versículos para matrimonios en crisis / para orar por la restauración / para salvar mi matrimonio | Informacional | `/blog/versiculos-biblicos-para-matrimonios-en-crisis` | Satélite | TOFU | Descargar guía | — | Bajo — los 3 artículos de "versículos" se fusionaron en uno (2026-08-22) |
 | qué dice la biblia sobre restaurar el matrimonio | Informacional | `/blog/que-dice-la-biblia-sobre-restaurar-un-matrimonio` | Satélite | TOFU | Guía gratuita | `que-dice-la-biblia-sobre-el-perdon-en-el-matrimonio` | Bajo |
 | Dios puede restaurar mi matrimonio | Informacional / esperanza | `/blog/dios-puede-restaurar-lo-que-parece-perdido` | Satélite | TOFU | Descargar guía | `senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Bajo |
 | consejería matrimonial cristiana | Informacional / comercial ligera | `/recursos` | Landing de recursos | BOFU | Conocer el programa | `quien-es-andres-arango-pastor-y-psicologo-de-matrimonios` | Bajo |
@@ -52,7 +51,7 @@ La misma lógica aplica a la grilla de 3 cards pequeños debajo del flagship (`r
 | mentoría matrimonial cristiana | Comercial | `/recursos`, `quien-es-andres-arango-pastor-y-psicologo-de-matrimonios` | Landing + autoridad | BOFU | Conocer el programa | — | Bajo |
 | programa para restaurar el matrimonio | Comercial | `/recursos` (enlaza a `restauratumatrimonio.org` vía `siteConfig.hotmartUrl`) | Landing de recursos | BOFU | Conocer el programa de restauración matrimonial | `testimonios-reales-de-matrimonios-restaurados` | Bajo |
 | cómo reconstruir la confianza en el matrimonio | Informacional | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` | Satélite | MOFU | Guía gratuita | — | Bajo |
-| Dios está trabajando en tu matrimonio | Informacional / esperanza | `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Satélite | TOFU | Guía gratuita | `senales-de-esperanza-en-un-matrimonio-que-dios-esta-restaurando` | **Medio** — ver content-audit |
+| Dios está trabajando en tu matrimonio | Informacional / esperanza | `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Satélite | TOFU | Guía gratuita | — | Bajo |
 | consejos para esposas cristianas | Informacional / crisis | `/blog/consejos-para-esposas-cristianas-en-crisis-matrimonial` | Satélite | MOFU | Conocer próximos pasos | — | Bajo — publicado 2026-08 |
 | consejos para esposos cristianos | Informacional / crisis | `/blog/consejos-para-esposos-cristianos-en-crisis-matrimonial` | Satélite | MOFU | Conocer próximos pasos | `/blog/primeros-pasos-para-restaurar-un-matrimonio-en-crisis`, `/blog/como-hablar-con-mi-esposo-sin-pelear` | Bajo — publicado 2026-08-06, ángulo distinto (esposo) del ya existente (esposa) |
 | cómo hablar con mi esposo sin pelear | Informacional | `/blog/como-hablar-con-mi-esposo-sin-pelear` | Satélite | MOFU | Guía gratuita | — | Bajo |
@@ -60,7 +59,7 @@ La misma lógica aplica a la grilla de 3 cards pequeños debajo del flagship (`r
 | cansada/o de luchar sola/o por mi matrimonio | Informacional / crisis | `/blog/que-hacer-cuando-sientes-que-eres-el-unico-que-lucha-por-tu-matrimonio` | Satélite | MOFU | Conocer próximos pasos | `antes-de-rendirte-ora-por-tu-matrimonio-una-vez-mas` | Bajo — publicado 2026-08-10, dolor de esfuerzo desigual sin cobertura previa |
 | somos compañeros de cuarto no esposos | Informacional / crisis | `/blog/sentimos-que-somos-companeros-de-cuarto-no-esposos` | Satélite | MOFU | Conocer próximos pasos | `como-recuperar-la-comunicacion-con-mi-pareja`, `devocional-diario-para-parejas-cristianas` | Bajo-Medio — la frase ya se mencionaba de paso en `5-senales-de-que-tu-matrimonio-necesita-sanidad-emocional` (1 de 5 señales); este artículo la desarrolla como tema propio con intención MOFU |
 | miedo a que mi matrimonio termine | Informacional / crisis | `/blog/tengo-miedo-de-que-mi-matrimonio-termine` | Satélite | MOFU | Conocer próximos pasos | `oracion-para-restaurar-mi-matrimonio` | Bajo — publicado 2026-08-10, ángulo de ansiedad anticipatoria sin evento de crisis real, distinto de artículos donde ya hay una frase o decisión de separación dicha |
-| cómo saber si mi matrimonio ya no tiene arreglo | Informacional / decisión | `/blog/senales-de-que-un-matrimonio-puede-ser-restaurado` | Satélite | TOFU | Guía gratuita | — | Bajo — integrado 2026-08-10 en el artículo existente (título/keywords/FAQ) en vez de crear una 4ª URL en el clúster de "señales", ya marcado Medio por content-audit |
+| cómo saber si mi matrimonio ya no tiene arreglo | Informacional / decisión | `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Satélite | TOFU | Guía gratuita | — | Bajo — el checklist de este artículo se conservó íntegro en la fusión del 2026-08-22 |
 
 ## Cómo se asignaron las CTAs por etapa de embudo
 
@@ -270,3 +269,34 @@ Nota: el pilar `oracion-para-restaurar-mi-matrimonio` ya afirmaba en la tabla de
 **Bug encontrado de paso (no relacionado con enlazado):** `pequenas-acciones-que-pueden-comenzar-una-restauracion-matrimonial.mdx` tenía 4 preguntas de FAQ con el encabezado duplicado `### ###` (ej. `### ### ¿Cuánto tiempo tarda en restaurarse un matrimonio?`), lo que hacía que el "###" literal apareciera en el texto de la pregunta tanto en el acordeón de FAQ como en el schema `FAQPage` (`getFaqs()` en `lib/posts.ts` solo recorta el primer grupo de 2-4 `#`, no un segundo grupo pegado). Corregido a un solo `###` en las 4 preguntas.
 
 **Script usado (no versionado, ejecutado ad-hoc):** recorre `content/posts/*.mdx`, extrae el cuerpo sin frontmatter de cada post, y cuenta cuántas veces aparece `(/blog/<slug>` de cada otro post dentro de ese cuerpo. Útil para repetir esta auditoría cada cierto tiempo a medida que se publique contenido nuevo.
+
+## Consolidación de los dos clústeres casi-duplicados (2026-08-22)
+
+El propietario volvió a pedir la revisión de AdSense después de reescribir los 5 artículos de dolor (sección "Rechazo de AdSense" arriba) y recibió **el mismo motivo de rechazo** ("contenido de bajo valor"). Eso indica que el problema no era solo esos 5 artículos — el patrón de fondo seguía presente en otra parte del sitio. Se decidió, con el propietario, dejar de sumar más variaciones de contenido de dolor y en vez de eso **fusionar** los dos grupos de artículos casi-duplicados que `docs/content-audit.md` (2026-07-16) ya había identificado como riesgo "Medio" pero no se habían fusionado en su momento (se dejaron "diferenciados" en vez de fusionados, a la espera de datos de Search Console que nunca llegaron a ser concluyentes por el bajo tráfico del sitio).
+
+### Clúster "señales" (3 artículos → 1)
+
+`senales-de-que-dios-esta-trabajando-en-tu-matrimonio` (superviviente — es el que tiene datos reales de Search Console: posición 21 para "como saber si dios quiere restaurar mi matrimonio", pin `homeRecentOrder` en la home) absorbió el contenido completo de:
+
+- `senales-de-esperanza-en-un-matrimonio-que-dios-esta-restaurando` (señales visibles en la relación)
+- `senales-de-que-un-matrimonio-puede-ser-restaurado` (checklist de 5 preguntas + señales que requieren prudencia)
+
+El artículo resultante tiene 3 partes claras (señales internas, señales visibles en la relación, checklist general "¿hay camino?"), sin perder ningún contenido sustancial de los 3 originales — solo se eliminó la redundancia real entre ellos (los 3 tenían una versión casi idéntica de "aceptan ayuda externa" / "nace el deseo de buscar ayuda", que aparecía por separado en cada uno). El FAQ se fusionó de 5+2+3=10 preguntas a 7, eliminando 3 que quedaban redundantes o sin sentido fuera de su artículo original (ej. "¿qué diferencia hay con el otro artículo de señales?", que ya no aplica al estar todo junto). De paso se corrigió una cita bíblica con error de transcripción ya publicado: Eclesiastés 4:9-10 decía "mejor son dos que uno" (verificado ahora contra RVR1960: es "Mejores son dos que uno", plural).
+
+### Clúster "versículos" (3 artículos → 1)
+
+`versiculos-biblicos-para-matrimonios-en-crisis` (superviviente — ya era el más completo y el "pilar informal" del grupo según `content-audit.md`) absorbió:
+
+- `versiculos-para-orar-por-la-restauracion-matrimonial` (5 versículos para oración estructurada, ninguno repetido con el artículo superviviente)
+- `versiculos-para-salvar-mi-matrimonio` (contenido de acción y "sin manipular"; sus 4 versículos principales ya estaban duplicados casi textualmente en el artículo superviviente, así que solo se conservaron sus 3 versículos realmente nuevos — Proverbios 15:1, Colosenses 4:6, Mateo 7:5 — y su encuadre de "convertir un versículo en un paso")
+
+El resultado son 14 versículos organizados en 3 partes (consuelo, oración estructurada, acción), todos verificados por búsqueda contra RVR1960 antes de conservarlos en la fusión (incluidos los que ya estaban publicados, no solo los nuevos).
+
+### Mecánica de la fusión (ambos clústeres)
+
+- **Redirects 301 permanentes** agregados en `next.config.ts` de las 4 URLs eliminadas hacia sus 2 URLs supervivientes, para no perder el poco ranking/backlinks que pudieran tener.
+- **Enlaces internos corregidos**: se revisó todo `content/posts/*.mdx` por referencias a las 4 URLs eliminadas (`dios-puede-restaurar-lo-que-parece-perdido.mdx` y `un-matrimonio-sano-no-es-perfecto-es-restaurable.mdx` las tenían) y se actualizaron para apuntar directo a las URLs supervivientes.
+- **Verificado con build de producción real** (`next build` + `next start`) que los 4 redirects devuelven 308 hacia la URL correcta y que ambas páginas supervivientes cargan con código 200.
+- El sitio pasa de 59 a 55 artículos publicados.
+
+**Pendiente de decisión editorial (no técnica):** si después de esta consolidación Google sigue rechazando AdSense por el mismo motivo, el siguiente sospechoso más probable ya no es contenido duplicado — es tráfico/autoridad de dominio insuficiente (Authority Score 2/100, ver auditoría SEMrush arriba). En ese caso, la única palanca real es tiempo + más tráfico orgánico antes de volver a solicitar la revisión, no más cambios de contenido.
