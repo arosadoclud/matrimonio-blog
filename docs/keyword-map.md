@@ -300,3 +300,20 @@ El resultado son 14 versículos organizados en 3 partes (consuelo, oración estr
 - El sitio pasa de 59 a 55 artículos publicados.
 
 **Pendiente de decisión editorial (no técnica):** si después de esta consolidación Google sigue rechazando AdSense por el mismo motivo, el siguiente sospechoso más probable ya no es contenido duplicado — es tráfico/autoridad de dominio insuficiente (Authority Score 2/100, ver auditoría SEMrush arriba). En ese caso, la única palanca real es tiempo + más tráfico orgánico antes de volver a solicitar la revisión, no más cambios de contenido.
+
+## Cola SEMrush, #4: "retiro para matrimonios en crisis" (2026-08-25)
+
+Siguiendo la cadencia (1 artículo cada 2-3 días), se revisó primero: sin PRs de contenido sin mergear, `keyword-map.md` y `content-audit.md` al día tras la consolidación del 2026-08-22.
+
+Se saltó deliberadamente el #2 de la cola ("oracion por mi matrimonio", 720 vol/mes) y el #3 ("consejeria matrimonial cristiana", 90 vol/mes) por la misma razón que motivó la consolidación de esta semana — evitar sumar más contenido casi-duplicado:
+
+- El sitio ya tiene 5 artículos de oración (`oracion-para-restaurar-mi-matrimonio`, `oracion-para-el-matrimonio`, `oracion-por-mi-esposa-en-tiempos-de-crisis`, `oracion-por-mi-esposo-para-que-dios-toque-su-corazon`, `devocional-diario-para-parejas-cristianas`). "Oración por mi matrimonio" es casi sinónimo de "oración para el matrimonio" (ya publicado 2026-08-22) — escribirlo ahora habría recreado el mismo patrón que se acaba de corregir. Queda en la cola para cuando haya más distancia temporal/temática, no descartado.
+- "Consejería matrimonial cristiana" ya está sustancialmente cubierta en `terapia-de-pareja-cristiana.mdx` (es su segunda keyword en `keywords[]`, y el artículo dedica una sección completa a diferenciar orientación espiritual / mentoría / terapia profesional / emergencia — exactamente la intención de esta keyword). Crear un artículo nuevo habría sido duplicar, no llenar un hueco real.
+
+Se avanzó en cambio con el **#4 de la cola: "retiro para matrimonios en crisis"** (110 vol/mes, KD5 — casi sin competencia, y sin cobertura dedicada en el sitio; solo mencionado de pasada en 2 artículos).
+
+| Keyword | Intención | URL asignada | Tipo de contenido | Etapa del embudo | CTA | Contenidos secundarios | Riesgo de canibalización |
+|---|---|---|---|---|---|---|---|
+| retiro para matrimonios en crisis | Informacional / práctico | `/blog/retiro-para-matrimonios-en-crisis` | Satélite | MOFU | Conocer el programa | `como-la-fe-catolica-puede-ayudar-a-restaurar-tu-matrimonio` (Retrouvaille), `sirve-un-programa-de-restauracion-si-mi-conyuge-no-quiere-participar` | Bajo — primer y único artículo del sitio sobre retiros/fines de semana de pareja como formato específico |
+
+Contenido publicado: `retiro-para-matrimonios-en-crisis.mdx`, categoría "Restauración matrimonial", ~799 palabras. Ángulo práctico/logístico (qué es, qué esperar, para quién sí/no, cómo elegir uno, alternativa si no pueden asistir presencial) — distinto de todo el contenido de oración o de dolor emocional ya publicado. Menciona Retrouvaille (ya verificado como programa real en el artículo católico) sin inventar ni nombrar otros proveedores específicos no verificados. Versículos verificados por búsqueda contra RVR1960 antes de usarlos: Marcos 6:31, Proverbios 24:6. Imagen: Pexels 9220734 (pareja caminando de espaldas en un bosque), verificada visualmente.
