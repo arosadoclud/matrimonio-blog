@@ -14,6 +14,8 @@ const kidsBooks = [
     description: "30 páginas para colorear la historia de Jonás, con diploma y actividades.",
     image: "/images/productos/jonas-y-el-gran-pez.jpg",
     href: "https://landing-pages-jonas.vercel.app/#beneficios",
+    // Edición en papel, disponible además de la versión digital de arriba.
+    amazonHref: "https://www.amazon.com/dp/B0HG9R465H",
   },
 ];
 
@@ -28,38 +30,53 @@ export function KidsBooksPromo() {
       </p>
       <div className="mt-4 grid gap-4">
         {kidsBooks.map((book) => (
-          <a
+          <div
             key={book.href}
-            href={book.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-[8px] border border-[#5A0F18]/10 bg-[#FFFDF8] shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37]/50 hover:shadow-md"
+            className="group overflow-hidden rounded-[8px] border border-[#5A0F18]/10 bg-[#FFFDF8] shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37]/50 hover:shadow-md"
           >
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FFF7E8]">
-              <Image
-                src={book.image}
-                alt={`Portada de ${book.title}`}
-                fill
-                sizes="(min-width: 1024px) 240px, 100vw"
-                className="object-cover transition duration-300 group-hover:scale-[1.03]"
-              />
-            </div>
-            <div className="p-3.5">
-              <span className="inline-flex items-center rounded-full border border-[#D4AF37]/40 bg-[#FFF7E8] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#8a6a18]">
-                {book.ageRange}
-              </span>
-              <p className="mt-2 font-[var(--font-display)] text-base font-bold leading-tight text-[#5A0F18] group-hover:underline">
-                {book.title}
-              </p>
-              <p className="mt-1.5 text-xs leading-5 text-[#1F1F1F]/65">{book.description}</p>
-              <span className="mt-2.5 inline-flex items-center gap-1 text-xs font-bold text-[#5A0F18]">
-                Ver más
-                <span aria-hidden="true" className="transition group-hover:translate-x-0.5">
-                  →
+            <a href={book.href} target="_blank" rel="noopener noreferrer" className="block">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FFF7E8]">
+                <Image
+                  src={book.image}
+                  alt={`Portada de ${book.title}`}
+                  fill
+                  sizes="(min-width: 1024px) 240px, 100vw"
+                  className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-3.5 pb-0">
+                <span className="inline-flex items-center rounded-full border border-[#D4AF37]/40 bg-[#FFF7E8] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#8a6a18]">
+                  {book.ageRange}
                 </span>
-              </span>
+                <p className="mt-2 font-[var(--font-display)] text-base font-bold leading-tight text-[#5A0F18] group-hover:underline">
+                  {book.title}
+                </p>
+                <p className="mt-1.5 text-xs leading-5 text-[#1F1F1F]/65">{book.description}</p>
+              </div>
+            </a>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 p-3.5 pt-2.5">
+              <a
+                href={book.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-bold text-[#5A0F18] hover:underline"
+              >
+                Ver más
+                <span aria-hidden="true">→</span>
+              </a>
+              {book.amazonHref ? (
+                <a
+                  href={book.amazonHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#8a6a18] hover:underline"
+                >
+                  Comprar en papel (Amazon)
+                  <span aria-hidden="true">→</span>
+                </a>
+              ) : null}
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>
