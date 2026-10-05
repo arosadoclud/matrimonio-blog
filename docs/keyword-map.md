@@ -442,3 +442,41 @@ Se detectaron 8 artículos sin ningún enlace manual entrante (`versiculos-bibli
 5. **Dependencias de desarrollo con versión mayor disponible** (`vitest` 5, `eslint` 10, `jsdom` 30, `typescript` 7, `@vitejs/plugin-react` 6): tienen avisos de seguridad solo en herramientas de desarrollo; migrar con calma en un PR aparte.
 6. **Ritmo de artículos nuevos.** Se mantuvo 1 cada 2-3 días (el último, `diferencia-de-deseo-e-intimidad-fisica-en-el-matrimonio`, el 2026-10-04). Con la evidencia de AdSense, subir el ritmo es más riesgoso que útil mientras queden artículos delgados sin profundizar.
 
+## Autor, diseño y ronda de 3 artículos (2026-10-05)
+
+El propietario pidió tres cosas: publicar **3 artículos por día**, poner a **Andy Rosado como autor de todo** y modernizar el diseño si hacía falta.
+
+### Autor
+- `author: "Andy Rosado"` en los 63 artículos; valor por defecto en `lib/posts.ts` y configuración en `authorConfig` (`lib/site.ts`).
+- El JSON-LD de cada artículo pasa de `Organization` a `Person` (con URL a la sección de autor).
+- Nueva caja de autor (`components/AuthorBox.tsx`), sección "Quién escribe" en `/sobre-nosotros#autor` y una línea de autoría en la política editorial.
+- **No se inventó ninguna credencial.** `authorConfig.bio` y `authorConfig.photo` son opcionales y la caja solo los muestra si se completan con datos reales. Pendiente del propietario: bio y foto reales, que es lo que más refuerza la autoría ante Google.
+- El encabezado dejó de mostrar "Revisado por Equipo editorial cristiano" (un revisor sin nombre que nadie puede verificar); el campo sigue en el frontmatter pero ya no se muestra. La política editorial mantiene, a propósito, la divulgación de que parte del trabajo se apoya en herramientas de IA con revisión humana.
+
+### Diseño
+- Encabezado del artículo: monograma del autor, "Por Andy Rosado", fecha, tiempo de lectura y etiqueta dorada "Actualizado el …".
+- Nuevo campo opcional `updated` (se usa en la etiqueta, en `dateModified` del JSON-LD y en `article:modified_time`). Marcados los 7 artículos reescritos el 2026-10-05.
+- Barra fina de progreso de lectura (`components/ReadingProgress.tsx`).
+- Campo opcional `imagePosition` (CSS `object-position` validado) para encuadrar portadas verticales; se aplica en la portada del artículo, en las tarjetas del blog y en el destacado de la home.
+- Verificado con capturas en navegador real (escritorio 1280px y móvil 390px): sin desbordamiento horizontal, barra de progreso avanza al hacer scroll, rostro completo en portada vertical.
+- Pruebas nuevas en `lib/__tests__/post-frontmatter.test.ts`: autor presente, `updated` válido, encuadre seguro, FAQ siempre como última sección.
+
+### Tres artículos nuevos
+
+Se buscaron huecos con `grep` sobre los 60 artículos (cero menciones de "adicción", "trabaja demasiado" ni "nido vacío"), y se eligieron tres temas distintos entre sí, con estructura y formato deliberadamente diferentes.
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| mi pareja trabaja demasiado / adicción al trabajo | Informacional / crisis | `/blog/pareja-trabaja-demasiado-como-cuidar-el-matrimonio` | Satélite | MOFU | Bajo — único del sitio sobre trabajo y matrimonio; el de dinero cubre solo la presión económica |
+| cónyuge con adicción / mi esposo tiene una adicción | Informacional / crisis | `/blog/conyuge-con-adiccion-como-cuidar-tu-matrimonio-y-a-ti` | Satélite | MOFU | Bajo — único del sitio sobre adicciones |
+| nido vacío / cuando los hijos se van | Informacional | `/blog/nido-vacio-cuando-los-hijos-se-van-y-el-matrimonio-se-siente-extrano` | Satélite | TOFU-MOFU | Bajo — "compañeros de cuarto" habla de distancia en general, no de esta etapa |
+
+- **Trabajo en exceso** (~1290 palabras, FAQ de 4): distingue temporada de huida, tres razones de fondo, un diálogo de ejemplo, y qué hacer si eres tú quien trabaja demasiado. Versículos verificados: 1 Timoteo 5:8, Salmos 127:2, Eclesiastés 4:6. Imagen Pexels 20373372 (hombre trabajando de noche en casa).
+- **Adicción** (~1220 palabras, FAQ de 4): empieza por seguridad (violencia, conducir ebrio, advertencia médica sobre la abstinencia), distingue "sobrellevar cargas" (Gálatas 6:2) de "cada uno llevará su propia carga" (Gálatas 6:5), conductas que habilitan, cómo hablarlo, y qué hacer si no quiere ayuda. Menciona grupos de apoyo para familiares (Al-Anon, Nar-Anon) sin enlaces ni teléfonos, que varían por país. Versículos verificados: Gálatas 6:2 y 6:5, 1 Corintios 6:12. Imagen Pexels 6874398 (mujer pensativa junto a una ventana, sin sustancias ni dramatismo).
+- **Nido vacío** (~1030 palabras, FAQ de 3): casi todo en prosa y tono sereno. Versículos verificados: Eclesiastés 3:1 y 9:9, Salmos 90:12, Isaías 46:4. Imagen Pexels 8795797 (pareja mayor junto a un lago).
+- Todos los versículos se verificaron contra RVR1960 en dos fuentes (bible.com y biblegateway.com). Las imágenes se vieron una por una antes de usarlas; se descartaron, entre otras, una con una mesa llena de copas (podía leerse como un bar) y otras con llanto dramatizado.
+- Se agregó al menos un enlace entrante desde artículos afines para cada uno (0 huérfanos).
+
+### Ritmo
+Se pasa de 1 artículo cada 2-3 días a **3 por día**, por decisión expresa del propietario. Riesgo conocido, ya advertido: la señal que Google llamó "contenido de bajo valor" se asocia con volumen alto de páginas parecidas. Para mitigarlo, cada artículo debe tener ≥1000 palabras, estructura, formato y número de preguntas de FAQ distintos del resto del día, y versículos e imágenes verificados. Si AdSense vuelve a rechazar, el primer ajuste debe ser bajar el ritmo.
+
