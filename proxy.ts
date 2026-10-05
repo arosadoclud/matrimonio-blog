@@ -64,7 +64,7 @@ function cleanupExpiredEntries(): void {
 // Run cleanup every 5 minutes
 setInterval(cleanupExpiredEntries, 5 * 60 * 1000);
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Apply rate limiting only to form submission endpoints

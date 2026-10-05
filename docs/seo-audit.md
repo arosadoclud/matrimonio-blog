@@ -61,7 +61,7 @@ Ningún cambio de esta lista modifica slugs existentes, elimina contenido, ni ca
 - Páginas de captación (`/pre-adsense`, `/gracias-guia-matrimonio`, `/restaurar-matrimonio-guia-gratis`) ya correctamente marcadas `noindex, nofollow` y fuera del sitemap.
 - Tratamiento responsable de contenido sensible: al menos 12 artículos incluyen, en prosa, un párrafo explícito que prioriza la seguridad física sobre la restauración, recomienda ayuda profesional/pastoral/autoridades locales, y aclara que la fe no debe usarse para justificar permanecer en peligro (ver `docs/content-audit.md` y sección 6 de este documento).
 - Aviso de afiliados (`/afiliados`) honesto, sin reseñas ni testimonios inventados.
-- Rate limiting básico en `middleware.ts` para endpoints de formularios.
+- Rate limiting básico en `proxy.ts` (antes `middleware.ts`, renombrado en Next 16) para endpoints de formularios.
 - Analítica centralizada en `lib/analytics.ts`, no lanza si faltan IDs, usa variables de entorno documentadas en `.env.example` y `README.md`.
 - Suite de tests existente (62 tests antes de esta auditoría, 72 después) cubriendo `posts`, `seo`, `analytics`, `utils`, componentes de formularios y CTAs.
 
