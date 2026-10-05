@@ -131,6 +131,13 @@ const nextConfig: NextConfig = {
         destination: "/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad",
         permanent: true,
       },
+      // Same pass: "mi esposo ya no quiere seguir" (477 words) repeated the
+      // advice in "ya no quiere luchar" (the survivor) almost point for point.
+      {
+        source: "/blog/mi-esposo-ya-no-quiere-seguir-que-hago",
+        destination: "/blog/que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar",
+        permanent: true,
+      },
     ];
   },
 };
