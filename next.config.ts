@@ -122,6 +122,15 @@ const nextConfig: NextConfig = {
         destination: "/blog/versiculos-biblicos-para-matrimonios-en-crisis",
         permanent: true,
       },
+      // Thin-content consolidation (2026-10-05): the "recuperar a mi esposo
+      // despues de una infidelidad" post (324 words) overlapped almost entirely
+      // with the "Dios puede restaurar... despues de una infidelidad" post, so
+      // it was merged into that one.
+      {
+        source: "/blog/como-recuperar-a-mi-esposo-despues-de-una-infidelidad",
+        destination: "/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad",
+        permanent: true,
+      },
     ];
   },
 };
