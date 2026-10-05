@@ -3,7 +3,7 @@ import Link from "next/link";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { CTABox } from "@/components/CTABox";
 import { JsonLd } from "@/components/JsonLd";
-import { siteConfig } from "@/lib/site";
+import { authorConfig, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sobre nosotros",
@@ -47,6 +47,33 @@ export default function AboutPage() {
           Creemos que Dios puede obrar restauración, pero también creemos en la importancia de
           buscar ayuda sabia, acompañamiento pastoral y apoyo profesional cuando la situación lo
           requiere.
+        </p>
+      </div>
+
+      <h2
+        id="autor"
+        className="mt-12 scroll-mt-24 font-[var(--font-display)] text-3xl font-bold text-[#5A0F18]"
+      >
+        Quién escribe
+      </h2>
+      <div className="mt-4 grid gap-6 text-lg leading-8 text-[#1F1F1F]/75">
+        <p>
+          Los artículos de este blog están escritos y editados por <strong>{authorConfig.name}</strong>
+          , quien responde por su contenido. Como explica nuestra{" "}
+          <Link href="/politica-editorial" className="underline decoration-[#D4AF37]/60 underline-offset-2">
+            política editorial
+          </Link>
+          , parte del trabajo se apoya en herramientas de inteligencia artificial y todo artículo
+          pasa por revisión humana antes de publicarse.
+        </p>
+        {authorConfig.bio ? <p>{authorConfig.bio}</p> : null}
+        <p>
+          Este es un blog de contenido espiritual y educativo: no ofrece consejería individual. Si
+          quieres escribirle, puedes hacerlo desde la página de{" "}
+          <Link href="/contacto" className="underline decoration-[#D4AF37]/60 underline-offset-2">
+            contacto
+          </Link>
+          .
         </p>
       </div>
 

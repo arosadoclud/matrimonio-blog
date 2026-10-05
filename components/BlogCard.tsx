@@ -18,6 +18,7 @@ export function BlogCard({ post }: BlogCardProps) {
             fill
             sizes="(min-width: 1024px) 33vw, 100vw"
             className="object-cover"
+            style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
           />
         </div>
       </Link>

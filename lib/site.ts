@@ -13,6 +13,21 @@ export const siteConfig = {
     "https://wa.me/18492763532?text=Hola%2C%20llegu%C3%A9%20desde%20la%20gu%C3%ADa%20de%20Restaura%20tu%20Matrimonio%20y%20quisiera%20recibir%20orientaci%C3%B3n.",
 };
 
+// Autor de los artículos. `bio` y `photo` son opcionales a propósito: la caja de
+// autor solo los muestra si se completan con datos reales. No inventar
+// credenciales ni formación que el autor no tenga.
+export const authorConfig: {
+  name: string;
+  role: string;
+  url: string;
+  bio?: string;
+  photo?: string;
+} = {
+  name: "Andy Rosado",
+  role: "Autor y editor de Restaura Tu Matrimonio",
+  url: `${siteConfig.url}/sobre-nosotros#autor`,
+};
+
 export const categories: Category[] = [
   {
     name: "Restauración matrimonial",

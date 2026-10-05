@@ -1,17 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import { AdSlot } from "@/components/AdSlot";
-import { AuthorBox } from "@/components/AuthorBox";
+import { AuthorBox, authorInitials } from "@/components/AuthorBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FunnelCTA } from "@/components/FunnelCTA";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { FaqSection } from "@/components/FaqSection";
 import { KidsBooksPromo } from "@/components/KidsBooksPromo";
 import { MdxContent } from "@/components/MdxContent";
+import { ReadingProgress } from "@/components/ReadingProgress";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { VerseBox } from "@/components/VerseBox";
 import { ViewContentTracker } from "@/components/ViewContentTracker";
 import { getFaqs, getTableOfContents, stripFaqSection } from "@/lib/posts";
-import { slugify } from "@/lib/site";
+import { authorConfig, slugify } from "@/lib/site";
 import type { Post } from "@/types/post";
 
 type ArticleLayoutProps = {
@@ -28,9 +30,12 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
   // the same monetization density as a full-length article (AdSense flags
   // pages that are ad-heavy relative to their actual content).
   const isShortPost = post.wordCount < 600;
+  const dateFormat = new Intl.DateTimeFormat("es", { dateStyle: "long" });
+  const showUpdated = Boolean(post.updated) && post.updated !== post.date;
 
   return (
-    <article>
+    <article id="articulo">
+      <ReadingProgress />
       <ViewContentTracker contentName={post.title} contentCategory={post.category} />
       <section className="bg-[#FFF7E8]">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
@@ -49,16 +54,32 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             {post.title}
           </h1>
           <p className="mt-5 text-lg leading-8 text-[#1F1F1F]/72">{post.description}</p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-[#5c5c5c]">
-            <span>{new Intl.DateTimeFormat("es", { dateStyle: "long" }).format(new Date(post.date))}</span>
-            <span>•</span>
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-semibold text-[#5c5c5c]">
+            <Link
+              href={authorConfig.url}
+              className="inline-flex items-center gap-2 text-[#5A0F18] hover:underline"
+            >
+              <span
+                aria-hidden="true"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-[#D4AF37] bg-[#5A0F18] text-xs font-bold text-[#FFF7E8]"
+              >
+                {authorInitials(post.author)}
+              </span>
+              <span>Por {post.author}</span>
+            </Link>
+            <span aria-hidden="true">•</span>
+            <time dateTime={post.date}>{dateFormat.format(new Date(post.date))}</time>
+            <span aria-hidden="true">•</span>
             <span>{post.readingTime}</span>
-            <span>•</span>
-            <span>{post.author}</span>
-            {post.reviewedBy ? (
+            {showUpdated && post.updated ? (
               <>
-                <span>•</span>
-                <span>Revisado por {post.reviewedBy}</span>
+                <span aria-hidden="true">•</span>
+                <time
+                  dateTime={post.updated}
+                  className="rounded-full bg-[#D4AF37]/20 px-3 py-0.5 text-[#6b5210]"
+                >
+                  Actualizado el {dateFormat.format(new Date(post.updated))}
+                </time>
               </>
             ) : null}
           </div>
@@ -74,6 +95,7 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             quality={70}
             sizes="100vw"
             className="object-cover"
+            style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
           />
         </div>
         {toc.length > 0 ? (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { buildCanonicalUrl } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/site";
@@ -45,6 +46,13 @@ export default function EditorialPolicyPage() {
           contenido se produce internamente y parte se genera con apoyo de herramientas de IA a
           través de un flujo editorial (ver más abajo), pero ningún artículo se publica sin pasar
           primero por una revisión.
+        </p>
+
+        <h2>Autoría y responsabilidad</h2>
+        <p>
+          Los artículos se publican bajo la autoría de Andy Rosado, quien responde por su
+          contenido. Puedes ver quién escribe en la sección{" "}
+          <Link href="/sobre-nosotros#autor">Sobre nosotros</Link>.
         </p>
 
         <h2>Cómo comprobamos las referencias bíblicas</h2>
