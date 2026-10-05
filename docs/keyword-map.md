@@ -24,18 +24,18 @@ La misma lógica aplica a la grilla de 3 cards pequeños debajo del flagship (`r
 | restauración matrimonial cristiana | Informacional | `/` (home) y `/blog/como-restaurar-mi-matrimonio-con-la-ayuda-de-dios` | Home + Pilar | TOFU | Guía gratuita | — | Bajo |
 | cómo salvar mi matrimonio | Transaccional / plan de acción | `/blog/como-salvar-tu-matrimonio-en-7-dias` | Pilar | MOFU | Descargar guía PDF | `dios-restaura-tu-matrimonio-guia-pdf-gratis` | Medio — mismo lead magnet, ver content-audit |
 | cómo recuperar mi matrimonio | Informacional | Sin URL asignada — oportunidad (se solapa hoy con `como-restaurar-mi-matrimonio-con-la-ayuda-de-dios`, no requiere URL nueva) | — | TOFU | Guía gratuita | — | — |
-| matrimonio en crisis | Informacional | `/categorias/crisis-matrimonial` | Categoría | TOFU | Conocer próximos pasos | `mi-esposa-dice-que-ya-no-me-ama`, `mi-esposo-ya-no-quiere-seguir-que-hago`, `que-hacer-si-mi-pareja-quiere-separarse`, `que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar` | Bajo |
+| matrimonio en crisis | Informacional | `/categorias/crisis-matrimonial` | Categoría | TOFU | Conocer próximos pasos | `mi-esposa-dice-que-ya-no-me-ama`, `que-hacer-si-mi-pareja-quiere-separarse`, `que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar` | Bajo |
 | cómo evitar el divorcio | Informacional / urgente | `/blog/errores-que-debes-evitar-al-intentar-restaurar-tu-matrimonio` | Satélite | MOFU | Guía gratuita | — | Bajo. Ampliado a 700 palabras (2026-07-20), incluye la keyword en título/descripción/cuerpo/FAQ |
 | señales de que mi matrimonio se puede salvar | Informacional | `/blog/senales-de-que-dios-esta-trabajando-en-tu-matrimonio` | Satélite | TOFU | Guía gratuita | — | Bajo — los 3 artículos de "señales" se fusionaron en uno (2026-08-22) |
 | cómo reconstruir la confianza en el matrimonio | Informacional | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` | Satélite | MOFU | Guía gratuita | `dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` | Bajo. Contenido hoy delgado (204 palabras) — ampliar |
 | mi esposo ya no me ama | Informacional / crisis | `/blog/mi-esposo-ya-no-me-ama` | Satélite | MOFU | Conocer próximos pasos | `/blog/mi-esposa-dice-que-ya-no-me-ama` | Bajo — publicado 2026-07-20, ángulo distinto (esposo) del ya existente (esposa) |
 | mi esposa ya no me ama | Informacional / crisis | `/blog/mi-esposa-dice-que-ya-no-me-ama` | Satélite | MOFU | Conocer próximos pasos | — | Bajo |
-| mi esposo quiere separarse | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse`, `/blog/mi-esposo-ya-no-quiere-seguir-que-hago` | Satélite | MOFU | Conocer próximos pasos | — | Bajo-Medio: dos posts cercanos, cada uno con matiz distinto (separación vs. "ya no quiere seguir luchando") |
+| mi esposo quiere separarse | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse`, `/blog/que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar` | Satélite | MOFU | Conocer próximos pasos | — | Bajo-Medio: dos posts cercanos con matiz distinto (separación vs. "ya no quiere seguir luchando"). `mi-esposo-ya-no-quiere-seguir-que-hago` se fusionó en el segundo el 2026-10-05 (301) |
 | mi esposa quiere separarse | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse` | Satélite | MOFU | Conocer próximos pasos | — | Bajo |
 | mi pareja quiere el divorcio qué hago | Informacional / crisis | `/blog/que-hacer-si-mi-pareja-quiere-separarse` | Satélite | MOFU | Conocer próximos pasos | — | Bajo — misma URL que "separarse", con sección e intención propia dentro del artículo (ver nota abajo) |
 | mi pareja no quiere hablar conmigo | Informacional | `/blog/mi-pareja-no-quiere-hablar-conmigo` | Satélite | MOFU | Guía gratuita | `como-recuperar-la-comunicacion-con-mi-pareja` | Bajo |
 | cómo recuperar a mi esposa | Informacional | `/blog/como-recuperar-a-mi-esposa-despues-de-haberla-herido` | Satélite | MOFU | Guía gratuita | — | Bajo |
-| cómo recuperar a mi esposo | Informacional | `/blog/como-recuperar-a-mi-esposo-despues-de-una-infidelidad` | Satélite | MOFU | Guía gratuita | — | Bajo |
+| cómo recuperar a mi esposo | Informacional | `/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` | Satélite | MOFU | Guía gratuita | — | Bajo. `como-recuperar-a-mi-esposo-despues-de-una-infidelidad` se fusionó aquí el 2026-10-05 (301) |
 | cómo perdonar una infidelidad | Informacional | `/blog/como-perdonar-una-infidelidad-con-la-ayuda-de-dios` | Satélite | MOFU | Guía gratuita | `que-dice-la-biblia-sobre-el-perdon-en-el-matrimonio` | Bajo |
 | cómo salvar un matrimonio después de una infidelidad | Informacional | `/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` | Satélite | MOFU | Guía gratuita | `como-recuperar-a-mi-esposo-despues-de-una-infidelidad` | Bajo |
 | cómo sanar heridas emocionales en el matrimonio | Informacional | `/blog/como-sanar-heridas-emocionales-en-el-matrimonio` | Satélite | TOFU | Guía gratuita | `5-senales-de-que-tu-matrimonio-necesita-sanidad-emocional` | Bajo |
@@ -151,7 +151,7 @@ Revisión de un export de "Related Keywords" / "Long-Tail Keywords" de una herra
 | oración para restaurar mi matrimonio | `/blog/oracion-para-restaurar-mi-matrimonio` (coincidencia exacta) |
 | Dios restaura tu matrimonio pdf | `/blog/dios-restaura-tu-matrimonio-guia-pdf-gratis` (coincidencia exacta) |
 | restaurando la confianza en tu matrimonio | `/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial` |
-| restaurar matrimonio después de adulterio | `/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad`, `/blog/como-recuperar-a-mi-esposo-despues-de-una-infidelidad` |
+| restaurar matrimonio después de adulterio | `/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` (absorbió a `como-recuperar-a-mi-esposo-despues-de-una-infidelidad`) |
 
 **Ajustadas en esta ronda (frase de la variante de búsqueda trabajada de forma natural en el copy, sin cambiar título/slug/keyword principal asignada):**
 
@@ -385,3 +385,98 @@ Se revisó de nuevo la lista de temas clásicos sin cobertura detectada en la ro
 | familia ensamblada / conflictos con hijastros en el matrimonio | Informacional / crisis de comunicación | `/blog/familia-ensamblada-conflictos-con-hijastros-en-el-matrimonio` | Satélite | MOFU | Guía gratuita | `como-hablar-con-mi-esposo-sin-pelear`, `como-recuperar-la-comunicacion-con-mi-pareja` | Bajo — primer y único artículo del sitio sobre familias ensambladas/hijastros |
 
 Contenido publicado: `familia-ensamblada-conflictos-con-hijastros-en-el-matrimonio.mdx`, categoría "Comunicación en pareja", ~1038 palabras. Reencuadre central: la disciplina y el lugar de los hijastros como el punto de fricción más común en una familia ensamblada, con un acuerdo práctico (el padre/madre biológico lidera la disciplina mientras el vínculo del padrastro/madrastra se construye) presentado en prosa, sin listas ni numeración — variación deliberada respecto a los tres artículos anteriores, que sí usaban listas o numeración. FAQ de 5 preguntas (frente a 3 y 4 de las rondas previas). Versículos verificados por búsqueda contra RVR1960 antes de usarlos: Rut 1:16 (lealtad elegida, no de sangre), Efesios 6:4 y Colosenses 3:21 (mismo estándar de crianza para ambos cónyuges, sin importar el vínculo biológico). Imagen: Pexels 8550724 (padre/padrastro y adolescente en una conversación seria en una escalera, sin dramatismo ni sonrisas forzadas de foto de stock), verificada visualmente.
+
+## Nuevo hueco cubierto: diferencia de deseo e intimidad física en el matrimonio (2026-10-04)
+
+Cadencia habitual: el PR #80 (suegros, celos, familia ensamblada), que había quedado abierto varias semanas sin respuesta, se confirmó finalmente cerrado y mergeado a `main` en este ciclo (closed_at 2026-10-02, con los tres artículos ya presentes en `main` vía `git show origin/main:...`) — se retomó la cadencia con normalidad. La rama de trabajo de esta sesión (`claude/matrimonio-blog-seo-content-79ciis`) se reinició desde el `main` actualizado para esta nueva ronda, siguiendo la convención de reusar el mismo nombre de rama tras el merge de su PR anterior.
+
+Se abordó finalmente el hueco de **intimidad física / diferencia de deseo en el matrimonio**, señalado como pendiente desde la ronda del 2026-09-07 y diferido dos veces por requerir un trato editorial especialmente cuidadoso. Se escribió con un enfoque deliberadamente no explícito: sin descripciones físicas, centrado en la diferencia de deseo como algo normal (no un fallo moral), la conexión emocional como base de la intimidad física, y una distinción explícita entre una temporada de bajo deseo (que se acompaña con paciencia) y usar la negación como forma de control (que Pablo advierte en 1 Corintios 7:5) — con una aclaración directa de que ningún pasaje usado justifica presión o coerción sobre el otro cónyuge. Se descartaron por ahora, para una ronda futura, otros huecos detectados en rondas anteriores que requieren remisión profesional más fuerte desde el inicio (pornografía, alcohol, enfermedad crónica).
+
+| Keyword | Intención | URL asignada | Tipo de contenido | Etapa del embudo | CTA | Contenidos secundarios | Riesgo de canibalización |
+|---|---|---|---|---|---|---|---|
+| intimidad física en el matrimonio / diferencia de deseo en la pareja | Informacional / crisis de conexión | `/blog/diferencia-de-deseo-e-intimidad-fisica-en-el-matrimonio` | Satélite | MOFU | Conocer próximos pasos | `como-recuperar-la-comunicacion-con-mi-pareja`, `5-senales-de-que-tu-matrimonio-necesita-sanidad-emocional` | Bajo — primer y único artículo del sitio sobre intimidad física/diferencia de deseo |
+
+Contenido publicado: `diferencia-de-deseo-e-intimidad-fisica-en-el-matrimonio.mdx`, categoría "Comunicación en pareja", ~912 palabras. Estructura: sin listas ni numeración (como el artículo de familia ensamblada), FAQ de 3 preguntas (vuelve a 3 tras el 4 y el 5 de las rondas anteriores, evitando un escalado mecánico del conteo). Versículos verificados específicamente contra RVR1960 (confirmando diferencias de redacción frente a NVI/DHH y frente a revisiones Reina-Valera anteriores a 1960) antes de usarlos: 1 Corintios 7:3-5, Proverbios 5:18-19. Imagen: Pexels 7730670 (pareja vestida formalmente, abrazo cálido desde atrás en un entorno exterior, sin ninguna connotación sensual, sin dormitorio ni piel expuesta más allá de brazos/manos), verificada visualmente con especial cuidado dado lo sensible del tema — se descartó como alternativa Pexels 6626030 (igualmente modesta, pero con estilizado tipo San Valentín que restaba seriedad al tono del artículo) y se rechazaron Pexels 2914629 (demasiado genérica, sin rostros) y Pexels 20992545 (foto de boda específica con henna, no encajaba con el tema de un matrimonio ya establecido).
+
+## Auditoría técnica y de calidad (2026-10-05)
+
+A raíz del aviso de Search Console ("15 clics en 28 días") y del pedido del propietario de actualizar, corregir, modernizar y volver a intentar la aprobación de AdSense, se hizo una auditoría completa. Resumen de hallazgos y de lo que se hizo.
+
+### Seguridad y mantenimiento
+
+- `npm audit` reportaba 17 vulnerabilidades, **1 crítica en `next` 16.2.9** (bypass de middleware/proxy en App Router + DoS), relevante porque el sitio usa un proxy para limitar la tasa de los formularios. Se actualizó dentro de los rangos de `package.json` (sin saltos mayores): `next` 16.3.8, `react`/`react-dom` 19.3.0, `sharp` 0.35.5, `postcss` 8.5.29. `npm audit --omit=dev` quedó en **0**. Las 7 restantes son solo de herramientas de desarrollo (`vitest`, `eslint`, `jsdom`) y requieren versiones mayores; no se forzaron. Ojo: `npm audit fix --force` propone *bajar* `eslint-config-next` a 14.x, lo cual es incorrecto; ignorar esa sugerencia.
+- `middleware.ts` renombrado a `proxy.ts` (la convención `middleware` está deprecada en Next 16). Verificado en build de producción que el límite de tasa sigue activo (los POST 11 y 12 devuelven 429).
+- Se eliminaron `/pre-adsense` y `/indexacion`: eran páginas internas de configuración accesibles públicamente (HTTP 200, solo `noindex`), sin enlaces desde ningún lado, y `/pre-adsense` citaba el dominio equivocado (`restauratumatrimonio.org`). La misma guía vive en `docs/manual-seo-setup.md` y `docs/post-deployment-seo-checklist.md`.
+- Se eliminó `public/sitemap.xml`, un sitemap estático viejo (33 URLs, host `www`, de julio) que convivía con el real `app/sitemap.ts` (82 URLs).
+
+### Calidad de contenido (la palanca real contra "contenido de bajo valor")
+
+Al medir los 62 artículos: mediana 773 palabras, **19 por debajo de 600**, y los de junio tenían ~40 palabras por sección (8 secciones en ~300 palabras, FAQ de una línea por respuesta, plantilla idéntica). Es exactamente la firma que ya se había identificado el 2026-08-12. Por eso esta ronda se centró en profundizar y fusionar lo débil en vez de sumar más páginas.
+
+| Artículo | Antes | Después | Qué se hizo |
+|---|---|---|---|
+| `dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` | 351 | 1473 | Absorbió a `como-recuperar-a-mi-esposo-despues-de-una-infidelidad` (324). Habla a ambos lados, aclara que quedarse no es una obligación religiosa (Mateo 19:9), añade nota de salud y de seguridad. 301 agregado. |
+| `que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar` | 966 | 1159 | Absorbió a `mi-esposo-ya-no-quiere-seguir-que-hago` (477), que repetía el mismo consejo. 301 agregado. Se corrigió además una cita mal aplicada (Filipenses 2:12-13, que no dice lo que se le atribuía) reemplazándola por Romanos 12:18. |
+| `como-recuperar-a-mi-esposa-despues-de-haberla-herido` | 306 | 1120 | Pasa de "ganarla de vuelta" a "reparar el daño"; disculpa que repara vs. que hiere; nota de seguridad. |
+| `mi-pareja-no-quiere-hablar-conmigo` | 315 | 1001 | Cuatro tipos de silencio y cuándo ya es control. |
+| `mi-esposa-dice-que-ya-no-me-ama` | 395 | 1235 | Qué puede significar la frase, cómo responder y escuchar, plan de dos semanas. |
+| `testimonios-reales-de-matrimonios-restaurados` | 414 | 921 | Afirmaba "patrones en la mayoría de restauraciones reales" sin que nadie hubiera verificado los 4 videos (que en YouTube solo se titulan "Testimonio"). Ahora dice solo lo comprobable, agrega la divulgación de afiliado junto al programa recomendado y enseña a evaluar un testimonio. |
+| `dios-restaura-tu-matrimonio-guia-pdf-gratis` | 420 | 821 | Se contrastó con el PDF real de 19 páginas en `public/guias`: el post prometía "preguntas para conversar en pareja" y un enfoque de "dirección" que la guía no tiene. Ahora describe la estructura diaria real, los siete temas y una muestra del día 1; se quitó la afirmación no comprobable de que "muchas parejas" lograron resultados con el programa de pago. |
+
+Todos los versículos citados se verificaron contra RVR1960 por búsqueda (fuente bible.com y, en el segundo lote, también biblegateway.com) antes de usarlos. Slugs, fechas e imágenes no cambiaron, para no mover el orden de la home. El sitio pasa de 62 a **60 artículos** y todas las URLs retiradas redirigen con 301 (308 en la respuesta) a su superviviente.
+
+### Enlazado interno
+
+Se detectaron 8 artículos sin ningún enlace manual entrante (`versiculos-biblicos-para-matrimonios-en-crisis` y los 7 más recientes). Se agregó una frase contextual, con redacción distinta en cada caso y sin el encabezado fijo "Ruta recomendada", en dos artículos afines por cada uno. Resultado: 0 huérfanos, 0 enlaces internos rotos.
+
+### Páginas legales
+
+`/privacidad` y `/cookies` eran de pocas frases y no divulgaban lo que Google exige a sitios que muestran sus anuncios. Se reescribieron con los procesadores reales que usa el código (Brevo, Vercel, GA4/Clarity/Meta Pixel si están activos, AdSense), las divulgaciones de cookies publicitarias de Google con los enlaces de exclusión, derechos del usuario y fecha de actualización. No se inventó ninguna entidad legal, dirección ni plazo de retención.
+
+### Pendiente — requiere decisión o acción del propietario
+
+1. **Identidad real del autor/editor (E-E-A-T).** "Sobre nosotros" y los artículos están firmados por "Restaura Tu Matrimonio" / "Equipo editorial cristiano", sin ninguna persona con nombre, experiencia o formación. Para un tema delicado como el matrimonio, esa falta de autoría identificable es una de las señales más débiles del sitio. No se puede resolver sin los datos reales del propietario (nombre, trayectoria, foto, cómo contactarlo); no se inventaron.
+2. **Consentimiento de cookies.** `NEXT_PUBLIC_REQUIRE_ANALYTICS_CONSENT` está apagado por defecto, así que GA4, Clarity y Meta Pixel cargan sin pedir permiso. Si hay tráfico desde España u otros países del EEE/Reino Unido (es probable con audiencia hispanohablante), eso no cumple con la normativa de cookies, y además Google exige un sistema de consentimiento certificado para servir anuncios a esa audiencia. Se debe decidir y configurarlo en Vercel; el código ya lo soporta (`lib/consent.ts`).
+3. **CSP para anuncios.** La `Content-Security-Policy` de `next.config.ts` solo permite `pagead2.googlesyndication.com` y `*.googlesyndication.com`. Cuando AdSense apruebe el sitio, los anuncios usan además dominios como `googleads.g.doubleclick.net` y `tpc.googlesyndication.com`, que hoy se bloquearían. Ajustarlo al aprobarse, no antes.
+4. **Más artículos delgados por ampliar** (todavía entre 500 y 670 palabras, con la plantilla de secciones cortas), por prioridad: `consejos-para-esposas-cristianas-en-crisis-matrimonial`, `como-hablar-con-mi-esposo-sin-pelear`, `oracion-por-mi-esposa-en-tiempos-de-crisis`, `oracion-por-mi-esposo-para-que-dios-toque-su-corazon`, `consejos-para-esposos-cristianos-en-crisis-matrimonial`, `que-hacer-si-mi-pareja-quiere-separarse`.
+5. **Dependencias de desarrollo con versión mayor disponible** (`vitest` 5, `eslint` 10, `jsdom` 30, `typescript` 7, `@vitejs/plugin-react` 6): tienen avisos de seguridad solo en herramientas de desarrollo; migrar con calma en un PR aparte.
+6. **Ritmo de artículos nuevos.** Se mantuvo 1 cada 2-3 días (el último, `diferencia-de-deseo-e-intimidad-fisica-en-el-matrimonio`, el 2026-10-04). Con la evidencia de AdSense, subir el ritmo es más riesgoso que útil mientras queden artículos delgados sin profundizar.
+
+## Autor, diseño y ronda de 3 artículos (2026-10-05)
+
+El propietario pidió tres cosas: publicar **3 artículos por día**, poner a **Andy Rosado como autor de todo** y modernizar el diseño si hacía falta.
+
+### Autor
+- `author: "Andy Rosado"` en los 63 artículos; valor por defecto en `lib/posts.ts` y configuración en `authorConfig` (`lib/site.ts`).
+- El JSON-LD de cada artículo pasa de `Organization` a `Person` (con URL a la sección de autor).
+- Nueva caja de autor (`components/AuthorBox.tsx`), sección "Quién escribe" en `/sobre-nosotros#autor` y una línea de autoría en la política editorial.
+- **No se inventó ninguna credencial.** `authorConfig.bio` y `authorConfig.photo` son opcionales y la caja solo los muestra si se completan con datos reales. Pendiente del propietario: bio y foto reales, que es lo que más refuerza la autoría ante Google.
+- El encabezado dejó de mostrar "Revisado por Equipo editorial cristiano" (un revisor sin nombre que nadie puede verificar); el campo sigue en el frontmatter pero ya no se muestra. La política editorial mantiene, a propósito, la divulgación de que parte del trabajo se apoya en herramientas de IA con revisión humana.
+
+### Diseño
+- Encabezado del artículo: monograma del autor, "Por Andy Rosado", fecha, tiempo de lectura y etiqueta dorada "Actualizado el …".
+- Nuevo campo opcional `updated` (se usa en la etiqueta, en `dateModified` del JSON-LD y en `article:modified_time`). Marcados los 7 artículos reescritos el 2026-10-05.
+- Barra fina de progreso de lectura (`components/ReadingProgress.tsx`).
+- Campo opcional `imagePosition` (CSS `object-position` validado) para encuadrar portadas verticales; se aplica en la portada del artículo, en las tarjetas del blog y en el destacado de la home.
+- Verificado con capturas en navegador real (escritorio 1280px y móvil 390px): sin desbordamiento horizontal, barra de progreso avanza al hacer scroll, rostro completo en portada vertical.
+- Pruebas nuevas en `lib/__tests__/post-frontmatter.test.ts`: autor presente, `updated` válido, encuadre seguro, FAQ siempre como última sección.
+
+### Tres artículos nuevos
+
+Se buscaron huecos con `grep` sobre los 60 artículos (cero menciones de "adicción", "trabaja demasiado" ni "nido vacío"), y se eligieron tres temas distintos entre sí, con estructura y formato deliberadamente diferentes.
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| mi pareja trabaja demasiado / adicción al trabajo | Informacional / crisis | `/blog/pareja-trabaja-demasiado-como-cuidar-el-matrimonio` | Satélite | MOFU | Bajo — único del sitio sobre trabajo y matrimonio; el de dinero cubre solo la presión económica |
+| cónyuge con adicción / mi esposo tiene una adicción | Informacional / crisis | `/blog/conyuge-con-adiccion-como-cuidar-tu-matrimonio-y-a-ti` | Satélite | MOFU | Bajo — único del sitio sobre adicciones |
+| nido vacío / cuando los hijos se van | Informacional | `/blog/nido-vacio-cuando-los-hijos-se-van-y-el-matrimonio-se-siente-extrano` | Satélite | TOFU-MOFU | Bajo — "compañeros de cuarto" habla de distancia en general, no de esta etapa |
+
+- **Trabajo en exceso** (~1290 palabras, FAQ de 4): distingue temporada de huida, tres razones de fondo, un diálogo de ejemplo, y qué hacer si eres tú quien trabaja demasiado. Versículos verificados: 1 Timoteo 5:8, Salmos 127:2, Eclesiastés 4:6. Imagen Pexels 20373372 (hombre trabajando de noche en casa).
+- **Adicción** (~1220 palabras, FAQ de 4): empieza por seguridad (violencia, conducir ebrio, advertencia médica sobre la abstinencia), distingue "sobrellevar cargas" (Gálatas 6:2) de "cada uno llevará su propia carga" (Gálatas 6:5), conductas que habilitan, cómo hablarlo, y qué hacer si no quiere ayuda. Menciona grupos de apoyo para familiares (Al-Anon, Nar-Anon) sin enlaces ni teléfonos, que varían por país. Versículos verificados: Gálatas 6:2 y 6:5, 1 Corintios 6:12. Imagen Pexels 6874398 (mujer pensativa junto a una ventana, sin sustancias ni dramatismo).
+- **Nido vacío** (~1030 palabras, FAQ de 3): casi todo en prosa y tono sereno. Versículos verificados: Eclesiastés 3:1 y 9:9, Salmos 90:12, Isaías 46:4. Imagen Pexels 8795797 (pareja mayor junto a un lago).
+- Todos los versículos se verificaron contra RVR1960 en dos fuentes (bible.com y biblegateway.com). Las imágenes se vieron una por una antes de usarlas; se descartaron, entre otras, una con una mesa llena de copas (podía leerse como un bar) y otras con llanto dramatizado.
+- Se agregó al menos un enlace entrante desde artículos afines para cada uno (0 huérfanos).
+
+### Ritmo
+Se pasa de 1 artículo cada 2-3 días a **3 por día**, por decisión expresa del propietario. Riesgo conocido, ya advertido: la señal que Google llamó "contenido de bajo valor" se asocia con volumen alto de páginas parecidas. Para mitigarlo, cada artículo debe tener ≥1000 palabras, estructura, formato y número de preguntas de FAQ distintos del resto del día, y versículos e imágenes verificados. Si AdSense vuelve a rechazar, el primer ajuste debe ser bajar el ritmo.
+

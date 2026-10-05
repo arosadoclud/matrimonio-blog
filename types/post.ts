@@ -12,10 +12,16 @@ export type PostMeta = {
   title: string;
   description: string;
   date: string;
+  // Fecha (YYYY-MM-DD) de la última revisión sustancial. Si existe y es posterior a
+  // `date`, se muestra "Actualizado el ..." y se usa como dateModified en el JSON-LD.
+  updated?: string;
   category: string;
   author: string;
   reviewedBy?: string;
   image: string;
+  // Encuadre opcional de la portada (CSS object-position, p. ej. "center 25%").
+  // Útil para fotos verticales que el recorte horizontal corta mal.
+  imagePosition?: string;
   slug: string;
   keywords: string[];
   contentType?: "pillar" | "satellite";

@@ -15,6 +15,7 @@ export function FeaturedPost({ post }: { post: PostMeta }) {
           quality={70}
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover"
+          style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
         />
       </div>
       <div className="p-7 sm:p-10">

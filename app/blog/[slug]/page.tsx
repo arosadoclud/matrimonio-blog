@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ArticleLayout } from "@/components/ArticleLayout";
 import { JsonLd } from "@/components/JsonLd";
 import { getAllPosts, getFaqs, getPostBySlug, getRelatedPosts } from "@/lib/posts";
-import { siteConfig, slugify } from "@/lib/site";
+import { siteConfig, slugify, authorConfig } from "@/lib/site";
 import { buildCanonicalUrl, buildPageTitle, ensureMetaDescription } from "@/lib/seo";
 
 type PageProps = {
@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.description,
       url,
       publishedTime: post.date,
+      ...(post.updated ? { modifiedTime: post.updated } : {}),
       authors: [post.author],
       images: [{ url: post.image }]
     },
@@ -79,10 +80,11 @@ export default async function ArticlePage({ params }: PageProps) {
     description: post.description,
     image: post.image,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated ?? post.date,
     author: {
-      "@type": "Organization",
-      name: post.author
+      "@type": "Person",
+      name: post.author,
+      url: authorConfig.url
     },
     publisher: {
       "@type": "Organization",

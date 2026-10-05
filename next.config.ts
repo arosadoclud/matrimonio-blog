@@ -122,6 +122,22 @@ const nextConfig: NextConfig = {
         destination: "/blog/versiculos-biblicos-para-matrimonios-en-crisis",
         permanent: true,
       },
+      // Thin-content consolidation (2026-10-05): the "recuperar a mi esposo
+      // despues de una infidelidad" post (324 words) overlapped almost entirely
+      // with the "Dios puede restaurar... despues de una infidelidad" post, so
+      // it was merged into that one.
+      {
+        source: "/blog/como-recuperar-a-mi-esposo-despues-de-una-infidelidad",
+        destination: "/blog/dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad",
+        permanent: true,
+      },
+      // Same pass: "mi esposo ya no quiere seguir" (477 words) repeated the
+      // advice in "ya no quiere luchar" (the survivor) almost point for point.
+      {
+        source: "/blog/mi-esposo-ya-no-quiere-seguir-que-hago",
+        destination: "/blog/que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar",
+        permanent: true,
+      },
     ];
   },
 };

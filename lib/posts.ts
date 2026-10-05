@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Post, PostMeta } from "@/types/post";
 import { slugify, getWordCount, estimateReadingTime } from "./utils";
+import { authorConfig } from "./site";
 
 const postsDirectory = path.join(process.cwd(), "content", "posts");
 
@@ -51,6 +52,18 @@ function parseFrontmatter(raw: string): { data: Record<string, string | string[]
   return { data, content };
 }
 
+const IMAGE_POSITION_PATTERN =
+  /^(center|top|bottom|left|right|\d{1,3}%)( (center|top|bottom|left|right|\d{1,3}%))?$/;
+
+// Solo acepta valores simples de object-position para no inyectar CSS arbitrario.
+function parseImagePosition(value: string | string[] | undefined): string | undefined {
+  if (typeof value !== "string") {
+    return undefined;
+  }
+  const trimmed = value.trim();
+  return IMAGE_POSITION_PATTERN.test(trimmed) ? trimmed : undefined;
+}
+
 /**
  * Parse a single post file with error handling
  */
@@ -77,10 +90,12 @@ function parsePost(fileName: string): Post | null {
       title,
       description: String(data.description || ""),
       date: String(data.date || new Date().toISOString()),
+      updated: data.updated ? String(data.updated) : undefined,
       category: String(data.category || "General"),
-      author: String(data.author ?? "Restaura Tu Matrimonio"),
+      author: String(data.author ?? authorConfig.name),
       reviewedBy: data.reviewedBy ? String(data.reviewedBy) : undefined,
       image: String(data.image || "/placeholder.jpg"),
+      imagePosition: parseImagePosition(data.imagePosition),
       slug,
       keywords: Array.isArray(data.keywords) ? data.keywords.map(String) : [],
       contentType: data.contentType === "pillar" ? "pillar" : "satellite",

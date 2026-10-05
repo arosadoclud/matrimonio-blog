@@ -73,7 +73,7 @@ Las primeras semanas priorizan **actualizar contenido delgado existente** (12 ar
 ### Semana 11
 - Nuevo: "Cómo expresar necesidades sin atacar a tu pareja" — clúster 5 — MOFU.
 - Nuevo: "Explicación del proceso: cómo funciona el acompañamiento de Restaura Tu Matrimonio" — clúster 6 — BOFU.
-- Actualización: ampliar `mi-esposa-dice-que-ya-no-me-ama` / `mi-esposo-ya-no-quiere-seguir-que-hago` con más profundidad y pasos concretos.
+- Actualización: ampliar `mi-esposa-dice-que-ya-no-me-ama` / `mi-esposo-ya-no-quiere-seguir-que-hago` con más profundidad y pasos concretos. *(Hecho el 2026-10-05: `mi-esposa-dice-que-ya-no-me-ama` ampliado a 1235 palabras; `mi-esposo-ya-no-quiere-seguir-que-hago` se fusionó en `que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar` con redirección 301, ver `docs/keyword-map.md`.)*
 
 ### Semana 12 — Contenido pilar del mes + cierre de trimestre
 - Pilar: revisión y expansión de `oracion-para-restaurar-mi-matrimonio` con nueva sección de preguntas frecuentes reales (mueve tráfico long-tail hacia el pilar en vez de crear satélites nuevos de versículos).

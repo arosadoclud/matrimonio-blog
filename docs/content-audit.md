@@ -137,3 +137,12 @@ No se eliminó ninguna categoría, no se movieron artículos ni se cambiaron URL
   3. Entrevista corta (real) a una pareja sobre un aspecto específico de su proceso (ej. cómo reconstruyeron la confianza), si autorizan.
   4. "Lo que nadie te cuenta sobre el proceso de restaurar un matrimonio" — basado en testimonios reales ya existentes, enfocado en expectativas realistas (tiempo, retrocesos), no en un caso nuevo.
   5. Actualización/seguimiento real de un testimonio ya publicado, si la pareja autoriza compartir cómo siguen tiempo después.
+
+## Actualización 2026-10-05
+
+Este documento es un registro histórico; el estado actual vive en `docs/keyword-map.md`, sección "Auditoría técnica y de calidad (2026-10-05)". Cambios relevantes para las tablas de arriba:
+
+- `como-recuperar-a-mi-esposo-despues-de-una-infidelidad` se fusionó en `dios-puede-restaurar-un-matrimonio-despues-de-una-infidelidad` y `mi-esposo-ya-no-quiere-seguir-que-hago` en `que-hacer-cuando-mi-esposo-o-esposa-ya-no-quiere-luchar`. Ambas URLs antiguas redirigen con 301.
+- Se ampliaron `como-recuperar-a-mi-esposa-despues-de-haberla-herido`, `mi-pareja-no-quiere-hablar-conmigo`, `mi-esposa-dice-que-ya-no-me-ama`, `testimonios-reales-de-matrimonios-restaurados` y `dios-restaura-tu-matrimonio-guia-pdf-gratis`.
+- **Advertencia sobre las ideas 2 y 4 de la lista de testimonios de arriba** ("qué tienen en común los matrimonios que sí lograron restaurarse", "lo que nadie te cuenta sobre el proceso"): se plantearon como análisis "basado en los testimonios ya publicados", pero los 4 videos de YouTube solo se titulan "Testimonio" y nadie del equipo editorial verificó su contenido. De hecho, esa generalización ya se había colado en `testimonios-reales-de-matrimonios-restaurados` y se retiró. No volver a escribir afirmaciones sobre lo que "tienen en común" esos testimonios sin haberlos visto y transcrito, o sin tener los casos reales y la autorización de las parejas.
+
