@@ -480,3 +480,20 @@ Se buscaron huecos con `grep` sobre los 60 artículos (cero menciones de "adicci
 ### Ritmo
 Se pasa de 1 artículo cada 2-3 días a **3 por día**, por decisión expresa del propietario. Riesgo conocido, ya advertido: la señal que Google llamó "contenido de bajo valor" se asocia con volumen alto de páginas parecidas. Para mitigarlo, cada artículo debe tener ≥1000 palabras, estructura, formato y número de preguntas de FAQ distintos del resto del día, y versículos e imágenes verificados. Si AdSense vuelve a rechazar, el primer ajuste debe ser bajar el ritmo.
 
+## Ronda diaria de 3 artículos — 2026-10-06
+
+El PR #81 se mergeó ayer; la rama de trabajo se reinició desde `main` y esta ronda abre un PR nuevo. Huecos confirmados con `grep` sobre los 63 artículos (cero menciones de infertilidad, de cuidar a un cónyuge enfermo ni de migración); pornografía, segundas nupcias, jubilación y duelo siguen pendientes.
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| infertilidad y matrimonio | Informacional / crisis | `/blog/infertilidad-y-matrimonio-como-atravesar-la-espera-juntos` | Satélite | MOFU | Bajo — único del sitio sobre infertilidad |
+| enfermedad crónica en el matrimonio / cuidar a mi pareja enferma | Informacional / crisis | `/blog/enfermedad-cronica-en-el-matrimonio-cuidar-sin-perder-la-relacion` | Satélite | MOFU | Bajo — único del sitio sobre enfermedad y cuidado |
+| migrar en pareja / matrimonio migrante | Informacional | `/blog/migrar-en-pareja-como-cuidar-el-matrimonio-lejos-de-casa` | Satélite | TOFU-MOFU | Bajo — "compañeros de cuarto" trata la distancia emocional, no la geográfica |
+
+- **Infertilidad** (~1470 palabras, FAQ de 5, categoría "Crisis matrimonial"): lo que cada uno vive, comentarios que no ayudan, 1 Samuel 1:8 leído con matices, intimidad que se vuelve tarea, decisiones difíciles, cuándo buscar ayuda. Sin promesas de que lleguen hijos y sin atribuir la infertilidad a falta de fe. Versículos verificados: 1 Samuel 1:8, Proverbios 13:12, Salmos 62:8. Imagen Pexels 6530565 (pareja vestida en un sofá mirando por la ventana), con `imagePosition`.
+- **Enfermedad crónica** (~1330 palabras, FAQ de 3, "Crisis matrimonial"): organizado por perspectiva (quien está enfermo, quien cuida, ambos), con agotamiento del cuidador, un guion de conversación, intimidad sin explicitud y señales para buscar ayuda. Versículos verificados: 2 Corintios 12:9, Salmos 73:26, Filipenses 2:4, Isaías 41:10. Imagen Pexels 8871484 (pareja mayor con las manos unidas); se descartó 29372724 (anciano en cama) porque el recorte horizontal lo volvía demasiado duro.
+- **Migración** (~1390 palabras, FAQ de 4, "Comunicación en pareja"): por etapas (antes, adaptación juntos, matrimonio a distancia, reencuentro), con lista de conversaciones previas y sin consejos legales (remite a profesionales de inmigración). Versículos verificados: Proverbios 24:3-4, Josué 1:9, Salmos 121:8. Imagen Pexels 7217916 (pareja cargando cajas de mudanza).
+- Los 11 versículos se verificaron en dos fuentes RVR1960 (bible.com y biblegateway.com) y se comparó cada cita con el texto verificado (se corrigió una "Y" sobrante en 1 Samuel 1:8).
+- **Imágenes:** una candidata del agente (Pexels 8560414) venía descrita como una pareja en un banco al aire libre, pero al abrirla era una pareja al borde de una cama con gesto tenso; se descartó. Lección: la descripción de un subagente no sustituye abrir la imagen.
+- Enlaces entrantes: dos desde artículos afines para cada uno (0 huérfanos, 0 enlaces rotos). Estructura y FAQ distintos entre sí (5, 3 y 4 preguntas) y respecto de la ronda del 2026-10-05.
+
