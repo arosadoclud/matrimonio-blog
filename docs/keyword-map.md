@@ -497,3 +497,23 @@ El PR #81 se mergeó ayer; la rama de trabajo se reinició desde `main` y esta r
 - **Imágenes:** una candidata del agente (Pexels 8560414) venía descrita como una pareja en un banco al aire libre, pero al abrirla era una pareja al borde de una cama con gesto tenso; se descartó. Lección: la descripción de un subagente no sustituye abrir la imagen.
 - Enlaces entrantes: dos desde artículos afines para cada uno (0 huérfanos, 0 enlaces rotos). Estructura y FAQ distintos entre sí (5, 3 y 4 preguntas) y respecto de la ronda del 2026-10-05.
 
+## Ronda diaria de 3 artículos — 2026-10-07
+
+El PR #82 (ronda del 2026-10-06) seguía abierto, con menos de 3 días, así que esta ronda se suma a la misma rama. Huecos confirmados con `grep` (cero menciones de pérdida de un hijo, de diferencias de personalidad y de pornografía salvo una mención de pasada en el artículo de adicciones, al que ahora se enlaza).
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| pérdida de un hijo y matrimonio / duelo en pareja | Informacional / crisis | `/blog/perdida-de-un-hijo-y-matrimonio-como-sostenerse-en-el-duelo` | Satélite | MOFU | Bajo — único del sitio sobre duelo por un hijo |
+| diferencias de personalidad en el matrimonio | Informacional | `/blog/somos-muy-distintos-diferencias-de-personalidad-en-el-matrimonio` | Satélite | TOFU-MOFU | Bajo — distinto de comunicación general y de diferencia de fe |
+| pornografía en el matrimonio | Informacional / crisis | `/blog/pornografia-en-el-matrimonio-que-hacer-cuando-lo-descubres` | Satélite | MOFU | Bajo — complementa al de adicciones y al de infidelidad, que lo enlazan |
+
+- **Pérdida de un hijo** (~1280 palabras, FAQ de 4, "Crisis matrimonial"): cada uno llora distinto, frases que duelen y qué decir, Jesús que llora, cuidarse como pareja, otros hijos, aniversarios, y cuándo es urgente (ideas de morir: emergencias o línea de crisis del país). Evita cifras no confiables (la FAQ aclara que no hay una regla ni cifra segura sobre separaciones). Versículos verificados: Juan 11:35, Romanos 12:15, Mateo 5:4, Salmos 56:8. Imagen Pexels 6975094 (pareja mayor, manos unidas en una mesa de cocina).
+- **Diferencias de personalidad** (~1180 palabras, FAQ de 3, "Comunicación en pareja"): tono más práctico y ligero, seis diferencias comunes con ejemplos, acuerdos de convivencia y cuándo "somos distintos" esconde otra cosa (desprecio, valores, indiferencia). Sin etiquetas pseudocientíficas. Versículos verificados: 1 Corintios 12:17, Romanos 15:7, Eclesiastés 4:12. Imagen Pexels 14678805 (dos personas de espaldas en un banco de parque).
+- **Pornografía** (~1450 palabras, FAQ de 5, "Crisis matrimonial"): sin contenido explícito, empieza por validar lo que siente quien descubre y por dejar claro que no es su culpa, distingue consumo de interacción con otras personas, habla también a quien lucha con ello, y cómo reconstruir la confianza (transparencia acordada, rendición de cuentas fuera del cónyuge, ayuda profesional). Marca como más grave y fuera del alcance del blog lo que involucre menores, violencia o coerción. Versículos verificados: 1 Juan 1:9, Salmos 139:23-24, Gálatas 6:1. Imagen Pexels 6262953 (hombre serio a una mesa con una taza y una tetera; neutral).
+- Los 11 versículos se verificaron en dos fuentes RVR1960 (bible.com y biblegateway.com) y cada cita se comparó con el texto verificado.
+- **Imágenes:** otra vez dos descripciones de un subagente no coincidían con la foto real. 13432281 estaba descrita como "mujer leyendo y hombre con el teléfono" y era una pareja mirando un teléfono y un menú de comida (ya rechazada antes por eso); 9241918 traía además piernas descubiertas y un símbolo religioso ajeno al blog. Regla confirmada: **abrir siempre la imagen antes de usarla**, y no confiar en la descripción del agente.
+- Se agregaron dos enlaces entrantes por artículo (0 huérfanos, 0 enlaces rotos). FAQ de 4, 3 y 5 preguntas, distintas entre sí y de la ronda anterior (5, 3, 4).
+
+### Nota operativa
+Esta ronda arrancó tras un reinicio del entorno de la sesión (repo local en un estado anterior y sin `node_modules`) y con el acceso a git caído un rato ("credential service temporarily unavailable"). Nada se perdió, porque todo estaba en GitHub: se reintentó con espera creciente, se sincronizó la rama por avance directo y se corrió `npm ci`.
+
