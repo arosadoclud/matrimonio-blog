@@ -480,3 +480,57 @@ Se buscaron huecos con `grep` sobre los 60 artículos (cero menciones de "adicci
 ### Ritmo
 Se pasa de 1 artículo cada 2-3 días a **3 por día**, por decisión expresa del propietario. Riesgo conocido, ya advertido: la señal que Google llamó "contenido de bajo valor" se asocia con volumen alto de páginas parecidas. Para mitigarlo, cada artículo debe tener ≥1000 palabras, estructura, formato y número de preguntas de FAQ distintos del resto del día, y versículos e imágenes verificados. Si AdSense vuelve a rechazar, el primer ajuste debe ser bajar el ritmo.
 
+## Ronda diaria de 3 artículos — 2026-10-06
+
+El PR #81 se mergeó ayer; la rama de trabajo se reinició desde `main` y esta ronda abre un PR nuevo. Huecos confirmados con `grep` sobre los 63 artículos (cero menciones de infertilidad, de cuidar a un cónyuge enfermo ni de migración); pornografía, segundas nupcias, jubilación y duelo siguen pendientes.
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| infertilidad y matrimonio | Informacional / crisis | `/blog/infertilidad-y-matrimonio-como-atravesar-la-espera-juntos` | Satélite | MOFU | Bajo — único del sitio sobre infertilidad |
+| enfermedad crónica en el matrimonio / cuidar a mi pareja enferma | Informacional / crisis | `/blog/enfermedad-cronica-en-el-matrimonio-cuidar-sin-perder-la-relacion` | Satélite | MOFU | Bajo — único del sitio sobre enfermedad y cuidado |
+| migrar en pareja / matrimonio migrante | Informacional | `/blog/migrar-en-pareja-como-cuidar-el-matrimonio-lejos-de-casa` | Satélite | TOFU-MOFU | Bajo — "compañeros de cuarto" trata la distancia emocional, no la geográfica |
+
+- **Infertilidad** (~1470 palabras, FAQ de 5, categoría "Crisis matrimonial"): lo que cada uno vive, comentarios que no ayudan, 1 Samuel 1:8 leído con matices, intimidad que se vuelve tarea, decisiones difíciles, cuándo buscar ayuda. Sin promesas de que lleguen hijos y sin atribuir la infertilidad a falta de fe. Versículos verificados: 1 Samuel 1:8, Proverbios 13:12, Salmos 62:8. Imagen Pexels 6530565 (pareja vestida en un sofá mirando por la ventana), con `imagePosition`.
+- **Enfermedad crónica** (~1330 palabras, FAQ de 3, "Crisis matrimonial"): organizado por perspectiva (quien está enfermo, quien cuida, ambos), con agotamiento del cuidador, un guion de conversación, intimidad sin explicitud y señales para buscar ayuda. Versículos verificados: 2 Corintios 12:9, Salmos 73:26, Filipenses 2:4, Isaías 41:10. Imagen Pexels 8871484 (pareja mayor con las manos unidas); se descartó 29372724 (anciano en cama) porque el recorte horizontal lo volvía demasiado duro.
+- **Migración** (~1390 palabras, FAQ de 4, "Comunicación en pareja"): por etapas (antes, adaptación juntos, matrimonio a distancia, reencuentro), con lista de conversaciones previas y sin consejos legales (remite a profesionales de inmigración). Versículos verificados: Proverbios 24:3-4, Josué 1:9, Salmos 121:8. Imagen Pexels 7217916 (pareja cargando cajas de mudanza).
+- Los 11 versículos se verificaron en dos fuentes RVR1960 (bible.com y biblegateway.com) y se comparó cada cita con el texto verificado (se corrigió una "Y" sobrante en 1 Samuel 1:8).
+- **Imágenes:** una candidata del agente (Pexels 8560414) venía descrita como una pareja en un banco al aire libre, pero al abrirla era una pareja al borde de una cama con gesto tenso; se descartó. Lección: la descripción de un subagente no sustituye abrir la imagen.
+- Enlaces entrantes: dos desde artículos afines para cada uno (0 huérfanos, 0 enlaces rotos). Estructura y FAQ distintos entre sí (5, 3 y 4 preguntas) y respecto de la ronda del 2026-10-05.
+
+## Ronda diaria de 3 artículos — 2026-10-07
+
+El PR #82 (ronda del 2026-10-06) seguía abierto, con menos de 3 días, así que esta ronda se suma a la misma rama. Huecos confirmados con `grep` (cero menciones de pérdida de un hijo, de diferencias de personalidad y de pornografía salvo una mención de pasada en el artículo de adicciones, al que ahora se enlaza).
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| pérdida de un hijo y matrimonio / duelo en pareja | Informacional / crisis | `/blog/perdida-de-un-hijo-y-matrimonio-como-sostenerse-en-el-duelo` | Satélite | MOFU | Bajo — único del sitio sobre duelo por un hijo |
+| diferencias de personalidad en el matrimonio | Informacional | `/blog/somos-muy-distintos-diferencias-de-personalidad-en-el-matrimonio` | Satélite | TOFU-MOFU | Bajo — distinto de comunicación general y de diferencia de fe |
+| pornografía en el matrimonio | Informacional / crisis | `/blog/pornografia-en-el-matrimonio-que-hacer-cuando-lo-descubres` | Satélite | MOFU | Bajo — complementa al de adicciones y al de infidelidad, que lo enlazan |
+
+- **Pérdida de un hijo** (~1280 palabras, FAQ de 4, "Crisis matrimonial"): cada uno llora distinto, frases que duelen y qué decir, Jesús que llora, cuidarse como pareja, otros hijos, aniversarios, y cuándo es urgente (ideas de morir: emergencias o línea de crisis del país). Evita cifras no confiables (la FAQ aclara que no hay una regla ni cifra segura sobre separaciones). Versículos verificados: Juan 11:35, Romanos 12:15, Mateo 5:4, Salmos 56:8. Imagen Pexels 6975094 (pareja mayor, manos unidas en una mesa de cocina).
+- **Diferencias de personalidad** (~1180 palabras, FAQ de 3, "Comunicación en pareja"): tono más práctico y ligero, seis diferencias comunes con ejemplos, acuerdos de convivencia y cuándo "somos distintos" esconde otra cosa (desprecio, valores, indiferencia). Sin etiquetas pseudocientíficas. Versículos verificados: 1 Corintios 12:17, Romanos 15:7, Eclesiastés 4:12. Imagen Pexels 14678805 (dos personas de espaldas en un banco de parque).
+- **Pornografía** (~1450 palabras, FAQ de 5, "Crisis matrimonial"): sin contenido explícito, empieza por validar lo que siente quien descubre y por dejar claro que no es su culpa, distingue consumo de interacción con otras personas, habla también a quien lucha con ello, y cómo reconstruir la confianza (transparencia acordada, rendición de cuentas fuera del cónyuge, ayuda profesional). Marca como más grave y fuera del alcance del blog lo que involucre menores, violencia o coerción. Versículos verificados: 1 Juan 1:9, Salmos 139:23-24, Gálatas 6:1. Imagen Pexels 6262953 (hombre serio a una mesa con una taza y una tetera; neutral).
+- Los 11 versículos se verificaron en dos fuentes RVR1960 (bible.com y biblegateway.com) y cada cita se comparó con el texto verificado.
+- **Imágenes:** otra vez dos descripciones de un subagente no coincidían con la foto real. 13432281 estaba descrita como "mujer leyendo y hombre con el teléfono" y era una pareja mirando un teléfono y un menú de comida (ya rechazada antes por eso); 9241918 traía además piernas descubiertas y un símbolo religioso ajeno al blog. Regla confirmada: **abrir siempre la imagen antes de usarla**, y no confiar en la descripción del agente.
+- Se agregaron dos enlaces entrantes por artículo (0 huérfanos, 0 enlaces rotos). FAQ de 4, 3 y 5 preguntas, distintas entre sí y de la ronda anterior (5, 3, 4).
+
+### Nota operativa
+Esta ronda arrancó tras un reinicio del entorno de la sesión (repo local en un estado anterior y sin `node_modules`) y con el acceso a git caído un rato ("credential service temporarily unavailable"). Nada se perdió, porque todo estaba en GitHub: se reintentó con espera creciente, se sincronizó la rama por avance directo y se corrió `npm ci`.
+
+## Ronda diaria de 3 artículos — 2026-10-08
+
+El PR #82 (rondas del 6 y 7 de octubre) seguía abierto con 2 días, así que esta ronda se suma a la misma rama. Huecos confirmados con `grep` (cero menciones dedicadas a celular/pantallas, a recién casados y a servir en la iglesia). Pendientes para próximas rondas: segundas nupcias, jubilación, hijos adolescentes, crisis de la mediana edad, viudez.
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| mi pareja vive pegada al celular | Informacional / crisis de conexión | `/blog/mi-pareja-vive-pegada-al-celular-como-recuperar-la-presencia` | Satélite | MOFU | Bajo — distinto de "indiferencia" y de "no quiere hablar" |
+| primer año de matrimonio / recién casados | Informacional | `/blog/primer-ano-de-matrimonio-ajustes-normales-y-como-atravesarlos` | Satélite | TOFU | Bajo — único para recién casados; enlaza a dinero, suegros e intimidad |
+| servir en la iglesia y el matrimonio | Informacional / crisis | `/blog/servir-en-la-iglesia-sin-descuidar-el-matrimonio` | Satélite | MOFU | Bajo — único del sitio sobre ministerio y matrimonio |
+
+- **Celular** (~1300 palabras, FAQ de 4, "Comunicación en pareja"): por qué se siente como una tercera persona, qué busca la persona en la pantalla, cómo hablarlo, acuerdos prácticos, y cuándo es compulsión o engaño (enlaza a pornografía y adicciones). Versículos verificados: Efesios 5:15-16, Lucas 10:41-42, Proverbios 4:23. Imagen Pexels 6603392 (pareja en un sofá, él con el teléfono y ella mirando al frente).
+- **Primer año** (~1220 palabras, FAQ de 5, "Consejos bíblicos"): expectativa frente a realidad, "los zorros pequeños" (Cantares 2:15), cinco conversaciones del primer año, desacuerdos tempranos y construir sobre la roca. Versículos verificados: Cantares 2:15, Proverbios 17:9, Mateo 7:24-25. Imagen Pexels 4246186 (pareja entre cajas de mudanza "KITCHEN" y "FRAGILE").
+- **Servir en la iglesia** (~1300 palabras, FAQ de 3, "Restauración matrimonial"): habla a quien sirve y a quien espera en casa, y a pastores y líderes. Versículos verificados: Cantares 1:6, 1 Timoteo 3:4-5, Mateo 11:28. Imagen Pexels 6647017 (voluntarios entregando cajas de ayuda).
+- Los 13 versículos se verificaron en dos fuentes RVR1960 (bible.com y biblegateway.com) y cada cita se comparó con el texto verificado (se corrigió "sólo" por "solo" en Lucas 10:42, que es como aparece en las dos fuentes).
+- **Imágenes:** esta vez las descripciones del subagente coincidieron con las fotos al abrirlas. Se descartaron por no cumplir las reglas del sitio varias fotos con hombros o piernas descubiertos, una con cama visible y otra con símbolo religioso ajeno.
+- Se agregaron dos enlaces entrantes por artículo (0 huérfanos, 0 enlaces rotos). FAQ de 4, 5 y 3 preguntas.
+
