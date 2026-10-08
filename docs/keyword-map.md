@@ -517,3 +517,20 @@ El PR #82 (ronda del 2026-10-06) seguía abierto, con menos de 3 días, así que
 ### Nota operativa
 Esta ronda arrancó tras un reinicio del entorno de la sesión (repo local en un estado anterior y sin `node_modules`) y con el acceso a git caído un rato ("credential service temporarily unavailable"). Nada se perdió, porque todo estaba en GitHub: se reintentó con espera creciente, se sincronizó la rama por avance directo y se corrió `npm ci`.
 
+## Ronda diaria de 3 artículos — 2026-10-08
+
+El PR #82 (rondas del 6 y 7 de octubre) seguía abierto con 2 días, así que esta ronda se suma a la misma rama. Huecos confirmados con `grep` (cero menciones dedicadas a celular/pantallas, a recién casados y a servir en la iglesia). Pendientes para próximas rondas: segundas nupcias, jubilación, hijos adolescentes, crisis de la mediana edad, viudez.
+
+| Keyword | Intención | URL asignada | Tipo | Embudo | Riesgo de canibalización |
+|---|---|---|---|---|---|
+| mi pareja vive pegada al celular | Informacional / crisis de conexión | `/blog/mi-pareja-vive-pegada-al-celular-como-recuperar-la-presencia` | Satélite | MOFU | Bajo — distinto de "indiferencia" y de "no quiere hablar" |
+| primer año de matrimonio / recién casados | Informacional | `/blog/primer-ano-de-matrimonio-ajustes-normales-y-como-atravesarlos` | Satélite | TOFU | Bajo — único para recién casados; enlaza a dinero, suegros e intimidad |
+| servir en la iglesia y el matrimonio | Informacional / crisis | `/blog/servir-en-la-iglesia-sin-descuidar-el-matrimonio` | Satélite | MOFU | Bajo — único del sitio sobre ministerio y matrimonio |
+
+- **Celular** (~1300 palabras, FAQ de 4, "Comunicación en pareja"): por qué se siente como una tercera persona, qué busca la persona en la pantalla, cómo hablarlo, acuerdos prácticos, y cuándo es compulsión o engaño (enlaza a pornografía y adicciones). Versículos verificados: Efesios 5:15-16, Lucas 10:41-42, Proverbios 4:23. Imagen Pexels 6603392 (pareja en un sofá, él con el teléfono y ella mirando al frente).
+- **Primer año** (~1220 palabras, FAQ de 5, "Consejos bíblicos"): expectativa frente a realidad, "los zorros pequeños" (Cantares 2:15), cinco conversaciones del primer año, desacuerdos tempranos y construir sobre la roca. Versículos verificados: Cantares 2:15, Proverbios 17:9, Mateo 7:24-25. Imagen Pexels 4246186 (pareja entre cajas de mudanza "KITCHEN" y "FRAGILE").
+- **Servir en la iglesia** (~1300 palabras, FAQ de 3, "Restauración matrimonial"): habla a quien sirve y a quien espera en casa, y a pastores y líderes. Versículos verificados: Cantares 1:6, 1 Timoteo 3:4-5, Mateo 11:28. Imagen Pexels 6647017 (voluntarios entregando cajas de ayuda).
+- Los 13 versículos se verificaron en dos fuentes RVR1960 (bible.com y biblegateway.com) y cada cita se comparó con el texto verificado (se corrigió "sólo" por "solo" en Lucas 10:42, que es como aparece en las dos fuentes).
+- **Imágenes:** esta vez las descripciones del subagente coincidieron con las fotos al abrirlas. Se descartaron por no cumplir las reglas del sitio varias fotos con hombros o piernas descubiertos, una con cama visible y otra con símbolo religioso ajeno.
+- Se agregaron dos enlaces entrantes por artículo (0 huérfanos, 0 enlaces rotos). FAQ de 4, 5 y 3 preguntas.
+
