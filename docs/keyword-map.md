@@ -534,3 +534,15 @@ El PR #82 (rondas del 6 y 7 de octubre) seguía abierto con 2 días, así que es
 - **Imágenes:** esta vez las descripciones del subagente coincidieron con las fotos al abrirlas. Se descartaron por no cumplir las reglas del sitio varias fotos con hombros o piernas descubiertos, una con cama visible y otra con símbolo religioso ajeno.
 - Se agregaron dos enlaces entrantes por artículo (0 huérfanos, 0 enlaces rotos). FAQ de 4, 5 y 3 preguntas.
 
+
+## Ronda diaria de 3 artículos — 2026-10-09
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| hijos-adolescentes-cuando-la-crianza-divide-al-matrimonio | hijos adolescentes y matrimonio | tres escenarios + acuerdos mínimos | 5 | 7114084 (vertical, `center 55%`) |
+| crisis-de-la-mediana-edad-cuando-uno-cuestiona-el-matrimonio | crisis de la mediana edad matrimonio | causas + dos perspectivas (quien lo vive / quien lo acompaña) | 3 | 6526185 (vertical, `center 40%`) |
+| no-puedo-perdonarme-cuando-la-culpa-pesa-en-el-matrimonio | no puedo perdonarme | culpa vs. vergüenza + trampas + pasos | 4 | 12177394 |
+
+Versículos (RVR1960, solo texto confirmado en dos fuentes): Pr 22:6, Pr 15:22, Stg 3:17 (solo la primera parte), Pr 14:12, Fil 3:13-14 (parcial), Is 43:18-19, Ro 8:1 (parcial), Sal 103:12, 1 Jn 3:20.
+
+Enlaces entrantes añadidos: nido-vacío (x2), familia-ensamblada, ya-no-quiere-luchar, pedir-perdón-con-humildad, perdón-en-el-matrimonio. Total: 75 posts, 0 huérfanos, 0 enlaces rotos.
