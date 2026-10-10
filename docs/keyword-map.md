@@ -546,3 +546,15 @@ El PR #82 (rondas del 6 y 7 de octubre) seguía abierto con 2 días, así que es
 Versículos (RVR1960, solo texto confirmado en dos fuentes): Pr 22:6, Pr 15:22, Stg 3:17 (solo la primera parte), Pr 14:12, Fil 3:13-14 (parcial), Is 43:18-19, Ro 8:1 (parcial), Sal 103:12, 1 Jn 3:20.
 
 Enlaces entrantes añadidos: nido-vacío (x2), familia-ensamblada, ya-no-quiere-luchar, pedir-perdón-con-humildad, perdón-en-el-matrimonio. Total: 75 posts, 0 huérfanos, 0 enlaces rotos.
+
+## Ronda diaria de 3 artículos — 2026-10-10
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| jubilacion-y-matrimonio-cuando-el-trabajo-termina-y-la-pareja-se-encuentra | jubilación y matrimonio | cambios + cuatro situaciones + acuerdos prácticos | 4 | 20127701 (vertical, `center 60%`) |
+| segundas-nupcias-como-no-repetir-el-pasado-en-un-nuevo-matrimonio | segundas nupcias | divorcio vs. viudez + seis tensiones | 5 | 12982837 (vertical, manos con anillos, `center 45%`) |
+| desempleo-y-matrimonio-cuando-perder-el-trabajo-golpea-a-la-pareja | desempleo y matrimonio | plan semanal en 7 pasos | 3 | 6963924 |
+
+Versículos (RVR1960, verificados en bible.com y biblegateway.com): Ec 3:1, Ec 4:9, Sal 90:12, Sal 92:14, Pr 4:23, 2 Co 5:17, Sal 147:3, Sal 55:22, Mt 6:34, Pr 17:17. Segundas nupcias no entra en el debate doctrinal sobre cuándo es apropiado y remite al pastor.
+
+Enlaces entrantes añadidos desde: nido-vacío, pareja-trabaja-demasiado (x2 temas), familia-ensamblada, reconciliación-tras-separación, problemas-de-dinero. Total: 78 posts. Huecos aún pendientes: viudez como tema propio, tiempo con la familia extendida, seis artículos delgados de la auditoría del 2026-10-05.
