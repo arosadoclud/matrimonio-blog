@@ -558,3 +558,13 @@ Enlaces entrantes añadidos: nido-vacío (x2), familia-ensamblada, ya-no-quiere-
 Versículos (RVR1960, verificados en bible.com y biblegateway.com): Ec 3:1, Ec 4:9, Sal 90:12, Sal 92:14, Pr 4:23, 2 Co 5:17, Sal 147:3, Sal 55:22, Mt 6:34, Pr 17:17. Segundas nupcias no entra en el debate doctrinal sobre cuándo es apropiado y remite al pastor.
 
 Enlaces entrantes añadidos desde: nido-vacío, pareja-trabaja-demasiado (x2 temas), familia-ensamblada, reconciliación-tras-separación, problemas-de-dinero. Total: 78 posts. Huecos aún pendientes: viudez como tema propio, tiempo con la familia extendida, seis artículos delgados de la auditoría del 2026-10-05.
+
+## Ronda diaria de 3 artículos — 2026-10-11
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| cuidar-a-padres-mayores-sin-descuidar-el-matrimonio | cuidar a mis padres y mi matrimonio | situaciones + acuerdos + señales de agotamiento | 4 | 5491324 |
+| mi-pareja-prefiere-salir-con-sus-amigos-como-hablarlo-sin-celos | mi pareja prefiere salir con sus amigos | guiones de conversación + errores | 3 | 8554325 |
+| comparar-tu-matrimonio-con-el-de-otros-mitos-y-realidades | comparar mi matrimonio con otros | cinco mitos/realidades + ejercicio de 3 pasos | 5 | 8796059 |
+
+Versículos (RVR1960, dos fuentes sin diferencias de palabras): Gn 2:24, Éx 20:12, Gá 6:2, Sal 71:9, Pr 18:24, Pr 13:20, Pr 14:30, Flp 4:11, 1 Co 13:4. Enlaces entrantes desde suegros, enfermedad crónica, celos (x2), trabaja-demasiado, matrimonio-sano. Total: 81 posts. Pendientes: viudez, familia extendida, seis artículos delgados de la auditoría.
