@@ -568,3 +568,13 @@ Enlaces entrantes añadidos desde: nido-vacío, pareja-trabaja-demasiado (x2 tem
 | comparar-tu-matrimonio-con-el-de-otros-mitos-y-realidades | comparar mi matrimonio con otros | cinco mitos/realidades + ejercicio de 3 pasos | 5 | 8796059 |
 
 Versículos (RVR1960, dos fuentes sin diferencias de palabras): Gn 2:24, Éx 20:12, Gá 6:2, Sal 71:9, Pr 18:24, Pr 13:20, Pr 14:30, Flp 4:11, 1 Co 13:4. Enlaces entrantes desde suegros, enfermedad crónica, celos (x2), trabaja-demasiado, matrimonio-sano. Total: 81 posts. Pendientes: viudez, familia extendida, seis artículos delgados de la auditoría.
+
+## Ronda diaria de 3 artículos — 2026-10-12
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| trabajar-desde-casa-y-matrimonio-como-convivir-sin-desgastarse | trabajar desde casa y matrimonio | escenarios + acuerdos + ritual de cierre | 3 | 5711388 (vertical, `center 60%`; pareja descalza en la cocina) |
+| no-coincidimos-en-tener-hijos-como-conversarlo-sin-romper-la-pareja | no estamos de acuerdo en tener hijos | preguntas de reflexión + errores; sin posición doctrinal | 4 | 5711600 |
+| celebrar-el-aniversario-cuando-el-matrimonio-atraviesa-una-crisis | aniversario de bodas en crisis | ideas según el momento + ejercicio de una hora | 5 | 8790874 (pareja mayor con tazas) |
+
+Versículos (RVR1960, dos fuentes sin diferencias de palabras): Col 3:23, Mr 6:31, Pr 24:3, Am 3:3, Stg 1:5, Sal 127:3 (con aviso de no usarlo como presión), Cnt 8:7, Sal 126:3, Lm 3:22-23. Enlaces entrantes desde trabaja-demasiado, jubilación, infertilidad, primer-año, pequeñas-acciones, reconciliación. Total: 84 posts. Pendientes: viudez, familia extendida, seis artículos delgados de la auditoría.
