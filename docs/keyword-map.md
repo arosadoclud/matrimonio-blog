@@ -578,3 +578,15 @@ Versículos (RVR1960, dos fuentes sin diferencias de palabras): Gn 2:24, Éx 20:
 | celebrar-el-aniversario-cuando-el-matrimonio-atraviesa-una-crisis | aniversario de bodas en crisis | ideas según el momento + ejercicio de una hora | 5 | 8790874 (pareja mayor con tazas) |
 
 Versículos (RVR1960, dos fuentes sin diferencias de palabras): Col 3:23, Mr 6:31, Pr 24:3, Am 3:3, Stg 1:5, Sal 127:3 (con aviso de no usarlo como presión), Cnt 8:7, Sal 126:3, Lm 3:22-23. Enlaces entrantes desde trabaja-demasiado, jubilación, infertilidad, primer-año, pequeñas-acciones, reconciliación. Total: 84 posts. Pendientes: viudez, familia extendida, seis artículos delgados de la auditoría.
+
+## Ronda diaria — 2026-10-13 (1 artículo nuevo + 2 ampliaciones)
+
+Con 12 artículos nuevos aún sin mergear (PR #83, 4 días abierto) y la auditoría del 2026-10-05 advirtiendo que subir el ritmo es arriesgado mientras queden artículos delgados, la ronda se repartió así:
+
+| Slug | Tipo | Detalle |
+|---|---|---|
+| quien-decide-en-el-matrimonio-decisiones-y-roles-sin-imponer | Nuevo (~1350 palabras, FAQ 4) | decisiones y roles; Efesios 5 leído en contexto, con aviso explícito de que ningún pasaje justifica control ni violencia; método de 5 pasos; señales de control. Portada Pexels 6963047 (misma serie que 6963924, otro encuadre). |
+| como-hablar-con-mi-esposo-sin-pelear | Ampliado 626 → ~1200 palabras | ejemplo de escalada, frases que encienden, esquema de 5 pasos, cómo reparar. Se eliminó el encabezado fijo "Ruta recomendada". `updated: 2026-10-13`. |
+| que-hacer-si-mi-pareja-quiere-separarse | Ampliado 662 → ~1400 palabras | primeras horas, frases que abren/cierran, errores, hijos, red de apoyo y seguridad. `updated: 2026-10-13`. |
+
+Versículos nuevos (RVR1960, dos fuentes): Ef 5:21, Ef 5:25, 1 P 3:7 (corregida contra el texto verificado), Fil 2:3, Pr 11:14. Las ampliaciones solo reutilizan versículos ya presentes. Total: 85 posts. Quedan por ampliar: consejos-para-esposos-cristianos, consejos-para-esposas-cristianas, oración por mi esposa/esposo.
