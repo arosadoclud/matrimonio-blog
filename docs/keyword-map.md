@@ -590,3 +590,15 @@ Con 12 artículos nuevos aún sin mergear (PR #83, 4 días abierto) y la auditor
 | que-hacer-si-mi-pareja-quiere-separarse | Ampliado 662 → ~1400 palabras | primeras horas, frases que abren/cierran, errores, hijos, red de apoyo y seguridad. `updated: 2026-10-13`. |
 
 Versículos nuevos (RVR1960, dos fuentes): Ef 5:21, Ef 5:25, 1 P 3:7 (corregida contra el texto verificado), Fil 2:3, Pr 11:14. Las ampliaciones solo reutilizan versículos ya presentes. Total: 85 posts. Quedan por ampliar: consejos-para-esposos-cristianos, consejos-para-esposas-cristianas, oración por mi esposa/esposo.
+
+## Ronda diaria — 2026-10-14 (3 ampliaciones, 0 artículos nuevos)
+
+El PR #83 lleva 5 días sin mergear y acumula 13 artículos nuevos; la auditoría del 2026-10-05 pide profundizar los delgados antes de seguir subiendo volumen. Se ampliaron tres (con `updated: 2026-10-14`, sin versículos nuevos, y quitando el encabezado fijo "Ruta recomendada", sustituido por "Lecturas que pueden acompañarte" o integrado):
+
+| Slug | Antes → después | Qué se añadió |
+|---|---|---|
+| consejos-para-esposas-cristianas-en-crisis-matrimonial | 595 → ~1230 palabras | semana de pequeños pasos, frases, "lo que no te toca cargar", hijos, red de apoyo; FAQ 3 → 5 |
+| consejos-para-esposos-cristianos-en-crisis-matrimonial | 642 → ~1290 palabras | qué pasa por dentro de un esposo, cinco gestos, frases, errores, situaciones graves (infidelidad, adicción, ira, depresión); FAQ 3 → 5 |
+| oracion-por-mi-esposa-en-tiempos-de-crisis | 605 → ~1200 palabras | tres oraciones por momento, siete días de oración y acción, errores, cuándo sumar ayuda; FAQ 2 → 4. Se corrigió la cita de 1 P 3:7 al texto verificado. |
+
+Quedan por ampliar: oracion-por-mi-esposo-para-que-dios-toque-su-corazon. Total: 85 posts.
