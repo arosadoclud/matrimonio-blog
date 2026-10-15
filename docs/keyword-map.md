@@ -602,3 +602,7 @@ El PR #83 lleva 5 días sin mergear y acumula 13 artículos nuevos; la auditorí
 | oracion-por-mi-esposa-en-tiempos-de-crisis | 605 → ~1200 palabras | tres oraciones por momento, siete días de oración y acción, errores, cuándo sumar ayuda; FAQ 2 → 4. Se corrigió la cita de 1 P 3:7 al texto verificado. |
 
 Quedan por ampliar: oracion-por-mi-esposo-para-que-dios-toque-su-corazon. Total: 85 posts.
+
+## Ronda diaria — 2026-10-15 (1 ampliación, 0 artículos nuevos)
+
+PR #83 con 6 días sin mergear (pausa a los 7). Se amplió el último artículo delgado de la lista: `oracion-por-mi-esposo-para-que-dios-toque-su-corazon` (663 → ~1250 palabras, FAQ 2 → 4, `updated: 2026-10-15`): qué pedir, tres oraciones por momento (redactadas distinto a las de la oración por mi esposa), acciones junto con orar, errores, cónyuge sin fe y señales para pedir ayuda. Sin versículos nuevos. Con esto quedan ampliados los seis artículos delgados de la auditoría del 2026-10-05. Total: 85 posts. Se evita sumar contenido nuevo hasta que el PR #83 se mergee.
