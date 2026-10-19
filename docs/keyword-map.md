@@ -534,3 +534,75 @@ El PR #82 (rondas del 6 y 7 de octubre) seguía abierto con 2 días, así que es
 - **Imágenes:** esta vez las descripciones del subagente coincidieron con las fotos al abrirlas. Se descartaron por no cumplir las reglas del sitio varias fotos con hombros o piernas descubiertos, una con cama visible y otra con símbolo religioso ajeno.
 - Se agregaron dos enlaces entrantes por artículo (0 huérfanos, 0 enlaces rotos). FAQ de 4, 5 y 3 preguntas.
 
+
+## Ronda diaria de 3 artículos — 2026-10-09
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| hijos-adolescentes-cuando-la-crianza-divide-al-matrimonio | hijos adolescentes y matrimonio | tres escenarios + acuerdos mínimos | 5 | 7114084 (vertical, `center 55%`) |
+| crisis-de-la-mediana-edad-cuando-uno-cuestiona-el-matrimonio | crisis de la mediana edad matrimonio | causas + dos perspectivas (quien lo vive / quien lo acompaña) | 3 | 6526185 (vertical, `center 40%`) |
+| no-puedo-perdonarme-cuando-la-culpa-pesa-en-el-matrimonio | no puedo perdonarme | culpa vs. vergüenza + trampas + pasos | 4 | 12177394 |
+
+Versículos (RVR1960, solo texto confirmado en dos fuentes): Pr 22:6, Pr 15:22, Stg 3:17 (solo la primera parte), Pr 14:12, Fil 3:13-14 (parcial), Is 43:18-19, Ro 8:1 (parcial), Sal 103:12, 1 Jn 3:20.
+
+Enlaces entrantes añadidos: nido-vacío (x2), familia-ensamblada, ya-no-quiere-luchar, pedir-perdón-con-humildad, perdón-en-el-matrimonio. Total: 75 posts, 0 huérfanos, 0 enlaces rotos.
+
+## Ronda diaria de 3 artículos — 2026-10-10
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| jubilacion-y-matrimonio-cuando-el-trabajo-termina-y-la-pareja-se-encuentra | jubilación y matrimonio | cambios + cuatro situaciones + acuerdos prácticos | 4 | 20127701 (vertical, `center 60%`) |
+| segundas-nupcias-como-no-repetir-el-pasado-en-un-nuevo-matrimonio | segundas nupcias | divorcio vs. viudez + seis tensiones | 5 | 12982837 (vertical, manos con anillos, `center 45%`) |
+| desempleo-y-matrimonio-cuando-perder-el-trabajo-golpea-a-la-pareja | desempleo y matrimonio | plan semanal en 7 pasos | 3 | 6963924 |
+
+Versículos (RVR1960, verificados en bible.com y biblegateway.com): Ec 3:1, Ec 4:9, Sal 90:12, Sal 92:14, Pr 4:23, 2 Co 5:17, Sal 147:3, Sal 55:22, Mt 6:34, Pr 17:17. Segundas nupcias no entra en el debate doctrinal sobre cuándo es apropiado y remite al pastor.
+
+Enlaces entrantes añadidos desde: nido-vacío, pareja-trabaja-demasiado (x2 temas), familia-ensamblada, reconciliación-tras-separación, problemas-de-dinero. Total: 78 posts. Huecos aún pendientes: viudez como tema propio, tiempo con la familia extendida, seis artículos delgados de la auditoría del 2026-10-05.
+
+## Ronda diaria de 3 artículos — 2026-10-11
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| cuidar-a-padres-mayores-sin-descuidar-el-matrimonio | cuidar a mis padres y mi matrimonio | situaciones + acuerdos + señales de agotamiento | 4 | 5491324 |
+| mi-pareja-prefiere-salir-con-sus-amigos-como-hablarlo-sin-celos | mi pareja prefiere salir con sus amigos | guiones de conversación + errores | 3 | 8554325 |
+| comparar-tu-matrimonio-con-el-de-otros-mitos-y-realidades | comparar mi matrimonio con otros | cinco mitos/realidades + ejercicio de 3 pasos | 5 | 8796059 |
+
+Versículos (RVR1960, dos fuentes sin diferencias de palabras): Gn 2:24, Éx 20:12, Gá 6:2, Sal 71:9, Pr 18:24, Pr 13:20, Pr 14:30, Flp 4:11, 1 Co 13:4. Enlaces entrantes desde suegros, enfermedad crónica, celos (x2), trabaja-demasiado, matrimonio-sano. Total: 81 posts. Pendientes: viudez, familia extendida, seis artículos delgados de la auditoría.
+
+## Ronda diaria de 3 artículos — 2026-10-12
+
+| Slug | Keyword principal | Formato | FAQ | Portada (Pexels) |
+|---|---|---|---|---|
+| trabajar-desde-casa-y-matrimonio-como-convivir-sin-desgastarse | trabajar desde casa y matrimonio | escenarios + acuerdos + ritual de cierre | 3 | 5711388 (vertical, `center 60%`; pareja descalza en la cocina) |
+| no-coincidimos-en-tener-hijos-como-conversarlo-sin-romper-la-pareja | no estamos de acuerdo en tener hijos | preguntas de reflexión + errores; sin posición doctrinal | 4 | 5711600 |
+| celebrar-el-aniversario-cuando-el-matrimonio-atraviesa-una-crisis | aniversario de bodas en crisis | ideas según el momento + ejercicio de una hora | 5 | 8790874 (pareja mayor con tazas) |
+
+Versículos (RVR1960, dos fuentes sin diferencias de palabras): Col 3:23, Mr 6:31, Pr 24:3, Am 3:3, Stg 1:5, Sal 127:3 (con aviso de no usarlo como presión), Cnt 8:7, Sal 126:3, Lm 3:22-23. Enlaces entrantes desde trabaja-demasiado, jubilación, infertilidad, primer-año, pequeñas-acciones, reconciliación. Total: 84 posts. Pendientes: viudez, familia extendida, seis artículos delgados de la auditoría.
+
+## Ronda diaria — 2026-10-13 (1 artículo nuevo + 2 ampliaciones)
+
+Con 12 artículos nuevos aún sin mergear (PR #83, 4 días abierto) y la auditoría del 2026-10-05 advirtiendo que subir el ritmo es arriesgado mientras queden artículos delgados, la ronda se repartió así:
+
+| Slug | Tipo | Detalle |
+|---|---|---|
+| quien-decide-en-el-matrimonio-decisiones-y-roles-sin-imponer | Nuevo (~1350 palabras, FAQ 4) | decisiones y roles; Efesios 5 leído en contexto, con aviso explícito de que ningún pasaje justifica control ni violencia; método de 5 pasos; señales de control. Portada Pexels 6963047 (misma serie que 6963924, otro encuadre). |
+| como-hablar-con-mi-esposo-sin-pelear | Ampliado 626 → ~1200 palabras | ejemplo de escalada, frases que encienden, esquema de 5 pasos, cómo reparar. Se eliminó el encabezado fijo "Ruta recomendada". `updated: 2026-10-13`. |
+| que-hacer-si-mi-pareja-quiere-separarse | Ampliado 662 → ~1400 palabras | primeras horas, frases que abren/cierran, errores, hijos, red de apoyo y seguridad. `updated: 2026-10-13`. |
+
+Versículos nuevos (RVR1960, dos fuentes): Ef 5:21, Ef 5:25, 1 P 3:7 (corregida contra el texto verificado), Fil 2:3, Pr 11:14. Las ampliaciones solo reutilizan versículos ya presentes. Total: 85 posts. Quedan por ampliar: consejos-para-esposos-cristianos, consejos-para-esposas-cristianas, oración por mi esposa/esposo.
+
+## Ronda diaria — 2026-10-14 (3 ampliaciones, 0 artículos nuevos)
+
+El PR #83 lleva 5 días sin mergear y acumula 13 artículos nuevos; la auditoría del 2026-10-05 pide profundizar los delgados antes de seguir subiendo volumen. Se ampliaron tres (con `updated: 2026-10-14`, sin versículos nuevos, y quitando el encabezado fijo "Ruta recomendada", sustituido por "Lecturas que pueden acompañarte" o integrado):
+
+| Slug | Antes → después | Qué se añadió |
+|---|---|---|
+| consejos-para-esposas-cristianas-en-crisis-matrimonial | 595 → ~1230 palabras | semana de pequeños pasos, frases, "lo que no te toca cargar", hijos, red de apoyo; FAQ 3 → 5 |
+| consejos-para-esposos-cristianos-en-crisis-matrimonial | 642 → ~1290 palabras | qué pasa por dentro de un esposo, cinco gestos, frases, errores, situaciones graves (infidelidad, adicción, ira, depresión); FAQ 3 → 5 |
+| oracion-por-mi-esposa-en-tiempos-de-crisis | 605 → ~1200 palabras | tres oraciones por momento, siete días de oración y acción, errores, cuándo sumar ayuda; FAQ 2 → 4. Se corrigió la cita de 1 P 3:7 al texto verificado. |
+
+Quedan por ampliar: oracion-por-mi-esposo-para-que-dios-toque-su-corazon. Total: 85 posts.
+
+## Ronda diaria — 2026-10-15 (1 ampliación, 0 artículos nuevos)
+
+PR #83 con 6 días sin mergear (pausa a los 7). Se amplió el último artículo delgado de la lista: `oracion-por-mi-esposo-para-que-dios-toque-su-corazon` (663 → ~1250 palabras, FAQ 2 → 4, `updated: 2026-10-15`): qué pedir, tres oraciones por momento (redactadas distinto a las de la oración por mi esposa), acciones junto con orar, errores, cónyuge sin fe y señales para pedir ayuda. Sin versículos nuevos. Con esto quedan ampliados los seis artículos delgados de la auditoría del 2026-10-05. Total: 85 posts. Se evita sumar contenido nuevo hasta que el PR #83 se mergee.
