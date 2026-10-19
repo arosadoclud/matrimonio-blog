@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AdSlot } from "@/components/AdSlot";
 import { AuthorBox, authorInitials } from "@/components/AuthorBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FunnelCTA } from "@/components/FunnelCTA";
@@ -29,7 +28,6 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
   // skip the mid-article ad break + second CTA so shorter pages don't carry
   // the same monetization density as a full-length article (AdSense flags
   // pages that are ad-heavy relative to their actual content).
-  const isShortPost = post.wordCount < 600;
   const dateFormat = new Intl.DateTimeFormat("es", { dateStyle: "long" });
   const showUpdated = Boolean(post.updated) && post.updated !== post.date;
 
@@ -131,33 +129,20 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
             </div>
           </aside>
           <div>
-            <div className="mt-2">
-              <FunnelCTA variant="top" />
-            </div>
             <VerseBox />
             <div className="mt-8 lg:hidden">
               <KidsBooksPromo />
             </div>
-            <AdSlot className="mt-8" label="Anuncio recomendado" />
             <div className="prose-article mt-8">
               <MdxContent source={bodyWithoutFaqs} />
             </div>
             <FaqSection faqs={faqs} />
-            {!isShortPost ? (
-              <>
-                <AdSlot className="mt-10" label="Anuncio de mitad de artículo" />
-                <div className="mt-10">
-                  <FunnelCTA variant="middle" topic={post.category} slug={post.slug} />
-                </div>
-              </>
-            ) : null}
             <div className="mt-10">
               <AuthorBox />
             </div>
             <div className="mt-10">
               <FunnelCTA variant="bottom" slug={post.slug} category={post.category} />
             </div>
-            <AdSlot className="mt-10" label="Anuncio final" />
           </div>
         </div>
         <RelatedArticles posts={relatedPosts} />
