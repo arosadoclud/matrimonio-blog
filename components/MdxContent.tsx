@@ -32,7 +32,7 @@ function renderInline(text: string) {
             {match[4]}
           </Link>
         ) : (
-          <a key={match.index} href={href}>
+          <a key={match.index} href={href} rel={href.startsWith("https://restauratumatrimonio.org/") ? "sponsored nofollow" : undefined}>
             {match[4]}
           </a>
         )

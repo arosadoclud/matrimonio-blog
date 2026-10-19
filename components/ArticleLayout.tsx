@@ -2,10 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { AuthorBox, authorInitials } from "@/components/AuthorBox";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FunnelCTA } from "@/components/FunnelCTA";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { FaqSection } from "@/components/FaqSection";
-import { KidsBooksPromo } from "@/components/KidsBooksPromo";
 import { MdxContent } from "@/components/MdxContent";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -24,11 +22,7 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
   const toc = getTableOfContents(post.content);
   const faqs = getFaqs(post.content);
   const bodyWithoutFaqs = stripFaqSection(post.content);
-  // Posts under 600 words still get the top/bottom CTA and one ad slot, but
-  // skip the mid-article ad break + second CTA so shorter pages don't carry
-  // the same monetization density as a full-length article (AdSense flags
-  // pages that are ad-heavy relative to their actual content).
-  const dateFormat = new Intl.DateTimeFormat("es", { dateStyle: "long" });
+  const dateFormat = new Intl.DateTimeFormat("es", { dateStyle: "long", timeZone: "UTC" });
   const showUpdated = Boolean(post.updated) && post.updated !== post.date;
 
   return (
@@ -124,24 +118,31 @@ export function ArticleLayout({ post, relatedPosts }: ArticleLayoutProps) {
                 ))}
               </nav>
             </div>
-            <div className="mt-6">
-              <KidsBooksPromo />
-            </div>
           </aside>
           <div>
-            <VerseBox />
-            <div className="mt-8 lg:hidden">
-              <KidsBooksPromo />
-            </div>
+            <VerseBox category={post.category} />
             <div className="prose-article mt-8">
               <MdxContent source={bodyWithoutFaqs} />
             </div>
             <FaqSection faqs={faqs} />
+            <aside className="mt-12 rounded-[1.5rem] bg-[#e8eee6] p-6 sm:p-8">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#43664e]">Llévalo a la práctica</p>
+              {post.category === "Comunicación en pareja" ? (
+                <>
+                  <h2 className="mt-2 font-[var(--font-display)] text-3xl font-semibold text-[#2d4638]">Prepara una conversación con calma</h2>
+                  <p className="mt-3 leading-7 text-[#46564b]">Si puedes hablar con seguridad, escribe qué necesitas decir, una petición concreta y cuándo conviene hacer una pausa. La hoja de trabajo es gratuita y se queda en tu navegador.</p>
+                  <Link href="/herramientas/primera-conversacion" className="mt-5 inline-flex text-sm font-bold text-[#2d4638] underline underline-offset-4">Abrir hoja de trabajo</Link>
+                </>
+              ) : (
+                <>
+                  <h2 className="mt-2 font-[var(--font-display)] text-3xl font-semibold text-[#2d4638]">Elige un siguiente paso adecuado</h2>
+                  <p className="mt-3 leading-7 text-[#46564b]">Compara una herramienta gratuita, apoyo profesional y recursos externos. Si hay amenazas o control, prioriza tu seguridad y busca orientación especializada individual.</p>
+                  <Link href="/recursos" className="mt-5 inline-flex text-sm font-bold text-[#2d4638] underline underline-offset-4">Ver opciones de ayuda</Link>
+                </>
+              )}
+            </aside>
             <div className="mt-10">
               <AuthorBox />
-            </div>
-            <div className="mt-10">
-              <FunnelCTA variant="bottom" slug={post.slug} category={post.category} />
             </div>
           </div>
         </div>

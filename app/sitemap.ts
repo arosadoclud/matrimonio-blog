@@ -70,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // llevan noindex,follow (ver app/blog/[slug]/page.tsx) y no deben estar en el sitemap.
   const blogPostPages: MetadataRoute.Sitemap = indexablePosts.map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt ?? post.date),
+    lastModified: new Date(post.updated ?? post.date),
     changeFrequency: "monthly" as const,
     priority: post.contentType === "pillar" ? 0.9 : 0.8,
   }));
