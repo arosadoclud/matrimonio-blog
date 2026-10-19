@@ -168,7 +168,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(
-      { success: true, message: "¡Mensaje enviado! Te contactaremos pronto." },
+      { success: true, message: "Mensaje enviado. Lo revisaremos cuando sea posible." },
       { status: 200 }
     );
   } catch (error) {

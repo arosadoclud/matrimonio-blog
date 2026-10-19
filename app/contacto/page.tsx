@@ -34,8 +34,11 @@ export default function ContactPage() {
         Escríbenos
       </h1>
       <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">
-        Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.
+        Usa este formulario para consultas sobre el sitio, recursos o correcciones. No es un canal
+        de atención de crisis, terapia ni respuesta inmediata. Si hay peligro, contacta a los
+        servicios de emergencia o de apoyo especializado de tu localidad.
       </p>
+      <p className="mt-3 max-w-2xl text-sm leading-6 text-[#655b56]">Evita incluir datos íntimos, información médica o detalles que identifiquen a otra persona.</p>
       <div className="mt-10">
         <ContactForm />
       </div>

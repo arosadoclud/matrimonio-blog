@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
+import { getAllPosts, stripFaqSection } from "@/lib/posts";
 import { MdxContent } from "../MdxContent";
 
 describe("MdxContent", () => {
@@ -59,5 +61,26 @@ describe("MdxContent", () => {
     expect(screen.getByRole("heading", { level: 2, name: "Un título" })).toBeInTheDocument();
     expect(screen.getByText("Primer punto")).toBeInTheDocument();
     expect(screen.getByText("Segundo punto")).toBeInTheDocument();
+  });
+
+  it("renders Windows CRLF articles as sections instead of literal Markdown", () => {
+    const source = "Introducción.\r\n\r\n## Escucha primero\r\n\r\nUn consejo útil.\r\n\r\n1. Primer paso\r\n2. Segundo paso";
+    render(<MdxContent source={source} />);
+
+    expect(screen.getByRole("heading", { level: 2, name: "Escucha primero" })).toHaveAttribute("id", "escucha-primero");
+    expect(screen.getByText("Un consejo útil.")).toBeInTheDocument();
+    expect(screen.getByRole("list").tagName).toBe("OL");
+    expect(screen.queryByText(/## Escucha primero/)).not.toBeInTheDocument();
+  });
+
+  it("preserves every published article section as a heading", () => {
+    for (const post of getAllPosts()) {
+      const body = stripFaqSection(post.content).replace(/\r\n?/g, "\n");
+      const expected = (body.match(/^## /gm) ?? []).length;
+      const html = renderToStaticMarkup(<MdxContent source={body} />);
+      const rendered = (html.match(/<h2\b/g) ?? []).length;
+      expect(rendered, post.slug).toBe(expected);
+      expect(html, post.slug).not.toMatch(/>## [^<]+</);
+    }
   });
 });

@@ -2,47 +2,25 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="bg-[#FFF7E8]">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
+    <section className="relative overflow-hidden bg-[#f4eee8]">
+      <div className="absolute -right-24 -top-48 h-[35rem] w-[35rem] rounded-full bg-[#e8cdbb]/50 blur-3xl" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-24">
         <div>
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-[#8a6a18]">
-            Restauración matrimonial cristiana
-          </p>
-          <h1 className="font-[var(--font-display)] text-5xl font-bold leading-[0.98] text-[#5A0F18] sm:text-6xl lg:text-7xl">
-            Dios puede restaurar tu matrimonio
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#1F1F1F]/78">
-            Recursos cristianos, oración y enseñanzas para matrimonios que desean sanar,
-            perdonar y volver a construir.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/blog"
-              className="rounded-full bg-[#5A0F18] px-7 py-3.5 text-center font-semibold text-white shadow-sm transition hover:bg-[#3f0b11]"
-            >
-              Leer artículos
-            </Link>
-            <Link
-              href="/recursos"
-              className="rounded-full border border-[#D4AF37] bg-white px-7 py-3.5 text-center font-semibold text-[#5A0F18] transition hover:bg-[#fffaf0]"
-            >
-              Ver recurso recomendado
-            </Link>
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-[#8c4e40]">Un lugar para empezar de nuevo</p>
+          <h1 className="max-w-4xl font-[var(--font-display)] text-6xl font-semibold leading-[0.96] tracking-[-0.025em] text-[#3e2528] sm:text-7xl lg:text-[5.6rem]">Cuando el matrimonio duele, necesitas <em className="font-normal text-[#a25b49]">claridad y compañía.</em></h1>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#514944]">Guías cristianas con preguntas honestas, pasos concretos y espacio para buscar ayuda. La esperanza también se construye con acciones pequeñas y responsables.</p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link href="/blog/primeros-pasos-para-restaurar-un-matrimonio-en-crisis" className="rounded-full bg-[#5a3135] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#422428]">Empezar por aquí <span aria-hidden="true">↗</span></Link>
+            <Link href="/herramientas/primera-conversacion" className="rounded-full border border-[#aa897d] bg-white/75 px-7 py-3.5 text-sm font-semibold text-[#5a3135] transition hover:bg-white">Preparar una conversación</Link>
           </div>
         </div>
-        <div className="rounded-[8px] border border-[#D4AF37]/35 bg-white p-6 shadow-xl shadow-[#5A0F18]/10">
-          <p className="font-[var(--font-display)] text-3xl font-bold text-[#5A0F18]">
-            “El amor todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.”
-          </p>
-          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#8a6a18]">
-            1 Corintios 13:7
-          </p>
-          <div className="mt-8 grid gap-3 text-sm text-[#1F1F1F]/72">
-            <div className="rounded-[8px] bg-[#FFF7E8] p-4">Oración por el matrimonio</div>
-            <div className="rounded-[8px] bg-[#FFF7E8] p-4">Perdón y reconciliación</div>
-            <div className="rounded-[8px] bg-[#FFF7E8] p-4">Consejos bíblicos para la crisis</div>
-          </div>
-        </div>
+        <aside className="rounded-[2rem] border border-[#e3d4c9] bg-white/85 p-7 shadow-[0_24px_80px_-50px_rgba(62,37,40,.5)] sm:p-9">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#dce4d6] text-xl text-[#345a47]" aria-hidden="true">✦</span>
+          <p className="mt-7 text-xs font-bold uppercase tracking-[0.18em] text-[#8c4e40]">Una pausa para hoy</p>
+          <h2 className="mt-3 font-[var(--font-display)] text-4xl font-semibold leading-tight text-[#3e2528]">No tienes que resolverlo todo en una sola conversación.</h2>
+          <p className="mt-5 leading-7 text-[#514944]">Empieza por identificar qué pasó, qué necesitas y qué puedes pedir sin presionar. Nuestra hoja de trabajo te ayuda a ordenar esas ideas.</p>
+          <Link href="/herramientas/primera-conversacion" className="mt-7 inline-flex border-b border-[#8c4e40] pb-1 text-sm font-bold text-[#5a3135]">Usar la hoja de trabajo <span className="ml-2" aria-hidden="true">→</span></Link>
+        </aside>
       </div>
     </section>
   );

@@ -74,9 +74,9 @@ export const categories: Category[] = [
   {
     name: "Testimonios",
     slug: "testimonios",
-    description: "Historias de esperanza para recordar que Dios sigue obrando.",
+    description: "Cómo evaluar historias de restauración matrimonial con esperanza y criterio.",
     intro:
-      "Compartimos únicamente testimonios reales de personas que autorizaron contar su historia, sin promesas de que tu proceso terminará igual. Ningún matrimonio se restaura exactamente como otro, y ninguna historia aquí garantiza un resultado — lo que sí puedes tomar es honestidad sobre lo que tomó tiempo, la ayuda que buscaron y la fe que sostuvo el proceso.",
+      "Aquí encontrarás preguntas para evaluar testimonios de restauración matrimonial y enlaces a su fuente cuando un programa externo los publica. Cada experiencia pertenece a quienes la cuentan; ninguna historia garantiza que otra pareja vivirá el mismo resultado.",
   },
   {
     name: "Preguntas frecuentes",

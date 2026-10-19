@@ -1,141 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogCard } from "@/components/BlogCard";
-import { CTABox } from "@/components/CTABox";
-import { FeaturedPost } from "@/components/FeaturedPost";
 import { Hero } from "@/components/Hero";
-import { NewsletterBox } from "@/components/NewsletterBox";
-import { getAllPosts, getPillarPosts } from "@/lib/posts";
-import { categories } from "@/lib/site";
-import { ensureMetaDescription } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
+import { getAllPosts } from "@/lib/posts";
+import { categories, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Restauración matrimonial cristiana, oración y reconciliación",
-  description: ensureMetaDescription(
-    "Dios puede restaurar tu matrimonio. Encuentra artículos cristianos sobre oración, perdón, reconciliación, crisis de pareja y restauración familiar."
-  ),
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  title: "Guías para cuidar tu matrimonio con fe y acciones concretas",
+  description: "Guías cristianas y herramientas prácticas para conversar, poner límites, pedir perdón y buscar ayuda en una crisis matrimonial.",
+  alternates: { canonical: siteConfig.url },
 };
+
+const paths = [
+  { number: "01", title: "Bajar la tensión", description: "Primeros pasos para detener los patrones que hacen más daño cuando todo se siente urgente.", href: "/blog/primeros-pasos-para-restaurar-un-matrimonio-en-crisis" },
+  { number: "02", title: "Volver a hablar", description: "Una hoja de trabajo para preparar una conversación breve, clara y respetuosa.", href: "/herramientas/primera-conversacion" },
+  { number: "03", title: "Reconstruir confianza", description: "Distinguir una disculpa de un cambio sostenido y avanzar sin exigir resultados inmediatos.", href: "/blog/como-reconstruir-la-confianza-despues-de-una-crisis-matrimonial" },
+];
 
 export default function HomePage() {
   const posts = getAllPosts();
-  const pillarPosts = getPillarPosts();
-  const featuredPillarSlugs = new Set(pillarPosts.slice(0, 3).map((post) => post.slug));
-  // Reference/index-style content (like the FAQ hub) reads well as a small
-  // grid card but not as the single large "featured" hero -- it has no
-  // narrative to preview. Also skip whatever is already shown as a
-  // "Destacado" pillar above so the same article doesn't appear twice.
-  const eligibleForFeatured = posts.filter(
-    (post) => !featuredPillarSlugs.has(post.slug) && post.category !== "Preguntas frecuentes"
-  );
-  const flagshipFeatured = eligibleForFeatured.find((post) => post.homeFlagshipFeatured);
-  const featuredPost = flagshipFeatured ?? eligibleForFeatured[0];
-  // Ranked posts (homeRecentOrder) go first. Among unranked posts, oldest
-  // first -- being newly published must never by itself be what wins a
-  // homepage slot meant to reflect real performance.
-  const recentPosts = eligibleForFeatured
-    .filter((post) => post.slug !== featuredPost?.slug)
-    .sort((a, b) => {
-      const rankA = a.homeRecentOrder ?? Infinity;
-      const rankB = b.homeRecentOrder ?? Infinity;
-      if (rankA !== rankB) return rankA - rankB;
-      return Number(new Date(a.date)) - Number(new Date(b.date));
-    });
+  const featured = ["como-recuperar-la-comunicacion-con-mi-pareja", "que-dice-la-biblia-sobre-el-perdon-en-el-matrimonio", "como-restaurar-mi-matrimonio-con-la-ayuda-de-dios"]
+    .map((slug) => posts.find((post) => post.slug === slug))
+    .filter((post): post is (typeof posts)[number] => Boolean(post));
+  const topicSlugs = new Set(["crisis-matrimonial", "comunicacion-en-pareja", "perdon-y-reconciliacion", "oracion-por-el-matrimonio", "restauracion-matrimonial", "consejos-biblicos"]);
 
   return (
     <>
       <Hero />
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Empieza aquí</p>
-            <h2 className="mt-2 font-[var(--font-display)] text-4xl font-bold text-[#5A0F18]">
-              Una ruta clara si tu matrimonio está en crisis
-            </h2>
-            <p className="mt-4 leading-7 text-[#1F1F1F]/70">
-              Empieza por los 3 artículos más leídos del sitio. Están pensados para ordenar el
-              corazón, orar con dirección y entender el perdón bíblico sin negar la realidad.
-            </p>
-            <Link
-              href="/newsletter"
-              className="mt-6 inline-flex rounded-full bg-[#5A0F18] px-6 py-3 text-sm font-semibold text-white"
-              data-event="cta_click"
-              data-label="home_empieza_aqui_newsletter"
-            >
-              Recibir guía gratuita
-            </Link>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {pillarPosts.slice(0, 3).map((post, index) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="flex flex-col rounded-[8px] border border-[#D4AF37]/35 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-              >
-                <span className="inline-flex w-fit items-center rounded-full bg-[#FFF7E8] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
-                  Destacado #{index + 1}
-                </span>
-                <h3 className="mt-3 line-clamp-3 font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
-                  {post.title}
-                </h3>
-                <p className="mt-3 line-clamp-3 text-sm leading-6 text-[#1F1F1F]/64">{post.description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="ruta-title">
+        <div className="max-w-3xl"><p className="text-xs font-bold uppercase tracking-[0.2em] text-[#986055]">Una ruta posible</p><h2 id="ruta-title" className="mt-3 font-[var(--font-display)] text-5xl font-semibold leading-tight text-[#3e2528]">Un paso útil para cada momento</h2><p className="mt-4 text-lg leading-8 text-[#514944]">Elige el punto que se parece a lo que vives hoy. Cada recurso propone algo que puedes poner en práctica sin prometer un resultado que nadie puede garantizar.</p></div>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">{paths.map((path) => <Link key={path.number} href={path.href} className="group flex flex-col rounded-[1.5rem] border border-[#e9ddd4] bg-white p-7 transition hover:-translate-y-1 hover:border-[#c7a99a] hover:shadow-md"><span className="font-[var(--font-display)] text-4xl text-[#b87967]">{path.number}</span><h3 className="mt-7 font-[var(--font-display)] text-3xl font-semibold text-[#3e2528]">{path.title}</h3><p className="mt-3 flex-1 leading-7 text-[#655b56]">{path.description}</p><span className="mt-8 text-sm font-bold text-[#7c403d]">Explorar <span className="inline-block transition group-hover:translate-x-1" aria-hidden="true">→</span></span></Link>)}</div>
       </section>
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Categorías</p>
-            <h2 className="mt-2 font-[var(--font-display)] text-4xl font-bold text-[#5A0F18]">
-              Encuentra guía para tu proceso
-            </h2>
-          </div>
-          <Link href="/blog" className="hidden text-sm font-bold text-[#5A0F18] sm:inline">
-            Ver artículos
-          </Link>
-        </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((category) => (
-            <Link
-              key={category.slug}
-              href={`/categorias/${category.slug}`}
-              className="rounded-[8px] border border-[#D4AF37]/35 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <h3 className="font-[var(--font-display)] text-2xl font-bold text-[#5A0F18]">{category.name}</h3>
-              <p className="mt-2 text-sm leading-6 text-[#1F1F1F]/64">{category.description}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
-      <section className="bg-[#FFF7E8] py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {featuredPost ? <FeaturedPost post={featuredPost} /> : null}
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {recentPosts.slice(0, 3).map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-        <CTABox />
-        <NewsletterBox />
-      </section>
-      <section className="border-t border-[#5A0F18]/10 bg-white px-4 py-12 text-center">
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Confianza</p>
-        <h2 className="mt-2 font-[var(--font-display)] text-4xl font-bold text-[#5A0F18]">
-          Contenido basado en principios bíblicos
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#1F1F1F]/68">
-          Cada artículo busca acompañarte con esperanza, responsabilidad y una mirada cristiana
-          centrada en la reconciliación, el perdón y la restauración familiar.
-        </p>
-      </section>
+      <section className="bg-[#e8eee6] py-20" aria-labelledby="herramienta-title"><div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8"><div className="rounded-[2rem] bg-white p-8 shadow-sm sm:p-10"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#43664e]">Herramienta gratuita</p><div className="mt-6 space-y-3 text-sm"><div className="rounded-xl bg-[#f5f7f1] p-4">1. Elige un solo tema.</div><div className="rounded-xl bg-[#f5f7f1] p-4">2. Nombra lo que sientes y necesitas.</div><div className="rounded-xl bg-[#f5f7f1] p-4">3. Propón un momento y un acuerdo posible.</div></div></div><div><h2 id="herramienta-title" className="font-[var(--font-display)] text-5xl font-semibold leading-tight text-[#2d4638]">Prepara tus palabras antes de una conversación difícil.</h2><p className="mt-5 max-w-xl text-lg leading-8 text-[#46564b]">La hoja de trabajo te permite escribir un plan privado, revisarlo y llevarlo contigo. Incluye una pauta para pausar si la conversación se vuelve hiriente.</p><Link href="/herramientas/primera-conversacion" className="mt-7 inline-flex rounded-full bg-[#345a47] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#274736]">Abrir hoja de trabajo <span className="ml-2" aria-hidden="true">↗</span></Link></div></div></section>
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8" aria-labelledby="temas-title"><div className="flex flex-wrap items-end justify-between gap-5"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-[#986055]">Explora a tu ritmo</p><h2 id="temas-title" className="mt-3 font-[var(--font-display)] text-5xl font-semibold text-[#3e2528]">Temas que acompañan tu proceso</h2></div><Link href="/categorias" className="text-sm font-bold text-[#7c403d] underline underline-offset-4">Ver todas las categorías</Link></div><div className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{categories.filter((category) => topicSlugs.has(category.slug)).map((category) => <Link key={category.slug} href={`/categorias/${category.slug}`} className="rounded-2xl border border-[#e9ddd4] bg-white px-6 py-5 transition hover:border-[#b87967] hover:bg-[#fbf5ef]"><h3 className="font-[var(--font-display)] text-2xl font-semibold text-[#3e2528]">{category.name} <span className="text-[#b87967]" aria-hidden="true">↗</span></h3><p className="mt-2 text-sm leading-6 text-[#655b56]">{category.description}</p></Link>)}</div></section>
+      <section className="border-t border-[#e9ddd4] bg-[#faf6f1] py-20" aria-labelledby="guias-title"><div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="flex flex-wrap items-end justify-between gap-5"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-[#986055]">Lecturas seleccionadas</p><h2 id="guias-title" className="mt-3 font-[var(--font-display)] text-5xl font-semibold text-[#3e2528]">Guías para profundizar</h2></div><Link href="/blog" className="text-sm font-bold text-[#7c403d] underline underline-offset-4">Explorar el blog</Link></div><div className="mt-9 grid gap-6 md:grid-cols-3">{featured.map((post) => <BlogCard key={post.slug} post={post} />)}</div></div></section>
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8"><div className="rounded-[2rem] bg-[#513137] px-7 py-10 text-white sm:px-12"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#edc8b9]">Nuestra manera de acompañar</p><h2 className="mt-3 max-w-3xl font-[var(--font-display)] text-4xl font-semibold leading-tight">Fe, responsabilidad y atención a la seguridad de cada persona.</h2><p className="mt-4 max-w-3xl leading-7 text-white/80">La reconciliación no se puede exigir. Nuestros contenidos invitan a escuchar, reparar y buscar apoyo adecuado. Si hay violencia, amenazas o control, la prioridad es protegerte y pedir ayuda local especializada.</p><Link href="/politica-editorial" className="mt-6 inline-flex text-sm font-bold text-white underline underline-offset-4">Conoce nuestra política editorial</Link></div></section>
     </>
   );
 }

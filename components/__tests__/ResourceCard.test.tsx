@@ -24,7 +24,7 @@ describe("ResourceCard", () => {
       />
     );
 
-    fireEvent.click(screen.getByRole("link", { name: "Acceder al recurso" }));
+    fireEvent.click(screen.getByRole("link", { name: "Conocer el programa externo" }));
 
     expect(trackHotmartCtaClick).toHaveBeenCalledWith(
       "recursos_page_cta",
@@ -33,7 +33,7 @@ describe("ResourceCard", () => {
         article_category: "Crisis matrimonial",
         cta_location: "recursos_page",
         content_cluster: "separacion_y_distancia_emocional",
-        cta_text: "Acceder al recurso",
+        cta_text: "Conocer el programa externo",
       })
     );
   });
@@ -42,7 +42,7 @@ describe("ResourceCard", () => {
     const { trackHotmartCtaClick } = await import("@/lib/analytics");
     render(<ResourceCard />);
 
-    fireEvent.click(screen.getByRole("link", { name: "Acceder al recurso" }));
+    fireEvent.click(screen.getByRole("link", { name: "Conocer el programa externo" }));
 
     expect(trackHotmartCtaClick).toHaveBeenCalledWith(
       "recursos_page_cta",
@@ -58,7 +58,7 @@ describe("ResourceCard", () => {
   it("carries the source slug as a UTM term in the destination URL", async () => {
     render(<ResourceCard sourcePostSlug="mi-esposa-dice-que-ya-no-me-ama" />);
 
-    const link = screen.getByRole("link", { name: "Acceder al recurso" });
+    const link = screen.getByRole("link", { name: "Conocer el programa externo" });
     const href = link.getAttribute("href") ?? "";
     expect(href).toContain("utm_term=mi-esposa-dice-que-ya-no-me-ama");
   });

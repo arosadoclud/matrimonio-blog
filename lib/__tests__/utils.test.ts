@@ -37,6 +37,7 @@ describe("slugify", () => {
 describe("formatDate", () => {
   it("should format date in Spanish", () => {
     const result = formatDate("2024-06-15");
+    expect(result).toContain("15");
     expect(result).toContain("junio");
     expect(result).toContain("2024");
   });

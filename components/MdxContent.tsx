@@ -32,7 +32,7 @@ function renderInline(text: string) {
             {match[4]}
           </Link>
         ) : (
-          <a key={match.index} href={href}>
+          <a key={match.index} href={href} rel={href.startsWith("https://restauratumatrimonio.org/") ? "sponsored nofollow" : undefined}>
             {match[4]}
           </a>
         )
@@ -50,7 +50,10 @@ function renderInline(text: string) {
 }
 
 export function MdxContent({ source }: { source: string }) {
-  const blocks = source.trim().split(/\n{2,}/);
+  // Los artículos llegan tanto con CRLF (Windows) como con LF. Si se separan
+  // solo por "\n\n", los títulos y las listas CRLF quedan dentro de un único
+  // párrafo y se muestran literalmente como "## Título".
+  const blocks = source.replace(/\r\n?/g, "\n").trim().split(/\n\s*\n/);
 
   return (
     <>
