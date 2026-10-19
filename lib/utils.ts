@@ -20,6 +20,9 @@ export function slugify(value: string): string {
 export function formatDate(dateString: string): string {
   return new Intl.DateTimeFormat("es", {
     dateStyle: "long",
+    // Frontmatter stores calendar dates without a timezone. Keep the displayed
+    // day stable for readers in the Americas instead of shifting to yesterday.
+    timeZone: "UTC",
   }).format(new Date(dateString));
 }
 

@@ -49,6 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.url}/herramientas/primera-conversacion`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 
   // Páginas de categorías: excluye categorías sin artículos publicados (contenido
@@ -65,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // llevan noindex,follow (ver app/blog/[slug]/page.tsx) y no deben estar en el sitemap.
   const blogPostPages: MetadataRoute.Sitemap = indexablePosts.map((post) => ({
     url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updatedAt ?? post.date),
     changeFrequency: "monthly" as const,
     priority: post.contentType === "pillar" ? 0.9 : 0.8,
   }));

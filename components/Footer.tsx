@@ -3,7 +3,7 @@ import { categories, siteConfig } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-[#5A0F18] text-white">
+    <footer className="bg-[#3e2528] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
         <div>
           <p className="font-[var(--font-display)] text-3xl font-bold">{siteConfig.name}</p>
@@ -16,7 +16,8 @@ export function Footer() {
           <p className="font-semibold text-[#D4AF37]">Explorar</p>
           <div className="mt-2 flex flex-col text-sm text-white/80">
             <Link className="inline-block py-1.5" href="/blog">Blog</Link>
-            <Link className="inline-block py-1.5" href="/recursos">Recursos</Link>
+            <Link className="inline-block py-1.5" href="/herramientas/primera-conversacion">Herramienta gratuita</Link>
+            <Link className="inline-block py-1.5" href="/recursos">Opciones de ayuda</Link>
             <Link className="inline-block py-1.5" href="/sobre-nosotros">Sobre nosotros</Link>
             <Link className="inline-block py-1.5" href="/contacto">Contacto</Link>
             <Link className="inline-block py-1.5" href="/privacidad">Política de Privacidad</Link>

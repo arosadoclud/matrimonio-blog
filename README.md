@@ -8,11 +8,9 @@ Andres Arango, vendido vía Hotmart a través del landing en
 
 **Arquitectura de dominios (a propósito, no es una migración):**
 - `restauratumatrimonio.org` → landing de ventas (checkout Hotmart, repo `matrimonio-landing`).
-- `restauratumatrimonio-blog.com` → dominio definitivo de este blog, aún no comprado.
-  Mientras tanto, `siteConfig` en [lib/site.ts](lib/site.ts) apunta al dominio temporal de
-  Vercel: [matrimonio-blog.vercel.app](https://matrimonio-blog.vercel.app). Cuando se compre
-  el dominio final, solo hay que actualizar `domain`/`url` ahí — el resto del código
-  (sitemap, robots, OG tags, JSON-LD) ya lo consume desde `siteConfig`.
+- `restauratumatrimonio-blog.com` → dominio canónico configurado para este blog en
+  [lib/site.ts](lib/site.ts). El propietario debe comprobar que el dominio, DNS y HTTPS
+  coinciden con esa configuración antes de solicitar una nueva revisión de AdSense.
 
 ## Desarrollo
 
@@ -74,12 +72,10 @@ del blog y del landing como audiencias separadas y se rompe la atribución del e
 
 ## Embudo de contenido
 
-- `components/FunnelCTA.tsx`: un CTA por posición en cada artículo —
-  `top` (guía gratis, captura de email), `middle` (suave, según la categoría del post, hacia
-  `/recursos`) y `bottom` (fuerte, directo al landing con UTM `funnel_blog`).
-- `app/recursos/page.tsx`: página puente problema → promesa → recurso
-  (`components/ResourceCard.tsx`) → CTA (con UTM y tracking) → testimonios de confianza →
-  newsletter.
+- Los artículos priorizan el contenido y ofrecen al final una herramienta gratuita para
+  preparar una conversación. La autoría del proyecto no se presenta como revisión clínica.
+- `app/recursos/page.tsx`: ruta de decisión entre recursos gratuitos, atención profesional y
+  programa externo de pago (`components/ResourceCard.tsx`) con aviso de afiliado.
 - El link final siempre apunta a `siteConfig.hotmartUrl` (`lib/site.ts`), que hoy es el
   landing en `restauratumatrimonio.org`. El landing es quien tiene los links reales de
   checkout de Hotmart (`go.hotmart.com`) con su propio tracking ya en producción.

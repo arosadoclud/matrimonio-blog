@@ -6,8 +6,8 @@ type CTABoxProps = {
 };
 
 export function CTABox({
-  title = "Conoce el recurso recomendado para restaurar tu matrimonio",
-  description = "Una guía práctica y cristiana para acompañarte con oración, reflexión y pasos concretos en este proceso."
+  title = "Encuentra una ayuda apropiada para tu situación",
+  description = "Compara herramientas gratuitas, orientación profesional y programas externos antes de decidir tu siguiente paso."
 }: CTABoxProps) {
   return (
     <section className="rounded-[8px] bg-[#5A0F18] p-6 text-white sm:p-8">
@@ -19,7 +19,7 @@ export function CTABox({
         data-label="recurso_recomendado"
         className="mt-6 inline-flex rounded-full bg-[#D4AF37] px-6 py-3 text-sm font-bold text-[#1F1F1F] transition hover:bg-[#e1bd45]"
       >
-        Ver recurso recomendado
+        Ver opciones de ayuda
       </Link>
     </section>
   );

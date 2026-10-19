@@ -50,9 +50,9 @@ describe("sitemap", () => {
     expect(home?.lastModified).toBeUndefined();
   });
 
-  it("uses the post's real date as lastModified for blog posts", () => {
+  it("uses the post's publication or actual update date as lastModified", () => {
     const post = getIndexablePosts()[0];
     const entry = entries.find((e) => e.url === `${siteConfig.url}/blog/${post.slug}`);
-    expect(entry?.lastModified).toEqual(new Date(post.date));
+    expect(entry?.lastModified).toEqual(new Date(post.updatedAt ?? post.date));
   });
 });

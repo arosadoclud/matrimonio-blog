@@ -18,8 +18,13 @@ html {
 body {
   margin: 0;
   color: var(--dark);
-  background: #fffdf8;
+  background: #fffdf9;
   font-family: var(--font-body), Arial, sans-serif;
+}
+
+/* The display face is shared by existing pages that use this Tailwind class. */
+[class~="font-[var(--font-display)]"] {
+  font-family: var(--font-display), Georgia, serif !important;
 }
 
 a {
@@ -31,18 +36,36 @@ a {
 }
 
 .prose-article {
-  color: #2d2d2d;
+  color: #37332f;
   font-size: 1.08rem;
-  line-height: 1.85;
+  line-height: 1.9;
+  max-width: 68ch;
 }
 
 .prose-article h2 {
   margin-top: 2.5rem;
   margin-bottom: 0.9rem;
-  color: var(--burgundy);
+  color: #3e2528;
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(1.75rem, 4vw, 2.35rem);
   line-height: 1.15;
+}
+
+.prose-article h2,
+.prose-article h3 {
+  scroll-margin-top: 7rem;
+}
+
+:focus-visible {
+  outline: 2px solid #7c403d;
+  outline-offset: 3px;
+}
+
+@media print {
+  header, footer, nav, button { display: none !important; }
+  body { background: white; }
+  .planner-grid { display: block !important; }
+  .planner-form { display: none !important; }
 }
 
 .prose-article h3 {
@@ -55,6 +78,12 @@ a {
 
 .prose-article p {
   margin: 1.35rem 0;
+}
+
+.prose-article > p:first-child {
+  margin-top: 0;
+  font-size: 1.18rem;
+  line-height: 1.8;
 }
 
 .prose-article ul,

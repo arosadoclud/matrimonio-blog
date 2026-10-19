@@ -41,11 +41,10 @@ export default function EditorialPolicyPage() {
 
         <h2>Cómo investigamos y escribimos los artículos</h2>
         <p>
-          El contenido combina principios bíblicos, experiencia pastoral y de acompañamiento
-          matrimonial, y recursos de orientación cristiana ya existentes en el ministerio. Parte del
-          contenido se produce internamente y parte se genera con apoyo de herramientas de IA a
-          través de un flujo editorial (ver más abajo), pero ningún artículo se publica sin pasar
-          primero por una revisión.
+          Los artículos combinan lecturas bíblicas, ejemplos cotidianos y propuestas educativas.
+          Algunos textos se preparan con apoyo de herramientas de IA. Esa ayuda no convierte el
+          contenido en consejo clínico ni reemplaza la comprobación de fuentes y la corrección de
+          errores antes y después de publicar.
         </p>
 
         <h2>Autoría y responsabilidad</h2>
@@ -57,25 +56,23 @@ export default function EditorialPolicyPage() {
 
         <h2>Cómo comprobamos las referencias bíblicas</h2>
         <p>
-          Cada cita o referencia bíblica se contrasta con el pasaje original antes de publicarse,
-          para evitar sacarla de contexto o atribuirle un significado que el texto no tiene.
+          Buscamos indicar el pasaje que inspira cada reflexión y distinguir una paráfrasis de una
+          cita literal. Si encuentras una referencia imprecisa o fuera de contexto, avísanos para
+          revisarla y corregirla.
         </p>
 
         <h2>Cómo se revisan los contenidos antes de publicarse</h2>
         <p>
-          Todo artículo nuevo se integra a este sitio mediante un Pull Request en el repositorio del
-          blog. Antes de poder publicarse, ese Pull Request pasa por revisión humana y por
-          validaciones automáticas (lint, verificación de tipos, pruebas automatizadas y build de
-          producción). Mientras el Pull Request no se apruebe y fusione, el artículo no está
-          publicado. Cuando un artículo fue revisado además por una persona con formación pastoral o
-          profesional específica, esto se indica en el propio artículo como &quot;Revisado por&quot;.
+          La firma del proyecto identifica al responsable de publicación, pero no implica revisión
+          por un terapeuta o pastor individual. Solo atribuimos revisión especializada cuando
+          podemos identificar al profesional y su función. Las comprobaciones técnicas del sitio
+          ayudan a detectar fallas de código; no certifican la exactitud de cada consejo.
         </p>
 
         <h2>Cómo corregimos errores</h2>
         <p>
           Si detectamos —o nos reportan— un error de contenido, doctrina, cita bíblica o dato, lo
-          corregimos directamente en el artículo correspondiente mediante una nueva revisión del
-          mismo proceso de Pull Request y CI descrito arriba.
+          revisamos en el artículo correspondiente. Puedes reportarlo desde la página de contacto.
         </p>
 
         <h2>Cómo actualizamos publicaciones</h2>
@@ -95,10 +92,11 @@ export default function EditorialPolicyPage() {
 
         <h2>Cómo manejamos los testimonios</h2>
         <p>
-          Los testimonios que compartimos corresponden a experiencias reales de personas que
-          participaron del acompañamiento del ministerio, e incluyen enlace a la fuente original
-          cuando está disponible en video. Ningún testimonio garantiza que otro matrimonio obtendrá
-          el mismo resultado, y lo decimos explícitamente donde se presentan.
+          No publicamos citas de personas anónimas como prueba de resultados. Antes de incorporar
+          una historia personal, debemos poder verificar su origen y contar con permiso para
+          compartirla. Cuando enlazamos testimonios que publica un programa externo, indicamos su
+          fuente y su contexto comercial; no afirmamos haber verificado esos casos de forma
+          independiente. Una experiencia individual nunca garantiza el resultado de otra pareja.
         </p>
 
         <h2>Cómo identificamos enlaces comerciales o de afiliado</h2>

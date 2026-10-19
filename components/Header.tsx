@@ -7,7 +7,8 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/blog", label: "Blog" },
   { href: "/categorias", label: "Categorías" },
-  { href: "/recursos", label: "Recursos" },
+  { href: "/herramientas/primera-conversacion", label: "Herramienta gratuita" },
+  { href: "/recursos", label: "Opciones de ayuda" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
   { href: "/contacto", label: "Contacto" },
 ];
@@ -51,14 +52,14 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-[#5A0F18]/10 bg-white/95 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-[#e9ddd4] bg-[#fffdf9]/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex flex-col leading-none">
-            <span className="font-[var(--font-display)] text-2xl font-bold text-[#5A0F18]">
+            <span className="font-[var(--font-display)] text-2xl font-semibold text-[#3e2528]">
               Restaura Tu Matrimonio
             </span>
             <span className="mt-1 text-xs uppercase tracking-[0.18em] text-[#8a6a18]">
-              Esperanza cristiana
+              Fe y pasos concretos
             </span>
           </Link>
 
@@ -78,10 +79,10 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="/recursos"
-              className="hidden rounded-full bg-[#5A0F18] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#3f0b11] sm:inline-flex"
+              href="/herramientas/primera-conversacion"
+              className="hidden rounded-full bg-[#345a47] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#274736] sm:inline-flex"
             >
-              Recurso recomendado
+              Empezar gratis
             </Link>
 
             {/* Mobile Menu Button */}
@@ -194,10 +195,10 @@ export function Header() {
 
           <div className="mt-auto">
             <Link
-              href="/recursos"
+              href="/herramientas/primera-conversacion"
               className="block w-full rounded-full bg-[#5A0F18] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-[#3f0b11]"
             >
-              Recurso recomendado
+              Empezar gratis
             </Link>
           </div>
         </div>

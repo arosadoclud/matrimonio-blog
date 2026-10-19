@@ -5,7 +5,7 @@ import { NewsletterBox } from "@/components/NewsletterBox";
 export const metadata: Metadata = {
   title: "7 días de oración por la restauración de tu matrimonio",
   description:
-    "Una guía cristiana gratuita para acompañarte con oración, reflexión bíblica y pasos prácticos durante siete días.",
+    "Descarga gratis una guía cristiana de siete días con oración, reflexión bíblica y pasos prácticos para tu matrimonio.",
   alternates: {
     canonical: buildCanonicalUrl("/guia-oracion"),
   },

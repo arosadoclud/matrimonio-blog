@@ -27,7 +27,7 @@ type ResourceCardProps = {
 
 export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCardProps = {}) {
   const hotmartUrl = buildHotmartUrl("recursos_page", sourcePostSlug);
-  const ctaText = "Acceder al recurso";
+  const ctaText = "Conocer el programa externo";
 
   return (
     <section className="grid gap-8 rounded-[8px] border border-[#D4AF37]/35 bg-white p-6 shadow-lg sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -41,18 +41,23 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
         />
       </div>
       <div>
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Recurso recomendado</p>
+        <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Programa externo de pago · enlace de afiliado</p>
         <h2 className="mt-3 font-[var(--font-display)] text-4xl font-bold leading-tight text-[#5A0F18]">
           Programa cristiano para restaurar tu matrimonio
         </h2>
         <p className="mt-4 leading-7 text-[#1F1F1F]/72">
-          Un recurso pensado para matrimonios que desean avanzar con oración, reflexión bíblica y
-          acciones prácticas para sanar conversaciones, heridas y distancia emocional.
+          La página del programa presenta contenidos sobre oración, comunicación y trabajo personal.
+          Revisa allí el temario, el precio actual, el formato y las condiciones antes de decidir.
+        </p>
+        <p className="mt-3 leading-7 text-[#1F1F1F]/72">
+          En esa misma página encontrarás la trayectoria que presenta el instructor y cuatro
+          testimonios en video publicados por el programa. Puedes escucharlos directamente en su
+          fuente y valorar cada experiencia sin tomarla como garantía de resultados.
         </p>
         <ul className="mt-5 grid gap-3 text-sm leading-6 text-[#1F1F1F]/75">
-          <li>Beneficios: claridad espiritual, ejercicios de reconciliación y enfoque diario.</li>
-          <li>Para quién es: esposos, esposas y parejas en crisis que aún desean buscar dirección.</li>
-          <li>Ideal como acompañamiento junto a consejería pastoral o profesional.</li>
+          <li>Es un recurso educativo; no equivale a terapia ni garantiza una reconciliación.</li>
+          <li>Puedes empezar por las herramientas gratuitas del blog y decidir más adelante.</li>
+          <li>Si hay violencia o control, busca ayuda especializada individual antes de cualquier programa para parejas.</li>
         </ul>
         <a
           href={hotmartUrl}
@@ -79,7 +84,7 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
           {ctaText}
         </a>
         <p className="mt-3 text-xs leading-5 text-[#5c5c5c]">
-          Enlace de afiliado a restauratumatrimonio.org, el sitio oficial del programa.
+          Te llevamos a restauratumatrimonio.org, una página externa de presentación y venta del programa.
         </p>
         <p className="mt-2 text-xs leading-5 text-[#5c5c5c]">
           Aviso: este sitio puede recibir una comisión si compras desde este enlace de afiliado, sin
