@@ -87,7 +87,7 @@ export default function AboutPage() {
           <Link href="/blog/quien-es-andres-arango-pastor-y-psicologo-de-matrimonios" className="underline decoration-[#D4AF37]/60 underline-offset-2">
             Andrés Arango
           </Link>
-          , pastor y psicólogo clínico con más de 20 años acompañando a parejas en crisis. No
+          , pastor y psicólogo clínico que acompaña a parejas en crisis, según la presentación del propio programa. No
           somos la misma organización — puedes leer quién es y en qué se basa su método antes de
           decidir si es para ti.
         </p>
