@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function PrayerGuidePage() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Guía gratuita</p>
-      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold leading-tight text-[#5A0F18]">
+      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Guía gratuita</p>
+      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold leading-tight text-[#263a31]">
         7 días de oración por la restauración de tu matrimonio
       </h1>
-      <p className="mt-5 max-w-3xl text-lg leading-8 text-[#1F1F1F]/72">
+      <p className="mt-5 max-w-3xl text-lg leading-8 text-[#263a31]/72">
         Una secuencia devocional pensada para orar con calma, ordenar el corazón y dar pasos
         pequeños de obediencia, perdón y esperanza.
       </p>

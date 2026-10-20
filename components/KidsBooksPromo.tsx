@@ -21,21 +21,21 @@ const kidsBooks = [
 
 export function KidsBooksPromo() {
   return (
-    <section className="rounded-[8px] border border-[#5A0F18]/10 bg-white p-5 shadow-sm">
-      <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8a6a18]">
+    <section className="rounded-[8px] border border-[#713f50]/10 bg-white p-5 shadow-sm">
+      <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#86604f]">
         Para los más pequeños de la casa
       </p>
-      <p className="mt-2 text-xs leading-5 text-[#1F1F1F]/65">
+      <p className="mt-2 text-xs leading-5 text-[#263a31]/65">
         También creamos libros bíblicos para colorear, pensados para acompañar la fe de tus hijos.
       </p>
       <div className="mt-4 grid gap-4">
         {kidsBooks.map((book) => (
           <div
             key={book.href}
-            className="group overflow-hidden rounded-[8px] border border-[#5A0F18]/10 bg-[#FFFDF8] shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37]/50 hover:shadow-md"
+            className="group overflow-hidden rounded-[8px] border border-[#713f50]/10 bg-[#FFFDF8] shadow-sm transition hover:-translate-y-0.5 hover:border-[#86604f]/50 hover:shadow-md"
           >
             <a href={book.href} target="_blank" rel="noopener noreferrer" className="block">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FFF7E8]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#f7f1e9]">
                 <Image
                   src={book.image}
                   alt={`Portada de ${book.title}`}
@@ -45,13 +45,13 @@ export function KidsBooksPromo() {
                 />
               </div>
               <div className="p-3.5 pb-0">
-                <span className="inline-flex items-center rounded-full border border-[#D4AF37]/40 bg-[#FFF7E8] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#8a6a18]">
+                <span className="inline-flex items-center rounded-full border border-[#86604f]/40 bg-[#f7f1e9] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#86604f]">
                   {book.ageRange}
                 </span>
-                <p className="mt-2 font-[var(--font-display)] text-base font-bold leading-tight text-[#5A0F18] group-hover:underline">
+                <p className="mt-2 font-[var(--font-display)] text-base font-bold leading-tight text-[#713f50] group-hover:underline">
                   {book.title}
                 </p>
-                <p className="mt-1.5 text-xs leading-5 text-[#1F1F1F]/65">{book.description}</p>
+                <p className="mt-1.5 text-xs leading-5 text-[#263a31]/65">{book.description}</p>
               </div>
             </a>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 p-3.5 pt-2.5">
@@ -59,7 +59,7 @@ export function KidsBooksPromo() {
                 href={book.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-bold text-[#5A0F18] hover:underline"
+                className="inline-flex items-center gap-1 text-xs font-bold text-[#713f50] hover:underline"
               >
                 Ver más
                 <span aria-hidden="true">→</span>
@@ -69,7 +69,7 @@ export function KidsBooksPromo() {
                   href={book.amazonHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#8a6a18] hover:underline"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#86604f] hover:underline"
                 >
                   Comprar en papel (Amazon)
                   <span aria-hidden="true">→</span>

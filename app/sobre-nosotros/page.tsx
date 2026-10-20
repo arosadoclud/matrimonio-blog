@@ -30,11 +30,11 @@ export default function AboutPage() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <JsonLd data={aboutPageSchema} />
-      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Sobre nosotros</p>
-      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold leading-tight text-[#5A0F18]">
+      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Sobre nosotros</p>
+      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold leading-tight text-[#263a31]">
         Un espacio cristiano de esperanza para matrimonios en crisis
       </h1>
-      <div className="mt-8 grid gap-6 text-lg leading-8 text-[#1F1F1F]/75">
+      <div className="mt-8 grid gap-6 text-lg leading-8 text-[#263a31]/75">
         <p>
           Restaura Tu Matrimonio nace como un espacio cristiano de esperanza para matrimonios que
           atraviesan crisis, distancia emocional o heridas profundas.
@@ -52,15 +52,15 @@ export default function AboutPage() {
 
       <h2
         id="autor"
-        className="mt-12 scroll-mt-24 font-[var(--font-display)] text-3xl font-bold text-[#5A0F18]"
+        className="mt-12 scroll-mt-24 font-[var(--font-display)] text-3xl font-bold text-[#713f50]"
       >
         Quién escribe
       </h2>
-      <div className="mt-4 grid gap-6 text-lg leading-8 text-[#1F1F1F]/75">
+      <div className="mt-4 grid gap-6 text-lg leading-8 text-[#263a31]/75">
         <p>
           Los artículos de este blog están escritos y editados por <strong>{authorConfig.name}</strong>
           , quien responde por su contenido. Como explica nuestra{" "}
-          <Link href="/politica-editorial" className="underline decoration-[#D4AF37]/60 underline-offset-2">
+          <Link href="/politica-editorial" className="underline decoration-[#86604f]/60 underline-offset-2">
             política editorial
           </Link>
           , parte del trabajo se apoya en herramientas de inteligencia artificial y todo artículo
@@ -70,21 +70,21 @@ export default function AboutPage() {
         <p>
           Este es un blog de contenido espiritual y educativo: no ofrece consejería individual. Si
           quieres escribirle, puedes hacerlo desde la página de{" "}
-          <Link href="/contacto" className="underline decoration-[#D4AF37]/60 underline-offset-2">
+          <Link href="/contacto" className="underline decoration-[#86604f]/60 underline-offset-2">
             contacto
           </Link>
           .
         </p>
       </div>
 
-      <h2 className="mt-12 font-[var(--font-display)] text-3xl font-bold text-[#5A0F18]">
+      <h2 className="mt-12 font-[var(--font-display)] text-3xl font-bold text-[#713f50]">
         Detrás del programa que recomendamos
       </h2>
-      <div className="mt-4 grid gap-6 text-lg leading-8 text-[#1F1F1F]/75">
+      <div className="mt-4 grid gap-6 text-lg leading-8 text-[#263a31]/75">
         <p>
           Este blog es un recurso independiente de contenido gratuito. Cuando recomendamos un
           acompañamiento más estructurado, apuntamos al programa de{" "}
-          <Link href="/blog/quien-es-andres-arango-pastor-y-psicologo-de-matrimonios" className="underline decoration-[#D4AF37]/60 underline-offset-2">
+          <Link href="/blog/quien-es-andres-arango-pastor-y-psicologo-de-matrimonios" className="underline decoration-[#86604f]/60 underline-offset-2">
             Andrés Arango
           </Link>
           , pastor y psicólogo clínico que acompaña a parejas en crisis, según la presentación del propio programa. No
@@ -93,15 +93,15 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <h2 className="mt-12 font-[var(--font-display)] text-3xl font-bold text-[#5A0F18]">
+      <h2 className="mt-12 font-[var(--font-display)] text-3xl font-bold text-[#713f50]">
         Cómo trabajamos el contenido
       </h2>
-      <div className="mt-4 grid gap-6 text-lg leading-8 text-[#1F1F1F]/75">
+      <div className="mt-4 grid gap-6 text-lg leading-8 text-[#263a31]/75">
         <p>
           Cada cita o referencia bíblica se contrasta con el pasaje original antes de publicarse, y
           ningún artículo sale al aire sin pasar por revisión editorial. Puedes leer el detalle
           completo de cómo investigamos, revisamos y actualizamos el contenido en nuestra{" "}
-          <Link href="/politica-editorial" className="underline decoration-[#D4AF37]/60 underline-offset-2">
+          <Link href="/politica-editorial" className="underline decoration-[#86604f]/60 underline-offset-2">
             política editorial
           </Link>
           .

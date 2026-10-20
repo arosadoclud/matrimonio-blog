@@ -29,16 +29,16 @@ export default function ContactPage() {
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <JsonLd data={contactPageSchema} />
-      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Contacto</p>
-      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
+      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Contacto</p>
+      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold text-[#263a31]">
         Escríbenos
       </h1>
-      <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">
+      <p className="mt-4 max-w-2xl leading-7 text-[#263a31]/70">
         Usa este formulario para consultas sobre el sitio, recursos o correcciones. No es un canal
         de atención de crisis, terapia ni respuesta inmediata. Si hay peligro, contacta a los
         servicios de emergencia o de apoyo especializado de tu localidad.
       </p>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-[#655b56]">Evita incluir datos íntimos, información médica o detalles que identifiquen a otra persona.</p>
+      <p className="mt-3 max-w-2xl text-sm leading-6 text-[#59655e]">Evita incluir datos íntimos, información médica o detalles que identifiquen a otra persona.</p>
       <div className="mt-10">
         <ContactForm />
       </div>

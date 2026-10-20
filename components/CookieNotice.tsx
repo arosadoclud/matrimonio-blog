@@ -42,25 +42,25 @@ export function CookieNotice() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-3xl rounded-[8px] border border-[#D4AF37]/40 bg-white p-4 shadow-xl shadow-[#5A0F18]/15">
+    <div className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-3xl rounded-[8px] border border-[#86604f]/40 bg-white p-4 shadow-xl shadow-[#713f50]/15">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-6 text-[#1F1F1F]/72">
+        <p className="text-sm leading-6 text-[#263a31]/72">
           Usamos cookies y herramientas de medición para mejorar el contenido y la experiencia.
-          Puedes leer más en nuestra <Link href="/privacidad" className="font-bold text-[#5A0F18]">Política de Privacidad</Link>.
+          Puedes leer más en nuestra <Link href="/privacidad" className="font-bold text-[#713f50]">Política de Privacidad</Link>.
         </p>
         {consentRequired ? (
           <div className="flex shrink-0 gap-2">
             <button
               type="button"
               onClick={() => decide("denied")}
-              className="rounded-full border border-[#5A0F18]/30 px-5 py-2.5 text-sm font-semibold text-[#5A0F18]"
+              className="rounded-full border border-[#713f50]/30 px-5 py-2.5 text-sm font-semibold text-[#713f50]"
             >
               Rechazar
             </button>
             <button
               type="button"
               onClick={() => decide("granted")}
-              className="rounded-full bg-[#5A0F18] px-5 py-2.5 text-sm font-semibold text-white"
+              className="rounded-full bg-[#713f50] px-5 py-2.5 text-sm font-semibold text-white"
             >
               Aceptar
             </button>
@@ -69,7 +69,7 @@ export function CookieNotice() {
           <button
             type="button"
             onClick={acknowledge}
-            className="shrink-0 rounded-full bg-[#5A0F18] px-5 py-2.5 text-sm font-semibold text-white"
+            className="shrink-0 rounded-full bg-[#713f50] px-5 py-2.5 text-sm font-semibold text-white"
           >
             Entendido
           </button>
@@ -86,7 +86,7 @@ function ChangeConsentLink({ onReopen }: { onReopen: () => void }) {
     <button
       type="button"
       onClick={onReopen}
-      className="fixed bottom-4 left-4 z-50 rounded-full border border-[#5A0F18]/20 bg-white px-4 py-2 text-xs font-semibold text-[#5A0F18] shadow-md"
+      className="fixed bottom-4 left-4 z-50 rounded-full border border-[#713f50]/20 bg-white px-4 py-2 text-xs font-semibold text-[#713f50] shadow-md"
     >
       Preferencias de cookies
     </button>

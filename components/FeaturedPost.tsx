@@ -5,7 +5,7 @@ import { CategoryBadge } from "@/components/CategoryBadge";
 
 export function FeaturedPost({ post }: { post: PostMeta }) {
   return (
-    <article className="grid overflow-hidden rounded-[8px] border border-[#5A0F18]/10 bg-white shadow-lg lg:grid-cols-[1fr_1fr]">
+    <article className="grid overflow-hidden rounded-[8px] border border-[#713f50]/10 bg-white shadow-lg lg:grid-cols-[1fr_1fr]">
       <div className="relative min-h-[280px]">
         <Image
           src={post.image}
@@ -20,18 +20,18 @@ export function FeaturedPost({ post }: { post: PostMeta }) {
       </div>
       <div className="p-7 sm:p-10">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex w-fit items-center rounded-full bg-[#FFF7E8] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
+          <span className="inline-flex w-fit items-center rounded-full bg-[#f7f1e9] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#86604f]">
             Destacado · Más leído
           </span>
           <CategoryBadge category={post.category} />
         </div>
-        <h2 className="mt-5 font-[var(--font-display)] text-4xl font-bold leading-tight text-[#5A0F18]">
+        <h2 className="mt-5 font-[var(--font-display)] text-4xl font-bold leading-tight text-[#713f50]">
           {post.title}
         </h2>
-        <p className="mt-4 leading-7 text-[#1F1F1F]/70">{post.description}</p>
+        <p className="mt-4 leading-7 text-[#263a31]/70">{post.description}</p>
         <Link
           href={`/blog/${post.slug}`}
-          className="mt-7 inline-flex rounded-full bg-[#5A0F18] px-6 py-3 text-sm font-semibold text-white"
+          className="mt-7 inline-flex rounded-full bg-[#713f50] px-6 py-3 text-sm font-semibold text-white"
         >
           Leer artículo
         </Link>

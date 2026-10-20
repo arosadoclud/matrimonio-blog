@@ -8,7 +8,7 @@ export function RelatedArticles({ posts }: { posts: PostMeta[] }) {
 
   return (
     <section className="mt-14">
-      <h2 className="font-[var(--font-display)] text-3xl font-bold text-[#5A0F18]">
+      <h2 className="font-[var(--font-display)] text-3xl font-bold text-[#713f50]">
         Artículos relacionados
       </h2>
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

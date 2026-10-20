@@ -22,12 +22,12 @@ function buildHotmartUrl(content: string) {
 export function FunnelCTA(props: FunnelCTAProps) {
   if (props.variant === "top") {
     return (
-      <section className="mb-10 rounded-[8px] border border-[#D4AF37]/35 bg-[#FFF7E8] p-6 sm:p-7">
-        <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#8a6a18]">Guía gratis</p>
-        <p className="mt-2 font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
+      <section className="mb-10 rounded-[8px] border border-[#86604f]/35 bg-[#f7f1e9] p-6 sm:p-7">
+        <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#86604f]">Guía gratis</p>
+        <p className="mt-2 font-[var(--font-display)] text-2xl font-bold leading-tight text-[#713f50]">
           Recibe gratis: 7 días de oración por la restauración de tu matrimonio
         </p>
-        <p className="mt-2 text-sm leading-6 text-[#1F1F1F]/70">
+        <p className="mt-2 text-sm leading-6 text-[#263a31]/70">
           Una guía devocional para acompañarte esta semana con oración, reflexión bíblica y pasos
           prácticos.
         </p>
@@ -41,11 +41,11 @@ export function FunnelCTA(props: FunnelCTAProps) {
     const ctaText = "Ver recurso recomendado";
 
     return (
-      <section className="mb-10 rounded-[8px] border border-[#5A0F18]/10 bg-white p-6 shadow-sm sm:p-7">
-        <p className="font-[var(--font-display)] text-2xl font-bold leading-tight text-[#5A0F18]">
+      <section className="mb-10 rounded-[8px] border border-[#713f50]/10 bg-white p-6 shadow-sm sm:p-7">
+        <p className="font-[var(--font-display)] text-2xl font-bold leading-tight text-[#713f50]">
           Si tu matrimonio atraviesa {props.topic.toLowerCase()}, este recurso puede ayudarte hoy
         </p>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-[#1F1F1F]/70">
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-[#263a31]/70">
           Conoce el recurso recomendado con oración, reflexión y acciones concretas para avanzar en
           este proceso.
         </p>
@@ -68,7 +68,7 @@ export function FunnelCTA(props: FunnelCTAProps) {
               )
             )
           }
-          className="mt-5 inline-flex rounded-full bg-[#5A0F18] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#3f0b11]"
+          className="mt-5 inline-flex rounded-full bg-[#713f50] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#563041]"
         >
           {ctaText}
         </Link>
@@ -80,7 +80,7 @@ export function FunnelCTA(props: FunnelCTAProps) {
   const bottomCtaText = "Quiero recuperar mi matrimonio →";
 
   return (
-    <section className="mb-10 rounded-[8px] bg-[#5A0F18] p-6 text-white sm:p-8">
+    <section className="mb-10 rounded-[8px] bg-[#713f50] p-6 text-white sm:p-8">
       <p className="font-[var(--font-display)] text-3xl font-bold leading-tight">
         No dejes tu matrimonio para después. Empieza a restaurarlo hoy.
       </p>
@@ -102,7 +102,7 @@ export function FunnelCTA(props: FunnelCTAProps) {
             cta_text: bottomCtaText,
           })
         }
-        className="mt-6 inline-flex rounded-full bg-[#D4AF37] px-6 py-3 text-sm font-bold text-[#1F1F1F] transition hover:bg-[#e1bd45]"
+        className="mt-6 inline-flex rounded-full bg-[#f7f1e9] px-6 py-3 text-sm font-bold text-[#563041] transition hover:bg-white"
       >
         {bottomCtaText}
       </a>

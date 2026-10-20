@@ -35,11 +35,11 @@ export function VerseBox({ category }: { category: string }) {
 
   return (
     <aside className="mb-9 rounded-[1.25rem] border border-[#e6cfb8] bg-[#fbf3e6] px-6 py-6 sm:px-8">
-      <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#8a6a18]">Para meditar</p>
-      <p className="mt-3 font-[var(--font-display)] text-3xl font-semibold leading-tight text-[#5A0F18]">
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#86604f]">Para meditar</p>
+      <p className="mt-3 font-[var(--font-display)] text-3xl font-semibold leading-tight text-[#713f50]">
         {reflection.thought}
       </p>
-      <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-[#8a6a18]">
+      <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-[#86604f]">
         Lectura sugerida · {reflection.reference}
       </p>
     </aside>

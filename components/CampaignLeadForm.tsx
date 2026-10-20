@@ -67,7 +67,7 @@ export function CampaignLeadForm({ placement = "hero" }: { placement?: string })
           maxLength={80}
           autoComplete="name"
           placeholder="¿Cómo te llamas? (opcional)"
-          className="w-full rounded-lg border border-[#5A0F18]/20 bg-white px-4 py-3.5 text-base outline-none transition focus:border-[#A87B24] focus:ring-4 focus:ring-[#D4AF37]/15"
+          className="w-full rounded-lg border border-[#713f50]/20 bg-white px-4 py-3.5 text-base outline-none transition focus:border-[#A87B24] focus:ring-4 focus:ring-[#86604f]/15"
         />
       </div>
       <div>
@@ -81,13 +81,13 @@ export function CampaignLeadForm({ placement = "hero" }: { placement?: string })
           required
           autoComplete="email"
           placeholder="tu@email.com"
-          className="w-full rounded-lg border border-[#5A0F18]/20 bg-white px-4 py-3.5 text-base outline-none transition focus:border-[#A87B24] focus:ring-4 focus:ring-[#D4AF37]/15"
+          className="w-full rounded-lg border border-[#713f50]/20 bg-white px-4 py-3.5 text-base outline-none transition focus:border-[#A87B24] focus:ring-4 focus:ring-[#86604f]/15"
         />
       </div>
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-1 min-h-14 rounded-lg bg-[#5A0F18] px-6 py-4 text-base font-bold text-white shadow-[0_12px_28px_rgba(90,15,24,0.22)] transition hover:bg-[#741923] focus:outline-none focus:ring-4 focus:ring-[#D4AF37]/35 disabled:cursor-wait disabled:opacity-70"
+        className="mt-1 min-h-14 rounded-lg bg-[#713f50] px-6 py-4 text-base font-bold text-white shadow-[0_12px_28px_rgba(90,15,24,0.22)] transition hover:bg-[#563041] focus:outline-none focus:ring-4 focus:ring-[#86604f]/35 disabled:cursor-wait disabled:opacity-70"
       >
         {status === "loading" ? "Preparando tu guía..." : "Recibir la guía gratis"}
       </button>

@@ -67,7 +67,7 @@ export function NewsletterForm() {
         required
         placeholder="tu@email.com"
         autoComplete="email"
-        className="rounded-full border border-[#5A0F18]/15 px-5 py-3 outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+        className="rounded-full border border-[#713f50]/15 px-5 py-3 outline-none focus:border-[#86604f] focus:ring-2 focus:ring-[#86604f]/20"
       />
       <input
         type="hidden"
@@ -83,7 +83,7 @@ export function NewsletterForm() {
         className="hidden"
       />
       <button
-        className="rounded-full bg-[#5A0F18] px-6 py-3 font-semibold text-white transition hover:bg-[#3f0b11] disabled:cursor-not-allowed disabled:opacity-50"
+        className="rounded-full bg-[#713f50] px-6 py-3 font-semibold text-white transition hover:bg-[#563041] disabled:cursor-not-allowed disabled:opacity-50"
         data-event="newsletter_signup_click"
         data-label="lead_magnet_7_dias"
         disabled={status === "loading"}
@@ -117,7 +117,7 @@ export function NewsletterForm() {
           "Recibir guía"
         )}
       </button>
-      <p className="text-xs leading-5 text-[#5c5c5c] sm:col-span-2">
+      <p className="text-xs leading-5 text-[#59655e] sm:col-span-2">
         Al solicitar la guía, aceptas recibir recursos y contenidos de Restaura tu Matrimonio.
         Puedes cancelar tu suscripción en cualquier momento.
       </p>

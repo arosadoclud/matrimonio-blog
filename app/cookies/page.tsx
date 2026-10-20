@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function CookiesPage() {
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Legal</p>
-      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
+      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Legal</p>
+      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold text-[#263a31]">
         Política de Cookies
       </h1>
-      <p className="mt-3 text-sm text-[#1F1F1F]/60">Última actualización: 5 de octubre de 2026</p>
+      <p className="mt-3 text-sm text-[#263a31]/60">Última actualización: 5 de octubre de 2026</p>
       <div className="prose-article mt-8">
         <p>
           Las cookies son pequeños archivos que un sitio web guarda en tu navegador. Otras

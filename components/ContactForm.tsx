@@ -89,7 +89,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5 rounded-[8px] border border-[#5A0F18]/10 bg-white p-6 shadow-sm">
+    <form onSubmit={onSubmit} className="grid gap-5 rounded-[8px] border border-[#713f50]/10 bg-white p-6 shadow-sm">
       {errors.length > 0 && (
         <div className="rounded-[8px] border border-red-200 bg-red-50 p-4" role="alert">
           <p className="text-sm font-semibold text-red-700">Por favor, corrige los siguientes errores:</p>
@@ -102,30 +102,30 @@ export function ContactForm() {
       )}
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-semibold text-[#5A0F18]">
+        <label className="grid gap-2 text-sm font-semibold text-[#713f50]">
           Nombre
           <input
-            className="rounded-[8px] border border-[#5A0F18]/15 px-4 py-3 outline-none transition focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+            className="rounded-[8px] border border-[#713f50]/15 px-4 py-3 outline-none transition focus:border-[#86604f] focus:ring-2 focus:ring-[#86604f]/20"
             name="name"
             required
             minLength={2}
             maxLength={100}
           />
         </label>
-        <label className="grid gap-2 text-sm font-semibold text-[#5A0F18]">
+        <label className="grid gap-2 text-sm font-semibold text-[#713f50]">
           Email
           <input
-            className="rounded-[8px] border border-[#5A0F18]/15 px-4 py-3 outline-none transition focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+            className="rounded-[8px] border border-[#713f50]/15 px-4 py-3 outline-none transition focus:border-[#86604f] focus:ring-2 focus:ring-[#86604f]/20"
             name="email"
             type="email"
             required
           />
         </label>
       </div>
-      <label className="grid gap-2 text-sm font-semibold text-[#5A0F18]">
+      <label className="grid gap-2 text-sm font-semibold text-[#713f50]">
         Motivo de contacto
         <select
-          className="rounded-[8px] border border-[#5A0F18]/15 px-4 py-3 outline-none transition focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+          className="rounded-[8px] border border-[#713f50]/15 px-4 py-3 outline-none transition focus:border-[#86604f] focus:ring-2 focus:ring-[#86604f]/20"
           name="reason"
           required
         >
@@ -137,10 +137,10 @@ export function ContactForm() {
           ))}
         </select>
       </label>
-      <label className="grid gap-2 text-sm font-semibold text-[#5A0F18]">
+      <label className="grid gap-2 text-sm font-semibold text-[#713f50]">
         Mensaje
         <textarea
-          className="min-h-40 rounded-[8px] border border-[#5A0F18]/15 px-4 py-3 outline-none transition focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+          className="min-h-40 rounded-[8px] border border-[#713f50]/15 px-4 py-3 outline-none transition focus:border-[#86604f] focus:ring-2 focus:ring-[#86604f]/20"
           name="message"
           required
           minLength={10}
@@ -149,7 +149,7 @@ export function ContactForm() {
         />
       </label>
       <button
-        className="rounded-full bg-[#5A0F18] px-7 py-3.5 font-semibold text-white transition hover:bg-[#3f0b11] disabled:cursor-not-allowed disabled:opacity-50"
+        className="rounded-full bg-[#713f50] px-7 py-3.5 font-semibold text-white transition hover:bg-[#563041] disabled:cursor-not-allowed disabled:opacity-50"
         type="submit"
         disabled={status === "loading"}
       >

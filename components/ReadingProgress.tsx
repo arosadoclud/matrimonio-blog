@@ -44,7 +44,7 @@ export function ReadingProgress() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-1">
       <div
-        className="h-full origin-left bg-gradient-to-r from-[#D4AF37] to-[#5A0F18]"
+        className="h-full origin-left bg-gradient-to-r from-[#86604f] to-[#713f50]"
         style={{ transform: `scaleX(${progress})` }}
       />
     </div>

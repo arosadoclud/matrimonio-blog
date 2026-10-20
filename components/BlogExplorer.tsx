@@ -30,7 +30,7 @@ export function BlogExplorer({ posts, categories }: BlogExplorerProps) {
 
   return (
     <div>
-      <div className="grid gap-4 rounded-[8px] border border-[#5A0F18]/10 bg-[#FFF7E8] p-4 lg:grid-cols-[1fr_auto]">
+      <div className="grid gap-4 rounded-[8px] border border-[#713f50]/10 bg-[#f7f1e9] p-4 lg:grid-cols-[1fr_auto]">
         <SearchBar value={query} onChange={setQuery} />
         <label className="sr-only" htmlFor="category-filter">
           Filtrar por categoría
@@ -39,7 +39,7 @@ export function BlogExplorer({ posts, categories }: BlogExplorerProps) {
           id="category-filter"
           value={category}
           onChange={(event) => setCategory(event.target.value)}
-          className="rounded-full border border-[#5A0F18]/15 bg-white px-5 py-3 text-sm font-semibold text-[#5A0F18] outline-none"
+          className="rounded-full border border-[#713f50]/15 bg-white px-5 py-3 text-sm font-semibold text-[#713f50] outline-none"
         >
           <option>Todos</option>
           {categories.map((item) => (
@@ -53,9 +53,9 @@ export function BlogExplorer({ posts, categories }: BlogExplorerProps) {
         ))}
       </div>
       {filteredPosts.length === 0 ? (
-        <div className="mt-8 rounded-[8px] border border-[#5A0F18]/10 bg-white p-8 text-center">
-          <p className="font-semibold text-[#5A0F18]">No encontramos artículos con ese criterio.</p>
-          <p className="mt-2 text-sm text-[#1F1F1F]/60">Prueba con otra palabra o categoría.</p>
+        <div className="mt-8 rounded-[8px] border border-[#713f50]/10 bg-white p-8 text-center">
+          <p className="font-semibold text-[#713f50]">No encontramos artículos con ese criterio.</p>
+          <p className="mt-2 text-sm text-[#263a31]/60">Prueba con otra palabra o categoría.</p>
         </div>
       ) : null}
     </div>
