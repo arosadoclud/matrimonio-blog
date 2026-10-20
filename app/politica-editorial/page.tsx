@@ -29,8 +29,8 @@ export default function EditorialPolicyPage() {
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <JsonLd data={pageSchema} />
-      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Transparencia</p>
-      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
+      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Transparencia</p>
+      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold text-[#263a31]">
         Política Editorial
       </h1>
       <div className="prose-article mt-8">

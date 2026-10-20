@@ -30,7 +30,7 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
   const ctaText = "Conocer el programa externo";
 
   return (
-    <section className="grid gap-8 rounded-[8px] border border-[#D4AF37]/35 bg-white p-6 shadow-lg sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
+    <section className="grid gap-8 rounded-[8px] border border-[#86604f]/35 bg-white p-6 shadow-lg sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
       <div className="relative min-h-[280px] overflow-hidden rounded-[8px]">
         <Image
           src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=1200&q=80"
@@ -41,20 +41,20 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
         />
       </div>
       <div>
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Programa externo de pago · enlace de afiliado</p>
-        <h2 className="mt-3 font-[var(--font-display)] text-4xl font-bold leading-tight text-[#5A0F18]">
+        <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Programa externo de pago · enlace de afiliado</p>
+        <h2 className="mt-3 font-[var(--font-display)] text-4xl font-bold leading-tight text-[#713f50]">
           Programa cristiano para restaurar tu matrimonio
         </h2>
-        <p className="mt-4 leading-7 text-[#1F1F1F]/72">
+        <p className="mt-4 leading-7 text-[#263a31]/72">
           La página del programa presenta contenidos sobre oración, comunicación y trabajo personal.
           Revisa allí el temario, el precio actual, el formato y las condiciones antes de decidir.
         </p>
-        <p className="mt-3 leading-7 text-[#1F1F1F]/72">
+        <p className="mt-3 leading-7 text-[#263a31]/72">
           En esa misma página encontrarás la trayectoria que presenta el instructor y cuatro
           testimonios en video publicados por el programa. Puedes escucharlos directamente en su
           fuente y valorar cada experiencia sin tomarla como garantía de resultados.
         </p>
-        <ul className="mt-5 grid gap-3 text-sm leading-6 text-[#1F1F1F]/75">
+        <ul className="mt-5 grid gap-3 text-sm leading-6 text-[#263a31]/75">
           <li>Es un recurso educativo; no equivale a terapia ni garantiza una reconciliación.</li>
           <li>Puedes empezar por las herramientas gratuitas del blog y decidir más adelante.</li>
           <li>Si hay violencia o control, busca ayuda especializada individual antes de cualquier programa para parejas.</li>
@@ -79,14 +79,14 @@ export function ResourceCard({ sourcePostSlug, sourcePostCategory }: ResourceCar
               cta_text: ctaText,
             })
           }
-          className="mt-7 inline-flex rounded-full bg-[#5A0F18] px-7 py-3.5 font-semibold text-white transition hover:bg-[#3f0b11]"
+          className="mt-7 inline-flex rounded-full bg-[#713f50] px-7 py-3.5 font-semibold text-white transition hover:bg-[#563041]"
         >
           {ctaText}
         </a>
-        <p className="mt-3 text-xs leading-5 text-[#5c5c5c]">
+        <p className="mt-3 text-xs leading-5 text-[#59655e]">
           Te llevamos a restauratumatrimonio.org, una página externa de presentación y venta del programa.
         </p>
-        <p className="mt-2 text-xs leading-5 text-[#5c5c5c]">
+        <p className="mt-2 text-xs leading-5 text-[#59655e]">
           Aviso: este sitio puede recibir una comisión si compras desde este enlace de afiliado, sin
           costo adicional para ti. El programa no garantiza resultados y no sustituye terapia ni
           ayuda profesional — es un complemento, no un reemplazo.

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BrandMark } from "@/components/BrandMark";
 
 const navItems = [
   { href: "/blog", label: "Blog" },
@@ -52,25 +53,28 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-[#e9ddd4] bg-[#fffdf9]/95 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-[#e4d9cb] bg-[#fffcf7]/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex flex-col leading-none">
-            <span className="font-[var(--font-display)] text-2xl font-semibold text-[#3e2528]">
-              Restaura Tu Matrimonio
-            </span>
-            <span className="mt-1 text-xs uppercase tracking-[0.18em] text-[#8a6a18]">
-              Fe y pasos concretos
+          <Link href="/" className="flex items-center gap-3 leading-none">
+            <BrandMark className="h-9 w-9 shrink-0 text-[#86604f]" />
+            <span className="flex flex-col">
+              <span className="font-[var(--font-display)] text-2xl font-semibold text-[#263a31]">
+                Restaura Tu Matrimonio
+              </span>
+              <span className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#86604f]">
+                Fe y pasos concretos
+              </span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-[#1F1F1F]/80 lg:flex">
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-[#263a31]/80 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className="transition hover:text-[#5A0F18]"
+                className="transition hover:text-[#713f50]"
               >
                 {item.label}
               </Link>
@@ -80,7 +84,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/herramientas/primera-conversacion"
-              className="hidden rounded-full bg-[#345a47] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#274736] sm:inline-flex"
+              className="hidden rounded-full bg-[#293d34] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#274736] sm:inline-flex"
             >
               Empezar gratis
             </Link>
@@ -97,7 +101,7 @@ export function Header() {
               <span className="sr-only">{isOpen ? "Cerrar" : "Abrir"} menú</span>
               {isOpen ? (
                 <svg
-                  className="h-6 w-6 text-[#5A0F18]"
+                  className="h-6 w-6 text-[#713f50]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -112,7 +116,7 @@ export function Header() {
                 </svg>
               ) : (
                 <svg
-                  className="h-6 w-6 text-[#5A0F18]"
+                  className="h-6 w-6 text-[#713f50]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -150,14 +154,14 @@ export function Header() {
       >
         <div className="flex h-full flex-col p-6">
           <div className="mb-8 flex items-center justify-between">
-            <span className="font-[var(--font-display)] text-xl font-bold text-[#5A0F18]">
+            <span className="font-[var(--font-display)] text-xl font-bold text-[#713f50]">
               Menú
             </span>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
               aria-label="Cerrar menú"
-              className="rounded-full p-2 text-[#5A0F18] transition hover:bg-[#5A0F18]/10"
+              className="rounded-full p-2 text-[#713f50] transition hover:bg-[#713f50]/10"
             >
               <svg
                 className="h-5 w-5"
@@ -184,8 +188,8 @@ export function Header() {
                 aria-current={pathname === item.href ? "page" : undefined}
                 className={`rounded-lg px-4 py-3 text-base font-medium transition ${
                   pathname === item.href
-                    ? "bg-[#5A0F18] text-white"
-                    : "text-[#1F1F1F] hover:bg-[#FFF7E8]"
+                    ? "bg-[#713f50] text-white"
+                    : "text-[#263a31] hover:bg-[#f7f1e9]"
                 }`}
               >
                 {item.label}
@@ -196,7 +200,7 @@ export function Header() {
           <div className="mt-auto">
             <Link
               href="/herramientas/primera-conversacion"
-              className="block w-full rounded-full bg-[#5A0F18] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-[#3f0b11]"
+              className="block w-full rounded-full bg-[#713f50] px-5 py-3 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-[#563041]"
             >
               Empezar gratis
             </Link>

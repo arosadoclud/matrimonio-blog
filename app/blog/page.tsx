@@ -21,11 +21,11 @@ export default function BlogPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="max-w-3xl">
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Blog</p>
-        <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
+        <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Blog</p>
+        <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold text-[#263a31]">
           Artículos para restaurar, sanar y volver a construir
         </h1>
-        <p className="mt-4 leading-7 text-[#1F1F1F]/70">
+        <p className="mt-4 leading-7 text-[#263a31]/70">
           Explora recursos cristianos preparados para matrimonios que atraviesan crisis, distancia
           emocional o procesos de reconciliación.
         </p>

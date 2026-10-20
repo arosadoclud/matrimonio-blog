@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 export default function CategoriesPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Categorías</p>
-      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
+      <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Categorías</p>
+      <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold text-[#263a31]">
         Temas para acompañar tu proceso
       </h1>
-      <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">
+      <p className="mt-4 max-w-2xl leading-7 text-[#263a31]/70">
         Cada matrimonio en crisis atraviesa un momento distinto: algunos necesitan primero recuperar la
         comunicación, otros sanar una herida específica como la infidelidad, y otros simplemente encontrar
         palabras para orar. Estas categorías agrupan el contenido del blog por el punto exacto en el que
@@ -32,10 +32,10 @@ export default function CategoriesPage() {
           <Link
             key={category.slug}
             href={`/categorias/${category.slug}`}
-            className="rounded-[8px] border border-[#D4AF37]/35 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            className="rounded-[8px] border border-[#86604f]/35 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
           >
-            <h2 className="font-[var(--font-display)] text-2xl font-bold text-[#5A0F18]">{category.name}</h2>
-            <p className="mt-3 text-sm leading-6 text-[#1F1F1F]/65">{category.description}</p>
+            <h2 className="font-[var(--font-display)] text-2xl font-bold text-[#713f50]">{category.name}</h2>
+            <p className="mt-3 text-sm leading-6 text-[#263a31]/65">{category.description}</p>
           </Link>
         ))}
       </div>

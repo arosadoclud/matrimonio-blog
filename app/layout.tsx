@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@/components/Analytics";
 import { CookieNotice } from "@/components/CookieNotice";
@@ -16,7 +16,7 @@ const display = Cormorant_Garamond({
   weight: ["600", "700"],
 });
 
-const body = Inter({
+const body = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });

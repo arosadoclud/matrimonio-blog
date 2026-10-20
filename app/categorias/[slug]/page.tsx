@@ -83,11 +83,11 @@ export default async function CategoryPage({ params }: PageProps) {
             { label: category.name }
           ]}
         />
-        <p className="mt-6 text-sm font-bold uppercase tracking-[0.16em] text-[#8a6a18]">Categoría</p>
-        <h1 className="mt-2 font-[var(--font-display)] text-5xl font-bold text-[#5A0F18]">
+        <p className="mt-6 text-sm font-bold uppercase tracking-[0.16em] text-[#86604f]">Categoría</p>
+        <h1 className="mt-2 font-[var(--font-display)] text-5xl font-semibold text-[#263a31]">
           {category.name}
         </h1>
-        <p className="mt-4 max-w-2xl leading-7 text-[#1F1F1F]/70">
+        <p className="mt-4 max-w-2xl leading-7 text-[#263a31]/70">
           {category.intro ?? category.description}
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -96,7 +96,7 @@ export default async function CategoryPage({ params }: PageProps) {
           ))}
         </div>
         {posts.length === 0 ? (
-          <p className="mt-10 rounded-[8px] bg-[#FFF7E8] p-6 text-[#1F1F1F]/70">
+          <p className="mt-10 rounded-[8px] bg-[#f7f1e9] p-6 text-[#263a31]/70">
             Pronto publicaremos artículos en esta categoría.
           </p>
         ) : null}

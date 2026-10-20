@@ -1,19 +1,20 @@
 import Link from "next/link";
 import { categories, siteConfig } from "@/lib/site";
+import { BrandMark } from "@/components/BrandMark";
 
 export function Footer() {
   return (
-    <footer className="bg-[#3e2528] text-white">
+    <footer className="bg-[#263a31] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
         <div>
-          <p className="font-[var(--font-display)] text-3xl font-bold">{siteConfig.name}</p>
+          <p className="flex items-center gap-3 font-[var(--font-display)] text-3xl font-semibold"><BrandMark className="h-10 w-10 shrink-0 text-[#d9bba6]" />{siteConfig.name}</p>
           <p className="mt-4 max-w-md text-sm leading-7 text-white/78">
             Recursos cristianos para matrimonios que desean sanar, perdonar y volver a construir
             con fe, sabiduría y esperanza.
           </p>
         </div>
         <div>
-          <p className="font-semibold text-[#D4AF37]">Explorar</p>
+          <p className="font-semibold text-[#d9bba6]">Explorar</p>
           <div className="mt-2 flex flex-col text-sm text-white/80">
             <Link className="inline-block py-1.5" href="/blog">Blog</Link>
             <Link className="inline-block py-1.5" href="/herramientas/primera-conversacion">Herramienta gratuita</Link>
@@ -28,7 +29,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="font-semibold text-[#D4AF37]">Categorías</p>
+          <p className="font-semibold text-[#d9bba6]">Categorías</p>
           <div className="mt-2 flex flex-col text-sm text-white/80">
             {categories.slice(0, 5).map((category) => (
               <Link

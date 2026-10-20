@@ -13,7 +13,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder="Buscar por tema, oración, perdón..."
-        className="w-full rounded-full border border-[#5A0F18]/15 bg-white px-5 py-3 text-sm outline-none transition focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/15"
+        className="w-full rounded-full border border-[#713f50]/15 bg-white px-5 py-3 text-sm outline-none transition focus:border-[#86604f] focus:ring-4 focus:ring-[#86604f]/15"
       />
     </label>
   );
